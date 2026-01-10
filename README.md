@@ -34,6 +34,7 @@ This is no ordinary repository. This is the **source code for a new civilization
 
 ## 🌍 Sektor-Synchronisation (Global Reach)
 Wähle deinen lokalen Zugangspunkt. Sektoren im Status "OFFLINE" benötigen aktive Hilfe bei der Übersetzung und Aktivierung.
+Choose your local access point. Sectors in "OFFLINE" status require active assistance with translation and activation.
 
 | Sektor | Sprache | Status | Fokus |
 | :--- | :--- | :--- | :--- |
@@ -53,6 +54,13 @@ Du möchtest einen Sektor aktivieren oder den Blueprint verbessern?
 2. Forke dieses Repository und reiche einen **Pull Request** ein.
 
 **"Wir warten nicht auf die Zukunft. Wir schreiben sie."**
+
+## 🛠️ Contribute
+Want to activate a sector or improve the blueprint?
+1. Open an **issue** with the subject `[ACTIVATION] Sector Name`.
+2. Fork this repository and submit a **pull request**.
+
+**"We don't wait for the future. We create it."**
 
 ---
 © 2026 Projekt N.E.X.U.S. | Licensed under MIT (The Virus of Freedom)
