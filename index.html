@@ -26,7 +26,7 @@
             font-size: 19px;
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 70px; /* Mehr Platz für Header */
+            padding-top: 70px;
         }
 
         h1, h2, h3 { 
@@ -40,7 +40,7 @@
         a { text-decoration: none; transition: 0.3s; }
         img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
 
-        /* --- HEADER (FIX OBEN) --- */
+        /* --- HEADER --- */
         header {
             position: fixed;
             top: 0;
@@ -58,23 +58,9 @@
             backdrop-filter: blur(5px);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-img {
-            height: 50px; /* Logo Größe angepasst */
-            width: auto;
-        }
-
-        .logo-text { 
-            font-weight: bold; 
-            color: var(--accent-cyan); 
-            letter-spacing: 1px; 
-            font-size: 1.2rem; 
-        }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 50px; width: auto; }
+        .logo-text { font-weight: bold; color: var(--accent-cyan); letter-spacing: 1px; font-size: 1.2rem; }
         
         .header-cta {
             background: var(--accent-orange);
@@ -87,7 +73,7 @@
         }
         .header-cta:hover { background: #fff; }
 
-        /* --- HERO SEKTION --- */
+        /* --- HERO --- */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -127,11 +113,11 @@
         .btn-choice {
             padding: 18px 30px;
             border: 3px solid;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
-            width: 320px;
+            width: 350px;
             display: inline-block;
             background: rgba(0,0,0,0.9);
             color: #fff;
@@ -180,7 +166,32 @@
         .cta-telegram { background: #229ED9; color: white; border: none; font-size: 1.3rem; margin: 0 auto; max-width: 500px; }
         .cta-telegram:hover { background: #fff; color: #229ED9; }
 
-        /* NEUE PDF BOX DESIGN */
+        /* HIGHLIGHT BOX (DIE BLAUPAUSE) */
+        .highlight-quote {
+            font-size: 1.25rem;
+            color: var(--accent-orange);
+            border-left: 4px solid var(--accent-orange);
+            padding: 20px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+            font-weight: bold;
+            background: rgba(255, 157, 0, 0.05);
+            display: block;
+        }
+
+        /* SOCIAL PROOF / REVIEW */
+        .social-proof-box {
+            margin: 30px 0;
+            padding: 15px;
+            border: 1px dashed #444;
+            color: #ccc;
+            background: #0a0a0a;
+        }
+        .quote-icon { font-size: 1.5rem; color: var(--accent-cyan); margin-right: 10px; }
+        .proof-text { font-style: italic; font-size: 1rem; }
+        .proof-author { display: block; margin-top: 5px; color: var(--accent-cyan); font-weight: bold; font-size: 0.8rem; text-align: right; }
+
+        /* DOWNLOAD BOX */
         .pdf-download-box {
             margin-top: 40px;
             background: #0f0f0f;
@@ -207,11 +218,7 @@
             border-bottom: 1px solid #222;
             transition: 0.2s;
         }
-        .pdf-link:hover {
-            background: #222;
-            color: var(--accent-orange);
-            padding-left: 20px;
-        }
+        .pdf-link:hover { background: #222; color: var(--accent-orange); padding-left: 20px; }
         .pdf-link:last-child { border-bottom: none; }
         .pdf-icon { margin-right: 10px; font-weight: bold; }
 
@@ -233,14 +240,14 @@
             .btn-choice { width: 100%; margin-bottom: 10px; }
             .section { padding: 40px 15px; }
             header { padding: 0 15px; }
-            .logo-text { font-size: 0.9rem; } /* Kleineres Logo auf Handy */
+            .logo-text { font-size: 0.9rem; } 
             .logo-img { height: 35px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- FIXER HEADER MIT LOGO -->
+    <!-- HEADER -->
     <header>
         <div class="logo-container">
             <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png" alt="Nexus Logo" class="logo-img">
@@ -249,7 +256,7 @@
         <a href="https://t.me/NexusProjectOfficial" target="_blank" class="header-cta">JOIN MOVEMENT</a>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <div class="hero">
         <h1>PROJECT N.E.X.U.S.</h1>
         <div class="subline">
@@ -272,12 +279,12 @@
             </p>
             <p>
                 Ich bin Josh Richman, der Nexus Navigator. Ich habe keine Antworten für Leute, 
-                die weiterschlafen wollen. Ich habe einen Plan für die, die aufwachen, ich habe den Plan nicht erfunden, ich habe ihn nur aufgeschrieben. Bauen müssen wir ihn zusammen.
+                die weiterschlafen wollen. Ich habe einen Plan für die, die aufwachen. Ich habe den Plan nicht erfunden, ich habe ihn nur aufgeschrieben. Bauen müssen wir ihn zusammen.
             </p>
         </div>
     </div>
 
-    <!-- VIDEO -->
+    <!-- VIDEO (Gefixter Link) -->
     <div class="video-intro">
         <div class="video-wrapper">
             <div class="video-container">
@@ -291,16 +298,29 @@
         <h2 class="section-title orange-border">Die Trilogie: FIKTION ALS WARNUNG UND ALS LÖSUNG</h2>
         <div class="content-grid">
             <div class="text-col">
-                <p><strong>Die N.E.X.U.S. Trilogie ist keine Unterhaltung. Sie ist eine Blaupause.</strong></p>
+                
+                <!-- NEU: Prominente Hervorhebung (Highlight Box) -->
+                <div class="highlight-quote">
+                    Die N.E.X.U.S. Trilogie ist keine Unterhaltung. <br>Sie ist eine Blaupause.
+                </div>
+
                 <p>David, Sarah und Robert zeigen in einer beklemmend realistischen Simulation, was passiert, wenn Smart Cities zu Gefängnissen werden – und wie der Ausweg über Mesh-Netzwerke und echte Gemeinschaft gelingt.</p>
                 <ul>
                     <li>🔥 <strong>Band 1: Stunde Null</strong> – Die Flucht aus dem digitalen Käfig.</li>
                     <li>🌪 <strong>Band 2: Das Fundament</strong> – Der harte Aufbau im Verborgenen.</li>
                     <li>🦅 <strong>Band 3: Die Metamorphose</strong> – Der Sieg der Dezentralität.</li>
                 </ul>
+
+                <!-- NEU: Social Proof Box -->
+                <div class="social-proof-box">
+                    <span class="quote-icon">❝</span>
+                    <span class="proof-text">Endlich eine Dystopie, die nicht im Chaos endet, sondern einen echten Ausweg zeigt. Das ist kein Roman, das ist ein Weckruf.</span>
+                    <span class="proof-author">– Leserstimme aus dem Signal</span>
+                </div>
+
                 <a href="https://amzn.eu/d/eWMNOTG" target="_blank" class="cta-button cta-amazon">JETZT AUF AMAZON STARTEN</a>
                 
-                <!-- NEUE DOWNLOAD BOX -->
+                <!-- DOWNLOAD BOX -->
                 <div class="pdf-download-box">
                     <span class="pdf-box-title">📂 OPEN SOURCE ZUGANG (PDF-Leseproben)</span>
                     <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf" target="_blank" class="pdf-link">
