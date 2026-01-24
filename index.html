@@ -9,10 +9,9 @@
         :root {
             --bg-color: #050505;
             --text-main: #e0e0e0;
-            --accent-cyan: #00f3ff; /* Für Tech/System */
-            --accent-orange: #ff9d00; /* Für Story/Emotion */
+            --accent-cyan: #00f3ff;
+            --accent-orange: #ff9d00;
             --dark-panel: #0a0a0a;
-            --panel-border: #222;
         }
 
         body {
@@ -20,18 +19,13 @@
             padding: 0;
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Courier New', Courier, monospace; /* Terminal Look */
+            font-family: 'Courier New', Courier, monospace;
             line-height: 1.6;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3 {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-
+        h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; margin: 0; }
         a { text-decoration: none; transition: 0.3s; }
         img { max-width: 100%; height: auto; display: block; }
 
@@ -43,17 +37,16 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* Hintergrundbild Einbindung via Raw-Link */
+            /* LOKALER PFAD: Sucht das Bild im selben Ordner */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
-                        url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png');
+                        url('background_image.png'); 
             background-size: cover;
             background-position: center;
             padding: 20px;
-            position: relative;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--text-main);
             text-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
             margin-bottom: 10px;
@@ -61,7 +54,7 @@
         }
 
         .subline {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 700px;
             margin-bottom: 50px;
             color: #ddd;
@@ -71,15 +64,9 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Split Buttons */
-        .split-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
-            width: 100%;
-        }
-
+        /* BUTTONS */
+        .split-container { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; width: 100%; }
+        
         .btn-choice {
             padding: 20px 40px;
             border: 2px solid;
@@ -90,90 +77,115 @@
             width: 280px;
             display: inline-block;
             background: rgba(0,0,0,0.8);
-            letter-spacing: 1px;
         }
 
-        .btn-story {
-            border-color: var(--accent-orange);
-            color: var(--accent-orange);
-            box-shadow: 0 0 15px rgba(255, 157, 0, 0.2);
-        }
-        .btn-story:hover {
-            background: var(--accent-orange);
-            color: #000;
-            box-shadow: 0 0 40px rgba(255, 157, 0, 0.8);
-        }
+        .btn-story { border-color: var(--accent-orange); color: var(--accent-orange); }
+        .btn-story:hover { background: var(--accent-orange); color: #000; }
 
-        .btn-system {
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
-        }
-        .btn-system:hover {
-            background: var(--accent-cyan);
-            color: #000;
-            box-shadow: 0 0 40px rgba(0, 243, 255, 0.8);
-        }
+        .btn-system { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+        .btn-system:hover { background: var(--accent-cyan); color: #000; }
 
-        /* --- VIDEO SEKTION --- */
-        .video-intro {
-            padding: 60px 20px;
-            background: #080808;
-            text-align: center;
-            border-bottom: 1px solid #222;
-        }
-        .video-wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-            border: 1px solid #333;
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
-            height: 0;
-            overflow: hidden;
-            background: #000;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        /* --- VIDEO & CONTENT --- */
+        .video-intro { padding: 60px 20px; background: #080808; text-align: center; border-bottom: 1px solid #222; }
+        .video-wrapper { max-width: 800px; margin: 0 auto; border: 1px solid #333; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        /* --- SEKTIONEN ALLGEMEIN --- */
-        .section {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            border-left: 5px solid;
-            padding-left: 20px;
-        }
-
+        .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid #1a1a1a; }
+        .section-title { font-size: 2rem; margin-bottom: 40px; border-left: 5px solid; padding-left: 20px; }
         .orange-border { border-color: var(--accent-orange); color: var(--accent-orange); }
         .cyan-border { border-color: var(--accent-cyan); color: var(--accent-cyan); }
 
-        /* GRID LAYOUT FÜR INHALTE */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .text-col { padding-right: 20px; }
+        .visual-col { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+
+        .book-cover { width: 140px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); border: 1px solid #333; transition: 0.3s; }
+        .book-cover:hover { transform: scale(1.05); }
+        .manual-cover { width: 300px; box-shadow: 0 0 30px rgba(0, 243, 255, 0.1); border: 1px solid var(--accent-cyan); }
+
+        ul { list-style: none; padding: 0; margin-bottom: 30px; }
+        li { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 1.1rem;}
+        li::before { content: ">>"; position: absolute; left: 0; color: #555; font-weight: bold; }
+
+        .cta-button { display: inline-block; width: 100%; max-width: 350px; padding: 15px; text-align: center; font-weight: bold; margin-top: 15px; }
+        .cta-amazon { background: var(--accent-orange); color: #000; }
+        .cta-whitepaper { border: 1px solid var(--accent-cyan); color: var(--accent-cyan); }
+        .cta-whitepaper:hover { background: rgba(0,243,255,0.1); }
+        .cta-telegram { background: #229ED9; color: white; border: none; }
+        
+        .small-link { display: block; margin-top: 10px; font-size: 0.9rem; color: #888; text-decoration: underline; }
+
+        /* Footer */
+        footer { text-align: center; padding: 50px 20px; background: #000; color: #555; }
+        .social-icons a { color: var(--text-main); margin: 0 15px; }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; } 50% { opacity: 0.7; }
         }
 
-        .text-col {
-            padding-right: 20px;
+        @media (max-width: 800px) {
+            .hero h1 { font-size: 2.2rem; }
+            .content-grid { grid-template-columns: 1fr; }
+            .visual-col { order: -1; margin-bottom: 30px; }
+            .book-cover { width: 100px; }
+            .btn-choice { width: 100%; }
         }
+    </style>
+</head>
+<body>
 
-        .visual-col {
-            display: flex;
-            justify-content: center;
-            fle
+    <!-- HERO -->
+    <div class="hero">
+        <h1>PROJECT N.E.X.U.S.</h1>
+        <p class="subline">Die Welt steht vor einem Reset. <br>Die Frage ist nur: Wer drückt den Knopf?<br>Sie – oder wir?</p>
+        <div class="split-container">
+            <a href="#story" class="btn-choice btn-story">Die Story erleben</a>
+            <a href="#system" class="btn-choice btn-system">Das System ändern</a>
+        </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-intro">
+        <div class="video-wrapper">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/x5BQTbccCh0" title="Josh Richman" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <p style="margin-top:15px; font-size:0.9rem; color:#888;">Josh Richman, der Nexus Navigator</p>
+    </div>
+
+    <!-- STORY -->
+    <div id="story" class="section">
+        <h2 class="section-title orange-border">1. DIE PROLOG-PHASE: FIKTION</h2>
+        <div class="content-grid">
+            <div class="text-col">
+                <p><strong>Bevor wir bauen, müssen wir verstehen.</strong></p>
+                <p>Die N.E.X.U.S. Trilogie ist eine Simulation. Sie zeigt, wie unsere Gesellschaft zusammenbricht – und wie wir neu bauen.</p>
+                <ul>
+                    <li>🔥 <strong>Band 1: Stunde Null</strong> – Der Ausbruch.</li>
+                    <li>🌪 <strong>Band 2: Das Fundament</strong> – Der Aufbau.</li>
+                    <li>🦅 <strong>Band 3: Die Metamorphose</strong> – Der Sieg.</li>
+                </ul>
+                <a href="https://amzn.eu/d/eWMNOTG" target="_blank" class="cta-button cta-amazon">TRILOGIE AUF AMAZON KAUFEN</a>
+                
+                <p style="margin-top: 30px; border-top: 1px solid #333; padding-top: 10px;"><strong>Kostenlose Leseproben (PDF):</strong></p>
+                <!-- WICHTIG: Die Dateinamen müssen exakt so auf Github heißen -->
+                <a href="Nexus -Trilogie_final_4.3_Band_1_Leseprobe_Teil 1.pdf" target="_blank" class="small-link">> Leseprobe Band 1</a>
+                <a href="Nexus -Trilogie_final_4.3_Band_2_Leseprobe.pdf" target="_blank" class="small-link">> Leseprobe Band 2</a>
+                <a href="Nexus -Trilogie_final_4.3_Band_3_Leseprobe.pdf" target="_blank" class="small-link">> Leseprobe Band 3</a>
+            </div>
+            <div class="visual-col">
+                <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="Band_1_4.jpg" alt="Band 1" class="book-cover"></a>
+                <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="Band_2_2.jpg" alt="Band 2" class="book-cover"></a>
+                <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="Band_3_2.jpg" alt="Band 3" class="book-cover"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SYSTEM -->
+    <div id="system" class="section">
+        <h2 class="section-title cyan-border">2. DIE KONSTRUKTIONS-PHASE: REALITÄT</h2>
+        <div class="content-grid">
+            <div class="visual-col">
+                <img src="Blueprint.png" alt="Handbuch
