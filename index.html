@@ -3,74 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N.E.X.U.S. | Genesis Terminal</title>
+    <title>PROJECT N.E.X.U.S. | Das Zivile Terminal</title>
     <style>
+        /* --- GRUNDDESIGN & FARBEN --- */
+        :root {
+            --bg-color: #050505;
+            --text-main: #e0e0e0;
+            --accent-cyan: #00f3ff; /* Für Tech/System */
+            --accent-orange: #ff9d00; /* Für Story/Emotion */
+            --dark-panel: #0a0a0a;
+            --panel-border: #222;
+        }
+
         body {
-            background-color: #0d0d0d;
-            color: #33ff00;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 40px;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace; /* Terminal Look */
             line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        a { text-decoration: none; transition: 0.3s; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* --- HERO SEKTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Hintergrundbild Einbindung via Raw-Link */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
+                        url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--text-main);
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+            margin-bottom: 10px;
+            animation: flicker 4s infinite alternate;
+        }
+
+        .subline {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 50px;
+            color: #ddd;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            border-left: 3px solid var(--accent-orange);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Split Buttons */
+        .split-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .btn-choice {
+            padding: 20px 40px;
+            border: 2px solid;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 280px;
+            display: inline-block;
+            background: rgba(0,0,0,0.8);
+            letter-spacing: 1px;
+        }
+
+        .btn-story {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+            box-shadow: 0 0 15px rgba(255, 157, 0, 0.2);
+        }
+        .btn-story:hover {
+            background: var(--accent-orange);
+            color: #000;
+            box-shadow: 0 0 40px rgba(255, 157, 0, 0.8);
+        }
+
+        .btn-system {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+        }
+        .btn-system:hover {
+            background: var(--accent-cyan);
+            color: #000;
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.8);
+        }
+
+        /* --- VIDEO SEKTION --- */
+        .video-intro {
+            padding: 60px 20px;
+            background: #080808;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+        .video-wrapper {
             max-width: 800px;
             margin: 0 auto;
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
         }
-        h1, h2 { text-transform: uppercase; border-bottom: 1px solid #33ff00; padding-bottom: 10px; }
-        a { color: #fff; text-decoration: none; border: 1px solid #33ff00; padding: 5px 10px; margin-right: 10px; display: inline-block; margin-top: 10px; }
-        a:hover { background-color: #33ff00; color: #000; }
-        .status { color: #ffcc00; }
-        .container { border: 1px solid #333; padding: 20px; background-color: #000; }
-    </style>
-</head>
-<body>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-    <h1>🖥️ N.E.X.U.S. Genesis Terminal</h1>
-    <p>[SYSTEM STATUS: <span class="status">ONLINE</span>] | [SEKTOR 01: DACH]</p>
-    <br>
+        /* --- SEKTIONEN ALLGEMEIN --- */
+        .section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            border-bottom: 1px solid #1a1a1a;
+        }
 
-    <div class="container">
-        <h2>📡 Das Signal</h2>
-        <p>Willkommen in der Realität. Dies ist der Quellcode für eine neue Zivilisation. Wir bekämpfen das alte System nicht – wir bauen das neue.</p>
-        
-        <h3>1. Die Simulation (Romane als Leseprobe)</h3>
-        <p>Der emotionale Einstieg. Erlebe den Ausbruch.</p>
-        <a href="https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf">📚 Band 1: Stunde Null</a>
-        <a href="https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/Nexus%20-Trilogie_final_4.3_Band_2_Leseprobe.pdf">📚 Band 2: Das Fundament</a>
-        <a href="https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/Nexus%20-Trilogie_final_4.3_Band_3_Leseprobe.pdf">📚 Band 3: Die Metamorphose</a>
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            border-left: 5px solid;
+            padding-left: 20px;
+        }
 
-        <br><br>
+        .orange-border { border-color: var(--accent-orange); color: var(--accent-orange); }
+        .cyan-border { border-color: var(--accent-cyan); color: var(--accent-cyan); }
 
-        <h3>2. Der Quellcode (Theorie)</h3>
-        <p>Die Architektur der neuen Gesellschaft.</p>
-        <a href="https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/PROJEKT%20NEXUS_Das%20Handbuch_V6.3.pdf">📖 Das Handbuch (Einstieg)</a>
-        <a href="https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/WHITE%20PAPER_%20PROJEKT%20NEXUS_V6.3_W.pdf">📄 Das Whitepaper (Deep Dive)</a>
-    </div>
+        /* GRID LAYOUT FÜR INHALTE */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
 
-    <br>
-    <p><i>"Wir warten nicht auf die Zukunft. Wir schreiben sie."</i></p>
+        .text-col {
+            padding-right: 20px;
+        }
 
-    <br>
-
-        <h3>3. Die Kohorte (Aktiv werden)</h3>
-        <p>Wir suchen keine Follower. Wir suchen Knotenpunkte.</p>
-        
-        <a href="https://t.me/NexusProjectOfficial" style="border-color: #0088cc; color: #0088cc;">📢 Das Signal (Telegram)</a>
-        
-        <a href="mailto:nexus.blueprint@proton.me" style="border-color: #ffffff; color: #ffffff;">✉️ Kontakt aufnehmen</a>
-
-    <pre style="color: #33ff00; font-weight: bold; font-size: 10px; line-height: 10px;">
-  _   _   ______   __   __   _    _    _____ 
- | \ | | |  ____|  \ \ / /  | |  | |  / ____|
- |  \| | | |__      \ V /   | |  | | | (___  
- | . ` | |  __|      > <    | |  | |  \___ \ 
- | |\  | | |____    / . \   | |__| |  ____) |
- |_| \_| |______|  /_/ \_\   \____/  |_____/ 
-    </pre>
-   <br><br><br>
-    
-    <div style="font-size: 10px; color: #888; border-top: 1px solid #333; padding-top: 10px;">
-        [SYSTEM PROTOCOL] 
-        <a href="https://github.com/project-nexus-official/terminal/blob/dd35fb1752c5c7c706578e5c6a6deacd8fe1f7ec/DATA-PROTOCOL" style="color: #bbb; border: none; font-size: 10px;">DATA PROTOCOL / CONTACT</a>
-    </div>
-
-</body>
-</html>
+        .visual-col {
+            display: flex;
+            justify-content: center;
+            fle
