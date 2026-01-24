@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECT N.E.X.U.S. | Das Zivile Terminal</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
+
     <style>
         /* --- GRUNDDESIGN --- */
         :root {
             --bg-color: #000000;
-            --text-main: #ffffff; /* Reinweiß für max. Kontrast */
+            --text-main: #ffffff;
             --accent-cyan: #00f3ff;
             --accent-orange: #ff9d00;
         }
@@ -19,10 +23,10 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Courier New', Courier, monospace;
-            font-size: 19px; /* Deutlich größer */
+            font-size: 19px;
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 60px; /* Platz für den fixen Header */
+            padding-top: 70px; /* Mehr Platz für Header */
         }
 
         h1, h2, h3 { 
@@ -42,8 +46,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 60px;
-            background: rgba(0,0,0,0.9);
+            height: 70px;
+            background: rgba(0,0,0,0.95);
             border-bottom: 1px solid #333;
             z-index: 1000;
             display: flex;
@@ -51,29 +55,46 @@
             align-items: center;
             padding: 0 20px;
             box-sizing: border-box;
+            backdrop-filter: blur(5px);
         }
 
-        .logo { font-weight: bold; color: var(--accent-cyan); letter-spacing: 1px; font-size: 1.2rem; }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px; /* Logo Größe angepasst */
+            width: auto;
+        }
+
+        .logo-text { 
+            font-weight: bold; 
+            color: var(--accent-cyan); 
+            letter-spacing: 1px; 
+            font-size: 1.2rem; 
+        }
         
         .header-cta {
             background: var(--accent-orange);
             color: #000;
-            padding: 8px 15px;
+            padding: 10px 20px;
             font-size: 0.9rem;
             font-weight: bold;
             border-radius: 2px;
+            text-transform: uppercase;
         }
         .header-cta:hover { background: #fff; }
 
         /* --- HERO SEKTION --- */
         .hero {
-            min-height: 90vh; /* Etwas kompakter */
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* Hintergrundbild heller (0.4 statt 0.7) */
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
                         url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png');
             background-size: cover;
@@ -82,8 +103,8 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem; /* Sehr groß */
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.8); /* Starkes Leuchten */
+            font-size: 3.5rem;
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
             margin-bottom: 20px;
             animation: flicker 4s infinite alternate;
         }
@@ -94,7 +115,7 @@
             max-width: 800px;
             margin-bottom: 40px;
             color: #fff;
-            background: rgba(0,0,0,0.6); /* Lesbarkeit Box */
+            background: rgba(0,0,0,0.6);
             padding: 20px;
             border-left: 4px solid var(--accent-orange);
             backdrop-filter: blur(5px);
@@ -110,7 +131,7 @@
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
-            width: 320px; /* Breiter */
+            width: 320px;
             display: inline-block;
             background: rgba(0,0,0,0.9);
             color: #fff;
@@ -123,17 +144,11 @@
         .btn-system { border-color: var(--accent-cyan); color: var(--accent-cyan); }
         .btn-system:hover { background: var(--accent-cyan); color: #000; box-shadow: 0 0 20px var(--accent-cyan); }
 
-        /* --- INTRO TEXT (NEU) --- */
-        .intro-text-block {
-            padding: 60px 20px;
-            background: #111;
-            text-align: center;
-            border-bottom: 1px solid #333;
-        }
+        /* --- INTRO & VIDEO --- */
+        .intro-text-block { padding: 60px 20px; background: #111; text-align: center; border-bottom: 1px solid #333; }
         .intro-container { max-width: 800px; margin: 0 auto; }
         .intro-headline { color: var(--accent-orange); font-size: 1.8rem; margin-bottom: 20px; }
 
-        /* --- VIDEO --- */
         .video-intro { padding: 40px 20px; background: #000; text-align: center; border-bottom: 1px solid #222; }
         .video-wrapper { max-width: 900px; margin: 0 auto; border: 2px solid #333; }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
@@ -141,7 +156,6 @@
 
         /* --- CONTENT SECTIONS --- */
         .section { padding: 50px 20px; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid #222; }
-        /* Weniger Abstand als vorher (80px -> 50px) */
 
         .section-title { font-size: 2.2rem; margin-bottom: 30px; border-left: 6px solid; padding-left: 20px; }
         .orange-border { border-color: var(--accent-orange); color: var(--accent-orange); }
@@ -155,31 +169,51 @@
         .book-cover:hover { transform: scale(1.05); border-color: #fff; }
         .manual-cover { width: 350px; box-shadow: 0 0 40px rgba(0, 243, 255, 0.15); border: 2px solid var(--accent-cyan); }
 
-        /* Listen & Links */
         ul { list-style: none; padding: 0; margin-top: 20px; }
         li { margin-bottom: 15px; font-size: 1.1rem; border-bottom: 1px solid #222; padding-bottom: 5px; }
         
-        .cta-button { 
-            display: inline-block; 
-            width: 100%; 
-            padding: 18px; 
-            text-align: center; 
-            font-weight: bold; 
-            margin-top: 20px; 
-            font-size: 1.1rem;
-            text-transform: uppercase;
-        }
+        .cta-button { display: inline-block; width: 100%; padding: 18px; text-align: center; font-weight: bold; margin-top: 20px; font-size: 1.1rem; text-transform: uppercase; }
         .cta-amazon { background: var(--accent-orange); color: #000; }
         .cta-amazon:hover { background: #fff; }
-        
         .cta-whitepaper { border: 2px solid var(--accent-cyan); color: var(--accent-cyan); background: transparent;}
         .cta-whitepaper:hover { background: var(--accent-cyan); color: #000; }
-        
         .cta-telegram { background: #229ED9; color: white; border: none; font-size: 1.3rem; margin: 0 auto; max-width: 500px; }
         .cta-telegram:hover { background: #fff; color: #229ED9; }
 
-        .small-link { display: block; margin-top: 15px; font-size: 1rem; color: #aaa; text-decoration: underline; }
-        .small-link:hover { color: #fff; }
+        /* NEUE PDF BOX DESIGN */
+        .pdf-download-box {
+            margin-top: 40px;
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .pdf-box-title {
+            color: #888;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .pdf-link { 
+            display: flex;
+            align-items: center;
+            padding: 12px 10px;
+            font-size: 1.1rem; 
+            color: #ddd; 
+            border-bottom: 1px solid #222;
+            transition: 0.2s;
+        }
+        .pdf-link:hover {
+            background: #222;
+            color: var(--accent-orange);
+            padding-left: 20px;
+        }
+        .pdf-link:last-child { border-bottom: none; }
+        .pdf-icon { margin-right: 10px; font-weight: bold; }
 
         /* FOOTER */
         footer { text-align: center; padding: 60px 20px; background: #080808; color: #777; border-top: 1px solid #222; }
@@ -191,7 +225,6 @@
             50% { opacity: 0.8; text-shadow: 0 0 5px rgba(0,243,255,0.3); }
         }
 
-        /* Mobile */
         @media (max-width: 900px) {
             .hero h1 { font-size: 2.5rem; }
             .content-grid { grid-template-columns: 1fr; }
@@ -199,16 +232,20 @@
             .book-cover { width: 110px; }
             .btn-choice { width: 100%; margin-bottom: 10px; }
             .section { padding: 40px 15px; }
-            header { padding: 0 10px; }
-            .logo { font-size: 1rem; }
+            header { padding: 0 15px; }
+            .logo-text { font-size: 0.9rem; } /* Kleineres Logo auf Handy */
+            .logo-img { height: 35px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- FIXER HEADER -->
+    <!-- FIXER HEADER MIT LOGO -->
     <header>
-        <div class="logo">PROJECT N.E.X.U.S.</div>
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png" alt="Nexus Logo" class="logo-img">
+            <div class="logo-text">PROJECT N.E.X.U.S.</div>
+        </div>
         <a href="https://t.me/NexusProjectOfficial" target="_blank" class="header-cta">JOIN MOVEMENT</a>
     </header>
 
@@ -216,8 +253,8 @@
     <div class="hero">
         <h1>PROJECT N.E.X.U.S.</h1>
         <div class="subline">
-            Überlassen wir die Zukunft den 5 % –<br>
-            oder nehmen 95% sie selbst in die Hand?
+            Überlassen wir die Zukunft den Algorithmen –<br>
+            oder nehmen wir sie selbst in die Hand?
         </div>
         <div class="split-container">
             <a href="#story" class="btn-choice btn-story">Die Simulation starten</a>
@@ -225,7 +262,7 @@
         </div>
     </div>
 
-    <!-- EINLEITUNG / WEICHENSTELLUNG -->
+    <!-- EINLEITUNG -->
     <div class="intro-text-block">
         <div class="intro-container">
             <h3 class="intro-headline">Willkommen am Knotenpunkt</h3>
@@ -263,10 +300,20 @@
                 </ul>
                 <a href="https://amzn.eu/d/eWMNOTG" target="_blank" class="cta-button cta-amazon">JETZT AUF AMAZON STARTEN</a>
                 
-                <p style="margin-top: 40px; border-top: 1px solid #333; padding-top: 10px; color: #999; font-size: 0.9rem;">GRATIS EINBLICKE (PDF):</p>
-                <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf" target="_blank" class="small-link">> Leseprobe Band 1 downloaden</a>
-                <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_2_Leseprobe.pdf" target="_blank" class="small-link">> Leseprobe Band 2 downloaden</a>
-                <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_3_Leseprobe.pdf" target="_blank" class="small-link">> Leseprobe Band 3 downloaden</a>
+                <!-- NEUE DOWNLOAD BOX -->
+                <div class="pdf-download-box">
+                    <span class="pdf-box-title">📂 Gratis Zugang (PDF-Leseproben)</span>
+                    <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf" target="_blank" class="pdf-link">
+                        <span class="pdf-icon">></span> Leseprobe Band 1 downloaden
+                    </a>
+                    <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_2_Leseprobe.pdf" target="_blank" class="pdf-link">
+                        <span class="pdf-icon">></span> Leseprobe Band 2 downloaden
+                    </a>
+                    <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_3_Leseprobe.pdf" target="_blank" class="pdf-link">
+                        <span class="pdf-icon">></span> Leseprobe Band 3 downloaden
+                    </a>
+                </div>
+
             </div>
             <div class="visual-col">
                 <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_1_4.jpg" alt="Band 1" class="book-cover"></a>
