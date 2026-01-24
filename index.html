@@ -11,7 +11,6 @@
             --text-main: #e0e0e0;
             --accent-cyan: #00f3ff;
             --accent-orange: #ff9d00;
-            --dark-panel: #0a0a0a;
         }
 
         body {
@@ -22,7 +21,6 @@
             font-family: 'Courier New', Courier, monospace;
             line-height: 1.6;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
         h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; margin: 0; }
@@ -37,9 +35,9 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* LOKALER PFAD: Sucht das Bild im selben Ordner */
+            /* Hintergrundbild über direkten Link */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
-                        url('background_image.png'); 
+                        url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png');
             background-size: cover;
             background-position: center;
             padding: 20px;
@@ -61,7 +59,6 @@
             background: rgba(0,0,0,0.7);
             padding: 15px;
             border-left: 3px solid var(--accent-orange);
-            backdrop-filter: blur(5px);
         }
 
         /* BUTTONS */
@@ -77,6 +74,7 @@
             width: 280px;
             display: inline-block;
             background: rgba(0,0,0,0.8);
+            color: #fff;
         }
 
         .btn-story { border-color: var(--accent-orange); color: var(--accent-orange); }
@@ -85,7 +83,7 @@
         .btn-system { border-color: var(--accent-cyan); color: var(--accent-cyan); }
         .btn-system:hover { background: var(--accent-cyan); color: #000; }
 
-        /* --- VIDEO & CONTENT --- */
+        /* --- CONTENT --- */
         .video-intro { padding: 60px 20px; background: #080808; text-align: center; border-bottom: 1px solid #222; }
         .video-wrapper { max-width: 800px; margin: 0 auto; border: 1px solid #333; }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
@@ -104,21 +102,19 @@
         .book-cover:hover { transform: scale(1.05); }
         .manual-cover { width: 300px; box-shadow: 0 0 30px rgba(0, 243, 255, 0.1); border: 1px solid var(--accent-cyan); }
 
-        ul { list-style: none; padding: 0; margin-bottom: 30px; }
-        li { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 1.1rem;}
-        li::before { content: ">>"; position: absolute; left: 0; color: #555; font-weight: bold; }
-
         .cta-button { display: inline-block; width: 100%; max-width: 350px; padding: 15px; text-align: center; font-weight: bold; margin-top: 15px; }
         .cta-amazon { background: var(--accent-orange); color: #000; }
         .cta-whitepaper { border: 1px solid var(--accent-cyan); color: var(--accent-cyan); }
         .cta-whitepaper:hover { background: rgba(0,243,255,0.1); }
         .cta-telegram { background: #229ED9; color: white; border: none; }
-        
+
         .small-link { display: block; margin-top: 10px; font-size: 0.9rem; color: #888; text-decoration: underline; }
 
-        /* Footer */
+        /* LIST & FOOTER */
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 10px; }
         footer { text-align: center; padding: 50px 20px; background: #000; color: #555; }
-        .social-icons a { color: var(--text-main); margin: 0 15px; }
+        .social-icons a { color: #fff; margin: 0 10px; }
 
         @keyframes flicker {
             0%, 100% { opacity: 1; } 50% { opacity: 0.7; }
@@ -170,15 +166,15 @@
                 <a href="https://amzn.eu/d/eWMNOTG" target="_blank" class="cta-button cta-amazon">TRILOGIE AUF AMAZON KAUFEN</a>
                 
                 <p style="margin-top: 30px; border-top: 1px solid #333; padding-top: 10px;"><strong>Kostenlose Leseproben (PDF):</strong></p>
-                <!-- WICHTIG: Die Dateinamen müssen exakt so auf Github heißen -->
-                <a href="Nexus -Trilogie_final_4.3_Band_1_Leseprobe_Teil 1.pdf" target="_blank" class="small-link">> Leseprobe Band 1</a>
-                <a href="Nexus -Trilogie_final_4.3_Band_2_Leseprobe.pdf" target="_blank" class="small-link">> Leseprobe Band 2</a>
-                <a href="Nexus -Trilogie_final_4.3_Band_3_Leseprobe.pdf" target="_blank" class="small-link">> Leseprobe Band 3</a>
+                <!-- Links angepasst auf Raw GitHub mit %20 für Leerzeichen -->
+                <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf" target="_blank" class="small-link">> Leseprobe Band 1</a>
+                <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_2_Leseprobe.pdf" target="_blank" class="small-link">> Leseprobe Band 2</a>
+                <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_3_Leseprobe.pdf" target="_blank" class="small-link">> Leseprobe Band 3</a>
             </div>
             <div class="visual-col">
-                <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="Band_1_4.jpg" alt="Band 1" class="book-cover"></a>
-                <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="Band_2_2.jpg" alt="Band 2" class="book-cover"></a>
-                <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="Band_3_2.jpg" alt="Band 3" class="book-cover"></a>
+                <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_1_4.jpg" alt="Band 1" class="book-cover"></a>
+                <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_2_2.jpg" alt="Band 2" class="book-cover"></a>
+                <a href="https://amzn.eu/d/eWMNOTG" target="_blank"><img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_3_2.jpg" alt="Band 3" class="book-cover"></a>
             </div>
         </div>
     </div>
@@ -188,7 +184,7 @@
         <h2 class="section-title cyan-border">2. DIE KONSTRUKTIONS-PHASE: REALITÄT</h2>
         <div class="content-grid">
             <div class="visual-col">
-                <img src="Blueprint.png" alt="Handbuch" class="manual-cover">
+                <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/Blueprint.png" alt="Handbuch" class="manual-cover">
             </div>
             <div class="text-col">
                 <p><strong>Wir reparieren nicht. Wir ersetzen.</strong></p>
@@ -198,8 +194,9 @@
                     <li>📡 <strong>Mesh-Networks</strong></li>
                     <li>💡 <strong>Resource Based Economy</strong></li>
                 </ul>
-                <a href="PROJEKT NEXUS_Das Handbuch_V6.3.pdf" target="_blank" class="cta-button cta-whitepaper" style="background:var(--accent-cyan); color:#000;">HANDBUCH (V6.3) LESEN</a>
-                <a href="WHITE PAPER_ PROJEKT NEXUS_V6.3_W.pdf" target="_blank" class="cta-button cta-whitepaper">TECHNICAL WHITEPAPER</a>
+                <!-- Links mit %20 für Leerzeichen -->
+                <a href="https://github.com/project-nexus-official/terminal/raw/main/PROJEKT%20NEXUS_Das%20Handbuch_V6.3.pdf" target="_blank" class="cta-button cta-whitepaper" style="background:var(--accent-cyan); color:#000;">HANDBUCH (V6.3) LESEN</a>
+                <a href="https://github.com/project-nexus-official/terminal/raw/main/WHITE%20PAPER_%20PROJEKT%20NEXUS_V6.3_W.pdf" target="_blank" class="cta-button cta-whitepaper">TECHNICAL WHITEPAPER</a>
             </div>
         </div>
     </div>
