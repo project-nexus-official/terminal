@@ -458,15 +458,47 @@
 <script>
     // --- KONFIGURATION ---
     const API_KEY = "AIzaSyAdTjZzQjNSFoIsa-QETPzf4b_Uw77bV9U"; 
-    
-    // Wir nutzen exakt dieses Modell. Kein "latest", kein "001", kein "pro".
-    // Das ist das Standard-Modell für den Free-Tier.
-    const MODEL_NAME = "gemini-1.5-flash";
-    
     const KNOWLEDGE_FILE = "nexus_context.txt";
+    
     let SYSTEM_PROMPT = "";
+    let ACTIVE_MODEL_NAME = "";
 
-    // 1. Wissen laden
+    // 1. Diagnose-Funktion: Findet das Modell, das für DICH funktioniert
+    async function findWorkingModel() {
+        const msgDiv = document.getElementById('chat-messages');
+        
+        try {
+            // Wir fragen die API: Was hast du da?
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${API_KEY}`);
+            const data = await response.json();
+            
+            if (data.error) {
+                throw new Error("API-Zugriff verweigert: " + data.error.message);
+            }
+
+            // Wir suchen ein Modell, das "generateContent" kann
+            // Wir bevorzugen 'flash' (schnell), sonst irgendein 'gemini'
+            const models = data.models || [];
+            let bestModel = models.find(m => m.name.includes("gemini-1.5-flash") && m.supportedGenerationMethods.includes("generateContent"));
+            
+            if (!bestModel) {
+                bestModel = models.find(m => m.name.includes("gemini") && m.supportedGenerationMethods.includes("generateContent"));
+            }
+
+            if (!bestModel) {
+                throw new Error("Kein passendes Modell für diesen Key gefunden.");
+            }
+
+            console.log("Modell gefunden:", bestModel.name);
+            return bestModel.name; // Das ist z.B. "models/gemini-1.5-flash-001"
+
+        } catch (e) {
+            msgDiv.innerHTML += `<div class="msg msg-bot" style="color:red">Initialisierungs-Fehler: ${e.message} <br> Bitte prüfe in der Google Cloud Console, ob die 'Generative Language API' aktiviert ist.</div>`;
+            return null;
+        }
+    }
+
+    // 2. Wissen laden
     async function loadKnowledge() {
         try {
             const response = await fetch(KNOWLEDGE_FILE);
@@ -479,14 +511,19 @@
             REGELN: Antworte kurz (max 3-4 Sätze).
             WISSEN: ${textData}
             `;
-            console.log("Wissen geladen.");
         } catch (e) {
-            console.error("Fehler beim Laden des Wissens:", e);
+            console.error("Wissen Error:", e);
         }
     }
-    loadKnowledge();
 
-    // 2. Chat UI
+    // Start-Prozess
+    (async function initSystem() {
+        await loadKnowledge();
+        ACTIVE_MODEL_NAME = await findWorkingModel();
+    })();
+
+
+    // 3. Chat UI
     window.toggleChat = function() {
         const chat = document.getElementById('nexus-chat-window');
         const btn = document.getElementById('nexus-chat-btn');
@@ -521,11 +558,23 @@
         typing.style.display = "block";
 
         try {
+            // Notfall-Check
+            if (!ACTIVE_MODEL_NAME) ACTIVE_MODEL_NAME = await findWorkingModel();
             if (!SYSTEM_PROMPT) await loadKnowledge();
+
+            if (!ACTIVE_MODEL_NAME) throw new Error("Kein Modell verfügbar.");
+
             const fullPrompt = `${SYSTEM_PROMPT}\n\nUser Frage: ${userText}\nAntwort:`;
 
-            // Wir rufen direkt das Flash Modell auf
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${API_KEY}`, {
+            // ACHTUNG: Hier nutzen wir den automatisch gefundenen Namen
+            // Die URL muss so aussehen: .../v1beta/models/gemini-pro:generateContent
+            // ACTIVE_MODEL_NAME enthält bereits "models/...", also bauen wir die URL vorsichtig
+            
+            // Wenn der Name "models/..." enthält, entfernen wir das "models/" Präfix für die URL, 
+            // da manche Endpoints es brauchen und manche nicht. 
+            // Der sicherste Weg für v1beta ist: /v1beta/{modelname}:generateContent
+            
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/${ACTIVE_MODEL_NAME}:generateContent?key=${API_KEY}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ contents: [{ parts: [{ text: fullPrompt }] }] })
@@ -533,14 +582,8 @@
 
             const data = await response.json();
 
-            // Fehlerauswertung
             if (data.error) {
-                // Hier fangen wir den Fehler ab und zeigen ihn dir genau an
                 throw new Error(data.error.message);
-            }
-
-            if (!data.candidates || !data.candidates[0].content) {
-                throw new Error("Leere Antwort vom Server.");
             }
 
             const botText = data.candidates[0].content.parts[0].text;
@@ -550,15 +593,9 @@
             msgDiv.innerHTML += `<div class="msg msg-bot">${formattedText}</div>`;
 
         } catch (error) {
-            console.error("API Error:", error);
+            console.error("Chat Error:", error);
             typing.style.display = "none";
-            
-            // Fehlermeldung für den User verständlich machen
-            let userMsg = "Signal gestört.";
-            if (error.message.includes("key")) userMsg = "API Key Fehler. Prüfe die Domain-Einschränkung in Google Cloud.";
-            if (error.message.includes("not found")) userMsg = "Modell-Fehler. Google findet 'gemini-1.5-flash' nicht.";
-            
-            msgDiv.innerHTML += `<div class="msg msg-bot" style="color:#ff5555">${userMsg} <br><span style="font-size:0.7em">(${error.message})</span></div>`;
+            msgDiv.innerHTML += `<div class="msg msg-bot" style="color:#ff5555">Fehler im Mainframe: ${error.message}</div>`;
         }
         msgDiv.scrollTop = msgDiv.scrollHeight;
     }
