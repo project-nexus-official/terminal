@@ -457,8 +457,11 @@
 </div>
 <script>
     // --- KONFIGURATION ---
-    // HIER DEINEN NEUEN, EINGESCHRÄNKTEN KEY EINFÜGEN
+    // HIER DEINEN NEUEN KEY EINFÜGEN
     const API_KEY = "AIzaSyAdTjZzQjNSFoIsa-QETPzf4b_Uw77bV9U"; 
+    
+    // WIR NUTZEN JETZT DEN STANDARD-NAMEN
+    const MODEL_NAME = "gemini-1.5-flash";
     
     const KNOWLEDGE_FILE = "nexus_context.txt";
     let SYSTEM_PROMPT = "";
@@ -471,9 +474,9 @@
             const textData = await response.text();
             
             SYSTEM_PROMPT = `
-            ROLLE: Du bist der "N.E.X.U.S. Navigator", ein Knotenpunkt im Widerstand.
-            TONALITÄT: Dringlich, konstruktiv, technisch-mystisch ("Signal", "Mainframe").
-            REGELN: Antworte kurz (max 3-4 Sätze). Duzt den User.
+            ROLLE: Du bist der "N.E.X.U.S. Navigator".
+            TONALITÄT: Dringlich, konstruktiv, "Signal", "Mainframe". Duzt den User.
+            REGELN: Antworte kurz (max 3-4 Sätze).
             WISSEN: ${textData}
             `;
             console.log("Wissen geladen.");
@@ -521,21 +524,32 @@
             if (!SYSTEM_PROMPT) await loadKnowledge();
             const fullPrompt = `${SYSTEM_PROMPT}\n\nUser Frage: ${userText}\nAntwort:`;
 
-            // Wir nutzen fest gemini-1.5-flash-latest, das ist am stabilsten
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`, {
+            // VERSUCH 1: Standard Flash Modell
+            let response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${API_KEY}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ contents: [{ parts: [{ text: fullPrompt }] }] })
             });
 
-            const data = await response.json();
+            let data = await response.json();
+
+            // FALLBACK: Falls Flash nicht geht, versuche "gemini-pro"
+            if (data.error) {
+                console.warn("Flash nicht gefunden, versuche Pro...", data.error);
+                response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: fullPrompt }] }] })
+                });
+                data = await response.json();
+            }
 
             if (data.error) {
-                // Spezielle Behandlung für "Leaked Key" Fehler
-                if (data.error.message.includes("leaked")) {
-                    throw new Error("Sicherheitssperre: Der Key muss in der Google Cloud Console für diese Domain freigegeben werden.");
-                }
                 throw new Error(data.error.message);
+            }
+
+            if (!data.candidates || !data.candidates[0].content) {
+                throw new Error("Keine Antwort erhalten.");
             }
 
             const botText = data.candidates[0].content.parts[0].text;
@@ -547,7 +561,11 @@
         } catch (error) {
             console.error("API Error:", error);
             typing.style.display = "none";
-            msgDiv.innerHTML += `<div class="msg msg-bot" style="color:#ff5555">Signal gestört: ${error.message}</div>`;
+            // Zeige Fehler an, aber übersetze "Key leaked"
+            let errorMsg = error.message;
+            if (errorMsg.includes("leaked")) errorMsg = "API Key gesperrt. Bitte neu erstellen und Domain-Schutz aktivieren.";
+            
+            msgDiv.innerHTML += `<div class="msg msg-bot" style="color:#ff5555">Signal gestört: ${errorMsg}</div>`;
         }
         msgDiv.scrollTop = msgDiv.scrollHeight;
     }
