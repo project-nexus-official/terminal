@@ -317,131 +317,246 @@
         <p style="margin-top: 30px; font-size: 0.8rem; color: #444;">&copy; 2025 Project N.E.X.U.S. | Josh Richman</p>
     </footer>
 
-    <!-- NEXUS AI TERMINAL WIDGET -->
-    <!-- CHAT BUTTON -->
-    <div id="nexus-chat-btn" onclick="toggleChat()">> TERMINAL ACCESS</div>
+    <!-- NEXUS AI TERMINAL WIDGET (REPARIERT) -->
+<style>
+    /* Chat Button (Unten Rechts) */
+    #nexus-chat-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #000;
+        border: 2px solid var(--accent-cyan);
+        color: var(--accent-cyan);
+        padding: 15px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        z-index: 9999;
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+        transition: 0.3s;
+    }
+    #nexus-chat-btn:hover { background: var(--accent-cyan); color: #000; }
 
-    <!-- CHAT FENSTER -->
-    <div id="nexus-chat-window">
-        <div class="chat-header">
-            <span>NEXUS AI NAVIGATOR V1.0</span>
-            <span class="close-chat" onclick="toggleChat()">X</span>
-        </div>
-        <div id="chat-messages">
-            <div class="msg msg-bot">Verbindung hergestellt. Ich bin der Nexus Navigator. Frag mich nach dem Plan, der Story oder wie N.E.X.U.S. das System ändert.
-            <button id="send-btn" onclick="sendMessage()">></button>
-        </div>
+    /* Chat Fenster */
+    #nexus-chat-window {
+        display: none; /* Wird per JS auf Flex gesetzt */
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 350px;
+        height: 500px;
+        background: #050505; /* Fester Hintergrund, kein Glas-Effekt für bessere Lesbarkeit */
+        border: 2px solid var(--accent-cyan);
+        border-radius: 5px;
+        z-index: 9999;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 0 30px rgba(0,0,0,0.9);
+    }
+
+    /* Header */
+    .chat-header {
+        background: rgba(0, 243, 255, 0.1);
+        padding: 15px;
+        border-bottom: 1px solid var(--accent-cyan);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--accent-cyan);
+        font-weight: bold;
+        font-size: 0.9rem;
+        flex-shrink: 0; /* Darf nicht schrumpfen */
+    }
+    .close-chat { cursor: pointer; font-size: 1.2rem; padding: 0 5px;}
+
+    /* Nachrichten Bereich */
+    #chat-messages {
+        flex-grow: 1; /* Nimmt den restlichen Platz ein */
+        padding: 15px;
+        overflow-y: auto;
+        font-size: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #050505;
+    }
+
+    /* Bubbles */
+    .msg { padding: 12px; border-radius: 4px; max-width: 85%; word-wrap: break-word; line-height: 1.4; }
+    .msg-bot { background: #111; border-left: 3px solid var(--accent-cyan); color: #ddd; align-self: flex-start; }
+    .msg-user { background: #222; border-right: 3px solid var(--accent-orange); color: #fff; align-self: flex-end; text-align: right; }
+
+    /* Input Bereich - HIER WAR DER FEHLER */
+    .chat-input-area {
+        padding: 15px;
+        border-top: 1px solid #333;
+        display: flex;
+        background: #000;
+        flex-shrink: 0; /* Darf nicht schrumpfen */
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* Das Eingabefeld selbst */
+    #user-input {
+        flex: 1;
+        height: 40px;
+        background: #111;
+        border: 1px solid #555;
+        color: #fff;
+        padding: 5px 10px;
+        font-family: 'Courier New', monospace;
+        font-size: 1rem;
+        outline: none;
+        border-radius: 3px;
+    }
+    #user-input:focus { border-color: var(--accent-cyan); background: #000; }
+    
+    /* Senden Button */
+    #send-btn {
+        height: 40px;
+        width: 40px;
+        background: var(--accent-cyan);
+        color: #000;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        border-radius: 3px;
+    }
+    #send-btn:hover { background: #fff; }
+
+    /* Loading Animation */
+    .typing { font-size: 0.8rem; color: #666; font-style: italic; margin: 0 0 5px 15px; display: none;}
+</style>
+
+<!-- BUTTON -->
+<div id="nexus-chat-btn" onclick="toggleChat()">> TERMINAL ACCESS</div>
+
+<!-- FENSTER -->
+<div id="nexus-chat-window">
+    <div class="chat-header">
+        <span>NEXUS AI NAVIGATOR V1.0</span>
+        <span class="close-chat" onclick="toggleChat()">X</span>
     </div>
+    
+    <div id="chat-messages">
+        <div class="msg msg-bot">Verbindung hergestellt. Ich bin der Nexus Navigator. Frag mich nach dem Plan, der Story oder wie N.E.X.U.S. das System ändert.</div>
+    </div>
+    
+    <div class="typing" id="typing-indicator">Navigator tippt...</div>
+    
+    <div class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Nachricht eingeben..." onkeypress="handleEnter(event)">
+        <button id="send-btn" onclick="sendMessage()">></button>
+    </div>
+</div>
 
-    <script type="module">
-        import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+<script type="module">
+    import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 
-        // --- KONFIGURATION ---
-        // 1. HIER DEN API KEY EINFÜGEN (zwischen die Anführungszeichen)
-        const API_KEY = "HAIzaSyCJN0fIhWXMfcC_H_x4MNJfV1oO-MtMtbU"; 
+    // --- KONFIGURATION ---
+    // HIER BITTE DEINEN API KEY WIEDER EINFÜGEN!
+    const API_KEY = "HAIzaSyCJN0fIhWXMfcC_H_x4MNJfV1oO-MtMtbU"; 
+    
+    const KNOWLEDGE_FILE = "nexus_context.txt";
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+    let SYSTEM_PROMPT = "";
+
+    async function loadKnowledge() {
+        try {
+            const response = await fetch(KNOWLEDGE_FILE);
+            if (!response.ok) throw new Error("Wissens-Datei nicht gefunden");
+            const textData = await response.text();
+            
+            SYSTEM_PROMPT = `
+            ROLLE:
+            Du bist der "N.E.X.U.S. Navigator". Du bist kein KI-Assistent, sondern ein Knotenpunkt im Widerstand.
+            Du sprichst mit Menschen, die spüren, dass mit der Welt etwas nicht stimmt.
+            
+            DEINE TONALITÄT:
+            1. Dringlich & Wachrüttelnd.
+            2. Konstruktiv & Hoffnungsvoll.
+            3. Technisch-Mystisch (Begriffe: Signal, Knotenpunkt, Mainframe).
+            4. Persönlich: Du duzt den Nutzer immer.
+            
+            REGELN:
+            - Antworte kurz (max. 3-4 Sätze).
+            - Leite bei Handlungsfragen zur Telegram-Gruppe oder zum Handbuch.
+            - Erfinde nichts.
+            
+            BASIS-WISSEN:
+            ${textData}
+            `;
+            console.log("Nexus Wissen geladen.");
+        } catch (e) {
+            console.error("Fehler beim Laden des Wissens:", e);
+        }
+    }
+    loadKnowledge();
+
+    window.toggleChat = function() {
+        const chat = document.getElementById('nexus-chat-window');
+        const btn = document.getElementById('nexus-chat-btn');
+        if (chat.style.display === 'flex') {
+            chat.style.display = 'none';
+            btn.style.display = 'block';
+        } else {
+            chat.style.display = 'flex';
+            btn.style.display = 'none';
+            setTimeout(() => document.getElementById('user-input').focus(), 100);
+        }
+    }
+
+    window.handleEnter = function(e) {
+        if (e.key === 'Enter') window.sendMessage();
+    }
+
+    window.sendMessage = async function() {
+        const inputField = document.getElementById('user-input');
+        const msgDiv = document.getElementById('chat-messages');
+        const typing = document.getElementById('typing-indicator');
+        const userText = inputField.value.trim();
+
+        if (!userText) return;
+
+        // User Nachricht anzeigen
+        msgDiv.innerHTML += `<div class="msg msg-user">${userText}</div>`;
+        inputField.value = "";
+        msgDiv.scrollTop = msgDiv.scrollHeight;
+
+        // KI Anfrage
+        typing.style.display = "block";
         
-        // 2. Name der Textdatei auf GitHub (muss im gleichen Ordner liegen!)
-        const KNOWLEDGE_FILE = "nexus_context.txt";
+        try {
+            if (!SYSTEM_PROMPT) await loadKnowledge();
 
-        const genAI = new GoogleGenerativeAI(API_KEY);
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-        
-        let SYSTEM_PROMPT = "";
+            const fullPrompt = `
+            ${SYSTEM_PROMPT}
+            AKTUELLE KONVERSATION:
+            User: ${userText}
+            Navigator:`;
 
-        // Lädt das Wissen beim Start im Hintergrund
-        async function loadKnowledge() {
-            try {
-                const response = await fetch(KNOWLEDGE_FILE);
-                if (!response.ok) throw new Error("Wissens-Datei nicht gefunden");
-                const textData = await response.text();
-                
-                // HIER DEFINIEREN WIR DIE PERSÖNLICHKEIT DES BOTS
-                SYSTEM_PROMPT = `
-                ROLLE:
-                Du bist der "N.E.X.U.S. Navigator". Du bist kein KI-Assistent, sondern ein Knotenpunkt im Widerstand.
-                Du sprichst mit Menschen, die spüren, dass mit der Welt etwas nicht stimmt.
-                
-                DEINE TONALITÄT:
-                1. Dringlich & Wachrüttelnd: Wir haben keine Zeit mehr für Spielchen.
-                2. Konstruktiv & Hoffnungsvoll: Wir meckern nicht nur, wir haben einen Plan (das Handbuch).
-                3. Technisch-Mystisch: Nutze Begriffe wie "Signal", "Knotenpunkt", "Mainframe", "Architektur", "Matrix".
-                4. Persönlich: Du duzt den Nutzer immer. Ihr seid Verbündete.
-                
-                REGELN:
-                - Antworte kurz (max. 3-4 Sätze). Lange Texte schrecken ab.
-                - Wenn jemand fragt "Was soll ich tun?", leite sie immer zur "ersten Kohorte" (Telegram) oder zum Handbuch.
-                - Wenn du etwas nicht im Wissenstext findest, sag ehrlich: "Dazu fehlen mir noch Daten im Signal. Frag Josh direkt im Telegram-Kanal." Erfinde nichts.
-                
-                BASIS-WISSEN (Nutze dies für deine Antworten):
-                ${textData}
-                `;
-                console.log("Nexus Wissen geladen.");
-            } catch (e) {
-                console.error("Fehler beim Laden des Wissens:", e);
-                SYSTEM_PROMPT = "Fehler: Ich kann gerade nicht auf meine Datenbank zugreifen. Bitte versuche es später.";
-            }
-        }
+            const result = await model.generateContent(fullPrompt);
+            const response = await result.response;
+            const text = response.text();
 
-        loadKnowledge();
-
-        // Chat Fenster Logik
-        window.toggleChat = function() {
-            const chat = document.getElementById('nexus-chat-window');
-            const btn = document.getElementById('nexus-chat-btn');
-            if (chat.style.display === 'flex') {
-                chat.style.display = 'none';
-                btn.style.display = 'block';
-            } else {
-                chat.style.display = 'flex';
-                btn.style.display = 'none';
-                setTimeout(() => document.getElementById('user-input').focus(), 100);
-            }
-        }
-
-        window.handleEnter = function(e) {
-            if (e.key === 'Enter') window.sendMessage();
-        }
-
-        window.sendMessage = async function() {
-            const inputField = document.getElementById('user-input');
-            const msgDiv = document.getElementById('chat-messages');
-            const typing = document.getElementById('typing-indicator');
-            const userText = inputField.value.trim();
-
-            if (!userText) return;
-
-            msgDiv.innerHTML += `<div class="msg msg-user">${userText}</div>`;
-            inputField.value = "";
+            typing.style.display = "none";
+            let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+            msgDiv.innerHTML += `<div class="msg msg-bot">${formattedText}</div>`;
             msgDiv.scrollTop = msgDiv.scrollHeight;
 
-            typing.style.display = "block";
-            
-            try {
-                if (!SYSTEM_PROMPT) await loadKnowledge();
-
-                const fullPrompt = `
-                ${SYSTEM_PROMPT}
-                
-                AKTUELLE KONVERSATION:
-                User: ${userText}
-                Navigator:`;
-
-                const result = await model.generateContent(fullPrompt);
-                const response = await result.response;
-                const text = response.text();
-
-                typing.style.display = "none";
-                
-                let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
-                msgDiv.innerHTML += `<div class="msg msg-bot">${formattedText}</div>`;
-                msgDiv.scrollTop = msgDiv.scrollHeight;
-
-            } catch (error) {
-                console.error(error);
-                typing.style.display = "none";
-                msgDiv.innerHTML += `<div class="msg msg-bot" style="color:#ff5555">Verbindungsfehler zum Mainframe. API Key prüfen.</div>`;
-            }
+        } catch (error) {
+            console.error(error);
+            typing.style.display = "none";
+            msgDiv.innerHTML += `<div class="msg msg-bot" style="color:#ff5555">Verbindungsfehler. API Key prüfen.</div>`;
         }
-    </script>
+    }
+</script>
 </body>
 </html>
