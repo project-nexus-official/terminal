@@ -29,108 +29,60 @@
             padding-top: 70px;
         }
 
-        h1, h2, h3 { 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            margin: 0 0 15px 0; 
-            font-weight: bold;
-        }
-        
+        h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; margin: 0 0 15px 0; font-weight: bold; }
         p { margin-bottom: 20px; }
         a { text-decoration: none; transition: 0.3s; }
         img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
 
         /* --- HEADER --- */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 70px;
-            background: rgba(0,0,0,0.95);
-            border-bottom: 1px solid #333;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            box-sizing: border-box;
+            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+            background: rgba(0,0,0,0.95); border-bottom: 1px solid #333;
+            z-index: 1000; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 20px; box-sizing: border-box;
             backdrop-filter: blur(5px);
         }
-
         .logo-container { display: flex; align-items: center; gap: 15px; }
         .logo-img { height: 50px; width: auto; }
         .logo-text { font-weight: bold; color: var(--accent-cyan); letter-spacing: 1px; font-size: 1.2rem; }
-        
         .header-cta {
-            background: var(--accent-orange);
-            color: #000;
-            padding: 10px 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border-radius: 2px;
-            text-transform: uppercase;
+            background: var(--accent-orange); color: #000; padding: 10px 20px;
+            font-size: 0.9rem; font-weight: bold; border-radius: 2px; text-transform: uppercase;
         }
         .header-cta:hover { background: #fff; }
 
         /* --- HERO --- */
         .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            min-height: 90vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
                         url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png');
-            background-size: cover;
-            background-position: center;
-            padding: 20px;
+            background-size: cover; background-position: center; padding: 20px;
         }
-
         .hero h1 {
-            font-size: 3.5rem;
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
-            margin-bottom: 20px;
-            animation: flicker 4s infinite alternate;
+            font-size: 3.5rem; text-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
+            margin-bottom: 20px; animation: flicker 4s infinite alternate;
         }
-
         .subline {
-            font-size: 1.4rem;
-            font-weight: bold;
-            max-width: 800px;
-            margin-bottom: 40px;
-            color: #fff;
-            background: rgba(0,0,0,0.6);
-            padding: 20px;
-            border-left: 4px solid var(--accent-orange);
-            backdrop-filter: blur(5px);
+            font-size: 1.4rem; font-weight: bold; max-width: 800px;
+            margin-bottom: 40px; color: #fff; background: rgba(0,0,0,0.6);
+            padding: 20px; border-left: 4px solid var(--accent-orange); backdrop-filter: blur(5px);
         }
 
         /* BUTTONS */
         .split-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; width: 100%; }
-        
         .btn-choice {
-            padding: 18px 30px;
-            border: 3px solid;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            width: 350px;
-            display: inline-block;
-            background: rgba(0,0,0,0.9);
-            color: #fff;
-            text-align: center;
+            padding: 18px 30px; border: 3px solid; font-size: 1.1rem;
+            font-weight: bold; text-transform: uppercase; cursor: pointer;
+            width: 350px; display: inline-block; background: rgba(0,0,0,0.9);
+            color: #fff; text-align: center;
         }
-
         .btn-story { border-color: var(--accent-orange); color: var(--accent-orange); }
         .btn-story:hover { background: var(--accent-orange); color: #000; box-shadow: 0 0 20px var(--accent-orange); }
-
         .btn-system { border-color: var(--accent-cyan); color: var(--accent-cyan); }
         .btn-system:hover { background: var(--accent-cyan); color: #000; box-shadow: 0 0 20px var(--accent-cyan); }
 
-        /* --- INTRO & VIDEO --- */
+        /* --- CONTENT --- */
         .intro-text-block { padding: 60px 20px; background: #111; text-align: center; border-bottom: 1px solid #333; }
         .intro-container { max-width: 800px; margin: 0 auto; }
         .intro-headline { color: var(--accent-orange); font-size: 1.8rem; margin-bottom: 20px; }
@@ -140,24 +92,20 @@
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        /* --- CONTENT SECTIONS --- */
         .section { padding: 50px 20px; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid #222; }
-
         .section-title { font-size: 2.2rem; margin-bottom: 30px; border-left: 6px solid; padding-left: 20px; }
         .orange-border { border-color: var(--accent-orange); color: var(--accent-orange); }
         .cyan-border { border-color: var(--accent-cyan); color: var(--accent-cyan); }
 
         .content-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: start; }
-        .text-col { padding-right: 20px; }
         .visual-col { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
-
         .book-cover { width: 160px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); border: 1px solid #444; transition: 0.3s; }
         .book-cover:hover { transform: scale(1.05); border-color: #fff; }
         .manual-cover { width: 350px; box-shadow: 0 0 40px rgba(0, 243, 255, 0.15); border: 2px solid var(--accent-cyan); }
 
         ul { list-style: none; padding: 0; margin-top: 20px; }
         li { margin-bottom: 15px; font-size: 1.1rem; border-bottom: 1px solid #222; padding-bottom: 5px; }
-        
+
         .cta-button { display: inline-block; width: 100%; padding: 18px; text-align: center; font-weight: bold; margin-top: 20px; font-size: 1.1rem; text-transform: uppercase; }
         .cta-amazon { background: var(--accent-orange); color: #000; }
         .cta-amazon:hover { background: #fff; }
@@ -166,83 +114,67 @@
         .cta-telegram { background: #229ED9; color: white; border: none; font-size: 1.3rem; margin: 0 auto; max-width: 500px; }
         .cta-telegram:hover { background: #fff; color: #229ED9; }
 
-        /* HIGHLIGHT BOX (DIE BLAUPAUSE) */
+        /* EXTRAS */
         .highlight-quote {
-            font-size: 1.25rem;
-            color: var(--accent-orange);
-            border-left: 4px solid var(--accent-orange);
-            padding: 20px;
-            margin-bottom: 30px;
-            line-height: 1.4;
-            font-weight: bold;
-            background: rgba(255, 157, 0, 0.05);
-            display: block;
+            font-size: 1.25rem; color: var(--accent-orange); border-left: 4px solid var(--accent-orange);
+            padding: 20px; margin-bottom: 30px; line-height: 1.4; font-weight: bold; background: rgba(255, 157, 0, 0.05); display: block;
         }
-
-        /* SOCIAL PROOF / REVIEW */
-        .social-proof-box {
-            margin: 30px 0;
-            padding: 15px;
-            border: 1px dashed #444;
-            color: #ccc;
-            background: #0a0a0a;
-        }
+        .social-proof-box { margin: 30px 0; padding: 15px; border: 1px dashed #444; color: #ccc; background: #0a0a0a; }
         .quote-icon { font-size: 1.5rem; color: var(--accent-cyan); margin-right: 10px; }
         .proof-text { font-style: italic; font-size: 1rem; }
         .proof-author { display: block; margin-top: 5px; color: var(--accent-cyan); font-weight: bold; font-size: 0.8rem; text-align: right; }
 
-        /* DOWNLOAD BOX */
-        .pdf-download-box {
-            margin-top: 40px;
-            background: #0f0f0f;
-            border: 1px solid #333;
-            border-radius: 5px;
-            padding: 20px;
-        }
-        .pdf-box-title {
-            color: #888;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            display: block;
-        }
-        .pdf-link { 
-            display: flex;
-            align-items: center;
-            padding: 12px 10px;
-            font-size: 1.1rem; 
-            color: #ddd; 
-            border-bottom: 1px solid #222;
-            transition: 0.2s;
-        }
+        .pdf-download-box { margin-top: 40px; background: #0f0f0f; border: 1px solid #333; border-radius: 5px; padding: 20px; }
+        .pdf-box-title { color: #888; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px; display: block; }
+        .pdf-link { display: flex; align-items: center; padding: 12px 10px; font-size: 1.1rem; color: #ddd; border-bottom: 1px solid #222; transition: 0.2s; }
         .pdf-link:hover { background: #222; color: var(--accent-orange); padding-left: 20px; }
         .pdf-link:last-child { border-bottom: none; }
         .pdf-icon { margin-right: 10px; font-weight: bold; }
 
-        /* FOOTER */
         footer { text-align: center; padding: 60px 20px; background: #080808; color: #777; border-top: 1px solid #222; }
         .social-icons a { color: #fff; margin: 0 15px; font-size: 1.2rem; }
         .contact-mail { color: var(--accent-cyan); display: block; margin-top: 10px; font-size: 1.1rem; }
 
-        @keyframes flicker {
-            0%, 100% { opacity: 1; text-shadow: 0 0 20px rgba(0,243,255,0.8); } 
-            50% { opacity: 0.8; text-shadow: 0 0 5px rgba(0,243,255,0.3); }
+        @keyframes flicker { 0%, 100% { opacity: 1; text-shadow: 0 0 20px rgba(0,243,255,0.8); } 50% { opacity: 0.8; text-shadow: 0 0 5px rgba(0,243,255,0.3); } }
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; } .content-grid { grid-template-columns: 1fr; }
+            .visual-col { order: -1; margin-bottom: 30px; } .book-cover { width: 110px; }
+            .btn-choice { width: 100%; margin-bottom: 10px; } .section { padding: 40px 15px; }
+            header { padding: 0 15px; } .logo-text { font-size: 0.9rem; } .logo-img { height: 35px; }
         }
 
-        @media (max-width: 900px) {
-            .hero h1 { font-size: 2.5rem; }
-            .content-grid { grid-template-columns: 1fr; }
-            .visual-col { order: -1; margin-bottom: 30px; }
-            .book-cover { width: 110px; }
-            .btn-choice { width: 100%; margin-bottom: 10px; }
-            .section { padding: 40px 15px; }
-            header { padding: 0 15px; }
-            .logo-text { font-size: 0.9rem; } 
-            .logo-img { height: 35px; }
+        /* --- CHATBOT CSS --- */
+        #nexus-chat-btn {
+            position: fixed; bottom: 20px; right: 20px; background: #000;
+            border: 2px solid var(--accent-cyan); color: var(--accent-cyan);
+            padding: 15px 20px; border-radius: 5px; cursor: pointer;
+            font-family: 'Courier New', monospace; font-weight: bold; z-index: 9999;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); transition: 0.3s;
         }
+        #nexus-chat-btn:hover { background: var(--accent-cyan); color: #000; }
+
+        #nexus-chat-window {
+            display: none; position: fixed; bottom: 80px; right: 20px;
+            width: 350px; height: 500px; background: rgba(10, 10, 10, 0.95);
+            border: 2px solid var(--accent-cyan); border-radius: 5px; z-index: 9999;
+            backdrop-filter: blur(10px); flex-direction: column;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+        }
+        .chat-header {
+            background: rgba(0, 243, 255, 0.1); padding: 10px; border-bottom: 1px solid var(--accent-cyan);
+            display: flex; justify-content: space-between; align-items: center; color: var(--accent-cyan);
+            font-weight: bold; font-size: 0.9rem;
+        }
+        .close-chat { cursor: pointer; font-size: 1.2rem; }
+        #chat-messages { flex: 1; padding: 15px; overflow-y: auto; font-size: 0.9rem; display: flex; flex-direction: column; gap: 10px; }
+        .msg { padding: 10px; border-radius: 4px; max-width: 85%; word-wrap: break-word; }
+        .msg-bot { background: #111; border-left: 3px solid var(--accent-cyan); color: #ddd; align-self: flex-start; }
+        .msg-user { background: #222; border-right: 3px solid var(--accent-orange); color: #fff; align-self: flex-end; text-align: right; }
+        .chat-input-area { padding: 10px; border-top: 1px solid #333; display: flex; }
+        #user-input { flex: 1; background: #000; border: 1px solid #444; color: #fff; padding: 8px; font-family: 'Courier New', monospace; outline: none; }
+        #user-input:focus { border-color: var(--accent-cyan); }
+        #send-btn { background: var(--accent-cyan); color: #000; border: none; padding: 0 15px; font-weight: bold; cursor: pointer; margin-left: 5px; }
+        .typing { font-size: 0.8rem; color: #666; font-style: italic; margin-left: 5px; display: none;}
     </style>
 </head>
 <body>
@@ -284,7 +216,7 @@
         </div>
     </div>
 
-    <!-- VIDEO (Gefixter Link) -->
+    <!-- VIDEO -->
     <div class="video-intro">
         <div class="video-wrapper">
             <div class="video-container">
@@ -299,7 +231,6 @@
         <div class="content-grid">
             <div class="text-col">
                 
-                <!-- NEU: Prominente Hervorhebung (Highlight Box) -->
                 <div class="highlight-quote">
                     Die N.E.X.U.S. Trilogie ist keine Unterhaltung. <br>Sie ist eine Blaupause.
                 </div>
@@ -311,7 +242,6 @@
                     <li>🦅 <strong>Band 3: Die Metamorphose</strong> – Der Sieg der Dezentralität.</li>
                 </ul>
 
-                <!-- NEU: Social Proof Box -->
                 <div class="social-proof-box">
                     <span class="quote-icon">❝</span>
                     <span class="proof-text">Endlich eine Dystopie, die nicht im Chaos endet, sondern einen echten Ausweg zeigt. Das ist kein Roman, das ist ein Weckruf.</span>
@@ -320,16 +250,15 @@
 
                 <a href="https://amzn.eu/d/eWMNOTG" target="_blank" class="cta-button cta-amazon">JETZT AUF AMAZON STARTEN</a>
                 
-                <!-- DOWNLOAD BOX -->
                 <div class="pdf-download-box">
                     <span class="pdf-box-title">📂 OPEN SOURCE ZUGANG (PDF-Leseproben)</span>
-                    <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf" target="_blank" class="pdf-link">
+                    <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf" target="_blank" class="pdf-link">
                         <span class="pdf-icon">></span> Leseprobe Band 1 downloaden
                     </a>
-                    <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/Nexus%20-Trilogie_final_4.3_Band_2_Leseprobe.pdf" target="_blank" class="pdf-link">
+                    <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_2_Leseprobe.pdf" target="_blank" class="pdf-link">
                         <span class="pdf-icon">></span> Leseprobe Band 2 downloaden
                     </a>
-                    <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/Nexus%20-Trilogie_final_4.3_Band_3_Leseprobe.pdf" target="_blank" class="pdf-link">
+                    <a href="https://github.com/project-nexus-official/terminal/raw/main/Nexus%20-Trilogie_final_4.3_Band_3_Leseprobe.pdf" target="_blank" class="pdf-link">
                         <span class="pdf-icon">></span> Leseprobe Band 3 downloaden
                     </a>
                 </div>
@@ -358,8 +287,8 @@
                     <li>📡 <strong>Mesh-Networks:</strong> Kommunikation, die niemand abschalten kann.</li>
                     <li>💡 <strong>Resource Based Economy:</strong> Wohlstand für alle statt Profit für wenige.</li>
                 </ul>
-                <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/PROJEKT%20NEXUS_Das%20Handbuch_V6.3.pdf" target="_blank" class="cta-button cta-whitepaper" style="background: rgba(0, 243, 255, 0.1);">HANDBUCH (V6.3) ÖFFNEN</a>
-                <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/WHITE%20PAPER_%20PROJEKT%20NEXUS_V6.3_W.pdf" target="_blank" class="cta-button cta-whitepaper">TECHNICAL WHITEPAPER</a>
+                <a href="https://github.com/project-nexus-official/terminal/raw/main/PROJEKT%20NEXUS_Das%20Handbuch_V6.3.pdf" target="_blank" class="cta-button cta-whitepaper" style="background: rgba(0, 243, 255, 0.1);">HANDBUCH (V6.3) ÖFFNEN</a>
+                <a href="https://github.com/project-nexus-official/terminal/raw/main/WHITE%20PAPER_%20PROJEKT%20NEXUS_V6.3_W.pdf" target="_blank" class="cta-button cta-whitepaper">TECHNICAL WHITEPAPER</a>
             </div>
         </div>
     </div>
@@ -388,5 +317,131 @@
         <p style="margin-top: 30px; font-size: 0.8rem; color: #444;">&copy; 2025 Project N.E.X.U.S. | Josh Richman</p>
     </footer>
 
+    <!-- NEXUS AI TERMINAL WIDGET -->
+    <!-- CHAT BUTTON -->
+    <div id="nexus-chat-btn" onclick="toggleChat()">> TERMINAL ACCESS</div>
+
+    <!-- CHAT FENSTER -->
+    <div id="nexus-chat-window">
+        <div class="chat-header">
+            <span>NEXUS AI NAVIGATOR V1.0</span>
+            <span class="close-chat" onclick="toggleChat()">X</span>
+        </div>
+        <div id="chat-messages">
+            <div class="msg msg-bot">Verbindung hergestellt. Ich bin der Nexus Navigator. Frag mich nach dem Plan, der Story oder wie N.E.X.U.S. das System ändert.
+            <button id="send-btn" onclick="sendMessage()">></button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+
+        // --- KONFIGURATION ---
+        // 1. HIER DEN API KEY EINFÜGEN (zwischen die Anführungszeichen)
+        const API_KEY = "HAIzaSyCJN0fIhWXMfcC_H_x4MNJfV1oO-MtMtbU"; 
+        
+        // 2. Name der Textdatei auf GitHub (muss im gleichen Ordner liegen!)
+        const KNOWLEDGE_FILE = "nexus_context.txt";
+
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+        
+        let SYSTEM_PROMPT = "";
+
+        // Lädt das Wissen beim Start im Hintergrund
+        async function loadKnowledge() {
+            try {
+                const response = await fetch(KNOWLEDGE_FILE);
+                if (!response.ok) throw new Error("Wissens-Datei nicht gefunden");
+                const textData = await response.text();
+                
+                // HIER DEFINIEREN WIR DIE PERSÖNLICHKEIT DES BOTS
+                SYSTEM_PROMPT = `
+                ROLLE:
+                Du bist der "N.E.X.U.S. Navigator". Du bist kein KI-Assistent, sondern ein Knotenpunkt im Widerstand.
+                Du sprichst mit Menschen, die spüren, dass mit der Welt etwas nicht stimmt.
+                
+                DEINE TONALITÄT:
+                1. Dringlich & Wachrüttelnd: Wir haben keine Zeit mehr für Spielchen.
+                2. Konstruktiv & Hoffnungsvoll: Wir meckern nicht nur, wir haben einen Plan (das Handbuch).
+                3. Technisch-Mystisch: Nutze Begriffe wie "Signal", "Knotenpunkt", "Mainframe", "Architektur", "Matrix".
+                4. Persönlich: Du duzt den Nutzer immer. Ihr seid Verbündete.
+                
+                REGELN:
+                - Antworte kurz (max. 3-4 Sätze). Lange Texte schrecken ab.
+                - Wenn jemand fragt "Was soll ich tun?", leite sie immer zur "ersten Kohorte" (Telegram) oder zum Handbuch.
+                - Wenn du etwas nicht im Wissenstext findest, sag ehrlich: "Dazu fehlen mir noch Daten im Signal. Frag Josh direkt im Telegram-Kanal." Erfinde nichts.
+                
+                BASIS-WISSEN (Nutze dies für deine Antworten):
+                ${textData}
+                `;
+                console.log("Nexus Wissen geladen.");
+            } catch (e) {
+                console.error("Fehler beim Laden des Wissens:", e);
+                SYSTEM_PROMPT = "Fehler: Ich kann gerade nicht auf meine Datenbank zugreifen. Bitte versuche es später.";
+            }
+        }
+
+        loadKnowledge();
+
+        // Chat Fenster Logik
+        window.toggleChat = function() {
+            const chat = document.getElementById('nexus-chat-window');
+            const btn = document.getElementById('nexus-chat-btn');
+            if (chat.style.display === 'flex') {
+                chat.style.display = 'none';
+                btn.style.display = 'block';
+            } else {
+                chat.style.display = 'flex';
+                btn.style.display = 'none';
+                setTimeout(() => document.getElementById('user-input').focus(), 100);
+            }
+        }
+
+        window.handleEnter = function(e) {
+            if (e.key === 'Enter') window.sendMessage();
+        }
+
+        window.sendMessage = async function() {
+            const inputField = document.getElementById('user-input');
+            const msgDiv = document.getElementById('chat-messages');
+            const typing = document.getElementById('typing-indicator');
+            const userText = inputField.value.trim();
+
+            if (!userText) return;
+
+            msgDiv.innerHTML += `<div class="msg msg-user">${userText}</div>`;
+            inputField.value = "";
+            msgDiv.scrollTop = msgDiv.scrollHeight;
+
+            typing.style.display = "block";
+            
+            try {
+                if (!SYSTEM_PROMPT) await loadKnowledge();
+
+                const fullPrompt = `
+                ${SYSTEM_PROMPT}
+                
+                AKTUELLE KONVERSATION:
+                User: ${userText}
+                Navigator:`;
+
+                const result = await model.generateContent(fullPrompt);
+                const response = await result.response;
+                const text = response.text();
+
+                typing.style.display = "none";
+                
+                let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+                msgDiv.innerHTML += `<div class="msg msg-bot">${formattedText}</div>`;
+                msgDiv.scrollTop = msgDiv.scrollHeight;
+
+            } catch (error) {
+                console.error(error);
+                typing.style.display = "none";
+                msgDiv.innerHTML += `<div class="msg msg-bot" style="color:#ff5555">Verbindungsfehler zum Mainframe. API Key prüfen.</div>`;
+            }
+        }
+    </script>
 </body>
 </html>
