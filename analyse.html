@@ -1,3 +1,5 @@
+code
+Html
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -60,15 +62,8 @@
         }
 
         /* SLIDER STYLES */
-        .slider-group { margin-bottom: 50px; text-align: left; }
+        .slider-group { margin-bottom: 60px; text-align: left; }
         
-        .header-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
         .slider-label { 
             font-weight: bold; 
             color: var(--accent-orange); 
@@ -76,31 +71,39 @@
             text-transform: uppercase;
             border-left: 4px solid var(--accent-orange);
             padding-left: 10px;
-            margin: 0;
+            margin-bottom: 15px;
+            display: block;
         }
 
-        /* DIE NEUE PROZENTANZEIGE */
-        .slider-value {
-            font-size: 1.5rem;
+        /* DIE NEUE STATUS-ANZEIGE (Text statt Prozent) */
+        .slider-value-display {
+            display: block;
+            margin: 10px auto;
+            font-size: 1.3rem; 
             color: var(--accent-cyan);
             font-weight: bold;
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
-            min-width: 60px;
-            text-align: right;
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+            background: #000;
+            padding: 8px 15px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .range-labels { 
             display: flex; 
             justify-content: space-between; 
-            font-size: 1rem; 
-            color: #ccc; 
-            margin-top: 10px; 
+            font-size: 0.9rem; 
+            color: #666; 
+            margin-top: 5px; 
             font-weight: bold;
         }
         
         /* Der Schieberegler selbst */
         input[type=range] {
-            width: 100%; -webkit-appearance: none; background: transparent; margin: 10px 0;
+            width: 100%; -webkit-appearance: none; background: transparent; margin: 0;
         }
         input[type=range]:focus { outline: none; }
         
@@ -152,8 +155,7 @@
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             .slider-label { font-size: 1.1rem; }
-            .slider-value { font-size: 1.2rem; }
-            .range-labels { font-size: 0.8rem; }
+            .slider-value-display { font-size: 1rem; }
             .analysis-container { padding: 20px; }
         }
     </style>
@@ -161,24 +163,28 @@
 <body>
 
     <div class="top-nav">
-        <a href="index.html" class="back-link">&lt; ABBRUCH / ZURÜCK</a>
+        <a href="index.html" class="back-link">&lt; ZURÜCK ZUM TERMINAL</a>
     </div>
 
     <h1>System-Integritäts-Check</h1>
-    <p class="subtitle">Bestimme deinen Standort in der Matrix. Schiebe die Regler intuitiv.</p>
+    <p class="subtitle">Bestimme deinen Standort in der Matrix. Schiebe die Regler.</p>
 
     <!-- FORMULAR START -->
     <!-- WICHTIG: HIER WIEDER DEINE FORMSPREE URL EINFÜGEN! -->
-    <form action="https://formspree.io/f/mbdoorpz" method="POST" class="analysis-container" id="nexusForm">
+    <form action="HIER_DEINE_FORMSPREE_URL_EINFUEGEN" method="POST" class="analysis-container" id="nexusForm">
         
         <!-- FRAGE 1 -->
         <div class="slider-group">
-            <div class="header-row">
-                <label class="slider-label">1. POLITISCHE RESONANZ</label>
-                <span class="slider-value" id="val1">50%</span>
-            </div>
-            <!-- oninput Event hinzugefügt -->
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Politik" id="s1" oninput="updateVal('s1', 'val1')">
+            <label class="slider-label">1. POLITISCHE RESONANZ</label>
+            
+            <!-- ANZEIGE FÜR DEN STATUS -->
+            <span class="slider-value-display" id="val1">NEUTRAL / UNENTSCHIEDEN</span>
+            
+            <!-- SLIDER -->
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Politik" id="s1" 
+                   data-left="HOHES VERTRAUEN" data-right="SYSTEM-VERRAT"
+                   oninput="updateText('s1', 'val1')">
+            
             <div class="range-labels">
                 <span>Vertraue dem Staat</span>
                 <span>Fühle mich verraten</span>
@@ -187,11 +193,14 @@
 
         <!-- FRAGE 2 -->
         <div class="slider-group">
-            <div class="header-row">
-                <label class="slider-label">2. ÖKONOMISCHE SITUATION</label>
-                <span class="slider-value" id="val2">50%</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Economy" id="s2" oninput="updateVal('s2', 'val2')">
+            <label class="slider-label">2. ÖKONOMISCHE SITUATION</label>
+            
+            <span class="slider-value-display" id="val2">NEUTRAL / UNENTSCHIEDEN</span>
+            
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Economy" id="s2" 
+                   data-left="FINANZIELL FREI" data-right="LOHNSKLAVEREI"
+                   oninput="updateText('s2', 'val2')">
+            
             <div class="range-labels">
                 <span>Finanziell Frei</span>
                 <span>Im Hamsterrad</span>
@@ -200,11 +209,14 @@
 
         <!-- FRAGE 3 -->
         <div class="slider-group">
-            <div class="header-row">
-                <label class="slider-label">3. DIGITALE ÜBERWACHUNG</label>
-                <span class="slider-value" id="val3">50%</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Tech" id="s3" oninput="updateVal('s3', 'val3')">
+            <label class="slider-label">3. DIGITALE ÜBERWACHUNG</label>
+            
+            <span class="slider-value-display" id="val3">NEUTRAL / UNENTSCHIEDEN</span>
+            
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Tech" id="s3" 
+                   data-left="ALLES KOMFORTABEL" data-right="GLÄSERNER MENSCH"
+                   oninput="updateText('s3', 'val3')">
+            
             <div class="range-labels">
                 <span>Egal / Komfortabel</span>
                 <span>Bedrohlich</span>
@@ -213,11 +225,14 @@
 
         <!-- FRAGE 4 -->
         <div class="slider-group">
-            <div class="header-row">
-                <label class="slider-label">4. BEREITSCHAFT ZUM WANDEL</label>
-                <span class="slider-value" id="val4">50%</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Action" id="s4" oninput="updateVal('s4', 'val4')">
+            <label class="slider-label">4. BEREITSCHAFT ZUM WANDEL</label>
+            
+            <span class="slider-value-display" id="val4">NEUTRAL / UNENTSCHIEDEN</span>
+            
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Action" id="s4" 
+                   data-left="ZUSCHAUER" data-right="ARCHITEKT"
+                   oninput="updateText('s4', 'val4')">
+            
             <div class="range-labels">
                 <span>Beobachter</span>
                 <span>Konstrukteur</span>
@@ -252,10 +267,26 @@
     </form>
 
     <script>
-        // Funktion für Live-Update der Prozentzahlen
-        function updateVal(sliderId, displayId) {
-            let val = document.getElementById(sliderId).value;
-            document.getElementById(displayId).innerText = val + "%";
+        // Dynamische Text-Anzeige
+        function updateText(sliderId, displayId) {
+            let slider = document.getElementById(sliderId);
+            let display = document.getElementById(displayId);
+            let val = parseInt(slider.value);
+            
+            // Texte aus den data-Attributen holen
+            let textLeft = slider.getAttribute('data-left');
+            let textRight = slider.getAttribute('data-right');
+
+            if (val <= 33) {
+                display.innerText = textLeft;
+                display.style.color = "#888"; // Grau für Links (System)
+            } else if (val >= 67) {
+                display.innerText = textRight;
+                display.style.color = "#00f3ff"; // Cyan für Rechts (Nexus)
+            } else {
+                display.innerText = "NEUTRAL / UNENTSCHIEDEN";
+                display.style.color = "#fff";
+            }
         }
 
         function calculateResult() {
