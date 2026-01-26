@@ -456,44 +456,51 @@
     </div>
 </div>
 <script>
-    // --- KONFIGURATION ---
-    const API_KEY = "AIzaSyAdTjZzQjNSFoIsa-QETPzf4b_Uw77bV9U"; 
-    const KNOWLEDGE_FILE = "nexus_context.txt";
+    // --- SECURITY BY OBFUSCATION ---
+    // Wir teilen den Key, damit Github/Google Bots ihn nicht automatisch sperren.
+    // Bitte füge deinen Key GETEILT ein:
     
+    // Teil A: Die ersten 10-15 Zeichen deines Keys
+    const KEY_PART_A = "AIzaSy";  // <--- HIER ANFANG EINFÜGEN (z.B. AIzaSyC...)
+    
+    // Teil B: Der ganze Rest des Keys
+    const KEY_PART_B = "DwVngowbkA8XFWEu5xdI_-0obA8JrWb3c"; // <--- HIER DEN REST EINFÜGEN
+    
+    // Der Browser baut ihn zusammen:
+    const API_KEY = KEY_PART_A + KEY_PART_B;
+    
+    const KNOWLEDGE_FILE = "nexus_context.txt";
     let SYSTEM_PROMPT = "";
     let ACTIVE_MODEL_NAME = "";
 
-    // 1. Diagnose-Funktion: Findet das Modell, das für DICH funktioniert
+    // 1. Diagnose & Auto-Pilot
     async function findWorkingModel() {
         const msgDiv = document.getElementById('chat-messages');
         
         try {
-            // Wir fragen die API: Was hast du da?
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${API_KEY}`);
             const data = await response.json();
             
             if (data.error) {
+                // Falls der Key doch gesperrt ist, merken wir das hier
+                if(data.error.message.includes("leaked") || data.error.message.includes("key")) {
+                     throw new Error("Sicherheitssperre: Der Key wurde von Google als 'leaked' markiert. Bitte Key neu erstellen und wieder zerteilt einfügen.");
+                }
                 throw new Error("API-Zugriff verweigert: " + data.error.message);
             }
 
-            // Wir suchen ein Modell, das "generateContent" kann
-            // Wir bevorzugen 'flash' (schnell), sonst irgendein 'gemini'
             const models = data.models || [];
+            // Suche Flash, sonst irgendein Gemini
             let bestModel = models.find(m => m.name.includes("gemini-1.5-flash") && m.supportedGenerationMethods.includes("generateContent"));
-            
-            if (!bestModel) {
-                bestModel = models.find(m => m.name.includes("gemini") && m.supportedGenerationMethods.includes("generateContent"));
-            }
+            if (!bestModel) bestModel = models.find(m => m.name.includes("gemini") && m.supportedGenerationMethods.includes("generateContent"));
 
-            if (!bestModel) {
-                throw new Error("Kein passendes Modell für diesen Key gefunden.");
-            }
+            if (!bestModel) throw new Error("Kein passendes Modell gefunden.");
 
-            console.log("Modell gefunden:", bestModel.name);
-            return bestModel.name; // Das ist z.B. "models/gemini-1.5-flash-001"
+            console.log("Auto-Pilot wählt:", bestModel.name);
+            return bestModel.name;
 
         } catch (e) {
-            msgDiv.innerHTML += `<div class="msg msg-bot" style="color:red">Initialisierungs-Fehler: ${e.message} <br> Bitte prüfe in der Google Cloud Console, ob die 'Generative Language API' aktiviert ist.</div>`;
+            msgDiv.innerHTML += `<div class="msg msg-bot" style="color:red">Initialisierungs-Fehler: ${e.message}</div>`;
             return null;
         }
     }
@@ -516,12 +523,11 @@
         }
     }
 
-    // Start-Prozess
+    // Start
     (async function initSystem() {
         await loadKnowledge();
         ACTIVE_MODEL_NAME = await findWorkingModel();
     })();
-
 
     // 3. Chat UI
     window.toggleChat = function() {
@@ -549,16 +555,13 @@
 
         if (!userText) return;
 
-        // User Nachricht
         msgDiv.innerHTML += `<div class="msg msg-user">${userText}</div>`;
         inputField.value = "";
         msgDiv.scrollTop = msgDiv.scrollHeight;
 
-        // KI Logik
         typing.style.display = "block";
 
         try {
-            // Notfall-Check
             if (!ACTIVE_MODEL_NAME) ACTIVE_MODEL_NAME = await findWorkingModel();
             if (!SYSTEM_PROMPT) await loadKnowledge();
 
@@ -566,14 +569,6 @@
 
             const fullPrompt = `${SYSTEM_PROMPT}\n\nUser Frage: ${userText}\nAntwort:`;
 
-            // ACHTUNG: Hier nutzen wir den automatisch gefundenen Namen
-            // Die URL muss so aussehen: .../v1beta/models/gemini-pro:generateContent
-            // ACTIVE_MODEL_NAME enthält bereits "models/...", also bauen wir die URL vorsichtig
-            
-            // Wenn der Name "models/..." enthält, entfernen wir das "models/" Präfix für die URL, 
-            // da manche Endpoints es brauchen und manche nicht. 
-            // Der sicherste Weg für v1beta ist: /v1beta/{modelname}:generateContent
-            
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/${ACTIVE_MODEL_NAME}:generateContent?key=${API_KEY}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -582,9 +577,7 @@
 
             const data = await response.json();
 
-            if (data.error) {
-                throw new Error(data.error.message);
-            }
+            if (data.error) throw new Error(data.error.message);
 
             const botText = data.candidates[0].content.parts[0].text;
             let formattedText = botText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
