@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N.E.X.U.S. | Status-Analyse</title>
-    <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
     <style>
         :root {
@@ -12,7 +11,7 @@
             --text-main: #ffffff;
             --accent-cyan: #00f3ff;
             --accent-orange: #ff9d00;
-            --panel-bg: #111;
+            --panel-bg: #0a0a0a;
         }
 
         body {
@@ -20,81 +19,142 @@
             background-color: var(--bg-color); color: var(--text-main);
             font-family: 'Courier New', Courier, monospace;
             line-height: 1.6; text-align: center;
+            font-size: 18px; /* Grundschriftgröße erhöht */
         }
 
-        h1 { color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 10px; }
-        .subtitle { color: #888; max-width: 600px; margin: 0 auto 40px auto; }
+        /* --- HEADER & BACK BUTTON --- */
+        .top-nav { text-align: left; margin-bottom: 30px; }
+        .back-link {
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border: 1px solid var(--accent-orange);
+            padding: 10px 20px;
+            display: inline-block;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .back-link:hover { background: var(--accent-orange); color: #000; box-shadow: 0 0 15px var(--accent-orange); }
+
+        h1 { 
+            color: var(--accent-cyan); 
+            text-transform: uppercase; 
+            margin-bottom: 10px; 
+            font-size: 2.5rem; /* Größer */
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        .subtitle { 
+            color: #ddd; /* Heller */
+            max-width: 700px; 
+            margin: 0 auto 50px auto; 
+            font-size: 1.2rem;
+        }
 
         /* CONTAINER */
         .analysis-container {
-            max-width: 600px; margin: 0 auto;
-            background: var(--panel-bg); padding: 30px;
-            border: 1px solid #333; border-radius: 5px;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+            max-width: 700px; margin: 0 auto;
+            background: var(--panel-bg); padding: 40px;
+            border: 2px solid #333; border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
         }
 
         /* SLIDER STYLES */
-        .slider-group { margin-bottom: 40px; text-align: left; }
-        .slider-label { font-weight: bold; color: var(--accent-orange); display: block; margin-bottom: 10px; }
-        .range-labels { display: flex; justify-content: space-between; font-size: 0.8rem; color: #666; margin-top: 5px; }
+        .slider-group { margin-bottom: 50px; text-align: left; }
         
+        .slider-label { 
+            font-weight: bold; 
+            color: var(--accent-orange); 
+            display: block; 
+            margin-bottom: 15px; 
+            font-size: 1.4rem; /* Viel größer */
+            text-transform: uppercase;
+            border-left: 4px solid var(--accent-orange);
+            padding-left: 10px;
+        }
+        
+        .range-labels { 
+            display: flex; 
+            justify-content: space-between; 
+            font-size: 1rem; /* Lesbarer */
+            color: #ccc; /* Heller */
+            margin-top: 10px; 
+            font-weight: bold;
+        }
+        
+        /* Der Schieberegler selbst (Dicker & Griffiger) */
         input[type=range] {
-            width: 100%; -webkit-appearance: none; background: transparent;
+            width: 100%; -webkit-appearance: none; background: transparent; margin: 10px 0;
         }
+        input[type=range]:focus { outline: none; }
+        
+        /* Der "Knopf" zum Schieben */
         input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none; height: 20px; width: 20px;
+            -webkit-appearance: none; height: 30px; width: 30px; /* Größer */
             border-radius: 50%; background: var(--accent-cyan);
-            cursor: pointer; margin-top: -8px; box-shadow: 0 0 10px var(--accent-cyan);
+            cursor: pointer; margin-top: -12px; 
+            box-shadow: 0 0 15px var(--accent-cyan);
+            border: 2px solid #fff;
         }
+        
+        /* Die Linie */
         input[type=range]::-webkit-slider-runnable-track {
-            width: 100%; height: 4px; cursor: pointer;
-            background: #333; border-radius: 2px;
+            width: 100%; height: 6px; cursor: pointer;
+            background: #444; border-radius: 3px;
         }
 
-        /* RESULT BOX (Versteckt am Anfang) */
-        #result-area { display: none; margin-top: 30px; border-top: 1px solid #333; padding-top: 30px; animation: fadeIn 1s; }
+        /* RESULT BOX */
+        #result-area { display: none; margin-top: 40px; border-top: 2px solid #333; padding-top: 40px; animation: fadeIn 1s; }
         
         .result-title { font-size: 1.5rem; font-weight: bold; color: var(--text-main); }
-        .result-type { font-size: 2.5rem; color: var(--accent-cyan); text-transform: uppercase; margin: 10px 0; text-shadow: 0 0 15px var(--accent-cyan); }
-        .result-desc { color: #ccc; margin-bottom: 30px; }
+        .result-type { font-size: 3rem; color: var(--accent-cyan); text-transform: uppercase; margin: 15px 0; text-shadow: 0 0 20px var(--accent-cyan); font-weight: bold;}
+        .result-desc { color: #eee; margin-bottom: 30px; font-size: 1.2rem;}
 
         /* FORMULAR */
         .email-input {
-            width: 100%; padding: 15px; margin-bottom: 15px;
-            background: #000; border: 1px solid var(--accent-cyan);
-            color: #fff; font-family: inherit; font-size: 1rem;
+            width: 100%; padding: 20px; margin-bottom: 20px;
+            background: #000; border: 2px solid var(--accent-cyan);
+            color: #fff; font-family: inherit; font-size: 1.1rem;
             box-sizing: border-box;
         }
         .submit-btn {
             background: var(--accent-orange); color: #000;
-            border: none; padding: 15px 40px; font-size: 1.1rem;
+            border: none; padding: 20px 40px; font-size: 1.3rem;
             font-weight: bold; cursor: pointer; text-transform: uppercase;
-            width: 100%; transition: 0.3s;
+            width: 100%; transition: 0.3s; letter-spacing: 1px;
         }
-        .submit-btn:hover { background: #fff; box-shadow: 0 0 20px var(--accent-orange); }
+        .submit-btn:hover { background: #fff; box-shadow: 0 0 30px var(--accent-orange); transform: scale(1.02); }
 
         .calc-btn {
-            background: #333; color: #fff; border: 1px solid #555;
-            padding: 15px 40px; font-size: 1rem; cursor: pointer;
-            width: 100%; text-transform: uppercase; font-family: inherit;
+            background: #222; color: #fff; border: 2px solid #666;
+            padding: 20px 50px; font-size: 1.2rem; cursor: pointer;
+            width: 100%; text-transform: uppercase; font-family: inherit; font-weight: bold;
+            transition: 0.3s;
         }
-        .calc-btn:hover { background: #444; }
+        .calc-btn:hover { background: #333; border-color: #fff; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        /* Mobile Optimierung */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .slider-label { font-size: 1.1rem; }
+            .range-labels { font-size: 0.8rem; }
+            .analysis-container { padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <a href="index.html" style="color: #666; font-size: 0.8rem; text-decoration: none;">&lt; ZURÜCK ZUM TERMINAL</a>
-    
-    <div style="height: 20px;"></div>
+    <div class="top-nav">
+        <a href="index.html" class="back-link">&lt; ABBRUCH / ZURÜCK</a>
+    </div>
 
     <h1>System-Integritäts-Check</h1>
     <p class="subtitle">Bestimme deinen Standort in der Matrix. Schiebe die Regler intuitiv.</p>
 
-    <!-- DAS FORMULAR -->
-    <!-- WICHTIG: Ersetze die URL im 'action' Feld mit deiner Formspree URL -->
-    <form action="https://formspree.io/f/mbdoorpz" method="POST" class="analysis-container" id="nexusForm">
+    <!-- FORMULAR -->
+    <form action="HIER_DEINE_FORMSPREE_URL_EINFUEGEN" method="POST" class="analysis-container" id="nexusForm">
         
         <!-- FRAGE 1 -->
         <div class="slider-group">
@@ -136,23 +196,22 @@
             </div>
         </div>
 
-        <!-- BUTTON ZUM BERECHNEN -->
+        <!-- BUTTON -->
         <div id="calc-step">
-            <button type="button" class="calc-btn" onclick="calculateResult()">ANALYSE STARTEN</button>
+            <button type="button" class="calc-btn" onclick="calculateResult()">>> ANALYSE STARTEN</button>
         </div>
 
-        <!-- ERGEBNIS BEREICH (Erscheint erst nach Klick) -->
+        <!-- ERGEBNIS -->
         <div id="result-area">
             <p class="result-title">DEIN STATUS:</p>
             <div class="result-type" id="result-type-text">BERECHNE...</div>
             <p class="result-desc" id="result-desc-text">...</p>
             
-            <hr style="border-color: #333; margin: 20px 0;">
+            <hr style="border-color: #333; margin: 30px 0;">
             
-            <p style="color: var(--accent-orange); font-weight: bold;">SICHERE DIR DAS PROTOKOLL</p>
-            <p style="font-size: 0.9rem;">Trage dich ein, um das Ergebnis und die strategische Empfehlung für deinen Typ zu speichern und Updates zum Projekt N.E.X.U.S. zu erhalten.</p>
+            <p style="color: var(--accent-orange); font-weight: bold; font-size: 1.2rem;">SICHERE DIR DAS PROTOKOLL</p>
+            <p>Trage dich ein, um das Ergebnis und die strategische Empfehlung für deinen Typ zu speichern.</p>
             
-            <!-- VERSTECKTE FELDER FÜR DAS ERGEBNIS IN DER EMAIL -->
             <input type="hidden" name="Ergebnis_Typ" id="hidden-type">
             <input type="hidden" name="Gesamt_Score" id="hidden-score">
 
@@ -166,19 +225,15 @@
 
     <script>
         function calculateResult() {
-            // Werte holen
             let v1 = parseInt(document.getElementById('s1').value);
             let v2 = parseInt(document.getElementById('s2').value);
             let v3 = parseInt(document.getElementById('s3').value);
             let v4 = parseInt(document.getElementById('s4').value);
 
-            // Durchschnitt berechnen
             let score = (v1 + v2 + v3 + v4) / 4;
-            
             let type = "";
             let desc = "";
 
-            // Logik
             if (score < 40) {
                 type = "SYSTEM-INTEGRIERT";
                 desc = "Du fühlst dich im aktuellen System noch relativ wohl. Aber du spürst, dass etwas nicht stimmt, sonst wärst du nicht hier. N.E.X.U.S. ist deine Versicherung, falls das System kippt.";
@@ -190,15 +245,11 @@
                 desc = "Du bist bereit. Deine Werte decken sich zu 100% mit N.E.X.U.S. Du bist kein Zuschauer mehr, du bist ein potentieller Knotenpunkt für das neue Netz.";
             }
 
-            // UI Update
             document.getElementById('result-type-text').innerText = type;
             document.getElementById('result-desc-text').innerText = desc;
-            
-            // Versteckte Felder füllen (für die Email an dich)
             document.getElementById('hidden-type').value = type;
             document.getElementById('hidden-score').value = score + "% System-Kritik";
 
-            // Anzeigen wechseln
             document.getElementById('calc-step').style.display = 'none';
             document.getElementById('result-area').style.display = 'block';
         }
