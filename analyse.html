@@ -19,7 +19,7 @@
             background-color: var(--bg-color); color: var(--text-main);
             font-family: 'Courier New', Courier, monospace;
             line-height: 1.6; text-align: center;
-            font-size: 18px; /* Grundschriftgröße erhöht */
+            font-size: 18px;
         }
 
         /* --- HEADER & BACK BUTTON --- */
@@ -41,11 +41,11 @@
             color: var(--accent-cyan); 
             text-transform: uppercase; 
             margin-bottom: 10px; 
-            font-size: 2.5rem; /* Größer */
+            font-size: 2.5rem;
             text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
         }
         .subtitle { 
-            color: #ddd; /* Heller */
+            color: #ddd;
             max-width: 700px; 
             margin: 0 auto 50px auto; 
             font-size: 1.2rem;
@@ -62,42 +62,56 @@
         /* SLIDER STYLES */
         .slider-group { margin-bottom: 50px; text-align: left; }
         
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
         .slider-label { 
             font-weight: bold; 
             color: var(--accent-orange); 
-            display: block; 
-            margin-bottom: 15px; 
-            font-size: 1.4rem; /* Viel größer */
+            font-size: 1.4rem; 
             text-transform: uppercase;
             border-left: 4px solid var(--accent-orange);
             padding-left: 10px;
+            margin: 0;
+        }
+
+        /* DIE NEUE PROZENTANZEIGE */
+        .slider-value {
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+            min-width: 60px;
+            text-align: right;
         }
         
         .range-labels { 
             display: flex; 
             justify-content: space-between; 
-            font-size: 1rem; /* Lesbarer */
-            color: #ccc; /* Heller */
+            font-size: 1rem; 
+            color: #ccc; 
             margin-top: 10px; 
             font-weight: bold;
         }
         
-        /* Der Schieberegler selbst (Dicker & Griffiger) */
+        /* Der Schieberegler selbst */
         input[type=range] {
             width: 100%; -webkit-appearance: none; background: transparent; margin: 10px 0;
         }
         input[type=range]:focus { outline: none; }
         
-        /* Der "Knopf" zum Schieben */
         input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none; height: 30px; width: 30px; /* Größer */
+            -webkit-appearance: none; height: 30px; width: 30px;
             border-radius: 50%; background: var(--accent-cyan);
             cursor: pointer; margin-top: -12px; 
             box-shadow: 0 0 15px var(--accent-cyan);
             border: 2px solid #fff;
         }
         
-        /* Die Linie */
         input[type=range]::-webkit-slider-runnable-track {
             width: 100%; height: 6px; cursor: pointer;
             background: #444; border-radius: 3px;
@@ -135,10 +149,10 @@
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
-        /* Mobile Optimierung */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             .slider-label { font-size: 1.1rem; }
+            .slider-value { font-size: 1.2rem; }
             .range-labels { font-size: 0.8rem; }
             .analysis-container { padding: 20px; }
         }
@@ -153,13 +167,18 @@
     <h1>System-Integritäts-Check</h1>
     <p class="subtitle">Bestimme deinen Standort in der Matrix. Schiebe die Regler intuitiv.</p>
 
-    <!-- FORMULAR -->
-    <form action="HIER_DEINE_FORMSPREE_URL_EINFUEGEN" method="POST" class="analysis-container" id="nexusForm">
+    <!-- FORMULAR START -->
+    <!-- WICHTIG: HIER WIEDER DEINE FORMSPREE URL EINFÜGEN! -->
+    <form action="https://formspree.io/f/mbdoorpz" method="POST" class="analysis-container" id="nexusForm">
         
         <!-- FRAGE 1 -->
         <div class="slider-group">
-            <label class="slider-label">1. POLITISCHE RESONANZ</label>
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Politik" id="s1">
+            <div class="header-row">
+                <label class="slider-label">1. POLITISCHE RESONANZ</label>
+                <span class="slider-value" id="val1">50%</span>
+            </div>
+            <!-- oninput Event hinzugefügt -->
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Politik" id="s1" oninput="updateVal('s1', 'val1')">
             <div class="range-labels">
                 <span>Vertraue dem Staat</span>
                 <span>Fühle mich verraten</span>
@@ -168,8 +187,11 @@
 
         <!-- FRAGE 2 -->
         <div class="slider-group">
-            <label class="slider-label">2. ÖKONOMISCHE SITUATION</label>
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Economy" id="s2">
+            <div class="header-row">
+                <label class="slider-label">2. ÖKONOMISCHE SITUATION</label>
+                <span class="slider-value" id="val2">50%</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Economy" id="s2" oninput="updateVal('s2', 'val2')">
             <div class="range-labels">
                 <span>Finanziell Frei</span>
                 <span>Im Hamsterrad</span>
@@ -178,8 +200,11 @@
 
         <!-- FRAGE 3 -->
         <div class="slider-group">
-            <label class="slider-label">3. DIGITALE ÜBERWACHUNG</label>
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Tech" id="s3">
+            <div class="header-row">
+                <label class="slider-label">3. DIGITALE ÜBERWACHUNG</label>
+                <span class="slider-value" id="val3">50%</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Tech" id="s3" oninput="updateVal('s3', 'val3')">
             <div class="range-labels">
                 <span>Egal / Komfortabel</span>
                 <span>Bedrohlich</span>
@@ -188,8 +213,11 @@
 
         <!-- FRAGE 4 -->
         <div class="slider-group">
-            <label class="slider-label">4. BEREITSCHAFT ZUM WANDEL</label>
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Action" id="s4">
+            <div class="header-row">
+                <label class="slider-label">4. BEREITSCHAFT ZUM WANDEL</label>
+                <span class="slider-value" id="val4">50%</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Action" id="s4" oninput="updateVal('s4', 'val4')">
             <div class="range-labels">
                 <span>Beobachter</span>
                 <span>Konstrukteur</span>
@@ -224,6 +252,12 @@
     </form>
 
     <script>
+        // Funktion für Live-Update der Prozentzahlen
+        function updateVal(sliderId, displayId) {
+            let val = document.getElementById(sliderId).value;
+            document.getElementById(displayId).innerText = val + "%";
+        }
+
         function calculateResult() {
             let v1 = parseInt(document.getElementById('s1').value);
             let v2 = parseInt(document.getElementById('s2').value);
