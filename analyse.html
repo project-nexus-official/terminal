@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.E.X.U.S. | Status-Analyse</title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-main: #ffffff;
+            --accent-cyan: #00f3ff;
+            --accent-orange: #ff9d00;
+            --panel-bg: #111;
+        }
+
+        body {
+            margin: 0; padding: 20px;
+            background-color: var(--bg-color); color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6; text-align: center;
+        }
+
+        h1 { color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 10px; }
+        .subtitle { color: #888; max-width: 600px; margin: 0 auto 40px auto; }
+
+        /* CONTAINER */
+        .analysis-container {
+            max-width: 600px; margin: 0 auto;
+            background: var(--panel-bg); padding: 30px;
+            border: 1px solid #333; border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+        }
+
+        /* SLIDER STYLES */
+        .slider-group { margin-bottom: 40px; text-align: left; }
+        .slider-label { font-weight: bold; color: var(--accent-orange); display: block; margin-bottom: 10px; }
+        .range-labels { display: flex; justify-content: space-between; font-size: 0.8rem; color: #666; margin-top: 5px; }
+        
+        input[type=range] {
+            width: 100%; -webkit-appearance: none; background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none; height: 20px; width: 20px;
+            border-radius: 50%; background: var(--accent-cyan);
+            cursor: pointer; margin-top: -8px; box-shadow: 0 0 10px var(--accent-cyan);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 4px; cursor: pointer;
+            background: #333; border-radius: 2px;
+        }
+
+        /* RESULT BOX (Versteckt am Anfang) */
+        #result-area { display: none; margin-top: 30px; border-top: 1px solid #333; padding-top: 30px; animation: fadeIn 1s; }
+        
+        .result-title { font-size: 1.5rem; font-weight: bold; color: var(--text-main); }
+        .result-type { font-size: 2.5rem; color: var(--accent-cyan); text-transform: uppercase; margin: 10px 0; text-shadow: 0 0 15px var(--accent-cyan); }
+        .result-desc { color: #ccc; margin-bottom: 30px; }
+
+        /* FORMULAR */
+        .email-input {
+            width: 100%; padding: 15px; margin-bottom: 15px;
+            background: #000; border: 1px solid var(--accent-cyan);
+            color: #fff; font-family: inherit; font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            background: var(--accent-orange); color: #000;
+            border: none; padding: 15px 40px; font-size: 1.1rem;
+            font-weight: bold; cursor: pointer; text-transform: uppercase;
+            width: 100%; transition: 0.3s;
+        }
+        .submit-btn:hover { background: #fff; box-shadow: 0 0 20px var(--accent-orange); }
+
+        .calc-btn {
+            background: #333; color: #fff; border: 1px solid #555;
+            padding: 15px 40px; font-size: 1rem; cursor: pointer;
+            width: 100%; text-transform: uppercase; font-family: inherit;
+        }
+        .calc-btn:hover { background: #444; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" style="color: #666; font-size: 0.8rem; text-decoration: none;">&lt; ZURÜCK ZUM TERMINAL</a>
+    
+    <div style="height: 20px;"></div>
+
+    <h1>System-Integritäts-Check</h1>
+    <p class="subtitle">Bestimme deinen Standort in der Matrix. Schiebe die Regler intuitiv.</p>
+
+    <!-- DAS FORMULAR -->
+    <!-- WICHTIG: Ersetze die URL im 'action' Feld mit deiner Formspree URL -->
+    <form action="https://formspree.io/f/mbdoorpz" method="POST" class="analysis-container" id="nexusForm">
+        
+        <!-- FRAGE 1 -->
+        <div class="slider-group">
+            <label class="slider-label">1. POLITISCHE RESONANZ</label>
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Politik" id="s1">
+            <div class="range-labels">
+                <span>Vertraue dem Staat</span>
+                <span>Fühle mich verraten</span>
+            </div>
+        </div>
+
+        <!-- FRAGE 2 -->
+        <div class="slider-group">
+            <label class="slider-label">2. ÖKONOMISCHE SITUATION</label>
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Economy" id="s2">
+            <div class="range-labels">
+                <span>Finanziell Frei</span>
+                <span>Im Hamsterrad</span>
+            </div>
+        </div>
+
+        <!-- FRAGE 3 -->
+        <div class="slider-group">
+            <label class="slider-label">3. DIGITALE ÜBERWACHUNG</label>
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Tech" id="s3">
+            <div class="range-labels">
+                <span>Egal / Komfortabel</span>
+                <span>Bedrohlich</span>
+            </div>
+        </div>
+
+        <!-- FRAGE 4 -->
+        <div class="slider-group">
+            <label class="slider-label">4. BEREITSCHAFT ZUM WANDEL</label>
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Action" id="s4">
+            <div class="range-labels">
+                <span>Beobachter</span>
+                <span>Konstrukteur</span>
+            </div>
+        </div>
+
+        <!-- BUTTON ZUM BERECHNEN -->
+        <div id="calc-step">
+            <button type="button" class="calc-btn" onclick="calculateResult()">ANALYSE STARTEN</button>
+        </div>
+
+        <!-- ERGEBNIS BEREICH (Erscheint erst nach Klick) -->
+        <div id="result-area">
+            <p class="result-title">DEIN STATUS:</p>
+            <div class="result-type" id="result-type-text">BERECHNE...</div>
+            <p class="result-desc" id="result-desc-text">...</p>
+            
+            <hr style="border-color: #333; margin: 20px 0;">
+            
+            <p style="color: var(--accent-orange); font-weight: bold;">SICHERE DIR DAS PROTOKOLL</p>
+            <p style="font-size: 0.9rem;">Trage dich ein, um das Ergebnis und die strategische Empfehlung für deinen Typ zu speichern und Updates zum Projekt N.E.X.U.S. zu erhalten.</p>
+            
+            <!-- VERSTECKTE FELDER FÜR DAS ERGEBNIS IN DER EMAIL -->
+            <input type="hidden" name="Ergebnis_Typ" id="hidden-type">
+            <input type="hidden" name="Gesamt_Score" id="hidden-score">
+
+            <input type="text" name="Name" placeholder="Dein Name / Codename" class="email-input" required>
+            <input type="email" name="Email" placeholder="Deine E-Mail Adresse" class="email-input" required>
+            
+            <button type="submit" class="submit-btn">ERGEBNIS SENDEN & BEITRETEN</button>
+        </div>
+
+    </form>
+
+    <script>
+        function calculateResult() {
+            // Werte holen
+            let v1 = parseInt(document.getElementById('s1').value);
+            let v2 = parseInt(document.getElementById('s2').value);
+            let v3 = parseInt(document.getElementById('s3').value);
+            let v4 = parseInt(document.getElementById('s4').value);
+
+            // Durchschnitt berechnen
+            let score = (v1 + v2 + v3 + v4) / 4;
+            
+            let type = "";
+            let desc = "";
+
+            // Logik
+            if (score < 40) {
+                type = "SYSTEM-INTEGRIERT";
+                desc = "Du fühlst dich im aktuellen System noch relativ wohl. Aber du spürst, dass etwas nicht stimmt, sonst wärst du nicht hier. N.E.X.U.S. ist deine Versicherung, falls das System kippt.";
+            } else if (score < 75) {
+                type = "DER ERWACHENDE";
+                desc = "Du hast das Signal erkannt. Du durchschaust die Illusionen der Politik und Wirtschaft. Dir fehlen nur noch die Werkzeuge, um dich unabhängig zu machen.";
+            } else {
+                type = "ARCHITEKT";
+                desc = "Du bist bereit. Deine Werte decken sich zu 100% mit N.E.X.U.S. Du bist kein Zuschauer mehr, du bist ein potentieller Knotenpunkt für das neue Netz.";
+            }
+
+            // UI Update
+            document.getElementById('result-type-text').innerText = type;
+            document.getElementById('result-desc-text').innerText = desc;
+            
+            // Versteckte Felder füllen (für die Email an dich)
+            document.getElementById('hidden-type').value = type;
+            document.getElementById('hidden-score').value = score + "% System-Kritik";
+
+            // Anzeigen wechseln
+            document.getElementById('calc-step').style.display = 'none';
+            document.getElementById('result-area').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
