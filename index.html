@@ -59,6 +59,34 @@
                         url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png');
             background-size: cover; background-position: center; padding: 20px;
         }
+        
+        /* MARKETING BANNER (NEU) */
+        .marketing-banner {
+            display: inline-block;
+            color: var(--accent-orange);
+            border: 1px solid var(--accent-orange);
+            padding: 8px 20px;
+            margin-bottom: 25px; /* Abstand zum Titel */
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: rgba(0,0,0,0.8);
+            animation: text-flash 2s infinite alternate;
+            text-decoration: none;
+        }
+        .marketing-banner:hover {
+            background: var(--accent-orange);
+            color: #000;
+            box-shadow: 0 0 20px var(--accent-orange);
+            animation: none;
+        }
+
+        @keyframes text-flash {
+            0% { border-color: var(--accent-orange); color: var(--accent-orange); box-shadow: 0 0 5px var(--accent-orange); }
+            100% { border-color: #fff; color: #fff; box-shadow: 0 0 15px var(--accent-orange); }
+        }
+
         .hero h1 {
             font-size: 3.5rem; text-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
             margin-bottom: 20px; animation: flicker 4s infinite alternate;
@@ -230,6 +258,12 @@
 
     <!-- HERO -->
     <div class="hero">
+        
+        <!-- NEUER HÖRBUCH BANNER -->
+        <a href="https://youtu.be/fRYNU-r-WQ4" target="_blank" class="marketing-banner">
+            🔴 JETZT KOSTENLOS: HÖRBUCH BAND 1 DER TRILOGIE HÖREN
+        </a>
+
         <h1>PROJECT N.E.X.U.S.</h1>
         <div class="subline">
             Überlassen wir die Zukunft den 5 % –<br>
