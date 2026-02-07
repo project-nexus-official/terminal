@@ -60,13 +60,13 @@
             background-size: cover; background-position: center; padding: 20px;
         }
         
-        /* MARKETING BANNER (NEU) */
+        /* MARKETING BANNER */
         .marketing-banner {
             display: inline-block;
             color: var(--accent-orange);
             border: 1px solid var(--accent-orange);
             padding: 8px 20px;
-            margin-bottom: 25px; /* Abstand zum Titel */
+            margin-bottom: 25px;
             font-size: 1.1rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -115,28 +115,54 @@
         .intro-container { max-width: 800px; margin: 0 auto; }
         .intro-headline { color: var(--accent-orange); font-size: 1.8rem; margin-bottom: 20px; }
 
-        /* PULS BUTTON STYLES */
+        /* INTRO BUTTONS CONTAINER (NEU) */
+        .intro-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* PULS BUTTON ORANGE (Analyse) */
         .pulse-button {
             display: inline-block;
             background: transparent;
             color: var(--accent-orange);
             border: 2px solid var(--accent-orange);
             padding: 15px 30px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             text-transform: uppercase;
-            margin-top: 30px;
             cursor: pointer;
             text-decoration: none;
             box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7);
             animation: pulse-orange 2s infinite;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         .pulse-button:hover { background: var(--accent-orange); color: #000; animation: none; }
+
+        /* GHOST BUTTON CYAN (Zusammenfassung) */
+        .ghost-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .ghost-button:hover { background: var(--accent-cyan); color: #000; box-shadow: 0 0 20px var(--accent-cyan); }
+
         @keyframes pulse-orange {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 157, 0, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 157, 0, 0); }
+            0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 157, 0, 0); }
+            100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 157, 0, 0); }
         }
 
         .video-intro { padding: 40px 20px; background: #000; text-align: center; border-bottom: 1px solid #222; }
@@ -193,6 +219,7 @@
             .visual-col { order: -1; margin-bottom: 30px; } .book-cover { width: 110px; }
             .btn-choice { width: 100%; margin-bottom: 10px; } .section { padding: 40px 15px; }
             header { padding: 0 15px; } .logo-text { font-size: 0.9rem; } .logo-img { height: 35px; }
+            .intro-buttons { flex-direction: column; align-items: center; } /* Buttons untereinander auf Handy */
         }
 
         /* --- CHATBOT CSS --- */
@@ -259,7 +286,7 @@
     <!-- HERO -->
     <div class="hero">
         
-        <!-- NEUER HÖRBUCH BANNER -->
+        <!-- HÖRBUCH BANNER -->
         <a href="https://youtu.be/fRYNU-r-WQ4" target="_blank" class="marketing-banner">
             🔴 JETZT NEU: HÖRBUCH BAND 1 DER TRILOGIE HÖREN
         </a>
@@ -287,8 +314,14 @@
                 Ich bin Josh Richman, der Nexus Navigator. Dieser Plan ist für alle, die spüren, dass der Status Quo des bestehenden Gesellschaftssystem nicht das Ende der Geschichte ist. Ich habe diese Lösungen nicht erfunden – ich habe sie nur zu einem System verbunden. Aber zum Leben erwecken können wir es nur gemeinsam.
             </p>
             
-            <!-- BUTTON SYSTEM-ANALYSE -->
-            <div style="text-align:center;">
+            <!-- BUTTONS CONTAINER (NEU) -->
+            <div class="intro-buttons">
+                <!-- ZUSAMMENFASSUNG -->
+                <a href="vision.html" class="ghost-button">
+                    ⚡ N.E.X.U.S. VISION (3 MIN)
+                </a>
+
+                <!-- SYSTEM-ANALYSE -->
                 <a href="analyse.html" class="pulse-button">
                     ⚠️ STARTE DEINE SYSTEM-ANALYSE
                 </a>
