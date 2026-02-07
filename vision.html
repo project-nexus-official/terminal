@@ -41,8 +41,7 @@
         .container { max-width: 800px; margin: 0 auto; padding: 20px 20px 100px 20px; }
 
         h1 { font-size: 2.5rem; text-align: center; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 10px; text-shadow: 0 0 15px rgba(0, 243, 255, 0.4); }
-        h2 { color: var(--accent-orange); text-transform: uppercase; border-left: 4px solid var(--accent-orange); padding-left: 15px; margin-top: 50px;}
-        h3 { color: #fff; margin-top: 30px; }
+        h2 { color: var(--accent-orange); text-transform: uppercase; border-left: 4px solid var(--accent-orange); padding-left: 15px; margin-top: 60px; margin-bottom: 20px;}
         
         .lead { font-size: 1.2rem; color: #fff; text-align: center; margin-bottom: 40px; font-style: italic; }
 
@@ -50,7 +49,7 @@
         .box { background: #111; padding: 25px; border: 1px solid #333; margin-bottom: 20px; border-radius: 4px; }
         .box strong { color: var(--accent-cyan); }
 
-        /* VERGLEICHS-TABELLE (PDF Seite 2) */
+        /* VERGLEICHS-TABELLE */
         .comparison { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95rem; }
         .comparison th { text-align: left; padding: 10px; border-bottom: 2px solid #444; color: #888; text-transform: uppercase; font-size: 0.8rem; }
         .comparison td { padding: 15px 10px; border-bottom: 1px solid #222; vertical-align: top; }
@@ -59,8 +58,9 @@
 
         /* 5 SÄULEN LISTE */
         .pillar-list { list-style: none; padding: 0; }
-        .pillar-list li { margin-bottom: 20px; padding-left: 25px; position: relative; }
+        .pillar-list li { margin-bottom: 25px; padding-left: 25px; position: relative; }
         .pillar-list li::before { content: "►"; color: var(--accent-orange); position: absolute; left: 0; }
+        .pillar-title { color: #fff; font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 5px; text-decoration: underline; text-decoration-color: var(--accent-cyan);}
 
         /* ROADMAP (Timeline) */
         .timeline-item { 
@@ -105,14 +105,14 @@
         <p class="lead">"Wir reparieren das System nicht. Wir ersetzen es."</p>
 
         <!-- INTRO -->
-        <div class="box">
-            <p><strong>Was wäre, wenn...</strong></p>
+        <div class="box" style="border-left: 4px solid var(--accent-cyan);">
+            <p style="margin-bottom:10px; font-size: 1.2rem; color: #fff;"><strong>Was wäre, wenn...</strong></p>
             <ul>
+                <li>...wir nicht das kaputte System reparieren, sondern es komplett neu schreiben?</li>
                 <li>...Liebe keine Moral wäre, sondern eine physikalische Systemgröße?</li>
-                <li>...Technologie uns befreit statt überwacht?</li>
                 <li>...eine Baugenehmigung 1 Tag statt 6 Monate dauert – und kostenlos ist?</li>
             </ul>
-            <p style="margin-top:20px;">NEXUS ist kein Buchprojekt. Es ist ein alternatives Zivilisations-Betriebssystem – psychologisch, narrativ und technisch implementiert.</p>
+            <p style="margin-top:20px; color: #888;">NEXUS ist kein Buchprojekt. Es ist ein alternatives Zivilisations-Betriebssystem – psychologisch, narrativ und technisch implementiert.</p>
         </div>
 
         <!-- VERGLEICH -->
@@ -148,42 +148,43 @@
         <h2>2. Die 5 Säulen des Systems</h2>
         <ul class="pillar-list">
             <li>
-                <strong>Liebe als Systemparameter:</strong><br>
-                Kein moralischer Appell, sondern ein Stabilitätsfaktor. Ein Anti-Entropie-Mechanismus.
+                <span class="pillar-title">1. Liebe als Systemparameter</span>
+                Kein moralischer Appell, sondern ein Stabilitätsfaktor. Ein Anti-Entropie-Mechanismus, physikalisch betrachtet wie Energie oder Reibung.
             </li>
             <li>
-                <strong>Ressourcen-basierte Ökonomie:</strong><br>
-                Keine künstliche Geldknappheit. Wer Wert schafft (Brot backen, Coden, Pflegen), erhält Credits. Blockchain macht es transparent.
+                <span class="pillar-title">2. Ressourcen-basierte Ökonomie</span>
+                Keine künstliche Geldknappheit. Wer Wert schafft (Brot backen, Coden, Pflegen), erhält Credits. Die Blockchain macht es transparent und fair.
             </li>
             <li>
-                <strong>Parallele Konstruktion:</strong><br>
-                Wir bekämpfen das alte System nicht. Wir bauen ein besseres daneben, bis das alte irrelevant wird (Buckminster Fuller Prinzip).
+                <span class="pillar-title">3. Parallele Konstruktion statt Revolution</span>
+                Wir bekämpfen das alte System nicht. Wir bauen ein besseres daneben, entziehen dem alten die Bedeutung, bis es irrelevant wird.
             </li>
             <li>
-                <strong>Technologie als Diener:</strong><br>
-                KI automatisiert die Bürokratie, aber der Mensch behält die Kontrolle. Recht auf Offline garantiert.
+                <span class="pillar-title">4. Technologie im Dienst des Menschen</span>
+                KI automatisiert die Bürokratie (Bauplan-Prüfung in 47 Sekunden!), aber der Mensch behält immer die Kontrolle.
             </li>
             <li>
-                <strong>Datensouveränität (Mesh):</strong><br>
-                Kein CEO, kein König. Dezentrale Netzwerke, die den Nutzern gehören.
+                <span class="pillar-title">5. Datensouveränität & Dezentralisierung</span>
+                Deine Daten gehören DIR. Kein CEO, kein König. Dezentrale Mesh-Netzwerke, die nicht abgeschaltet werden können.
             </li>
         </ul>
 
         <!-- DIE METHODE -->
         <h2>3. Warum Romane? (Der Trojaner)</h2>
-        <p>Der Blueprint (Handbuch) erklärt das <strong>WAS</strong>.</p>
-        <p>Die Trilogie erklärt das <strong>WARUM</strong> und <strong>WIE</strong> es sich anfühlt.</p>
-        <div class="box" style="border-left: 2px solid var(--accent-cyan);">
-            <p><strong>Band 1: Stunde Null</strong> – Die Dekonstruktion der Illusion.</p>
-            <p><strong>Band 2: Das Fundament</strong> – Der harte Aufbau im Schlamm (Realismus).</p>
-            <p><strong>Band 3: Die Metamorphose</strong> – Der Sieg durch Emergenz.</p>
+        <p>Die N.E.X.U.S.-Trilogie ist keine begleitende Fiktion. Sie ist der eigentliche <strong>Trojaner</strong>.</p>
+        <p>Der Blueprint (Handbuch) erklärt das <strong>WAS</strong>. Die Trilogie erklärt das <strong>WARUM</strong> und macht die Veränderung psychologisch überlebensfähig.</p>
+        
+        <div class="box">
+            <p><strong>Band 1: Stunde Null</strong> – Dekonstruktion. Die Illusion der Neutralität fällt.</p>
+            <p><strong>Band 2: Das Fundament</strong> – Die Feuerprobe. Der harte Aufbau im Schlamm.</p>
+            <p><strong>Band 3: Die Metamorphose</strong> – Emergenz. Vom Überleben zum Sinn.</p>
         </div>
 
         <!-- ROADMAP -->
         <h2>4. Der Weg (Roadmap)</h2>
         <div class="timeline-item">
             <span class="phase-title">Phase 1: Genesis (Jahr 1-2)</span>
-            Die ersten 100 Pioniere entwickeln das Kern-Protokoll. Alpha-Test. Die DNA wird geschrieben.
+            Die ersten 100 Pioniere entwickeln das Kern-Protokoll. Alpha-Test mit 10.000 Nutzern. Die DNA wird geschrieben.
         </div>
         <div class="timeline-item">
             <span class="phase-title">Phase 2: Expansion (Jahr 2-5)</span>
@@ -191,21 +192,21 @@
         </div>
         <div class="timeline-item">
             <span class="phase-title">Phase 3: Manifestation (Jahr 5-10)</span>
-            Physische Infrastruktur: FabLabs, Health Hubs, regenerative Farmen.
+            Physische Infrastruktur: FabLabs, Health Hubs, regenerative Farmen. Bei 3-5% der Bevölkerung wird der Wandel unaufhaltsam.
         </div>
         <div class="timeline-item">
             <span class="phase-title">Phase 4: Souveränität (Jahr 10+)</span>
-            Globales Mesh-Netzwerk. Föderation freier, vernetzter Zellen.
+            Diplomatische Anerkennung. Globales Mesh-Netzwerk. Eine Föderation freier, vernetzter Zellen.
         </div>
 
         <!-- CTA -->
         <div class="cta-area">
-            <h3>Bist du bereit für die Tiefe?</h3>
-            <p>Das war die Übersicht. Jetzt beginnt die Arbeit.</p>
+            <h3>Wir warten nicht auf die Zukunft. Wir schreiben sie.</h3>
+            <p style="color:#888; margin-bottom:20px;">Die Geschichte wird von denen geschrieben, die auftauchen.</p>
             
             <a href="index.html#story" class="big-btn">ZUR TRILOGIE (AMAZON)</a>
             <br><br>
-            <a href="index.html#system" style="color: #888; text-decoration: underline;">Zum Handbuch (PDF)</a>
+            <a href="index.html#system" style="color: var(--accent-cyan); text-decoration: underline;">Zum Handbuch & Whitepaper</a>
         </div>
 
     </div>
