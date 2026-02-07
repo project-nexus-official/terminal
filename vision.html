@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.E.X.U.S. | Die Vision (Crashkurs)</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-main: #e0e0e0;
+            --accent-cyan: #00f3ff;
+            --accent-orange: #ff9d00;
+            --panel-bg: #0a0a0a;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--bg-color); color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6; font-size: 18px;
+            padding-top: 80px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+            background: rgba(0,0,0,0.95); border-bottom: 1px solid #333;
+            z-index: 1000; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 20px; box-sizing: border-box;
+        }
+        .logo-text { font-weight: bold; color: var(--accent-cyan); letter-spacing: 1px; font-size: 1.2rem; }
+        .back-btn {
+            border: 1px solid var(--accent-orange); color: var(--accent-orange);
+            padding: 8px 15px; text-decoration: none; font-weight: bold; font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .back-btn:hover { background: var(--accent-orange); color: #000; }
+
+        /* CONTENT CONTAINER */
+        .container { max-width: 800px; margin: 0 auto; padding: 20px 20px 100px 20px; }
+
+        h1 { font-size: 2.5rem; text-align: center; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 10px; text-shadow: 0 0 15px rgba(0, 243, 255, 0.4); }
+        h2 { color: var(--accent-orange); text-transform: uppercase; border-left: 4px solid var(--accent-orange); padding-left: 15px; margin-top: 50px;}
+        h3 { color: #fff; margin-top: 30px; }
+        
+        .lead { font-size: 1.2rem; color: #fff; text-align: center; margin-bottom: 40px; font-style: italic; }
+
+        /* BOXEN */
+        .box { background: #111; padding: 25px; border: 1px solid #333; margin-bottom: 20px; border-radius: 4px; }
+        .box strong { color: var(--accent-cyan); }
+
+        /* VERGLEICHS-TABELLE (PDF Seite 2) */
+        .comparison { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95rem; }
+        .comparison th { text-align: left; padding: 10px; border-bottom: 2px solid #444; color: #888; text-transform: uppercase; font-size: 0.8rem; }
+        .comparison td { padding: 15px 10px; border-bottom: 1px solid #222; vertical-align: top; }
+        .col-nexus { color: var(--accent-cyan); font-weight: bold; }
+        .col-today { color: #999; }
+
+        /* 5 SÄULEN LISTE */
+        .pillar-list { list-style: none; padding: 0; }
+        .pillar-list li { margin-bottom: 20px; padding-left: 25px; position: relative; }
+        .pillar-list li::before { content: "►"; color: var(--accent-orange); position: absolute; left: 0; }
+
+        /* ROADMAP (Timeline) */
+        .timeline-item { 
+            border-left: 2px solid var(--accent-cyan); 
+            padding-left: 25px; 
+            margin-bottom: 30px; 
+            position: relative; 
+        }
+        .timeline-item::before { 
+            content: ''; width: 12px; height: 12px; background: #000; border: 2px solid var(--accent-cyan);
+            position: absolute; left: -9px; top: 5px; border-radius: 50%;
+        }
+        .phase-title { color: var(--accent-cyan); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 5px; }
+
+        /* FOOTER CTA */
+        .cta-area { text-align: center; margin-top: 60px; padding: 40px; background: #111; border: 1px solid var(--accent-orange); }
+        .big-btn {
+            background: var(--accent-orange); color: #000; padding: 15px 30px;
+            font-size: 1.1rem; font-weight: bold; text-decoration: none; display: inline-block;
+            text-transform: uppercase; margin-top: 20px; box-shadow: 0 0 20px rgba(255, 157, 0, 0.3);
+        }
+        .big-btn:hover { background: #fff; box-shadow: 0 0 40px rgba(255, 157, 0, 0.6); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .comparison td { display: block; padding: 5px 10px; }
+            .comparison td:first-child { color: #666; font-size: 0.8rem; padding-top: 15px; }
+            .comparison th { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">N.E.X.U.S. VISION</div>
+        <a href="index.html" class="back-btn">X Schliessen</a>
+    </header>
+
+    <div class="container">
+        
+        <h1>Das Betriebssystem<br>für eine freie Welt</h1>
+        <p class="lead">"Wir reparieren das System nicht. Wir ersetzen es."</p>
+
+        <!-- INTRO -->
+        <div class="box">
+            <p><strong>Was wäre, wenn...</strong></p>
+            <ul>
+                <li>...Liebe keine Moral wäre, sondern eine physikalische Systemgröße?</li>
+                <li>...Technologie uns befreit statt überwacht?</li>
+                <li>...eine Baugenehmigung 1 Tag statt 6 Monate dauert – und kostenlos ist?</li>
+            </ul>
+            <p style="margin-top:20px;">NEXUS ist kein Buchprojekt. Es ist ein alternatives Zivilisations-Betriebssystem – psychologisch, narrativ und technisch implementiert.</p>
+        </div>
+
+        <!-- VERGLEICH -->
+        <h2>1. Der Unterschied (Realitäts-Check)</h2>
+        <table class="comparison">
+            <thead>
+                <tr>
+                    <th>Heute (Altes System)</th>
+                    <th>In N.E.X.U.S.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-today">Baugenehmigung: 6 Monate, 5.000€</td>
+                    <td class="col-nexus">Baugenehmigung: 1 Tag, 0€</td>
+                </tr>
+                <tr>
+                    <td class="col-today">Daten = Profit für Konzerne</td>
+                    <td class="col-nexus">Daten gehören DIR</td>
+                </tr>
+                <tr>
+                    <td class="col-today">Arbeit für Geld zum Überleben</td>
+                    <td class="col-nexus">Beitrag zur Gemeinschaft = Credits</td>
+                </tr>
+                <tr>
+                    <td class="col-today">Wahlen alle 4 Jahre</td>
+                    <td class="col-nexus">Liquid Democracy: Täglich mitentscheiden</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 5 SÄULEN -->
+        <h2>2. Die 5 Säulen des Systems</h2>
+        <ul class="pillar-list">
+            <li>
+                <strong>Liebe als Systemparameter:</strong><br>
+                Kein moralischer Appell, sondern ein Stabilitätsfaktor. Ein Anti-Entropie-Mechanismus.
+            </li>
+            <li>
+                <strong>Ressourcen-basierte Ökonomie:</strong><br>
+                Keine künstliche Geldknappheit. Wer Wert schafft (Brot backen, Coden, Pflegen), erhält Credits. Blockchain macht es transparent.
+            </li>
+            <li>
+                <strong>Parallele Konstruktion:</strong><br>
+                Wir bekämpfen das alte System nicht. Wir bauen ein besseres daneben, bis das alte irrelevant wird (Buckminster Fuller Prinzip).
+            </li>
+            <li>
+                <strong>Technologie als Diener:</strong><br>
+                KI automatisiert die Bürokratie, aber der Mensch behält die Kontrolle. Recht auf Offline garantiert.
+            </li>
+            <li>
+                <strong>Datensouveränität (Mesh):</strong><br>
+                Kein CEO, kein König. Dezentrale Netzwerke, die den Nutzern gehören.
+            </li>
+        </ul>
+
+        <!-- DIE METHODE -->
+        <h2>3. Warum Romane? (Der Trojaner)</h2>
+        <p>Der Blueprint (Handbuch) erklärt das <strong>WAS</strong>.</p>
+        <p>Die Trilogie erklärt das <strong>WARUM</strong> und <strong>WIE</strong> es sich anfühlt.</p>
+        <div class="box" style="border-left: 2px solid var(--accent-cyan);">
+            <p><strong>Band 1: Stunde Null</strong> – Die Dekonstruktion der Illusion.</p>
+            <p><strong>Band 2: Das Fundament</strong> – Der harte Aufbau im Schlamm (Realismus).</p>
+            <p><strong>Band 3: Die Metamorphose</strong> – Der Sieg durch Emergenz.</p>
+        </div>
+
+        <!-- ROADMAP -->
+        <h2>4. Der Weg (Roadmap)</h2>
+        <div class="timeline-item">
+            <span class="phase-title">Phase 1: Genesis (Jahr 1-2)</span>
+            Die ersten 100 Pioniere entwickeln das Kern-Protokoll. Alpha-Test. Die DNA wird geschrieben.
+        </div>
+        <div class="timeline-item">
+            <span class="phase-title">Phase 2: Expansion (Jahr 2-5)</span>
+            Leuchtturm-Strategie in Fokus-Städten. Wenn 20% eines Viertels NEXUS nutzen, entsteht die Parallel-Ökonomie.
+        </div>
+        <div class="timeline-item">
+            <span class="phase-title">Phase 3: Manifestation (Jahr 5-10)</span>
+            Physische Infrastruktur: FabLabs, Health Hubs, regenerative Farmen.
+        </div>
+        <div class="timeline-item">
+            <span class="phase-title">Phase 4: Souveränität (Jahr 10+)</span>
+            Globales Mesh-Netzwerk. Föderation freier, vernetzter Zellen.
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-area">
+            <h3>Bist du bereit für die Tiefe?</h3>
+            <p>Das war die Übersicht. Jetzt beginnt die Arbeit.</p>
+            
+            <a href="index.html#story" class="big-btn">ZUR TRILOGIE (AMAZON)</a>
+            <br><br>
+            <a href="index.html#system" style="color: #888; text-decoration: underline;">Zum Handbuch (PDF)</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
