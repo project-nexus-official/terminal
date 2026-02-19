@@ -1,0 +1,464 @@
+# NEXUS OneApp: Technischer Implementierungsplan
+## Vom 400-Seiten-Bauplan zur funktionierenden Software
+
+---
+
+## 1. FEATURE-INVENTAR: Was die OneApp laut Bauplan können muss
+
+Aus dem Bauplan extrahiert, nach Priorität geordnet:
+
+### Kern-Infrastruktur (muss von Tag 1 existieren)
+- **Self-Sovereign Identity (SSI):** Seed Phrase, DID, kryptografische Schlüsselpaare, Social Recovery
+- **AETHER Wallet:** VITA Ꝟ senden/empfangen, Kontostand, Transaktionshistorie
+- **Mesh-Chat:** Ende-zu-Ende-verschlüsselt, funktioniert ohne Internet (Bluetooth/WLAN-Direct)
+- **Offline-First:** Kernfunktionen ohne Internetverbindung nutzbar
+
+### Phase 1a – Killer-App #1: Mesh-Chat (Monat 1-3)
+- Zensurfreie Kommunikation
+- Mesh-Netzwerk (Device-to-Device)
+- Gruppenkanäle (lokale Zelle)
+- „Schwarzes Brett" (dezentrale Pinnwand)
+- Low-Bandwidth-Modus (Katastrophen-Modus)
+
+### Phase 1b – Killer-App #2: Lokaler Marktplatz (Monat 4-12)
+- Angebote erstellen/suchen (nur lokale Zelle)
+- Bezahlung in VITA Ꝟ (und Euro in Übergangsphase)
+- AURA ₳-basierte Vertrauensanzeige
+- QR-Code-Zahlung
+- Proof of Useful Work: Selbst-Deklaration + Peer-Bestätigung
+
+### Phase 2a – Killer-App #3: Care-System (Jahr 2)
+- Pflege-Matching (wer braucht Hilfe ↔ wer bietet an)
+- Automatische VITA-Auszahlung via Smart Contract
+- Care-VITA-Tracking
+- Skill-Multiplikator-Berechnung
+
+### Phase 2b – Killer-App #4: Wohn-Kooperativen (Jahr 3)
+- Fluid Living: Wohnungstausch-Matching
+- AURA-basierte Zugangssteuerung (statt Kaution)
+- Gemeinschaftsprojekt-Verwaltung
+
+### Governance-Modul
+- Liquid Democracy: Direkt abstimmen oder Stimme delegieren
+- Quadratic Voting
+- Delegation Decay (automatischer Stimmverfall)
+- Proposals erstellen und diskutieren
+- KI-gestützter Konsens-Finder
+
+### Sphären-Module (5 Basis-Sphären)
+- **Asklepios (Gesundheit):** KI-Schutzengel, Gesundheitsdaten im POD, Federated Learning
+- **Athena (Bildung):** KI-Tutor, Skill-Trees, Mentor-Matchmaking, Open Library
+- **Demeter (Ernährung):** Food-Coop-Koordination, Überschuss-Signalisierung, Lieferketten-Transparenz
+- **Hestia (Wohnen):** Fluid Living, Hüter-System, Wohnraum-Matching
+- **Agora (Politik):** Liquid Democracy (s.o.), Diskussionsforen, KI-Moderation
+
+### Sicherheits-Features
+- Dead-Man-Switch (24h-Check-in)
+- Automatische Social-Media-Kampagne bei Verhaftung
+- Rechtsanwalts-Netzwerk-Trigger
+- Privacy Proxy (Zero-Knowledge-Proofs)
+- Post-Quanten-Kryptografie
+- Emergency/Survival-Modus
+
+### Gamification
+- Life-Quests (freiwillige Challenges)
+- Skill-Trees (visuelle Fähigkeitendarstellung)
+- Badges und Achievements
+
+---
+
+## 2. ARCHITEKTUR: Wie ich es bauen würde
+
+### 2.1 Grundsatzentscheidungen
+
+Der Bauplan beschreibt bewusst ein **Protokoll, keine Plattform** (Kap. 4.8: „Standard statt Plattform"). Das ist die richtige Philosophie. Konkret heißt das:
+
+**Schicht 1: Das NEXUS-Protokoll (der Standard)**
+- Offene Spezifikation für Identität, Transaktionen, Governance, Messaging
+- Jeder kann einen Client bauen, der dieses Protokoll spricht
+- Vergleichbar mit E-Mail (SMTP/IMAP) oder dem Web (HTTP/HTML)
+
+**Schicht 2: Die Referenz-Implementierung (die OneApp)**
+- Der „offizielle" Client, den das Kern-Team baut
+- Zeigt, wie das Protokoll funktioniert
+- Wird Open Source veröffentlicht
+
+**Schicht 3: Das Ökosystem (Community-Apps)**
+- Dritte bauen eigene Clients, spezialisierte Tools, Sphären-Plugins
+- Alle sprechen dasselbe Protokoll
+
+### 2.2 Tech-Stack-Empfehlung
+
+Der Bauplan nennt explizit: DIDs, Solid/PODs, Verifiable Credentials, IPFS, LoRa, ZKPs, Post-Quanten-Krypto, Federated Learning, lokale LLMs. Er lässt aber die konkrete Blockchain-Wahl offen. Hier meine Empfehlung:
+
+#### Identität & Daten
+| Komponente | Technologie | Begründung |
+|-----------|------------|-----------|
+| Dezentrale ID | **did:key** + **did:web** (W3C Standard) | Einfachster Einstieg, kein Blockchain-Zwang für IDs |
+| Datensouveränität | **Solid PODs** (Tim Berners-Lee) | Im Bauplan explizit genannt. Trennt Daten von Apps |
+| Verifiable Credentials | **W3C VC Data Model 2.0** | Standard für digitale Nachweise |
+| Schlüsselverwaltung | **BIP-39** (12-Wort Seed Phrase) | Bewährt, im Bauplan beschrieben |
+| Social Recovery | **Shamir's Secret Sharing** | Verteilt Seed-Backup auf N Vertrauenspersonen |
+
+#### Ledger & Smart Contracts
+| Komponente | Technologie | Begründung |
+|-----------|------------|-----------|
+| Blockchain | **Substrate** (Polkadot SDK) | Modular, eigene Chain möglich, upgradeable ohne Hardfork, Rust-basiert |
+| Smart Contracts | **ink!** (Substrate-native) oder **CosmWasm** | WASM-basiert, sicher, formal verifizierbar |
+| Alternative | **Cosmos SDK** | Wenn Inter-Chain-Kommunikation Priorität ist |
+| Konsens | **BABE/GRANDPA** (Substrate-Default) oder **Tendermint** | Proof-of-Authority anfangs, später Nominated PoS |
+
+**Warum Substrate und nicht Ethereum/Solana?**
+- Eigene souveräne Chain (kein Abhängigkeit von Ethereum-Gas-Preisen)
+- Forkless Upgrades: Protokoll-Updates ohne Hardfork (im Bauplan gefordert: „Updates ohne Hardfork möglich")
+- Modulare Runtime: Demurrage, AURA-Decay, Quadratic Voting als native Pallets
+- Rust-basiert: Speichersicher, performant, passend für Embedded/Edge
+
+#### Kommunikation & Mesh
+| Komponente | Technologie | Begründung |
+|-----------|------------|-----------|
+| Mesh-Chat Protokoll | **Matrix** (Synapse/Dendrite) | Föderiert, E2E-verschlüsselt (Olm/Megolm), offener Standard |
+| Mesh-Transport | **Bluetooth LE Mesh** + **WLAN-Direct** | Für Device-to-Device ohne Internet |
+| Notfall-Funk | **LoRa/Meshtastic** | Im Bauplan explizit (5€ LoRa-Chips), bewährt |
+| Overlay-Netzwerk | **Yggdrasil** oder **I2P** | Im Bauplan erwähnt für Zensurumgehung |
+| Datei-Speicherung | **IPFS** (Kubo) | Im Bauplan explizit, Content-Addressable Storage |
+
+#### KI & Privacy
+| Komponente | Technologie | Begründung |
+|-----------|------------|-----------|
+| Lokales LLM | **llama.cpp** / **MLX** (Apple) / **ONNX Runtime** | Läuft auf Smartphone, keine Cloud nötig |
+| Modell | **Mistral 7B** oder **Phi-3 Mini** (quantisiert) | Klein genug für Edge, gut genug für Tutoring |
+| Federated Learning | **Flower** (Framework) | Open Source, production-ready |
+| Zero-Knowledge-Proofs | **Circom** + **Groth16** oder **Halo2** | Für Altersnachweis, Berechtigungsprüfung |
+| Post-Quanten-Krypto | **CRYSTALS-Kyber** + **CRYSTALS-Dilithium** | NIST-standardisiert (2024), Gitterbasiert |
+
+#### Frontend / App
+| Komponente | Technologie | Begründung |
+|-----------|------------|-----------|
+| Cross-Platform App | **Flutter** (Dart) oder **React Native** | Eine Codebase → Android + iOS + Desktop |
+| Meine Empfehlung | **Flutter** | Bessere Performance, eigene Render-Engine, gute Crypto-Libraries |
+| Alternative | **Kotlin Multiplatform** | Wenn native Performance auf Android kritisch ist |
+| Offline-First DB | **SQLite** + **CRDTs** (Automerge) | Lokale Datenbank, Conflict-Free Sync |
+| UI-Design | **Material 3** mit Custom Design System | Wiedererkennbar, barrierefrei |
+
+#### Infrastructure
+| Komponente | Technologie | Begründung |
+|-----------|------------|-----------|
+| Home-Node | **Raspberry Pi 4/5** + **NixOS** | Im Bauplan erwähnt, günstig, reproduzierbar |
+| Container | **Podman** (rootless) | Sicherer als Docker für Community-Nodes |
+| Monitoring | **Prometheus** + **Grafana** | Open Source, Standard |
+| CI/CD | **GitHub Actions** oder **Forgejo** (self-hosted) | Forgejo für volle Souveränität |
+
+### 2.3 Systemarchitektur (Übersicht)
+
+```
+┌─────────────────────────────────────────────────────┐
+│                    NUTZER-GERÄT                       │
+│  ┌─────────────┐  ┌──────────┐  ┌────────────────┐  │
+│  │  OneApp UI   │  │ Local AI │  │  Mesh Radio    │  │
+│  │  (Flutter)   │  │ (LLM)   │  │  (BLE/LoRa)    │  │
+│  └──────┬───────┘  └────┬─────┘  └───────┬────────┘  │
+│         │               │                │            │
+│  ┌──────┴───────────────┴────────────────┴─────────┐ │
+│  │              NEXUS SDK / Core Library             │ │
+│  │  ┌────────┐ ┌────────┐ ┌──────┐ ┌────────────┐  │ │
+│  │  │Identity│ │ Wallet │ │ Chat │ │ Governance  │  │ │
+│  │  │ (DID)  │ │(AETHER)│ │(E2EE)│ │(Liq. Demo.)│  │ │
+│  │  └────────┘ └────────┘ └──────┘ └────────────┘  │ │
+│  │  ┌────────┐ ┌────────┐ ┌──────────────────────┐  │ │
+│  │  │  ZKP   │ │ CRDT   │ │   Sphären-Plugin-API │  │ │
+│  │  │ Engine │ │  Sync  │ │  (Asklepios, Athena…) │  │ │
+│  │  └────────┘ └────────┘ └──────────────────────┘  │ │
+│  └──────────────────────┬───────────────────────────┘ │
+│                         │                             │
+│  ┌──────────────────────┴──────────────────────────┐  │
+│  │              Solid POD (Lokaler Datentresor)      │  │
+│  │  Gesundheit │ Bildung │ Finanzen │ Soziales      │  │
+│  └──────────────────────────────────────────────────┘  │
+└──────────────────────────┬──────────────────────────────┘
+                           │
+              ┌────────────┼────────────┐
+              ▼            ▼            ▼
+     ┌────────────┐ ┌───────────┐ ┌──────────┐
+     │ Mesh-Netz  │ │  Internet │ │ LoRa     │
+     │(BLE/WLAN)  │ │ (Yggdrasil│ │(Notfall) │
+     │            │ │  /Tor)    │ │          │
+     └─────┬──────┘ └─────┬─────┘ └────┬─────┘
+           │               │            │
+           └───────┬───────┘            │
+                   ▼                    │
+     ┌──────────────────────────────────┴─────┐
+     │         NEXUS-NETZWERK                  │
+     │  ┌────────────┐  ┌──────────────────┐  │
+     │  │ Substrate  │  │  IPFS-Cluster    │  │
+     │  │ Blockchain │  │  (Dateien)       │  │
+     │  │ (VITA/     │  │                  │  │
+     │  │  TERRA/    │  │  Matrix-Server   │  │
+     │  │  AURA)     │  │  (Chat-Relay)    │  │
+     │  └────────────┘  └──────────────────┘  │
+     │                                        │
+     │  ┌────────────────────────────────┐    │
+     │  │  Home-Nodes (Raspberry Pi)     │    │
+     │  │  = lokale Validator-Knoten     │    │
+     │  │  = IPFS-Pinning               │    │
+     │  │  = Matrix-Homeserver           │    │
+     │  │  = Solid-POD-Host              │    │
+     │  └────────────────────────────────┘    │
+     └────────────────────────────────────────┘
+```
+
+---
+
+## 3. IMPLEMENTIERUNGS-ROADMAP
+
+### Phase 0: Fundament (Monat 1-2) — 3-5 Entwickler
+
+**Ziel:** Die absoluten Grundlagen, auf denen alles aufbaut.
+
+| Woche | Aufgabe | Deliverable |
+|-------|---------|-------------|
+| 1-2 | Projekt-Setup: Monorepo, CI/CD, Coding-Standards | Forgejo-Repo, Flutter-Skeleton, Substrate-Node-Template |
+| 2-3 | **Identity-Modul:** Seed Phrase generieren (BIP-39), DID erstellen, Schlüsselpaar ableiten | Nutzer kann Identität erstellen und wiederherstellen |
+| 3-4 | **Lokale Datenbank:** SQLite + Automerge-CRDTs für Offline-First | Daten überleben App-Neustart, können später synchronisiert werden |
+| 5-6 | **Crypto-Primitives:** Post-Quanten-Signaturen (Dilithium), E2E-Verschlüsselung (X3DH + Double Ratchet) | Jede Nachricht/Transaktion ist quantensicher signiert |
+| 7-8 | **Basis-UI:** Onboarding-Flow (Seed Phrase erstellen, Backup-Warnung, Profilname) | Nutzer durchläuft Sarah's „Tag 1" aus der Pioneer-Journey |
+
+**Ergebnis nach Phase 0:** App startet, Identität existiert, aber sie kann noch nichts „tun".
+
+---
+
+### Phase 1a: Mesh-Chat — Killer-App #1 (Monat 3-5) — 5-7 Entwickler
+
+**Ziel:** WhatsApp-Alternative, die ohne Internet funktioniert.
+
+| Komponente | Beschreibung | Technologie |
+|-----------|-------------|-------------|
+| **Transport-Layer** | Device-to-Device über BLE Mesh + WLAN-Direct. Nachrichten springen von Gerät zu Gerät (Store-and-Forward) | Custom Protocol auf BLE 5.0, eventuell Bridgefy SDK als Beschleuniger |
+| **Chat-Protokoll** | Matrix-kompatibel, E2E-verschlüsselt, föderiert | Vodozemac (Rust Matrix-Crypto), eigener Lightweight-Homeserver |
+| **Gruppenkanäle** | Jede Zelle = ein Kanal. „Schwarzes Brett" als spezieller Channel-Typ (Pinnwand-Modus) | Matrix-Räume mit Custom Room Types |
+| **Katastrophen-Modus** | Auto-Umschaltung bei Internetverlust. Nur Text, keine Bilder. LoRa-Fallback für Notfall-Pings | Automatische Netzwerk-Erkennung, LoRa via Meshtastic-Bibliothek |
+| **UI** | Einfach wie WhatsApp. Chat-Liste, Nachrichten, Gruppen, Schwarzes Brett | Flutter mit Material 3 |
+
+**Kritischer Pfad:** BLE Mesh auf Android UND iOS zum Laufen bringen. Apple ist restriktiver mit Background-BLE. Lösung: CoreBluetooth-Workarounds, eventuell MultipeerConnectivity-Framework auf iOS.
+
+**Ergebnis:** 500 Privacy-bewusste Early Adopters nutzen den Chat. Die App hat einen echten, täglichen Nutzen, auch ohne Ökonomie.
+
+---
+
+### Phase 1b: AETHER-Wallet + Marktplatz — Killer-App #2 (Monat 6-12) — 8-12 Entwickler
+
+**Ziel:** VITA Ꝟ verdienen, ausgeben und auf einem lokalen Marktplatz handeln.
+
+#### Substrate-Blockchain
+
+| Pallet (Modul) | Funktion | Komplexität |
+|----------------|---------|-------------|
+| `pallet-identity` | DID-Registrierung auf-Chain | Mittel |
+| `pallet-vita` | VITA Ꝟ Token mit eingebauter Demurrage (0,5%/Monat auf Idle-Balances) | Hoch — Demurrage muss pro Block berechnet werden (lazy evaluation) |
+| `pallet-terra` | TERRA ₮ Token, nicht-konsumierbar, nur für Governance-genehmigte Projekte | Mittel |
+| `pallet-aura-reputation` | AURA ₳ Score: Akkumulation durch PoUW, Decay bei Inaktivität (2-5%/Mo), nicht-transferierbar, Domain-spezifisch | Hoch — komplexe Decay-Logik, Skill-Domains |
+| `pallet-pouw` | Proof of Useful Work: Selbst-Deklaration + Peer-Bestätigung → VITA-Schöpfung | Hoch — Verifikationslogik, Anti-Fraud |
+| `pallet-gaia-fonds` | Automatischer 10%-Abzug bei jeder VITA-Schöpfung → Gaia-Pool | Niedrig |
+| `pallet-demurrage-engine` | Globaler Tick: Berechnet Demurrage-Verluste, verteilt Rückflüsse | Hoch |
+
+**Demurrage-Implementierung (technisch anspruchsvollster Teil):**
+```
+Statt jeden Block alle Kontostände zu aktualisieren (O(n) pro Block), nutzen wir
+Lazy Evaluation:
+
+- Jedes Konto speichert: {balance, last_updated_block}
+- Bei Zugriff (Senden, Empfangen, Abfrage):
+  blocks_elapsed = current_block - last_updated_block
+  decay_factor = (1 - 0.005/blocks_per_month) ^ blocks_elapsed
+  actual_balance = stored_balance * decay_factor
+- Erst bei Schreibzugriff wird der neue Wert gespeichert
+
+→ O(1) pro Block statt O(n). Skaliert unbegrenzt.
+```
+
+#### Marktplatz-Modul (App-seitig)
+
+| Feature | Beschreibung |
+|---------|-------------|
+| Angebot erstellen | Foto + Beschreibung + Preis in VITA Ꝟ. Wird via IPFS gespeichert, Index auf Chain |
+| Suche | Nur lokale Zelle (GPS/manuell). Kategorien: Lebensmittel, Handwerk, Dienstleistung, Gebrauchtes |
+| QR-Zahlung | Verkäufer zeigt QR → Käufer scannt → Transaktion signiert → auf Chain bestätigt |
+| AURA-Anzeige | Neben jedem Verkäufer: AURA-Score als Vertrauensindikator |
+| Euro-Bridge | In Übergangsphase: Euro ↔ VITA Wechselkurs (1:1 anfangs) über Genossenschafts-Konto |
+
+**Ergebnis:** 1.500 Nutzer. Menschen kaufen Brot mit VITA Ꝟ. Der Satz „VITA sind echt wertvoll" wird Realität.
+
+---
+
+### Phase 2: Sphären-Framework + Care + Governance (Jahr 2) — 12-20 Entwickler
+
+#### Sphären-Plugin-Architektur
+
+```
+Jede Sphäre ist ein eigenständiges Modul mit:
+- Frontend: Flutter-Package (Widget-Library)
+- Backend: Substrate-Pallet oder Off-Chain-Logik
+- Daten: Eigener Namespace im Solid POD
+- Berechtigungen: Nutzer entscheidet pro Sphäre, welche Daten geteilt werden
+
+Plugin-Manifest (YAML):
+  name: "asklepios"
+  version: "0.1.0"
+  permissions:
+    - "pod:health:read"
+    - "pod:health:write"
+    - "chain:vita:transfer"
+  dependencies:
+    - "nexus-core >= 1.0"
+```
+
+#### Governance-Modul
+
+| Feature | Implementierung |
+|---------|----------------|
+| Proposals | Jeder kann einen Vorschlag erstellen (on-Chain mit IPFS-Beschreibung) |
+| Liquid Democracy | Stimmen-Delegation: `delegate(from, to, domain, weight)`. Jederzeit widerrufbar |
+| Quadratic Voting | Kosten: 1 Stimme = 1 Punkt, 2 Stimmen = 4 Punkte, 3 = 9 etc. Budget pro Zyklus |
+| Delegation Decay | Delegierte Stimmkraft sinkt um 10%/Monat → zwingt zur aktiven Bestätigung |
+| KI-Konsens-Finder | Lokales LLM analysiert Diskussion, schlägt Kompromiss vor (Advisory, kein Stimmrecht) |
+
+#### Care-System
+
+| Feature | Implementierung |
+|---------|----------------|
+| Pflege-Matching | Algorithmus: Bedarf (Pflegebedürftiger) ↔ Angebot (Pflegekraft) basierend auf Fähigkeiten, Nähe, Verfügbarkeit |
+| Smart Contract | `care_session_complete(provider, recipient, hours, skill_level)` → automatische VITA-Schöpfung + AURA-Boost |
+| Skill-Multiplikator | Auf-Chain-Tabelle: `{skill: "nursing", level: 3, multiplier: 2.5}` — Governance-gesteuert |
+| Peer-Verifikation | Empfänger bestätigt Leistung via digitale Signatur. Bei >15 AURA: 2 unabhängige Verifikatoren nötig |
+
+---
+
+### Phase 3: Vollständiges Ökosystem (Jahr 3-5)
+
+| Modul | Beschreibung |
+|-------|-------------|
+| **Asklepios** | KI-Schutzengel (lokal), Federated Learning für Forschung, Gesundheitsdaten-POD |
+| **Athena** | KI-Tutor (lokal), Skill-Trees, Mentor-Matchmaking, Open Library (IPFS) |
+| **Demeter** | Food-Coop-Logistik, Überschuss-Alerts, Farm-to-Fork-Transparenz |
+| **Hestia** | Wohnungs-Matching, Fluid Living, Gemeinschaftsprojekte in TERRA ₮ |
+| **Dead-Man-Switch** | 24h-Check-in, automatische Alarmierung, Social-Media-Bot, Anwalts-Trigger |
+| **Life-Quests** | Gamification: Challenges, Badges, Skill-Trees |
+| **Inter-Zellen-Protokoll** | Föderations-Governance, inter-zellulärer Solidaritäts-Pool, Schiedsgericht |
+
+---
+
+## 4. TEAM-STRUKTUR
+
+### Kern-Team (Phase 0-1): 8-12 Personen
+
+| Rolle | Anzahl | Fokus |
+|-------|--------|-------|
+| **Protocol Engineer (Rust)** | 2-3 | Substrate-Blockchain, Pallets, Crypto |
+| **Mobile Engineer (Flutter)** | 2-3 | OneApp UI, Offline-First, BLE-Mesh |
+| **Mesh/Network Engineer** | 1-2 | BLE Mesh, LoRa, Yggdrasil, Matrix-Integration |
+| **Cryptographer** | 1 | ZKPs, Post-Quanten-Krypto, Formale Verifikation |
+| **DevOps / Infrastructure** | 1 | CI/CD, Testnet, Raspberry Pi Nodes |
+| **Product/UX Designer** | 1 | „So einfach wie WhatsApp"-Prinzip |
+| **Community/QA** | 1 | Beta-Test-Koordination, Dokumentation |
+
+### Erweiterung (Phase 2+): 15-25 Personen
+- +2-3 ML Engineers (lokale LLMs, Federated Learning)
+- +2-3 Sphären-Entwickler (Asklepios, Athena, Demeter)
+- +1 Governance-Spezialist (Liquid Democracy Implementierung)
+- +1 Security Auditor
+
+---
+
+## 5. DIE DREI GRÖSSTEN TECHNISCHEN RISIKEN
+
+### Risiko 1: BLE Mesh auf iOS
+
+Apple beschränkt Background-Bluetooth stark. Eine App, die im Hintergrund als Mesh-Relay fungiert, wird von iOS nach Minuten eingeschlafen. Das bedeutet: Mesh-Chat funktioniert nur, solange die App offen ist.
+
+**Lösung:**
+- iOS: MultipeerConnectivity Framework nutzen (Apple's eigenes Mesh)
+- Zusätzlich: Dedicated Relay-Nodes (Raspberry Pi mit BLE-Dongle) in jedem Hub
+- Langfristig: LoRa-Module als Always-On-Relay (batteriebetrieben, wochenlang Laufzeit)
+- Pragmatisch: Für Phase 1 akzeptieren, dass Mesh auf iOS eingeschränkt ist. Android + dedizierte Nodes tragen das Netz
+
+### Risiko 2: Demurrage auf einer Blockchain
+
+Demurrage (automatischer Wertverlust) widerspricht dem Standardverhalten jeder Blockchain, wo Balances statisch sind. Die Lazy-Evaluation-Lösung funktioniert für Kontostände, aber:
+- DeFi-Interaktionen (falls je gewünscht) werden kompliziert
+- Light Clients müssen die Decay-Berechnung lokal replizieren
+- Token-Standards (ERC-20 etc.) unterstützen kein Demurrage nativ
+
+**Lösung:**
+- Eigene Chain (Substrate) statt Ethereum → volle Kontrolle über Token-Logik
+- Demurrage als First-Class-Feature ins Protokoll einbauen, nicht als Wrapper
+- Dedicated `decay_checkpoint()` Extrinsic für periodische Materialisierung (z.B. monatlich)
+
+### Risiko 3: Lokale LLMs auf Smartphones
+
+Der Bauplan beschreibt einen „digitalen Schutzengel" (lokales LLM), der Gesundheitsberatung, Tutoring und Moderation übernimmt. Aktuell (2026) sind lokale LLMs auf Smartphones möglich, aber stark eingeschränkt:
+- Qualität: 3-4B-Parameter-Modelle sind brauchbar, aber nicht GPT-4-Niveau
+- RAM: Benötigt 2-4 GB für ein quantisiertes Modell
+- Akku: Intensive Nutzung entleert Akku schnell
+
+**Lösung:**
+- Phase 1-2: Kein lokales LLM. Stattdessen regelbasierte Systeme (Gesundheits-Checklisten, Skill-Matching-Algorithmen)
+- Phase 3: Optionales lokales LLM für Nutzer mit leistungsfähigen Geräten (>8GB RAM)
+- Hybrid: Home-Node (Raspberry Pi 5 mit 8GB) hostet das LLM im lokalen Netzwerk. Smartphone fragt den eigenen Home-Node an (keine Cloud, aber auch nicht auf dem Handy)
+- Langfristig: Hardware wird besser. 2028-2029 werden 7B-Modelle auf Mittelklasse-Phones laufen
+
+---
+
+## 6. BUDGET-SCHÄTZUNG (GROB)
+
+### Annahme: Open-Source-Projekt mit bezahltem Kern-Team
+
+| Phase | Dauer | Team | Kosten (bei ~5.000€/Monat/Person) |
+|-------|-------|------|----------------------------------|
+| Phase 0 (Fundament) | 2 Monate | 5 | ~50.000€ |
+| Phase 1a (Mesh-Chat) | 3 Monate | 7 | ~105.000€ |
+| Phase 1b (Wallet + Marktplatz) | 6 Monate | 10 | ~300.000€ |
+| Phase 2 (Care + Governance) | 12 Monate | 15 | ~900.000€ |
+| **Gesamt bis Killer-App #3** | **~23 Monate** | | **~1.350.000€** |
+
+Das ist bewusst konservativ (europäische Gehälter, kein VC-Niveau). Mit Sweat Equity (wie im Genesis-Pakt beschrieben: 10h/Woche unbezahlt) und Grants (EU Horizon, NGI, Prototype Fund) kann das auf 30-50% reduziert werden.
+
+---
+
+## 7. WAS WIR ZUERST BAUEN (Priorisierung)
+
+Wenn ich morgen anfangen müsste, mit 3-5 Entwicklern und begrenztem Budget:
+
+### Woche 1-4: Der „Genesis-Prototyp"
+1. **Flutter-App** mit Onboarding: Seed Phrase generieren, Profil erstellen
+2. **BLE-Chat:** Zwei Handys können direkt miteinander chatten (kein Server)
+3. **Simpelste Wallet:** Lokaler Zähler (noch keine echte Blockchain), QR-Code-Übertragung
+
+### Monat 2-3: „Es lebt"
+4. **Substrate-Testnet:** 3 Raspberry Pis als Validator-Noten
+5. **VITA-Pallet:** Echte Token mit Demurrage (Lazy Evaluation)
+6. **PoUW-Basis:** „Ich habe X getan" + „Person Y bestätigt" → VITA werden geschöpft
+
+### Monat 4-6: „Es ist nützlich"
+7. **Marktplatz-Modul:** Angebote erstellen, QR-Zahlung
+8. **Gruppen-Chat** über Matrix-Protokoll mit Mesh-Fallback
+9. **Schwarzes Brett** der lokalen Zelle
+10. **AURA-Score:** Basis-Implementierung (steigt bei bestätigter Arbeit, sinkt bei Inaktivität)
+
+### Monat 6: Erster öffentlicher Beta-Test
+→ 100 Pioniere in Berlin testen den Alltag: chatten, Brot kaufen, Pflege bestätigen.
+
+Das ist Sarahs Geschichte aus der Pioneer-Journey – nur technisch real.
+
+---
+
+## 8. ZUSAMMENFASSUNG
+
+Der Bauplan beschreibt ein System, das technisch anspruchsvoll, aber realisierbar ist. Die Killer-App-Strategie (Chat → Marktplatz → Care → Wohnen) ist die richtige Reihenfolge. Die kritischsten Entscheidungen sind:
+
+1. **Substrate als Blockchain** (Souveränität, Forkless Upgrades, Demurrage nativ)
+2. **Flutter als App-Framework** (eine Codebase, Offline-First, starke Crypto-Libraries)
+3. **Matrix als Chat-Protokoll** (föderiert, verschlüsselt, bewährt)
+4. **Mesh-Chat als erster Use-Case** (funktioniert ohne Ökonomie, zieht Early Adopter an)
+5. **Lokale KI erst ab Phase 3** (Hardware ist 2026 noch nicht reif für Smartphones)
+
+Die größte Stärke des Bauplans: Er sagt explizit „wir bauen ein Protokoll, keine Plattform" und „wir fokussieren auf eine Killer-App, nicht alles auf einmal". Das ist die richtige Denkweise. Wer alles auf einmal baut, baut nichts.
