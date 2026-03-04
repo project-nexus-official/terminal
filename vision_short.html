@@ -11,6 +11,7 @@
             --text-main: #e0e0e0;
             --accent-cyan: #00f3ff;
             --accent-orange: #ff9d00;
+            --accent-gold: #ffd700; /* Gold für Architekten */
             --panel-bg: #0a0a0a;
         }
 
@@ -78,45 +79,44 @@
 
         /* STEPS BOX (Letzte Seite) */
         .steps-box { background: #0f1515; border: 1px solid var(--accent-cyan); padding: 30px; margin-top: 40px; text-align: center; }
-        .step-num { color: var(--accent-orange); font-size: 1.5rem; font-weight: bold; display: block; margin-top: 20px; }
+        .step-num { color: var(--accent-orange); font-size: 1.3rem; font-weight: bold; display: block; margin-top: 30px; text-transform: uppercase; letter-spacing: 1px;}
+        .step-num:first-of-type { margin-top: 10px; }
 
-        /* LINKS */
+        /* LINKS & BUTTONS */
         a { color: var(--accent-cyan); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        .btn-gold {
+            background: transparent; color: var(--accent-gold);
+            border: 2px solid var(--accent-gold); padding: 12px 25px;
+            font-weight: bold; display: inline-block; border-radius: 2px;
+            margin-top: 10px; text-transform: uppercase; transition: 0.3s;
+        }
+        .btn-gold:hover { background: var(--accent-gold); color: #000; text-decoration: none; box-shadow: 0 0 15px var(--accent-gold); }
+
+        .btn-telegram {
+            background: #229ED9; color: #fff; border: none;
+            padding: 12px 25px; font-weight: bold; display: inline-block;
+            border-radius: 2px; margin-top: 10px; text-transform: uppercase; transition: 0.3s;
+        }
+        .btn-telegram:hover { background: #fff; color: #229ED9; text-decoration: none; }
+
+
         /* EMOTIONAL INTRO */
         .emotional-intro {
-            font-size: 1.1rem;
-            color: #ccc;
-            text-align: center;
-            margin-bottom: 40px;
-            line-height: 1.9;
+            font-size: 1.1rem; color: #ccc; text-align: center; margin-bottom: 40px; line-height: 1.9;
         }
-        .emotional-intro .pain-line {
-            color: #fff;
-            font-size: 1.15rem;
-        }
+        .emotional-intro .pain-line { color: #fff; font-size: 1.15rem; }
         .emotional-intro .turn-line {
-            color: var(--accent-orange);
-            font-weight: bold;
-            display: block;
-            margin-top: 20px;
-            font-size: 1.2rem;
+            color: var(--accent-orange); font-weight: bold; display: block; margin-top: 20px; font-size: 1.2rem;
         }
 
         /* BRIDGE TEXT */
         .bridge {
-            text-align: center;
-            font-style: italic;
-            color: #aaa;
-            margin: 30px 0 40px 0;
-            padding: 20px;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
+            text-align: center; font-style: italic; color: #aaa; margin: 30px 0 40px 0;
+            padding: 20px; border-top: 1px solid #333; border-bottom: 1px solid #333;
         }
-        .bridge strong {
-            color: #fff;
-        }
+        .bridge strong { color: #fff; }
 
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
@@ -290,7 +290,7 @@
             <p style="font-style: italic; color: var(--accent-cyan);">"Die Geschichte wird von denen geschrieben, die auftauchen."</p>
         </div>
 
-        <!-- CTA -->
+        <!-- CTA BEREICH (ANGEPASST) -->
         <div class="steps-box">
             <h2 style="margin-top:0; border:none;">Dein nächster Schritt</h2>
             
@@ -301,11 +301,15 @@
             <span class="step-num">2. Erlebe die Geschichte</span>
             <a href="https://amzn.eu/d/eWMNOTG" target="_blank">Lies die NEXUS-Trilogie auf Amazon</a>
 
-            <span class="step-num">3. Werde Teil der Genesis-Pioniere</span>
-            <p>Verbinde dich mit dem Hauptnetzwerk.</p>
-            
-            <br>
-            <a href="https://t.me/Nexus_Project_official" style="background: var(--accent-orange); color:#000; padding:15px 30px; font-weight:bold; display:inline-block; border-radius:4px;">
+            <span class="step-num">3. Werde aktiver Architekt</span>
+            <p>Du willst nicht nur reden, sondern bauen?</p>
+            <a href="genesis.html" class="btn-gold">
+                ZUR BEWERBUNG (GENESIS PAKT)
+            </a>
+
+            <span class="step-num">4. Werde Teil der Pioniere</span>
+            <p>Unterstütze uns mit deiner Energie und Reichweite.</p>
+            <a href="https://t.me/Nexus_Project_official" class="btn-telegram">
                 ZUR TELEGRAM GRUPPE
             </a>
         </div>
