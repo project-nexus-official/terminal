@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.E.X.U.S. | Genesis Pakt</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-main: #e0e0e0;
+            --accent-cyan: #00f3ff;
+            --accent-gold: #ffd700; /* Gold für Architekten */
+            --panel-bg: #0a0a0a;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--bg-color); color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6; font-size: 18px;
+            padding-top: 80px;
+        }
+
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+            background: rgba(0,0,0,0.95); border-bottom: 1px solid #333;
+            z-index: 1000; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 20px; box-sizing: border-box;
+        }
+        .logo-text { font-weight: bold; color: var(--accent-gold); letter-spacing: 2px; font-size: 1.2rem; }
+        .back-btn {
+            border: 1px solid #fff; color: #fff;
+            padding: 8px 15px; text-decoration: none; font-weight: bold; font-size: 0.9rem;
+        }
+
+        .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+
+        h1 { color: var(--accent-gold); text-align: center; text-transform: uppercase; font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #fff; margin-bottom: 50px; font-size: 1.2rem; }
+
+        .manifesto-box {
+            border: 1px solid var(--accent-gold); padding: 30px;
+            background: rgba(255, 215, 0, 0.05); margin-bottom: 40px;
+        }
+        .manifesto-box p { margin-bottom: 20px; font-size: 1.1rem; }
+
+        /* FORMULAR DESIGN */
+        form { background: #111; padding: 30px; border: 1px solid #333; }
+        
+        label { display: block; margin-bottom: 8px; color: var(--accent-gold); font-weight: bold; text-transform: uppercase; font-size: 0.9rem;}
+        input, select, textarea {
+            width: 100%; padding: 15px; margin-bottom: 25px;
+            background: #000; border: 1px solid #444; color: #fff;
+            font-family: inherit; font-size: 1rem; box-sizing: border-box;
+        }
+        input:focus, select:focus, textarea:focus { border-color: var(--accent-gold); outline: none; }
+
+        .submit-btn {
+            background: var(--accent-gold); color: #000;
+            border: none; padding: 20px; font-size: 1.2rem;
+            font-weight: bold; cursor: pointer; text-transform: uppercase;
+            width: 100%; transition: 0.3s;
+        }
+        .submit-btn:hover { background: #fff; box-shadow: 0 0 20px var(--accent-gold); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">GENESIS PAKT</div>
+        <a href="index.html" class="back-btn">ABBRUCH</a>
+    </header>
+
+    <div class="container">
+        
+        <h1>Wir suchen die Architekten</h1>
+        <p class="subtitle">Der Think Tank der 95% formiert sich.</p>
+
+        <div class="manifesto-box">
+            <p><strong>N.E.X.U.S. ist keine Show. Es ist Arbeit.</strong></p>
+            <p>Die Eliten haben ihre Netzwerke. Wir bauen unseres. Wir suchen keine Zuschauer, die konsumieren wollen. Wir suchen die ersten 100 Pioniere, die bereit sind, ihre Fähigkeiten für die Menschheitsfamilie einzusetzen.</p>
+            <p>Egal ob du Code schreibst, Verträge prüfst, Menschen organisierst oder einfach logisch denken kannst – wir brauchen deine Superkraft.</p>
+            <p style="text-align: center; font-style: italic;">"Die Geschichte wird von denen geschrieben, die auftauchen."</p>
+        </div>
+
+        <!-- FORMULAR -->
+        <form action="HIER_DEINE_FORMSPREE_URL_EINFUEGEN" method="POST">
+            
+            <label>Dein Name (oder Codename)</label>
+            <input type="text" name="Name" required placeholder="Wie sollen wir dich nennen?">
+
+            <label>Deine Kontakt-Email</label>
+            <input type="email" name="Email" required placeholder="Für das Signal">
+
+            <label>Deine Rolle / Fähigkeit</label>
+            <select name="Superkraft" required>
+                <option value="" disabled selected>Wähle deine Stärke...</option>
+                <option value="IT_Tech">Architekt (IT / Tech / Blockchain)</option>
+                <option value="Recht_Orga">Stratege (Recht / Organisation / Wirtschaft)</option>
+                <option value="Kommunikation">Erzähler (Design / Marketing / Text)</option>
+                <option value="Handwerk_Praxis">Macher (Handwerk / Landwirtschaft / Aufbau)</option>
+                <option value="Philosophie">Denker (Ethik / Bildung / Soziales)</option>
+                <option value="Unterstützer">Investor / Unterstützer</option>
+            </select>
+
+            <label>Warum du? (Motivation)</label>
+            <textarea name="Motivation" rows="4" required placeholder="Warum willst du bauen statt nur zuschauen?"></textarea>
+
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #888;">
+                <input type="checkbox" required style="width: auto; margin-right: 10px;">
+                Ich verstehe, dass dies ein Arbeitskreis ist, kein Fanclub.
+            </div>
+
+            <button type="submit" class="submit-btn">BEWERBUNG ABSENDEN</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
