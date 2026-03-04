@@ -9,7 +9,8 @@
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
 
     <!-- METRICOOL TRACKING -->
-    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"HIER_DEINE_METRICOOL_ID_EINFÜGEN"})});</script>
+    <!-- WICHTIG: Ersetze 'HIER_DEINE_METRICOOL_ID_EINFÜGEN' mit deinem Hash von Metricool, falls noch nicht geschehen -->
+    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"1efca36b1cfe69463502ffbe6b1933b7"})});</script>
 
     <style>
         /* --- GRUNDDESIGN --- */
@@ -20,6 +21,8 @@
             --accent-orange: #ff9d00;
             --accent-gold: #ffd700;
         }
+
+        html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
@@ -33,12 +36,12 @@
             padding-top: 80px; /* Etwas mehr Platz für den Header */
         }
 
-        h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; margin: 0 0 15px 0; font-weight: bold; }
+        h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 2px; margin: 0 0 15px 0; font-weight: bold; }
         p { margin-bottom: 20px; }
         a { text-decoration: none; transition: 0.3s; }
         img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
 
-        /* --- HEADER (NEU STRUKTURIERT) --- */
+        /* --- HEADER --- */
         header {
             position: fixed; top: 0; left: 0; width: 100%; height: auto; min-height: 70px;
             background: rgba(0,0,0,0.95); border-bottom: 1px solid #333;
@@ -46,14 +49,13 @@
             align-items: center; padding: 10px 20px; box-sizing: border-box;
             backdrop-filter: blur(5px); flex-wrap: wrap; gap: 15px;
         }
-        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-container { display: flex; align-items: center; gap: 15px; cursor: pointer; }
         .logo-img { height: 50px; width: auto; }
         .logo-text { font-weight: bold; color: var(--accent-cyan); letter-spacing: 1px; font-size: 1.2rem; }
         
         /* Header Buttons Container */
         .header-nav { display: flex; gap: 15px; align-items: center; }
 
-        /* Button: Telegram */
         .header-cta {
             background: var(--accent-orange); color: #000; padding: 8px 15px;
             font-size: 0.85rem; font-weight: bold; border-radius: 2px; text-transform: uppercase;
@@ -61,7 +63,6 @@
         }
         .header-cta:hover { background: #fff; }
 
-        /* Button: Architekt (Neu) */
         .header-architekt-btn {
             border: 2px solid var(--accent-gold); color: var(--accent-gold); background: transparent;
             padding: 6px 15px; font-size: 0.85rem; font-weight: bold; border-radius: 2px; 
@@ -78,7 +79,6 @@
             background-size: cover; background-position: center; padding: 20px;
         }
         
-        /* MARKETING BANNER */
         .marketing-banner {
             display: inline-block;
             color: var(--accent-orange);
@@ -133,13 +133,26 @@
         .intro-container { max-width: 800px; margin: 0 auto; }
         .intro-headline { color: var(--accent-orange); font-size: 2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;}
 
+        /* ROLLE / MANIFEST BLOCK */
+        .role-manifest {
+            border: 1px solid #333;
+            background: #0a0a0a;
+            padding: 30px;
+            margin: 40px auto;
+            text-align: left;
+            border-left: 4px solid var(--accent-cyan);
+            max-width: 750px;
+        }
+        .role-manifest h4 { color: var(--accent-cyan); margin-top: 0; font-size: 1.3rem; }
+        .role-manifest p { font-size: 1rem; color: #ccc; margin-bottom: 15px; line-height: 1.7; }
+        .role-manifest p:last-child { margin-bottom: 0; }
+
         /* INTRO BUTTONS CONTAINER */
         .intro-buttons {
             display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
             margin-top: 30px; margin-bottom: 40px;
         }
 
-        /* BUTTON STYLES */
         .ghost-button {
             display: inline-block; background: transparent; color: var(--accent-cyan);
             border: 2px solid var(--accent-cyan); padding: 15px 30px; font-size: 1.1rem;
@@ -156,7 +169,6 @@
         }
         .pulse-button:hover { background: var(--accent-orange); color: #000; animation: none; }
 
-        /* ARCHITEKTEN BUTTON (Body) */
         .architekt-button {
             display: inline-block; background: transparent; color: var(--accent-gold);
             border: 2px solid var(--accent-gold); padding: 15px 30px; font-size: 1.1rem;
@@ -221,6 +233,26 @@
 
         @keyframes flicker { 0%, 100% { opacity: 1; text-shadow: 0 0 20px rgba(0,243,255,0.8); } 50% { opacity: 0.8; text-shadow: 0 0 5px rgba(0,243,255,0.3); } }
         
+        /* BACK TO TOP BUTTON */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #111;
+            color: var(--accent-cyan);
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-cyan);
+            transition: 0.3s;
+        }
+        #backToTop:hover { background-color: var(--accent-cyan); color: #000; box-shadow: 0 0 10px var(--accent-cyan); }
+
         /* Mobile Header Anpassung */
         @media (max-width: 900px) {
             header { height: auto; padding: 10px; flex-direction: column; }
@@ -285,18 +317,24 @@
 </head>
 <body>
 
-    <!-- HEADER (NEU: MIT 2 BUTTONS) -->
+    <!-- HEADER -->
     <header>
-        <div class="logo-container">
-            <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png" alt="Nexus Logo" class="logo-img">
-            <div class="logo-text">PROJECT N.E.X.U.S.</div>
-        </div>
+        <!-- KLICKBARES LOGO (RELOAD) -->
+        <a href="index.html" style="text-decoration:none;">
+            <div class="logo-container">
+                <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png" alt="Nexus Logo" class="logo-img">
+                <div class="logo-text">PROJECT N.E.X.U.S.</div>
+            </div>
+        </a>
         
         <div class="header-nav">
             <a href="genesis.html" class="header-architekt-btn">WERDE ARCHITEKT</a>
             <a href="https://t.me/Nexus_Project_official" target="_blank" class="header-cta">FOLGE UNS AUF TELEGRAM</a>
         </div>
     </header>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button onclick="topFunction()" id="backToTop" title="Nach oben">⬆</button>
 
     <!-- HERO -->
     <div class="hero">
@@ -315,14 +353,15 @@
         <!-- BUTTONS FÜR CRASHKURS & ANALYSE -->
         <div class="intro-buttons">
             <a href="vision_short.html" class="ghost-button">
-                ⚡ N.E.X.U.S. VISION (3 MIN)
+                ⚡ N.E.X.U.S. VISION Erfahre in 3 Minuten, worum es geht
             </a>
+
             <a href="analyse.html" class="pulse-button">
                 ⚠️ STARTE DEINE SYSTEM-ANALYSE
             </a>
         </div>
 
-        <!-- HAUPT-WAHL BUTTONS (TEXT GEÄNDERT) -->
+        <!-- HAUPT-WAHL BUTTONS -->
         <div class="split-container">
             <a href="#story" class="btn-choice btn-story">DAS NEUE GESELLSCHAFTSSYSTEM ALS SIMULATION STARTEN</a>
             <a href="#system" class="btn-choice btn-system">DAS NEUE GESELLSCHAFTSSYSTEM TIEFER BEGREIFEN</a>
@@ -351,7 +390,21 @@
                 <br>Entworfen von uns. Für uns alle.
             </p>
 
-            <!-- NEUER BUTTON FÜR ARCHITEKTEN AUCH HIER UNTEN -->
+            <!-- NEUER ABSCHNITT: ROLLE & OFFENHEIT -->
+            <div class="role-manifest">
+                <h4>Ein lebendes System – Kein Dogma</h4>
+                <p>
+                    Ich bin Josh Richman. Ich bin der Initiator, nicht der Prophet. N.E.X.U.S. ist keine fertige Doktrin, sondern Version 1.0 eines offenen Betriebssystems.
+                </p>
+                <p>
+                    Meine Rolle ist die des "Lead Architects" – ich halte den Rahmen und das Ethos. Aber das System gehört uns allen.
+                </p>
+                <p>
+                    Kritik ist hier kein Angriff, sondern "Bug-Hunting". Ich erwarte, dass ihr diesen Bauplan prüft, verbessert und Teile davon neu schreibt. Wir bauen das zusammen.
+                </p>
+            </div>
+
+            <!-- BUTTON FÜR ARCHITEKTEN -->
             <div style="text-align: center; margin-top: 30px;">
                 <a href="genesis.html" class="architekt-button" style="border: 2px solid var(--accent-gold); color: var(--accent-gold);">
                     🏛 WERDE ARCHITEKT (GENESIS PAKT)
@@ -493,6 +546,24 @@
     </div>
 
     <script>
+        // --- BACK TO TOP BUTTON LOGIK ---
+        var mybutton = document.getElementById("backToTop");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
         // --- SECURITY BY OBFUSCATION ---
         // Teil A: Die ersten Zeichen
         const KEY_PART_A = "AIzaSy";
