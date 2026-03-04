@@ -84,6 +84,40 @@
         a { color: var(--accent-cyan); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* EMOTIONAL INTRO */
+        .emotional-intro {
+            font-size: 1.1rem;
+            color: #ccc;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.9;
+        }
+        .emotional-intro .pain-line {
+            color: #fff;
+            font-size: 1.15rem;
+        }
+        .emotional-intro .turn-line {
+            color: var(--accent-orange);
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        /* BRIDGE TEXT */
+        .bridge {
+            text-align: center;
+            font-style: italic;
+            color: #aaa;
+            margin: 30px 0 40px 0;
+            padding: 20px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        .bridge strong {
+            color: #fff;
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             .comparison td { display: block; padding: 5px 10px; }
@@ -102,31 +136,46 @@
     <div class="container">
         
         <h1>PROJEKT N.E.X.U.S.</h1>
-        <p class="lead">Das Betriebssystem für eine freie Welt</p>
+        <p class="lead">Der Bauplan für eine freie Welt</p>
 
-        <!-- SEITE 1 -->
+        <!-- EMOTIONALER EINSTIEG -->
+        <div class="emotional-intro">
+            <p class="pain-line">Du arbeitest härter, aber es reicht weniger.<br>
+            Du wählst, aber es ändert sich nichts.<br>
+            Kriege und Krisen nehmen zu, statt weniger zu werden.<br>
+            Du funktionierst – aber du lebst nicht.</p>
+            <span class="turn-line">Das liegt nicht an dir. Das System wurde nicht für dich gebaut.</span>
+        </div>
+
+        <!-- WAS WÄRE WENN -->
         <div class="box box-highlight">
             <h3>Was wäre, wenn...</h3>
             <ul class="list-clean" style="margin-top: 15px;">
                 <li>...wir nicht das kaputte System reparieren, sondern es komplett neu schreiben?</li>
-                <li>...Liebe keine Moral wäre, sondern eine physikalische Systemgröße?</li>
+                <li>...Nächstenliebe keine Moral wäre, sondern ein Konstruktionsprinzip?</li>
                 <li>...Technologie uns befreit statt überwacht?</li>
                 <li>...eine Baugenehmigung 1 Tag statt 6 Monate dauert – und kostenlos ist?</li>
             </ul>
-            <p><strong>NEXUS ist kein Buchprojekt. Es ist ein alternatives Zivilisations-Betriebssystem – psychologisch, narrativ und technisch implementiert.</strong></p>
         </div>
 
+        <div class="bridge">
+            Das klingt utopisch? Vielleicht.<br>
+            Aber wir haben es durchgerechnet. <strong>400 Seiten. Jedes Detail.</strong><br>
+            Von der Währung bis zur Baugenehmigung. Open Source. Für alle.
+        </div>
+
+        <!-- WARUM JETZT -->
         <h3>Warum jetzt?</h3>
-        <p>Wir stehen nicht vor einer normalen Krise. Wir erleben einen System-Kollaps: Wirtschaft, Gesundheit, Politik, Informationsraum – alles zerbricht gleichzeitig. Das alte Betriebssystem der Menschheit ist hoffnungslos veraltet.</p>
+        <p>Mieten explodieren. Kriege eskalieren. Das Gesundheitssystem kollabiert. Politiker streiten über Nebensächlichkeiten. Das ist kein Zufall – es ist das Ergebnis eines Systems, das auf künstliche Knappheit und Konkurrenz programmiert wurde.</p>
+        <p>Es ist kein moralisches Versagen. Es ist ein <strong>Designfehler</strong> – ein Betriebssystem, geschrieben für eine andere Zeit.</p>
         <p>Doch jede Krise ist eine Chance. In diesem Moment der Transformation können wir das Fundament für etwas radikal Neues legen.</p>
 
+        <!-- WAS MACHT NEXUS ANDERS -->
         <h3>Was macht NEXUS anders?</h3>
-        <p>NEXUS unterscheidet sich von 99% aller Visionen durch eine einzigartige Kombination:</p>
-        <p><strong>Mythos + Praxis</strong><br>
-        Der Blueprint erklärt WAS. Die Trilogie erklärt, WARUM man es fühlen will. Zusammen erklären sie, WIE Veränderung psychologisch überlebensfähig wird.<br>
-        Narrativ + Infrastruktur.</p>
+        <p><strong>Der Bauplan ist der Kopf. Die Trilogie ist das Herz.</strong><br>
+        Der Bauplan erklärt WAS und WIE. Die Trilogie zeigt, WARUM – und macht die Veränderung fühlbar. Zusammen sind sie Infrastruktur und Erzählung in einem.</p>
 
-        <!-- SEITE 2 -->
+        <!-- SINN + ALLTAG -->
         <h2>Sinn + Alltag</h2>
         <p>Technokraten scheitern an der Seele. Spirituelle scheitern an der Physik. Romanautoren scheitern an der Umsetzbarkeit. <strong>NEXUS verbindet alle drei Ebenen.</strong></p>
         <p>Was sonst nur große Religionen oder Ideologien geschafft haben: Die Vision ist im Alltag lebbar. Von der Baugenehmigung bis zur spirituellen Entwicklung – alles ist durchdacht.</p>
@@ -150,11 +199,19 @@
                 </tr>
                 <tr>
                     <td class="col-today">Arbeit für Geld zum Überleben</td>
-                    <td class="col-nexus">Beitrag zur Gemeinschaft = Credits</td>
+                    <td class="col-nexus">Beitrag zur Gemeinschaft = faire Vergütung</td>
                 </tr>
                 <tr>
                     <td class="col-today">Wahlen alle 4 Jahre</td>
-                    <td class="col-nexus">Liquid Democracy: Täglich mitentscheiden</td>
+                    <td class="col-nexus">Echte Mitbestimmung – bei jedem Thema</td>
+                </tr>
+                <tr>
+                    <td class="col-today">Gesundheit = Geschäftsmodell</td>
+                    <td class="col-nexus">Dein Arzt wird bezahlt, weil du gesund bist</td>
+                </tr>
+                <tr>
+                    <td class="col-today">Wohnen = Spekulationsobjekt</td>
+                    <td class="col-nexus">Wohnen = Menschenrecht, keine Ware</td>
                 </tr>
             </tbody>
         </table>
@@ -162,16 +219,16 @@
         <h2>Die 5 Säulen des Systems</h2>
         
         <div class="timeline-item" style="border-color: #333;">
-            <span class="phase-title">1. Liebe als Systemparameter</span>
-            Hier wird es radikal: Liebe ist kein moralischer Appell, sondern ein Stabilitätsfaktor, ein Antientropie-Mechanismus, ein Skalierungsprinzip.
+            <span class="phase-title">1. Nächstenliebe als Systemlogik</span>
+            Hier wird es radikal: Nächstenliebe ist kein moralischer Appell, sondern ein Stabilitätsfaktor, ein Antientropie-Mechanismus, ein Skalierungsprinzip.
         </div>
         <div class="timeline-item" style="border-color: #333;">
             <span class="phase-title">2. Ressourcen-basierte Ökonomie</span>
-            Keine künstliche Geldknappheit mehr. Beitrag = Credits. Wer Wert schafft, wird durch die Blockchain transparent und fair vergütet.
+            Keine künstliche Geldknappheit mehr. Wer Wert schafft – ob Pflege, Code oder Ernte – wird transparent und fair vergütet. Maschinen arbeiten, Menschen leben.
         </div>
         <div class="timeline-item" style="border-color: #333;">
             <span class="phase-title">3. Parallele Konstruktion statt Revolution</span>
-            NEXUS bekämpft das alte System nicht. Es lebt parallel, lässt es funktional irrelevant werden und entzieht ihm Bedeutung.
+            NEXUS bekämpft das alte System nicht. Es baut daneben ein besseres auf – und macht das alte Schritt für Schritt überflüssig.
         </div>
         <div class="timeline-item" style="border-color: #333;">
             <span class="phase-title">4. Technologie im Dienst des Menschen</span>
@@ -179,28 +236,28 @@
         </div>
         <div class="timeline-item" style="border-color: #333;">
             <span class="phase-title">5. Datensouveränität & Dezentralisierung</span>
-            Deine Daten gehören DIR. Kein CEO, kein König. Dezentrale Mesh-Netzwerke schützen deine Privatsphäre.
+            Deine Daten gehören dir. Kein Konzern, kein Staat. Ein Internet, das allen gehört – nicht fünf Konzernen.
         </div>
 
-        <!-- SEITE 3 -->
-        <h2>Die Trilogie: Der eigentliche Trojaner</h2>
-        <p>Die NEXUS-Trilogie ist keine begleitende Fiktion. Sie ist der eigentliche Trojaner – die Methode, wie Veränderung psychologisch überlebensfähig wird:</p>
+        <!-- DIE TRILOGIE -->
+        <h2>Die Trilogie: Das Herz des Projekts</h2>
+        <p>Ein Bauplan allein erreicht die Herzen nicht. Die NEXUS-Trilogie macht die Vision fühlbar – durch Menschen wie dich und mich, die den Wandel durchleben:</p>
         
         <div class="box">
-            <p><strong>Band 1: Stunde Null – Dekonstruktion</strong><br>
-            Du nimmst dem Leser die Illusion von Neutralität. Du zeigst das System als das, was es ist: eine Maschine, die Menschen verbrennt. Du moralisierst nicht, du zeigst Mechanik.</p>
+            <p><strong>Band 1: Stunde Null – Der Ausbruch</strong><br>
+            Du spürst, was Millionen spüren: Das System verbraucht dich. David entdeckt im digitalen Code der Macht einen Riss. Sarah zerbricht fast an ihrer Empathie. Zusammen wagen sie den Schritt aus der Sicherheit in die Freiheit.</p>
             
             <p><strong>Band 2: Das Fundament – Die Feuerprobe</strong><br>
-            Hier trennen sich Spreu und Weizen. Schlamm, Ego, Konflikt, Scheitern. Du glaubst nicht an den „guten Menschen“, sondern an lernende Systeme.</p>
+            Die Euphorie verfliegt, die harte Realität beginnt. Schlamm, Ego, Konflikte, Scheitern. Hier wird bewiesen: Nächstenliebe funktioniert auch, wenn der Strom ausfällt. Keine Naivität – lernende Systeme, getragen von echten Menschen.</p>
             
-            <p><strong>Band 3: Die Metamorphose – Emergenz</strong><br>
-            Vom Überleben zum Sinn. Die Noosphäre fällt nicht vom Himmel – sie ist emergent. Sie ist systemisch vorbereitet.</p>
+            <p><strong>Band 3: Die Metamorphose – Die Vernetzung</strong><br>
+            Aus dem Funken wird ein Leuchtfeuer. Die Wüste wird zum Garten. Der Ozean atmet wieder. Nicht weil ein Held die Welt rettet – sondern weil viele gemeinsam ein neues System weben, das stärker ist als das alte.</p>
         </div>
 
         <h3>Die Stärke: Es ist unbequem</h3>
-        <p>NEXUS ist nicht naiv, nicht weltfremd, nicht rein spirituell, nicht rein technisch. Es ist unbequem. Und genau deshalb relevant.</p>
+        <p>NEXUS ist radikal ehrlich, technisch fundiert und zutiefst menschlich. Es ist unbequem. Und genau deshalb relevant.</p>
 
-        <!-- SEITE 4 -->
+        <!-- ROADMAP -->
         <h2>Der Weg: Von der Vision zur Realität</h2>
         <div class="timeline-item">
             <span class="phase-title">Phase 1: Genesis (Jahr 1-2)</span>
@@ -212,11 +269,11 @@
         </div>
         <div class="timeline-item">
             <span class="phase-title">Phase 3: Manifestation (Jahr 5-10)</span>
-            Physische Infrastruktur: FabLabs, Health Hubs, regenerative Farmen.
+            Physische Infrastruktur: Gemeinschaftswerkstätten, Gesundheitszentren, regenerative Farmen.
         </div>
         <div class="timeline-item">
             <span class="phase-title">Phase 4: Souveränität (Jahr 10+)</span>
-            Diplomatische Anerkennung. Globales Mesh-Netzwerk. Eine Föderation freier, vernetzter Zellen.
+            Diplomatische Anerkennung. Globales Netzwerk. Eine Föderation freier, vernetzter Gemeinschaften.
         </div>
 
         <!-- DER MENSCH & ARCHETYPEN -->
@@ -229,16 +286,17 @@
                 <li><strong>Bewahrer:</strong> Die das Menschliche bewahren.</li>
                 <li><strong>Erzähler:</strong> Die die Vision verbreiten.</li>
             </ul>
-            <p style="font-style: italic; color: #ccc;">"Die Geschichte wird von denen geschrieben, die auftauchen."</p>
+            <p style="color: #ccc;">Und für alle, die einfach spüren, dass es so nicht weitergehen kann – und bereit sind, etwas Neues mitzubauen.</p>
+            <p style="font-style: italic; color: var(--accent-cyan);">"Die Geschichte wird von denen geschrieben, die auftauchen."</p>
         </div>
 
-        <!-- SEITE 5 CTA -->
+        <!-- CTA -->
         <div class="steps-box">
             <h2 style="margin-top:0; border:none;">Dein nächster Schritt</h2>
             
             <span class="step-num">1. Lies den Bauplan</span>
             <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/BAUPLAN_%20PROJEKT%20NEXUS_V12.0.pdf" target="_blank">BAUPLAN_PROJEKT_NEXUS_V12.0.pdf</a><br>
-            <span style="font-size:0.9rem; color:#888;">300+ Seiten detaillierte Architektur.</span>
+            <span style="font-size:0.9rem; color:#888;">400+ Seiten detaillierte Architektur.</span>
 
             <span class="step-num">2. Erlebe die Geschichte</span>
             <a href="https://amzn.eu/d/eWMNOTG" target="_blank">Lies die NEXUS-Trilogie auf Amazon</a>
