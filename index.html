@@ -18,7 +18,7 @@
             --text-main: #ffffff;
             --accent-cyan: #00f3ff;
             --accent-orange: #ff9d00;
-            --accent-gold: #ffd700; /* NEU: Gold für Architekten */
+            --accent-gold: #ffd700;
         }
 
         body {
@@ -30,7 +30,7 @@
             font-size: 19px;
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 70px;
+            padding-top: 80px; /* Etwas mehr Platz für den Header */
         }
 
         h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; margin: 0 0 15px 0; font-weight: bold; }
@@ -38,22 +38,36 @@
         a { text-decoration: none; transition: 0.3s; }
         img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
 
-        /* --- HEADER --- */
+        /* --- HEADER (NEU STRUKTURIERT) --- */
         header {
-            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+            position: fixed; top: 0; left: 0; width: 100%; height: auto; min-height: 70px;
             background: rgba(0,0,0,0.95); border-bottom: 1px solid #333;
             z-index: 1000; display: flex; justify-content: space-between;
-            align-items: center; padding: 0 20px; box-sizing: border-box;
-            backdrop-filter: blur(5px);
+            align-items: center; padding: 10px 20px; box-sizing: border-box;
+            backdrop-filter: blur(5px); flex-wrap: wrap; gap: 15px;
         }
         .logo-container { display: flex; align-items: center; gap: 15px; }
         .logo-img { height: 50px; width: auto; }
         .logo-text { font-weight: bold; color: var(--accent-cyan); letter-spacing: 1px; font-size: 1.2rem; }
+        
+        /* Header Buttons Container */
+        .header-nav { display: flex; gap: 15px; align-items: center; }
+
+        /* Button: Telegram */
         .header-cta {
-            background: var(--accent-orange); color: #000; padding: 10px 20px;
-            font-size: 0.9rem; font-weight: bold; border-radius: 2px; text-transform: uppercase;
+            background: var(--accent-orange); color: #000; padding: 8px 15px;
+            font-size: 0.85rem; font-weight: bold; border-radius: 2px; text-transform: uppercase;
+            text-align: center;
         }
         .header-cta:hover { background: #fff; }
+
+        /* Button: Architekt (Neu) */
+        .header-architekt-btn {
+            border: 2px solid var(--accent-gold); color: var(--accent-gold); background: transparent;
+            padding: 6px 15px; font-size: 0.85rem; font-weight: bold; border-radius: 2px; 
+            text-transform: uppercase; text-align: center;
+        }
+        .header-architekt-btn:hover { background: var(--accent-gold); color: #000; }
 
         /* --- HERO --- */
         .hero {
@@ -142,7 +156,7 @@
         }
         .pulse-button:hover { background: var(--accent-orange); color: #000; animation: none; }
 
-        /* NEUER ARCHITEKTEN BUTTON */
+        /* ARCHITEKTEN BUTTON (Body) */
         .architekt-button {
             display: inline-block; background: transparent; color: var(--accent-gold);
             border: 2px solid var(--accent-gold); padding: 15px 30px; font-size: 1.1rem;
@@ -206,12 +220,17 @@
         .contact-mail { color: var(--accent-cyan); display: block; margin-top: 10px; font-size: 1.1rem; }
 
         @keyframes flicker { 0%, 100% { opacity: 1; text-shadow: 0 0 20px rgba(0,243,255,0.8); } 50% { opacity: 0.8; text-shadow: 0 0 5px rgba(0,243,255,0.3); } }
+        
+        /* Mobile Header Anpassung */
         @media (max-width: 900px) {
+            header { height: auto; padding: 10px; flex-direction: column; }
+            .header-nav { width: 100%; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+            .header-cta, .header-architekt-btn { width: 100%; margin-bottom: 5px; }
+            
             .hero h1 { font-size: 2.5rem; } .content-grid { grid-template-columns: 1fr; }
             .visual-col { order: -1; margin-bottom: 30px; } .book-cover { width: 110px; }
             .btn-choice { width: 100%; margin-bottom: 10px; } .section { padding: 40px 15px; }
-            header { padding: 0 15px; } .logo-text { font-size: 0.9rem; } .logo-img { height: 35px; }
-            .intro-buttons { flex-direction: column; align-items: center; } /* Buttons untereinander auf Handy */
+            .intro-buttons { flex-direction: column; align-items: center; }
         }
 
         /* --- CHATBOT CSS --- */
@@ -266,13 +285,17 @@
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER (NEU: MIT 2 BUTTONS) -->
     <header>
         <div class="logo-container">
             <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png" alt="Nexus Logo" class="logo-img">
             <div class="logo-text">PROJECT N.E.X.U.S.</div>
         </div>
-        <a href="https://t.me/Nexus_Project_official" target="_blank" class="header-cta">Werde Teil der Bewegung</a>
+        
+        <div class="header-nav">
+            <a href="genesis.html" class="header-architekt-btn">WERDE ARCHITEKT</a>
+            <a href="https://t.me/Nexus_Project_official" target="_blank" class="header-cta">FOLGE UNS AUF TELEGRAM</a>
+        </div>
     </header>
 
     <!-- HERO -->
@@ -289,27 +312,24 @@
             oder nehmen 95 % sie selbst in die Hand?
         </div>
 
-        <!-- NEU POSITIONIERT: BUTTONS FÜR CRASHKURS & ANALYSE -->
+        <!-- BUTTONS FÜR CRASHKURS & ANALYSE -->
         <div class="intro-buttons">
-            <!-- ZUSAMMENFASSUNG -->
             <a href="vision_short.html" class="ghost-button">
-                ⚡ N.E.X.U.S. VISION Erfahre in 3 Minuten, worum es geht
+                ⚡ N.E.X.U.S. VISION (3 MIN)
             </a>
-
-            <!-- SYSTEM-ANALYSE -->
             <a href="analyse.html" class="pulse-button">
                 ⚠️ STARTE DEINE SYSTEM-ANALYSE
             </a>
         </div>
 
-        <!-- HAUPT-WAHL BUTTONS -->
+        <!-- HAUPT-WAHL BUTTONS (TEXT GEÄNDERT) -->
         <div class="split-container">
             <a href="#story" class="btn-choice btn-story">DAS NEUE GESELLSCHAFTSSYSTEM ALS SIMULATION STARTEN</a>
-            <a href="#system" class="btn-choice btn-system">DAS NEUE GESELLSCHAFTSSYSTEM JETZT MIT AUFBAUEN</a>
+            <a href="#system" class="btn-choice btn-system">DAS NEUE GESELLSCHAFTSSYSTEM TIEFER BEGREIFEN</a>
         </div>
     </div>
 
-    <!-- EINLEITUNG (Buttons hier entfernt) -->
+    <!-- EINLEITUNG -->
     <div class="intro-text-block">
         <div class="intro-container">
             <h3 class="intro-headline">Der Think Tank der Menschheitsfamilie</h3>
@@ -331,9 +351,9 @@
                 <br>Entworfen von uns. Für uns alle.
             </p>
 
-            <!-- NEUER BUTTON FÜR ARCHITEKTEN -->
+            <!-- NEUER BUTTON FÜR ARCHITEKTEN AUCH HIER UNTEN -->
             <div style="text-align: center; margin-top: 30px;">
-                <a href="genesis.html" class="architekt-button">
+                <a href="genesis.html" class="architekt-button" style="border: 2px solid var(--accent-gold); color: var(--accent-gold);">
                     🏛 WERDE ARCHITEKT (GENESIS PAKT)
                 </a>
             </div>
