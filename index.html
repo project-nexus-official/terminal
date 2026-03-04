@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
 
     <!-- METRICOOL TRACKING -->
-    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"1efca36b1cfe69463502ffbe6b1933b7"})});</script>
+    <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"HIER_DEINE_METRICOOL_ID_EINFÜGEN"})});</script>
 
     <style>
         /* --- GRUNDDESIGN --- */
@@ -18,6 +18,7 @@
             --text-main: #ffffff;
             --accent-cyan: #00f3ff;
             --accent-orange: #ff9d00;
+            --accent-gold: #ffd700; /* NEU: Gold für Architekten */
         }
 
         body {
@@ -116,52 +117,39 @@
         /* --- CONTENT --- */
         .intro-text-block { padding: 60px 20px; background: #111; text-align: center; border-bottom: 1px solid #333; }
         .intro-container { max-width: 800px; margin: 0 auto; }
-        .intro-headline { color: var(--accent-orange); font-size: 1.8rem; margin-bottom: 20px; }
+        .intro-headline { color: var(--accent-orange); font-size: 2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;}
 
-        /* INTRO BUTTONS CONTAINER (NEU POSITIONIERT) */
+        /* INTRO BUTTONS CONTAINER */
         .intro-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-            margin-bottom: 40px; /* Abstand zu den unteren Buttons */
+            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+            margin-top: 30px; margin-bottom: 40px;
         }
 
-        /* PULS BUTTON ORANGE (Analyse) */
+        /* BUTTON STYLES */
+        .ghost-button {
+            display: inline-block; background: transparent; color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan); padding: 15px 30px; font-size: 1.1rem;
+            font-weight: bold; text-transform: uppercase; cursor: pointer; text-decoration: none;
+            letter-spacing: 1px; transition: 0.3s;
+        }
+        .ghost-button:hover { background: var(--accent-cyan); color: #000; box-shadow: 0 0 20px var(--accent-cyan); }
+
         .pulse-button {
-            display: inline-block;
-            background: transparent;
-            color: var(--accent-orange);
-            border: 2px solid var(--accent-orange);
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7);
-            animation: pulse-orange 2s infinite;
-            letter-spacing: 1px;
+            display: inline-block; background: transparent; color: var(--accent-orange);
+            border: 2px solid var(--accent-orange); padding: 15px 30px; font-size: 1.1rem;
+            font-weight: bold; text-transform: uppercase; cursor: pointer; text-decoration: none;
+            box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7); animation: pulse-orange 2s infinite; letter-spacing: 1px;
         }
         .pulse-button:hover { background: var(--accent-orange); color: #000; animation: none; }
 
-        /* GHOST BUTTON CYAN (Zusammenfassung) */
-        .ghost-button {
-            display: inline-block;
-            background: transparent;
-            color: var(--accent-cyan);
-            border: 2px solid var(--accent-cyan);
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            text-decoration: none;
-            letter-spacing: 1px;
-            transition: 0.3s;
+        /* NEUER ARCHITEKTEN BUTTON */
+        .architekt-button {
+            display: inline-block; background: transparent; color: var(--accent-gold);
+            border: 2px solid var(--accent-gold); padding: 15px 30px; font-size: 1.1rem;
+            font-weight: bold; text-transform: uppercase; cursor: pointer; text-decoration: none;
+            letter-spacing: 1px; transition: 0.3s; margin-top: 15px;
         }
-        .ghost-button:hover { background: var(--accent-cyan); color: #000; box-shadow: 0 0 20px var(--accent-cyan); }
+        .architekt-button:hover { background: var(--accent-gold); color: #000; box-shadow: 0 0 20px var(--accent-gold); }
 
         @keyframes pulse-orange {
             0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7); }
@@ -324,14 +312,32 @@
     <!-- EINLEITUNG (Buttons hier entfernt) -->
     <div class="intro-text-block">
         <div class="intro-container">
-            <h3 class="intro-headline">Willkommen am Knotenpunkt</h3>
+            <h3 class="intro-headline">Der Think Tank der Menschheitsfamilie</h3>
             <p>
-                Du bist hier, weil du es spürst. Das alte Betriebssystem der Welt hat einen Fehler. 
-                Es dient nicht mehr dem Menschen, sondern verwaltet nur noch den Mangel.
+                Du spürst es. Etwas stimmt nicht. Du arbeitest härter, aber es reicht weniger. Du wählst, aber es ändert sich nichts. Kriege und Krisen nehmen zu, statt weniger zu werden. Du funktionierst – aber du lebst nicht.
             </p>
             <p>
-                Ich bin Josh Richman, der Nexus Navigator. Dieser Plan ist für alle, die spüren, dass der Status Quo des bestehenden Gesellschaftssystem nicht das Ende der Geschichte ist. Ich habe diese Lösungen nicht erfunden – ich habe sie nur zu einem System verbunden. Aber zum Leben erwecken können wir es nur gemeinsam.
+                Das liegt nicht an dir. Das System wurde nicht für dich gebaut.
+                Es ist kein moralisches Versagen. Es ist ein Designfehler – ein Betriebssystem, geschrieben für eine andere Zeit: zentralisiert, konkurrenzgetrieben, programmiert auf künstliche Knappheit.
             </p>
+            <p>
+                <strong>N.E.X.U.S. ist der Neubau.</strong> Ein dezentrales sozio-ökonomisches Betriebssystem für die Menschheitsfamilie.
+            </p>
+            <p>
+                Ein Bauplan für eine Welt, in der Wohnen, Gesundheit und Bildung keine Ware sind. Aufgebaut auf dem Prinzip der Nächstenliebe – nicht als Appell, sondern als Systemlogik. Skaliert mit den Möglichkeiten unserer Zeit.
+            </p>
+            <p>
+                Die Eliten nutzen exklusive Think Tanks, um die Macht der 5% zu sichern. Hier entsteht der Think Tank der 95%, um eine echte Alternative aufzubauen.
+                <br>Entworfen von uns. Für uns alle.
+            </p>
+
+            <!-- NEUER BUTTON FÜR ARCHITEKTEN -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="genesis.html" class="architekt-button">
+                    🏛 WERDE ARCHITEKT (GENESIS PAKT)
+                </a>
+            </div>
+
         </div>
     </div>
 
