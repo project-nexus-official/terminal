@@ -32,7 +32,7 @@
             font-size: 19px;
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 80px; /* Etwas mehr Platz für den Header */
+            padding-top: 90px; /* Mehr Platz für den Header */
         }
 
         h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 2px; margin: 0 0 15px 0; font-weight: bold; }
@@ -40,9 +40,9 @@
         a { text-decoration: none; transition: 0.3s; }
         img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
 
-        /* --- HEADER --- */
+        /* --- HEADER (NEU STRUKTURIERT) --- */
         header {
-            position: fixed; top: 0; left: 0; width: 100%; height: auto; min-height: 70px;
+            position: fixed; top: 0; left: 0; width: 100%; height: auto; min-height: 80px;
             background: rgba(0,0,0,0.95); border-bottom: 1px solid #333;
             z-index: 1000; display: flex; justify-content: space-between;
             align-items: center; padding: 10px 20px; box-sizing: border-box;
@@ -52,7 +52,25 @@
         .logo-img { height: 50px; width: auto; }
         .logo-text { font-weight: bold; color: var(--accent-cyan); letter-spacing: 1px; font-size: 1.2rem; }
         
-        /* Header Buttons Container */
+        /* Neuer Center Link (Think Tank) */
+        .header-center-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-gold);
+            padding: 8px 15px;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        .header-center-link:hover {
+            background: var(--accent-gold);
+            color: #000;
+            box-shadow: 0 0 15px var(--accent-gold);
+        }
+
+        /* Header Buttons Container (Rechts) */
         .header-nav { display: flex; gap: 15px; align-items: center; }
 
         .header-cta {
@@ -137,7 +155,7 @@
             border: 1px solid #333;
             background: #0a0a0a;
             padding: 30px;
-            margin: 0 auto; /* Zentriert */
+            margin: 0 auto;
             text-align: left;
             border-left: 4px solid var(--accent-cyan);
             max-width: 800px;
@@ -145,6 +163,16 @@
         .role-manifest h4 { color: var(--accent-cyan); margin-top: 0; font-size: 1.3rem; }
         .role-manifest p { font-size: 1rem; color: #ccc; margin-bottom: 15px; line-height: 1.7; }
         .role-manifest p:last-child { margin-bottom: 0; }
+        
+        .manifest-link {
+            color: var(--accent-gold);
+            text-decoration: underline;
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            text-align: right;
+        }
+        .manifest-link:hover { color: #fff; }
 
         /* INTRO BUTTONS CONTAINER */
         .intro-buttons {
@@ -172,7 +200,7 @@
             display: inline-block; background: transparent; color: var(--accent-gold);
             border: 2px solid var(--accent-gold); padding: 15px 30px; font-size: 1.1rem;
             font-weight: bold; text-transform: uppercase; cursor: pointer; text-decoration: none;
-            letter-spacing: 1px; transition: 0.3s; margin-top: 20px;
+            letter-spacing: 1px; transition: 0.3s; margin-top: 15px;
         }
         .architekt-button:hover { background: var(--accent-gold); color: #000; box-shadow: 0 0 20px var(--accent-gold); }
 
@@ -254,8 +282,10 @@
 
         /* Mobile Header Anpassung */
         @media (max-width: 900px) {
-            header { height: auto; padding: 10px; flex-direction: column; }
+            header { height: auto; padding: 10px; flex-direction: column; align-items: center; }
             .header-nav { width: 100%; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+            /* Center Link auf Mobile als eigener Block */
+            .header-center-link { order: 3; width: 100%; text-align: center; margin: 5px 0;}
             .header-cta, .header-architekt-btn { width: 100%; margin-bottom: 5px; }
             
             .hero h1 { font-size: 2.5rem; } .content-grid { grid-template-columns: 1fr; }
@@ -318,12 +348,17 @@
 
     <!-- HEADER -->
     <header>
-        <!-- KLICKBARES LOGO (RELOAD) -->
+        <!-- KLICKBARES LOGO -->
         <a href="index.html" style="text-decoration:none;">
             <div class="logo-container">
                 <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png" alt="Nexus Logo" class="logo-img">
                 <div class="logo-text">PROJECT N.E.X.U.S.</div>
             </div>
+        </a>
+
+        <!-- PROMINENTER CENTER LINK (Screenshot 3) -->
+        <a href="thinktank.html" class="header-center-link">
+            ZUM THINK TANK (GENESIS CIRCLE)
         </a>
         
         <div class="header-nav">
@@ -401,7 +436,7 @@
         </div>
     </div>
 
-    <!-- NEU PLATZIERT: MANIFEST & ROLLE (UNTER DEM VIDEO) -->
+    <!-- MANIFEST & ROLLE (UNTER DEM VIDEO) -->
     <div class="section" style="border-bottom: 1px solid #222; background: #000; padding-top: 40px; padding-bottom: 40px;">
         <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
             
@@ -416,6 +451,11 @@
                 <p>
                     Kritik ist hier kein Angriff, sondern "Bug-Hunting". Ich erwarte, dass ihr diesen Bauplan prüft, verbessert und Teile davon neu schreibt. Wir bauen das zusammen.
                 </p>
+                
+                <!-- LINK IM TEXTBEREICH (Screenshot 4) -->
+                <a href="thinktank.html" class="manifest-link">
+                    >> Mehr über den Genesis Circle (Think Tank) erfahren
+                </a>
             </div>
 
             <!-- BUTTON FÜR ARCHITEKTEN -->
@@ -570,9 +610,7 @@
         }
 
         // --- SECURITY BY OBFUSCATION ---
-        // Teil A: Die ersten Zeichen
         const KEY_PART_A = "AIzaSy";
-        // Teil B: Der Rest
         const KEY_PART_B = "DwVngowbkA8XFWEu5xdI_-0obA8JrWb3c";
         
         const API_KEY = KEY_PART_A + KEY_PART_B;
