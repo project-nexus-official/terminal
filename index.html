@@ -40,7 +40,7 @@
         a { text-decoration: none; transition: 0.3s; }
         img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
 
-        /* --- HEADER (NEU STRUKTURIERT) --- */
+        /* --- HEADER --- */
         header {
             position: fixed; top: 0; left: 0; width: 100%; height: auto; min-height: 80px;
             background: rgba(0,0,0,0.95); border-bottom: 1px solid #333;
@@ -155,7 +155,7 @@
             border: 1px solid #333;
             background: #0a0a0a;
             padding: 30px;
-            margin: 0 auto;
+            margin: 40px auto;
             text-align: left;
             border-left: 4px solid var(--accent-cyan);
             max-width: 800px;
@@ -164,15 +164,26 @@
         .role-manifest p { font-size: 1rem; color: #ccc; margin-bottom: 15px; line-height: 1.7; }
         .role-manifest p:last-child { margin-bottom: 0; }
         
-        .manifest-link {
-            color: var(--accent-gold);
-            text-decoration: underline;
-            font-weight: bold;
-            display: block;
-            margin-top: 15px;
-            text-align: right;
+        /* NEU: Think Tank Promo im Text */
+        .thinktank-promo {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #333;
         }
-        .manifest-link:hover { color: #fff; }
+        .tt-desc { font-size: 0.95rem; color: #aaa; margin-bottom: 15px; font-style: italic; }
+        .tt-link {
+            color: var(--accent-gold);
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--accent-gold);
+            padding: 10px 20px;
+            display: inline-block;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        .tt-link:hover { background: var(--accent-gold); color: #000; }
+
 
         /* INTRO BUTTONS CONTAINER */
         .intro-buttons {
@@ -200,7 +211,7 @@
             display: inline-block; background: transparent; color: var(--accent-gold);
             border: 2px solid var(--accent-gold); padding: 15px 30px; font-size: 1.1rem;
             font-weight: bold; text-transform: uppercase; cursor: pointer; text-decoration: none;
-            letter-spacing: 1px; transition: 0.3s; margin-top: 15px;
+            letter-spacing: 1px; transition: 0.3s; margin-top: 20px;
         }
         .architekt-button:hover { background: var(--accent-gold); color: #000; box-shadow: 0 0 20px var(--accent-gold); }
 
@@ -348,7 +359,7 @@
 
     <!-- HEADER -->
     <header>
-        <!-- KLICKBARES LOGO -->
+        <!-- KLICKBARES LOGO (RELOAD) -->
         <a href="index.html" style="text-decoration:none;">
             <div class="logo-container">
                 <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png" alt="Nexus Logo" class="logo-img">
@@ -356,7 +367,7 @@
             </div>
         </a>
 
-        <!-- PROMINENTER CENTER LINK (Screenshot 3) -->
+        <!-- PROMINENTER CENTER LINK -->
         <a href="thinktank.html" class="header-center-link">
             ZUM THINK TANK (GENESIS CIRCLE)
         </a>
@@ -436,7 +447,7 @@
         </div>
     </div>
 
-    <!-- MANIFEST & ROLLE (UNTER DEM VIDEO) -->
+    <!-- NEU PLATZIERT: MANIFEST & ROLLE (UNTER DEM VIDEO) -->
     <div class="section" style="border-bottom: 1px solid #222; background: #000; padding-top: 40px; padding-bottom: 40px;">
         <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
             
@@ -452,10 +463,15 @@
                     Kritik ist hier kein Angriff, sondern "Bug-Hunting". Ich erwarte, dass ihr diesen Bauplan prüft, verbessert und Teile davon neu schreibt. Wir bauen das zusammen.
                 </p>
                 
-                <!-- LINK IM TEXTBEREICH (Screenshot 4) -->
-                <a href="thinktank.html" class="manifest-link">
-                    >> Mehr über den Genesis Circle (Think Tank) erfahren
-                </a>
+                <!-- NEUER THINK TANK TEASER -->
+                <div class="thinktank-promo">
+                    <p class="tt-desc">
+                        Der N.E.X.U.S. Genesis Circle formiert sich. Wir organisieren die kollektive Intelligenz in 6 Departments (Code, Recht, Soil, Mind, Story & Invest).
+                    </p>
+                    <a href="thinktank.html" class="tt-link">
+                        DETAILS ZUM THINK TANK ANSEHEN
+                    </a>
+                </div>
             </div>
 
             <!-- BUTTON FÜR ARCHITEKTEN -->
@@ -610,7 +626,9 @@
         }
 
         // --- SECURITY BY OBFUSCATION ---
+        // Teil A: Die ersten Zeichen
         const KEY_PART_A = "AIzaSy";
+        // Teil B: Der Rest
         const KEY_PART_B = "DwVngowbkA8XFWEu5xdI_-0obA8JrWb3c";
         
         const API_KEY = KEY_PART_A + KEY_PART_B;
