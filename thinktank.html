@@ -12,8 +12,9 @@
             --accent-cyan: #00f3ff;
             --accent-orange: #ff9d00;
             --accent-gold: #ffd700;
-            --accent-green: #00ff41; /* Für Bewahrer */
-            --accent-purple: #bd00ff; /* Für Denker */
+            --accent-green: #00ff41; 
+            --accent-purple: #bd00ff; 
+            --accent-white: #ffffff; /* Für Investoren */
             --panel-bg: #0a0a0a;
         }
 
@@ -81,6 +82,7 @@
         .role-denker { color: var(--accent-purple); border-top: 3px solid var(--accent-purple); }
         .role-bewahrer { color: var(--accent-green); border-top: 3px solid var(--accent-green); }
         .role-erzaehler { color: var(--accent-gold); border-top: 3px solid var(--accent-gold); }
+        .role-investor { color: var(--accent-white); border-top: 3px solid var(--accent-white); } /* NEU */
 
         /* TOOLS & TRANSPARENZ */
         .tools-box {
@@ -99,11 +101,22 @@
         }
         .tool-link:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
 
-        /* FINANCE */
+        /* FINANCE / AURA */
         .finance-box {
-            border: 1px dashed var(--accent-orange);
-            background: rgba(255, 157, 0, 0.05);
-            padding: 30px; text-align: center; margin-top: 50px;
+            border: 1px solid var(--accent-orange);
+            background: #0d0d0d;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        .finance-title { color: var(--accent-orange); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 15px; display: block; font-weight: bold; }
+        
+        .aura-info {
+            background: rgba(255, 157, 0, 0.1);
+            padding: 15px;
+            border-left: 3px solid var(--accent-orange);
+            margin: 20px 0;
+            font-size: 0.95rem;
+            color: #ddd;
         }
 
         /* CTA */
@@ -139,7 +152,7 @@
             <p>Keine Geheimnisse. Kein Profitstreben. Nur der Code der Freiheit.</p>
         </div>
 
-        <!-- 5 ARCHETYPEN -->
+        <!-- 6 ARCHETYPEN (Jetzt Stringent zur Bewerbung) -->
         <div style="text-align: center;">
             <h2>Finde deinen Platz</h2>
             <p style="color:#888; margin-bottom:30px;">Ein System braucht mehr als nur Coder. Welcher Archetyp bist du?</p>
@@ -165,6 +178,11 @@
             <div class="archetype-card role-erzaehler">
                 <span class="role-title">5. Der Erzähler</span>
                 <p class="role-desc">Du übersetzt den Code in Emotion. Design, Video, Text, Marketing. Du verbreitest das Signal.</p>
+            </div>
+            <!-- NEU: INVESTOR -->
+            <div class="archetype-card role-investor">
+                <span class="role-title">6. Der Investor / Unterstützer</span>
+                <p class="role-desc">Du hast Ressourcen, aber keine Zeit? Du ermöglichst die Infrastruktur. Du gießt das Fundament mit Energie (Geld).</p>
             </div>
         </div>
 
@@ -193,12 +211,27 @@
             </div>
         </div>
 
-        <!-- FINANZEN -->
+        <!-- FINANZEN / AURA -->
         <div class="finance-box">
-            <h3 style="color:var(--accent-orange); margin-top:0;">Multi-Sig Finanzen (Crowdfunding)</h3>
-            <p style="color:#ccc;">Geld ist Energie. In N.E.X.U.S. fließt sie transparent. Kein Cent verschwindet in dunklen Kanälen.</p>
-            <p style="font-size:0.9rem; margin-bottom:20px;">Wir richten aktuell <strong>Open Collective</strong> ein, damit jeder sehen kann, woher Geld kommt und wohin es fließt (Server, Tools, Förderung).</p>
-            <span style="background:#333; color:#fff; padding:10px 20px; font-size:0.9rem; border:1px solid #555;">KONTO WIRD ERÖFFNET...</span>
+            <span class="finance-title">Multi-Sig Finanzen (Crowdfunding)</span>
+            
+            <p>Freiheit kostet. Server, Domains, Lizenzen, Gründungskosten. Aber bei N.E.X.U.S. verschwindet kein Geld in dunklen Kanälen.</p>
+            
+            <p>Wir nutzen <strong>Multi-Signature Wallets</strong> und öffentliche Kassenbücher (Open Collective), damit jeder Cent nachvollziehbar ist.</p>
+
+            <div class="aura-info">
+                <strong>⚡ DAS AURA-PRINZIP (RÜCKFLUSS):</strong><br>
+                Deine Unterstützung ist keine Spende in ein schwarzes Loch. Sie ist eine energetische Investition.<br><br>
+                Jeder Euro, den du jetzt in der Genesis-Phase beisteuerst, wird als <strong>AURA (Reputation/Energie)</strong> im Genesis-Block des Systems vermerkt. Wenn das System steht, fließt diese Energie in Form von Credits oder Status an die Pioniere zurück.
+            </div>
+
+            <p style="font-size: 0.9rem; color:#888; margin-top:20px;">
+                Aktueller Status: Wir richten das Open Collective Konto ein.
+            </p>
+            
+            <span style="background:#333; color:#fff; padding:10px 20px; font-size:0.9rem; border:1px solid #555; display:inline-block; margin-top:10px;">
+                KONTO-ERÖFFNUNG LÄUFT...
+            </span>
         </div>
 
         <!-- FINAL CTA -->
