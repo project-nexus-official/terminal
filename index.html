@@ -52,7 +52,7 @@
         .logo-img { height: 50px; width: auto; }
         .logo-text { font-weight: bold; color: var(--accent-cyan); letter-spacing: 1px; font-size: 1.2rem; }
         
-        /* Neuer Center Link (Think Tank) */
+        /* Center Link (Think Tank) */
         .header-center-link {
             color: var(--accent-gold);
             text-decoration: none;
@@ -164,25 +164,52 @@
         .role-manifest p { font-size: 1rem; color: #ccc; margin-bottom: 15px; line-height: 1.7; }
         .role-manifest p:last-child { margin-bottom: 0; }
         
-        /* NEU: Think Tank Promo im Text */
+        /* THINK TANK PROMO BEREICH */
         .thinktank-promo {
-            margin-top: 25px;
+            margin-top: 30px;
             padding-top: 20px;
             border-top: 1px dashed #333;
         }
         .tt-desc { font-size: 0.95rem; color: #aaa; margin-bottom: 15px; font-style: italic; }
+        
+        /* Container für die beiden Buttons nebeneinander */
+        .tt-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         .tt-link {
-            color: var(--accent-gold);
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid #555;
+            padding: 12px 20px;
+            display: inline-block;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            flex: 1; /* Nimmt Platz ein */
+            text-align: center;
+        }
+        .tt-link:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+
+        .tt-link-gold {
+            color: #000;
+            background: var(--accent-gold);
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
             border: 1px solid var(--accent-gold);
-            padding: 10px 20px;
+            padding: 12px 20px;
             display: inline-block;
             transition: 0.3s;
             font-size: 0.9rem;
+            flex: 1; /* Nimmt Platz ein */
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
         }
-        .tt-link:hover { background: var(--accent-gold); color: #000; }
+        .tt-link-gold:hover { background: #fff; box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); }
 
 
         /* INTRO BUTTONS CONTAINER */
@@ -206,14 +233,6 @@
             box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7); animation: pulse-orange 2s infinite; letter-spacing: 1px;
         }
         .pulse-button:hover { background: var(--accent-orange); color: #000; animation: none; }
-
-        .architekt-button {
-            display: inline-block; background: transparent; color: var(--accent-gold);
-            border: 2px solid var(--accent-gold); padding: 15px 30px; font-size: 1.1rem;
-            font-weight: bold; text-transform: uppercase; cursor: pointer; text-decoration: none;
-            letter-spacing: 1px; transition: 0.3s; margin-top: 20px;
-        }
-        .architekt-button:hover { background: var(--accent-gold); color: #000; box-shadow: 0 0 20px var(--accent-gold); }
 
         @keyframes pulse-orange {
             0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7); }
@@ -303,6 +322,9 @@
             .visual-col { order: -1; margin-bottom: 30px; } .book-cover { width: 110px; }
             .btn-choice { width: 100%; margin-bottom: 10px; } .section { padding: 40px 15px; }
             .intro-buttons { flex-direction: column; align-items: center; }
+            
+            /* Buttons im Manifest untereinander auf mobile */
+            .tt-buttons { flex-direction: column; }
         }
 
         /* --- CHATBOT CSS --- */
@@ -447,7 +469,7 @@
         </div>
     </div>
 
-    <!-- NEU PLATZIERT: MANIFEST & ROLLE (UNTER DEM VIDEO) -->
+    <!-- MANIFEST & ROLLE (UNTER DEM VIDEO) -->
     <div class="section" style="border-bottom: 1px solid #222; background: #000; padding-top: 40px; padding-bottom: 40px;">
         <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
             
@@ -463,22 +485,20 @@
                     Kritik ist hier kein Angriff, sondern "Bug-Hunting". Ich erwarte, dass ihr diesen Bauplan prüft, verbessert und Teile davon neu schreibt. Wir bauen das zusammen.
                 </p>
                 
-                <!-- NEUER THINK TANK TEASER -->
+                <!-- NEUER PROMO BEREICH MIT 2 BUTTONS NEBENEINANDER -->
                 <div class="thinktank-promo">
                     <p class="tt-desc">
                         Der N.E.X.U.S. Genesis Circle formiert sich. Wir organisieren die kollektive Intelligenz in 6 Departments (Code, Recht, Soil, Mind, Story & Invest).
                     </p>
-                    <a href="thinktank.html" class="tt-link">
-                        DETAILS ZUM THINK TANK ANSEHEN
-                    </a>
+                    <div class="tt-buttons">
+                        <a href="thinktank.html" class="tt-link">
+                            DETAILS ZUM THINK TANK ANSEHEN
+                        </a>
+                        <a href="genesis.html" class="tt-link-gold">
+                            🏛 WERDE ARCHITEKT (GENESIS PAKT)
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <!-- BUTTON FÜR ARCHITEKTEN -->
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="genesis.html" class="architekt-button" style="border: 2px solid var(--accent-gold); color: var(--accent-gold);">
-                    🏛 WERDE ARCHITEKT (GENESIS PAKT)
-                </a>
             </div>
 
         </div>
@@ -626,9 +646,7 @@
         }
 
         // --- SECURITY BY OBFUSCATION ---
-        // Teil A: Die ersten Zeichen
         const KEY_PART_A = "AIzaSy";
-        // Teil B: Der Rest
         const KEY_PART_B = "DwVngowbkA8XFWEu5xdI_-0obA8JrWb3c";
         
         const API_KEY = KEY_PART_A + KEY_PART_B;
