@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.E.X.U.S. | Genesis Circle</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-main: #e0e0e0;
+            --accent-cyan: #00f3ff;
+            --accent-orange: #ff9d00;
+            --accent-gold: #ffd700;
+            --accent-green: #00ff41; /* Für Bewahrer */
+            --accent-purple: #bd00ff; /* Für Denker */
+            --panel-bg: #0a0a0a;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--bg-color); color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6; font-size: 18px;
+            padding-top: 80px;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+            background: rgba(0,0,0,0.95); border-bottom: 1px solid #333;
+            z-index: 1000; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 20px; box-sizing: border-box;
+        }
+        .logo-text { font-weight: bold; color: var(--accent-gold); letter-spacing: 1px; font-size: 1.2rem; }
+        .back-btn {
+            border: 1px solid #fff; color: #fff;
+            padding: 8px 15px; text-decoration: none; font-weight: bold; font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .back-btn:hover { background: #fff; color: #000; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px 20px 100px 20px; }
+
+        /* HERO */
+        h1 { font-size: 2.5rem; text-align: center; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 10px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+        .lead { font-size: 1.2rem; color: #fff; text-align: center; margin-bottom: 50px; }
+
+        .manifest-box {
+            border-left: 4px solid var(--accent-gold);
+            background: #111; padding: 30px; margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* ARCHETYPEN GRID */
+        h2 { text-align: center; color: #fff; text-transform: uppercase; margin-top: 60px; margin-bottom: 30px; border-bottom: 1px solid #333; display: inline-block; padding-bottom: 10px;}
+        
+        .archetype-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .archetype-card {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            padding: 25px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .archetype-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+        
+        .role-title { font-size: 1.4rem; font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        .role-desc { font-size: 0.95rem; color: #aaa; }
+        
+        /* Farben für Rollen */
+        .role-architekt { color: var(--accent-cyan); border-top: 3px solid var(--accent-cyan); }
+        .role-macher { color: var(--accent-orange); border-top: 3px solid var(--accent-orange); }
+        .role-denker { color: var(--accent-purple); border-top: 3px solid var(--accent-purple); }
+        .role-bewahrer { color: var(--accent-green); border-top: 3px solid var(--accent-green); }
+        .role-erzaehler { color: var(--accent-gold); border-top: 3px solid var(--accent-gold); }
+
+        /* TOOLS & TRANSPARENZ */
+        .tools-box {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+            margin-top: 30px;
+        }
+        .tool-item { background: #111; padding: 20px; border: 1px solid #333; text-align: center; }
+        .tool-name { display: block; font-weight: bold; color: #fff; margin-bottom: 10px; font-size: 1.2rem;}
+        .tool-status { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;}
+        .status-live { color: var(--accent-green); }
+        .status-soon { color: #888; }
+        
+        .tool-link {
+            display: inline-block; padding: 8px 15px; border: 1px solid #555;
+            color: #ccc; text-decoration: none; font-size: 0.9rem; transition: 0.3s;
+        }
+        .tool-link:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+
+        /* FINANCE */
+        .finance-box {
+            border: 1px dashed var(--accent-orange);
+            background: rgba(255, 157, 0, 0.05);
+            padding: 30px; text-align: center; margin-top: 50px;
+        }
+
+        /* CTA */
+        .final-cta { text-align: center; margin-top: 60px; }
+        .apply-btn {
+            background: var(--accent-gold); color: #000; padding: 20px 40px;
+            font-size: 1.2rem; font-weight: bold; text-decoration: none;
+            display: inline-block; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+        .apply-btn:hover { background: #fff; box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+
+        @media (max-width: 700px) {
+            h1 { font-size: 2rem; }
+            .tools-box { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">N.E.X.U.S. GENESIS CIRCLE</div>
+        <a href="index.html" class="back-btn">X ZURÜCK</a>
+    </header>
+
+    <div class="container">
+        
+        <h1>Der Think Tank der 95%</h1>
+        <p class="lead">"Sie haben Milliarden. Wir haben uns."</p>
+
+        <div class="manifest-box">
+            <p><strong>Die Eliten arbeiten nicht zufällig.</strong> Sie nutzen Think Tanks, bezahlen Experten und arbeiten hinter verschlossenen Türen Strategien aus, um ihre Macht zu sichern.</p>
+            <p>Wir drehen den Spieß um. <strong>N.E.X.U.S. ist der Gegenentwurf.</strong> Ein offener Think Tank für die Menschheitsfamilie. Wir nutzen Schwarmintelligenz, radikale Transparenz und die besten Köpfe, um eine Alternative zu bauen, die funktioniert.</p>
+            <p>Keine Geheimnisse. Kein Profitstreben. Nur der Code der Freiheit.</p>
+        </div>
+
+        <!-- 5 ARCHETYPEN -->
+        <div style="text-align: center;">
+            <h2>Finde deinen Platz</h2>
+            <p style="color:#888; margin-bottom:30px;">Ein System braucht mehr als nur Coder. Welcher Archetyp bist du?</p>
+        </div>
+
+        <div class="archetype-grid">
+            <div class="archetype-card role-architekt">
+                <span class="role-title">1. Der Architekt</span>
+                <p class="role-desc">Du sprichst Code, Tech oder Struktur. Du baust die App, die Blockchain oder die rechtlichen Verträge.</p>
+            </div>
+            <div class="archetype-card role-macher">
+                <span class="role-title">2. Der Macher</span>
+                <p class="role-desc">Du bist Realist. Du baust Autarkie, Landwirtschaft, Energie oder Hardware. Du erdest die Vision.</p>
+            </div>
+            <div class="archetype-card role-denker">
+                <span class="role-title">3. Der Denker</span>
+                <p class="role-desc">Du analysierst Systeme, Philosophie oder Ökonomie. Du prüfst den Bauplan auf Fehler und Ethik.</p>
+            </div>
+            <div class="archetype-card role-bewahrer">
+                <span class="role-title">4. Der Bewahrer</span>
+                <p class="role-desc">Du kümmerst dich um den Menschen. Psychologie, Gesundheit, Konfliktlösung. Du hältst die Gruppe gesund.</p>
+            </div>
+            <div class="archetype-card role-erzaehler">
+                <span class="role-title">5. Der Erzähler</span>
+                <p class="role-desc">Du übersetzt den Code in Emotion. Design, Video, Text, Marketing. Du verbreitest das Signal.</p>
+            </div>
+        </div>
+
+        <!-- WERKZEUGE & TRANSPARENZ -->
+        <div style="text-align: center;">
+            <h2>Radikale Transparenz</h2>
+            <p style="color:#888;">Die Eliten arbeiten im Dunkeln. Wir arbeiten im Licht.</p>
+        </div>
+
+        <div class="tools-box">
+            <!-- GITHUB -->
+            <div class="tool-item">
+                <span class="tool-name">DER CODE (GITHUB)</span>
+                <span class="tool-status status-live">● LIVE</span>
+                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Hier liegen Bauplan, Whitepaper und Diskussionen.</p>
+                <a href="https://github.com/project-nexus-official/terminal/discussions" target="_blank" class="tool-link">ZUR DISKUSSION</a>
+                <a href="https://github.com/project-nexus-official/terminal/wiki" target="_blank" class="tool-link" style="margin-left:10px;">ZUM WIKI</a>
+            </div>
+
+            <!-- NOTION -->
+            <div class="tool-item">
+                <span class="tool-name">DAS BÜRO (NOTION)</span>
+                <span class="tool-status status-soon">○ WIRD EINGERICHTET</span>
+                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Projektmanagement, Aufgabenverteilung und Roadmap.</p>
+                <span style="color:#555; border:1px solid #333; padding:5px 10px; font-size:0.8rem;">ZUGANG FÜR ARCHITEKTEN</span>
+            </div>
+        </div>
+
+        <!-- FINANZEN -->
+        <div class="finance-box">
+            <h3 style="color:var(--accent-orange); margin-top:0;">Multi-Sig Finanzen (Crowdfunding)</h3>
+            <p style="color:#ccc;">Geld ist Energie. In N.E.X.U.S. fließt sie transparent. Kein Cent verschwindet in dunklen Kanälen.</p>
+            <p style="font-size:0.9rem; margin-bottom:20px;">Wir richten aktuell <strong>Open Collective</strong> ein, damit jeder sehen kann, woher Geld kommt und wohin es fließt (Server, Tools, Förderung).</p>
+            <span style="background:#333; color:#fff; padding:10px 20px; font-size:0.9rem; border:1px solid #555;">KONTO WIRD ERÖFFNET...</span>
+        </div>
+
+        <!-- FINAL CTA -->
+        <div class="final-cta">
+            <h2 style="border:none;">Hast du dich erkannt?</h2>
+            <p style="margin-bottom:30px;">Wir suchen die ersten 100 für den Genesis Circle.</p>
+            <a href="genesis.html" class="apply-btn">BEWERBUNG STARTEN</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
