@@ -14,7 +14,7 @@
             --accent-gold: #ffd700;
             --accent-green: #00ff41; 
             --accent-purple: #bd00ff; 
-            --accent-white: #ffffff; /* Für Investoren */
+            --accent-white: #ffffff; 
             --panel-bg: #0a0a0a;
         }
 
@@ -53,84 +53,91 @@
             font-size: 1.1rem;
         }
 
+        /* TITEL STYLES */
+        h2 { text-align: center; color: #fff; text-transform: uppercase; margin-top: 60px; margin-bottom: 20px; border-bottom: 1px solid #333; display: inline-block; padding-bottom: 10px;}
+        .sub-desc { text-align: center; color: #888; margin-bottom: 40px; font-size: 1.05rem; }
+
         /* ARCHETYPEN GRID */
-        h2 { text-align: center; color: #fff; text-transform: uppercase; margin-top: 60px; margin-bottom: 30px; border-bottom: 1px solid #333; display: inline-block; padding-bottom: 10px;}
-        
         .archetype-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; margin-bottom: 50px;
         }
 
         .archetype-card {
-            background: #0f0f0f;
-            border: 1px solid #333;
-            padding: 25px;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
+            background: #0f0f0f; border: 1px solid #333; padding: 25px;
+            transition: 0.3s; position: relative; overflow: hidden;
         }
         .archetype-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
-        
         .role-title { font-size: 1.4rem; font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 10px; }
         .role-desc { font-size: 0.95rem; color: #aaa; }
         
-        /* Farben für Rollen */
         .role-architekt { color: var(--accent-cyan); border-top: 3px solid var(--accent-cyan); }
         .role-macher { color: var(--accent-orange); border-top: 3px solid var(--accent-orange); }
         .role-denker { color: var(--accent-purple); border-top: 3px solid var(--accent-purple); }
         .role-bewahrer { color: var(--accent-green); border-top: 3px solid var(--accent-green); }
         .role-erzaehler { color: var(--accent-gold); border-top: 3px solid var(--accent-gold); }
-        .role-investor { color: var(--accent-white); border-top: 3px solid var(--accent-white); } /* NEU */
+        .role-investor { color: var(--accent-white); border-top: 3px solid var(--accent-white); }
 
-        /* TOOLS & TRANSPARENZ */
-        .tools-box {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
-            margin-top: 30px;
+        /* NEU: ABLAUF BOX (Was passiert dann?) */
+        .process-box {
+            background: #111;
+            border: 1px solid #333;
+            padding: 30px;
+            margin: 50px 0;
         }
+        .process-step { margin-bottom: 20px; padding-left: 30px; position: relative; }
+        .process-step::before {
+            content: "►"; color: var(--accent-gold); position: absolute; left: 0; font-size: 1.2rem; top: -2px;
+        }
+        .process-step strong { color: #fff; font-size: 1.1rem; }
+        .process-step p { margin-top: 5px; color: #aaa; font-size: 0.95rem; }
+
+        /* WERKZEUGE & TRANSPARENZ */
+        .tools-box { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
         .tool-item { background: #111; padding: 20px; border: 1px solid #333; text-align: center; }
         .tool-name { display: block; font-weight: bold; color: #fff; margin-bottom: 10px; font-size: 1.2rem;}
         .tool-status { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;}
         .status-live { color: var(--accent-green); }
         .status-soon { color: #888; }
-        
-        .tool-link {
-            display: inline-block; padding: 8px 15px; border: 1px solid #555;
-            color: #ccc; text-decoration: none; font-size: 0.9rem; transition: 0.3s;
-        }
+        .tool-link { display: inline-block; padding: 8px 15px; border: 1px solid #555; color: #ccc; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
         .tool-link:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
 
-        /* FINANCE / AURA */
+        /* FINANCE / AURA - ÜBERARBEITET */
         .finance-box {
-            border: 1px solid var(--accent-orange);
-            background: #0d0d0d;
-            padding: 30px;
-            margin-top: 50px;
+            border: 1px solid var(--accent-orange); background: #0d0d0d;
+            padding: 30px; margin-top: 50px;
         }
         .finance-title { color: var(--accent-orange); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 15px; display: block; font-weight: bold; }
+        .aura-info { background: rgba(255, 157, 0, 0.1); padding: 15px; border-left: 3px solid var(--accent-orange); margin: 20px 0; font-size: 0.95rem; color: #ddd; }
         
-        .aura-info {
-            background: rgba(255, 157, 0, 0.1);
-            padding: 15px;
-            border-left: 3px solid var(--accent-orange);
-            margin: 20px 0;
-            font-size: 0.95rem;
-            color: #ddd;
-        }
+        /* Neue Milestones Tabelle */
+        .milestone-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95rem; }
+        .milestone-table td { padding: 10px; border-bottom: 1px solid #333; }
+        .milestone-table td:last-child { text-align: right; color: var(--accent-orange); font-weight: bold; font-family: monospace; }
+        .ms-done { color: #555; text-decoration: line-through; }
+        .ms-active { color: #fff; }
 
-        /* CTA */
-        .final-cta { text-align: center; margin-top: 60px; }
+        /* NEU: COUNTER & FINAL CTA */
+        .final-cta { text-align: center; margin-top: 80px; padding: 40px 20px; background: #0a0a0a; border: 1px solid var(--accent-gold); }
+        
+        .counter-box { margin-bottom: 30px; }
+        .counter-text { font-size: 1.2rem; color: #fff; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .counter-bar-bg { width: 100%; max-width: 400px; height: 10px; background: #222; margin: 0 auto; border-radius: 5px; overflow: hidden; position: relative;}
+        .counter-bar-fill { width: 3%; /* Hier steht der aktuelle Wert (3/100) */ height: 100%; background: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold); }
+
         .apply-btn {
             background: var(--accent-gold); color: #000; padding: 20px 40px;
-            font-size: 1.2rem; font-weight: bold; text-decoration: none;
+            font-size: 1.3rem; font-weight: bold; text-decoration: none;
             display: inline-block; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
         }
-        .apply-btn:hover { background: #fff; box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+        .apply-btn:hover { background: #fff; box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); transform: scale(1.02); }
 
         @media (max-width: 700px) {
             h1 { font-size: 2rem; }
             .tools-box { grid-template-columns: 1fr; }
+            .milestone-table td { display: block; text-align: left !important; border-bottom: none; padding: 5px 10px; }
+            .milestone-table tr { border-bottom: 1px solid #333; padding-bottom: 10px; display: block; margin-bottom: 10px; }
         }
     </style>
 </head>
@@ -152,10 +159,10 @@
             <p>Keine Geheimnisse. Kein Profitstreben. Nur der Code der Freiheit.</p>
         </div>
 
-        <!-- 6 ARCHETYPEN (Jetzt Stringent zur Bewerbung) -->
+        <!-- 6 ARCHETYPEN -->
         <div style="text-align: center;">
             <h2>Finde deinen Platz</h2>
-            <p style="color:#888; margin-bottom:30px;">Ein System braucht mehr als nur Coder. Welcher Archetyp bist du?</p>
+            <p class="sub-desc">Ein System braucht mehr als nur Coder. Welcher Archetyp bist du?</p>
         </div>
 
         <div class="archetype-grid">
@@ -179,65 +186,110 @@
                 <span class="role-title">5. Der Erzähler</span>
                 <p class="role-desc">Du übersetzt den Code in Emotion. Design, Video, Text, Marketing. Du verbreitest das Signal.</p>
             </div>
-            <!-- NEU: INVESTOR -->
             <div class="archetype-card role-investor">
-                <span class="role-title">6. Der Investor / Unterstützer</span>
+                <span class="role-title">6. Der Unterstützer</span>
                 <p class="role-desc">Du hast Ressourcen, aber keine Zeit? Du ermöglichst die Infrastruktur. Du gießt das Fundament mit Energie (Geld).</p>
             </div>
         </div>
 
+        <!-- NEU: DER ABLAUF -->
+        <div style="text-align: center;">
+            <h2>Der Ablauf</h2>
+            <p class="sub-desc">Was passiert, nachdem du auf "Bewerben" geklickt hast?</p>
+        </div>
+
+        <div class="process-box">
+            <div class="process-step">
+                <strong>1. Verifizierung</strong>
+                <p>Wir prüfen deine Motivation. N.E.X.U.S. ist kein Debattierclub, sondern ein Arbeitskreis. Wenn es passt, erhältst du deinen Zugangs-Code.</p>
+            </div>
+            <div class="process-step">
+                <strong>2. Interner Workspace</strong>
+                <p>Du erhältst Zugang zum geschlossenen Notion-Workspace und dem internen Architekten-Discord. Dort liegt die unzensierte Roadmap.</p>
+            </div>
+            <div class="process-step">
+                <strong>3. Zuweisung & Meilensteine</strong>
+                <p>Du wirst anhand deines Archetyps einem Departement zugeordnet (Code, Law, Soil, Mind). Dort nimmst du dir konkrete, kleine Aufgabenpakete (Bugs, Designs, Recherchen).</p>
+            </div>
+            <div class="process-step">
+                <strong>4. Der Genesis-Block</strong>
+                <p>Jede geleistete Arbeit, jede Zeile Code und jedes Konzept wird dokumentiert. Deine Energie fließt offiziell als AURA in den Genesis-Block der neuen Zivilisation ein.</p>
+            </div>
+        </div>
+
+
         <!-- WERKZEUGE & TRANSPARENZ -->
         <div style="text-align: center;">
             <h2>Radikale Transparenz</h2>
-            <p style="color:#888;">Die Eliten arbeiten im Dunkeln. Wir arbeiten im Licht.</p>
+            <p class="sub-desc">Die Eliten arbeiten im Dunkeln. Wir arbeiten im Licht.</p>
         </div>
 
         <div class="tools-box">
-            <!-- GITHUB -->
             <div class="tool-item">
                 <span class="tool-name">DER CODE (GITHUB)</span>
                 <span class="tool-status status-live">● LIVE</span>
-                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Hier liegen Bauplan, Whitepaper und Diskussionen.</p>
+                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Hier liegen Bauplan, Whitepaper und öffentliche Diskussionen.</p>
                 <a href="https://github.com/project-nexus-official/terminal/discussions" target="_blank" class="tool-link">ZUR DISKUSSION</a>
                 <a href="https://github.com/project-nexus-official/terminal/wiki" target="_blank" class="tool-link" style="margin-left:10px;">ZUM WIKI</a>
             </div>
 
-            <!-- NOTION -->
             <div class="tool-item">
                 <span class="tool-name">DAS BÜRO (NOTION)</span>
                 <span class="tool-status status-soon">○ WIRD EINGERICHTET</span>
-                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Projektmanagement, Aufgabenverteilung und Roadmap.</p>
-                <span style="color:#555; border:1px solid #333; padding:5px 10px; font-size:0.8rem;">ZUGANG FÜR ARCHITEKTEN</span>
+                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Projektmanagement, Aufgabenverteilung und interne Roadmap.</p>
+                <span style="color:#555; border:1px solid #333; padding:5px 10px; font-size:0.8rem;">NUR FÜR ARCHITEKTEN</span>
             </div>
         </div>
 
         <!-- FINANZEN / AURA -->
         <div class="finance-box">
-            <span class="finance-title">Multi-Sig Finanzen (Crowdfunding)</span>
+            <span class="finance-title">Crowdfunding & Energie</span>
             
-            <p>Freiheit kostet. Server, Domains, Lizenzen, Gründungskosten. Aber bei N.E.X.U.S. verschwindet kein Geld in dunklen Kanälen.</p>
+            <p>Freiheit kostet in der Entstehungsphase Geld. Server, Domains, Lizenzen, Gründungskosten. Aber bei N.E.X.U.S. verschwindet kein Cent im Dunkeln.</p>
             
-            <p>Wir nutzen <strong>Multi-Signature Wallets</strong> und öffentliche Kassenbücher (Open Collective), damit jeder Cent nachvollziehbar ist.</p>
-
             <div class="aura-info">
                 <strong>⚡ DAS AURA-PRINZIP (RÜCKFLUSS):</strong><br>
-                Deine Unterstützung ist keine Spende in ein schwarzes Loch. Sie ist eine energetische Investition.<br><br>
-                Jeder Euro, den du jetzt in der Genesis-Phase beisteuerst, wird als <strong>AURA (Reputation/Energie)</strong> im Genesis-Block des Systems vermerkt. Wenn das System steht, fließt diese Energie in Form von Credits oder Status an die Pioniere zurück.
+                Deine Unterstützung ist keine Spende, sondern eine energetische Investition. Jeder Euro wird als <strong>AURA (Reputation/Energie)</strong> im Genesis-Block vermerkt. Wenn das System steht, fließt diese Energie an dich zurück.
             </div>
 
+            <!-- NEU: KONKRETE MEILENSTEINE -->
+            <h4 style="color: #fff; margin-top:30px; margin-bottom: 10px;">Aktuelle Finanzierungs-Ziele:</h4>
+            <table class="milestone-table">
+                <tr class="ms-done">
+                    <td>Phase 0: Domain & Basic Hosting (Erledigt durch Initiator)</td>
+                    <td>100 €</td>
+                </tr>
+                <tr class="ms-active">
+                    <td><strong>Phase 1: Notion-Workspace & Cloud-Infrastruktur (Genesis)</strong></td>
+                    <td><strong>1.500 €</strong></td>
+                </tr>
+                <tr class="ms-active">
+                    <td>Phase 2: Rechtliche Prüfung (Genossenschafts-Modell / Verein)</td>
+                    <td>3.500 €</td>
+                </tr>
+            </table>
+
             <p style="font-size: 0.9rem; color:#888; margin-top:20px;">
-                Aktueller Status: Wir richten das Open Collective Konto ein.
+                Wir nutzen <strong>Open Collective</strong> (öffentliches Kassenbuch), damit jeder Cent nachvollziehbar ist.
             </p>
-            
-            <span style="background:#333; color:#fff; padding:10px 20px; font-size:0.9rem; border:1px solid #555; display:inline-block; margin-top:10px;">
-                KONTO-ERÖFFNUNG LÄUFT...
+            <span style="background:#333; color:#fff; padding:10px 20px; font-size:0.9rem; border:1px solid #555; display:inline-block;">
+                KONTO WIRD AKTUELL ERÖFFNET...
             </span>
         </div>
 
-        <!-- FINAL CTA -->
+        <!-- FINAL CTA MIT COUNTER -->
         <div class="final-cta">
-            <h2 style="border:none;">Hast du dich erkannt?</h2>
-            <p style="margin-bottom:30px;">Wir suchen die ersten 100 für den Genesis Circle.</p>
+            <h2 style="border:none; margin-top: 0;">Bereit für den Bau?</h2>
+            
+            <!-- NEU: Zähler -->
+            <div class="counter-box">
+                <span class="counter-text">Aktueller Status: 3 / 100 Architekten</span>
+                <div class="counter-bar-bg">
+                    <div class="counter-bar-fill"></div>
+                </div>
+                <p style="font-size:0.9rem; color:#888; margin-top:10px;">Der Genesis Pakt schließt, sobald die erste Kohorte vollständig ist.</p>
+            </div>
+
             <a href="genesis.html" class="apply-btn">BEWERBUNG STARTEN</a>
         </div>
 
