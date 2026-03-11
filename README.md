@@ -59,7 +59,6 @@ Wir suchen die **ersten 100 Architekten** — keine Zuschauer, keine Follower, s
 
 Lies die Romane und den Bauplan. Verstehe, was wir bauen und warum.
 
-* [📖 Das Handbuch / Bauplan (Genesis Edition)](https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/PROJEKT%20NEXUS_Das%20Handbuch_V6.3.pdf)
 * [📄 Das Whitepaper (12.0)](https://github.com/project-nexus-official/terminal/blob/docs/de/BAUPLAN_%20PROJEKT%20NEXUS_V12.0.pdf)
 * [👁️ Leseprobe Band 1: Stunde Null](https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf)
 * [👁️ Leseprobe Band 2: Das Fundament](https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/Nexus%20-Trilogie_final_4.3_Band_2_Leseprobe.pdf)
