@@ -76,7 +76,7 @@ Dieses GitHub ist unser Arbeitsraum. Alles ist öffentlich. Alles ist nachvollzi
 **3. Beitreten — Die Kohorte**
 
 * [🌐 Webseite: nexus-terminal.org](https://www.nexus-terminal.org)
-* [💬 Discord: Genesis Circle](DISCORD-LINK-HIER-EINFÜGEN)
+* [💬 Discord: Genesis Circle](https://discord.gg/UpgRBnAm)
 * [📢 Telegram: Das Signal](https://t.me/Nexus_Project_official)
 * [✉️ Email: Kontakt](mailto:nexus.blueprint@proton.me)
 
@@ -147,7 +147,7 @@ We are looking for the **first 100 architects** — not spectators, not follower
 
 **Contribute:** [Issues](../../issues) · [Projects](../../projects) · [Discussions](../../discussions) · [Wiki](../../wiki)
 
-**Connect:** [Website](https://www.nexus-terminal.org) · [Discord](DISCORD-LINK-HIER-EINFÜGEN) · [Telegram](https://t.me/NexusProjectOfficial) · [Email](mailto:nexus.blueprint@proton.me)
+**Connect:** [Website](https://www.nexus-terminal.org) · [Discord](https://discord.gg/UpgRBnAm) · [Telegram](https://t.me/NexusProjectOfficial) · [Email](mailto:nexus.blueprint@proton.me)
 
 ---
 
