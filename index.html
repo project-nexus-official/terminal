@@ -234,6 +234,14 @@
         }
         .pulse-button:hover { background: var(--accent-orange); color: #000; animation: none; }
 
+        .architekt-button {
+            display: inline-block; background: transparent; color: var(--accent-gold);
+            border: 2px solid var(--accent-gold); padding: 15px 30px; font-size: 1.1rem;
+            font-weight: bold; text-transform: uppercase; cursor: pointer; text-decoration: none;
+            letter-spacing: 1px; transition: 0.3s; margin-top: 20px;
+        }
+        .architekt-button:hover { background: var(--accent-gold); color: #000; box-shadow: 0 0 20px var(--accent-gold); }
+
         @keyframes pulse-orange {
             0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 157, 0, 0); }
@@ -259,7 +267,7 @@
         ul { list-style: none; padding: 0; margin-top: 20px; }
         li { margin-bottom: 15px; font-size: 1.1rem; border-bottom: 1px solid #222; padding-bottom: 5px; }
 
-        .cta-button { display: inline-block; width: 100%; padding: 18px; text-align: center; font-weight: bold; margin-top: 20px; font-size: 1.1rem; text-transform: uppercase; }
+        .cta-button { display: inline-block; width: 100%; padding: 18px; text-align: center; font-weight: bold; margin-top: 20px; font-size: 1.1rem; text-transform: uppercase; box-sizing: border-box; }
         .cta-amazon { background: var(--accent-orange); color: #000; }
         .cta-amazon:hover { background: #fff; }
         .cta-whitepaper { border: 2px solid var(--accent-cyan); color: var(--accent-cyan); background: transparent;}
@@ -381,7 +389,7 @@
 
     <!-- HEADER -->
     <header>
-        <!-- KLICKBARES LOGO (RELOAD) -->
+        <!-- KLICKBARES LOGO -->
         <a href="index.html" style="text-decoration:none;">
             <div class="logo-container">
                 <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png" alt="Nexus Logo" class="logo-img">
@@ -485,7 +493,7 @@
                     Kritik ist hier kein Angriff, sondern "Bug-Hunting". Ich erwarte, dass ihr diesen Bauplan prüft, verbessert und Teile davon neu schreibt. Wir bauen das zusammen.
                 </p>
                 
-                <!-- NEUER PROMO BEREICH MIT 2 BUTTONS NEBENEINANDER -->
+                <!-- PROMO BEREICH MIT 2 BUTTONS NEBENEINANDER -->
                 <div class="thinktank-promo">
                     <p class="tt-desc">
                         Der N.E.X.U.S. Genesis Circle formiert sich. Wir organisieren die kollektive Intelligenz in 6 Departments (Code, Recht, Soil, Mind, Story & Invest).
@@ -567,7 +575,10 @@
                     <li>💡 <strong>Resource Based Economy:</strong> Wohlstand für alle statt Profit für wenige.</li>
                 </ul>
                 <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/BAUPLAN_%20PROJEKT%20NEXUS_V12.0.pdf" target="_blank" class="cta-button cta-whitepaper" style="background: rgba(0, 243, 255, 0.1);">Der vollständige Bauplan für eine souveräne Zivilisation (12.0)</a>
-                <a href="https://https://github.com/project-nexus-official/terminal/blob/182cb087321e29d1647a17717841491cb9d293ff/NEXUS_Bauplan_einfach_V1.8.pdf" target="_blank" class="cta-button cta-whitepaper">Der Bauplan V12.0 in komprimierter Form & leicht verständlicher Sprache ((V1.8)</a>
+                <a href="https://github.com/project-nexus-official/terminal/blob/182cb087321e29d1647a17717841491cb9d293ff/NEXUS_Bauplan_einfach_V1.8.pdf" target="_blank" class="cta-button cta-whitepaper">Der Bauplan V12.0 in komprimierter Form & leicht verständlicher Sprache (V1.8)</a>
+                
+                <!-- NEUER BUTTON: 10 SEITEN ZUSAMMENFASSUNG -->
+                <a href="https://github.com/project-nexus-official/terminal/blob/da1b240211a848bfa190a6a062a0fb5a59f125c6/NEXUS_Zusammenfassung_10Seiten.pdf" target="_blank" class="cta-button cta-whitepaper">Die N.E.X.U.S. Essenz – 10 Seiten Zusammenfassung</a>
             </div>
         </div>
     </div>
@@ -592,8 +603,6 @@
             <a href="https://www.instagram.com/n.e.x.u.s._navigator" target="_blank">Instagram</a>
             <a href="https://www.threads.com/@n.e.x.u.s._navigator" target="_blank">Threads</a>
             <a href="https://www.tiktok.com/@n.e.x.u.s._navigator" target="_blank">TikTok</a>
-            <a href="https://x.com/nexusxnavigator" target="_blank">X</a>
-            <a href="https://bsky.app/profile/nexus-navigator.bsky.social" target="_blank">Bluesky</a>
             <a href="https://github.com/project-nexus-official/terminal/blob/main/datenschutz.html" target="_blank">Datenschutz</a>
             <a href="https://github.com/project-nexus-official/terminal/blob/main/impressum.html" target="_blank">Impressum</a>
         </div>
