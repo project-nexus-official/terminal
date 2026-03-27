@@ -81,7 +81,8 @@
             margin-top: 25px;
         }
         
-        input[type="text"], input[type="email"], select, textarea {
+        /* HIER WURDE input[type="url"] HINZUGEFÜGT */
+        input[type="text"], input[type="email"], input[type="url"], select, textarea {
             width: 100%; padding: 15px; 
             background: #000; border: 1px solid #444; 
             color: #fff; font-family: inherit; font-size: 1rem;
@@ -119,7 +120,7 @@
     </div>
 
     <h1>OneApp Bug-Hunting</h1>
-    <p class="subtitle">Wir meckern nicht über Fehler. Wir isolieren und vernichten sie. Trage die System-Anomalie hier ein, um den Code zu härten.</p>
+    <p class="subtitle">Wir meckern nicht über Fehler. Wir isolieren und beseitigen sie. Trage die System-Anomalie hier ein, um den Code zu härten.</p>
 
     <div class="form-container">
         
@@ -132,7 +133,6 @@
         </div>
 
         <!-- FORMULAR START -->
-        <!-- WICHTIG: NEUE FORMSPREE URL HIER EINFÜGEN -->
         <form action="https://formspree.io/f/mzdkznlk" method="POST">
             
             <label>1. Dein Nickname (Telegram) / Name</label>
@@ -175,6 +175,11 @@
 
             <label>8. Erwartetes Verhalten</label>
             <input type="text" name="Expected_Behavior" required placeholder="Was hätte laut System-Logik eigentlich passieren sollen?">
+
+            <!-- NEUER BEREICH FÜR SCREENSHOTS/VIDEOS -->
+            <label>9. Beweismaterial (Screenshots / Videos)</label>
+            <input type="url" name="Evidence_Link" placeholder="https://link-zu-deinem-screenshot.com">
+            <span class="help-text">Um das System schlank und souverän zu halten, laden wir hier keine Dateien direkt hoch. Lade deinen Screenshot oder dein Video in deine eigene Cloud (Proton Drive, Mega, ungelistetes YouTube) und füge den Freigabelink hier ein. (Optional)</span>
 
             <button type="submit" class="submit-btn">ANOMALIE MELDEN</button>
         </form>
