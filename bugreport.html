@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.E.X.U.S. | Bug-Hunting Protokoll</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-main: #e0e0e0;
+            --accent-cyan: #00f3ff;
+            --accent-orange: #ff9d00;
+            --accent-gold: #ffd700;
+            --accent-red: #ff3333; /* Für Fehler/Bugs */
+            --panel-bg: #0a0a0a;
+        }
+
+        body {
+            margin: 0; padding: 20px;
+            background-color: var(--bg-color); color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6; font-size: 18px;
+        }
+
+        /* --- HEADER & BACK BUTTON --- */
+        .top-nav { text-align: left; margin-bottom: 30px; margin-top: 20px;}
+        .back-link {
+            color: var(--accent-cyan);
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: 1px solid var(--accent-cyan);
+            padding: 10px 20px;
+            display: inline-block;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .back-link:hover { background: var(--accent-cyan); color: #000; box-shadow: 0 0 15px var(--accent-cyan); }
+
+        h1 { 
+            color: var(--accent-red); 
+            text-transform: uppercase; 
+            margin-bottom: 10px; 
+            font-size: 2.5rem;
+            text-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+            text-align: center;
+        }
+        .subtitle { 
+            color: #ddd;
+            max-width: 700px; 
+            margin: 0 auto 50px auto; 
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* CONTAINER */
+        .form-container {
+            max-width: 800px; margin: 0 auto;
+            background: var(--panel-bg); padding: 40px;
+            border: 1px solid #333; border-top: 4px solid var(--accent-red);
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(255, 51, 51, 0.1);
+        }
+
+        /* KNOWN BUGS BOX */
+        .known-bugs {
+            background: rgba(255, 51, 51, 0.05);
+            border: 1px dashed var(--accent-red);
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+        .known-bugs h3 { color: var(--accent-red); margin-top: 0; font-size: 1.1rem; }
+        .known-bugs ul { margin: 0; padding-left: 20px; color: #ccc; font-size: 0.95rem; }
+
+        /* FORMULAR ELEMENTE */
+        label { 
+            display: block; margin-bottom: 8px; color: var(--accent-cyan); 
+            font-weight: bold; text-transform: uppercase; font-size: 0.95rem;
+            margin-top: 25px;
+        }
+        
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%; padding: 15px; 
+            background: #000; border: 1px solid #444; 
+            color: #fff; font-family: inherit; font-size: 1rem;
+            box-sizing: border-box; border-radius: 3px;
+            transition: 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus { 
+            border-color: var(--accent-red); outline: none; box-shadow: 0 0 10px rgba(255, 51, 51, 0.2); 
+        }
+
+        .help-text {
+            display: block; color: #888; font-size: 0.85rem; margin-top: 5px; font-style: italic;
+        }
+
+        .submit-btn {
+            background: var(--accent-red); color: #000;
+            border: none; padding: 20px; font-size: 1.2rem;
+            font-weight: bold; cursor: pointer; text-transform: uppercase;
+            width: 100%; transition: 0.3s; letter-spacing: 1px;
+            margin-top: 40px;
+        }
+        .submit-btn:hover { background: #fff; box-shadow: 0 0 30px var(--accent-red); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .form-container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav" style="max-width: 800px; margin: 20px auto 30px auto;">
+        <a href="index.html" class="back-link">&lt; ZURÜCK ZUM TERMINAL</a>
+    </div>
+
+    <h1>OneApp Bug-Hunting</h1>
+    <p class="subtitle">Wir meckern nicht über Fehler. Wir isolieren und vernichten sie. Trage die System-Anomalie hier ein, um den Code zu härten.</p>
+
+    <div class="form-container">
+        
+        <div class="known-bugs">
+            <h3>⚠️ Bekannte Anomalien (Bitte nicht mehr melden)</h3>
+            <ul>
+                <li><strong>Missed-Message-Sync:</strong> Nostr Timestamps synchronisieren beim App-Neustart noch unzuverlässig. (Code Circle arbeitet bereits am Fix).</li>
+                <li><strong>Gruppen-Chats:</strong> Noch deaktiviert in dieser Alpha-Version.</li>
+            </ul>
+        </div>
+
+        <!-- FORMULAR START -->
+        <!-- WICHTIG: NEUE FORMSPREE URL HIER EINFÜGEN -->
+        <form action="https://formspree.io/f/mzdkznlk" method="POST">
+            
+            <label>1. Dein Codename / Name</label>
+            <input type="text" name="Reporter_Name" required placeholder="Wer meldet die Anomalie?">
+
+            <label>2. E-Mail Adresse (Für Rückfragen)</label>
+            <input type="email" name="Email" required placeholder="Damit die Architekten dich bei Fragen erreichen können">
+
+            <label>3. Verwendete Hardware & OS-Version</label>
+            <input type="text" name="Device_OS" required placeholder="z.B. Samsung Galaxy S23 (Android 14) oder iPhone 13 (iOS 17)">
+            <span class="help-text">Da wir plattformübergreifend mit Flutter arbeiten, ist diese Angabe essenziell.</span>
+
+            <label>4. Netzwerk-Status beim Fehler</label>
+            <select name="Network_Status" required>
+                <option value="" disabled selected>Bitte auswählen...</option>
+                <option value="Global_Nostr">Globales Netz (Internet / Nostr-Relays)</option>
+                <option value="Local_LAN">Lokales Netz (WLAN / LAN-Sync)</option>
+                <option value="BLE_Bluetooth">Bluetooth (BLE Mesh)</option>
+                <option value="Offline">Komplett Offline</option>
+            </select>
+
+            <label>5. In welchem Modul trat der Fehler auf?</label>
+            <select name="App_Module" required>
+                <option value="" disabled selected>Bitte auswählen...</option>
+                <option value="Onboarding">Identitätserstellung / SSI-Onboarding</option>
+                <option value="Inbox_Chat">Inbox / Chat-Verlauf</option>
+                <option value="Contacts_Trust">Kontakte / 4-stufiges Trust-Level</option>
+                <option value="Media_Upload">Bilder / Medien versenden</option>
+                <option value="Encryption">Verschlüsselung (E2E)</option>
+                <option value="UI_Design">Layout / Optik verschoben</option>
+                <option value="Other">Sonstiges</option>
+            </select>
+
+            <label>6. Symptom: Was genau ist passiert?</label>
+            <textarea name="Bug_Description" rows="4" required placeholder="Beschreibe die Anomalie. Gab es eine Fehlermeldung auf dem Bildschirm? Ist die App eingefroren?"></textarea>
+
+            <label>7. Reproduktion: Wie können wir das nachstellen?</label>
+            <textarea name="Bug_Steps" rows="4" required placeholder="Schritt 1: Ich habe auf X geklickt. Schritt 2: Dann habe ich Y eingegeben..."></textarea>
+            <span class="help-text">Ein Bug, den wir nicht reproduzieren können, ist ein Bug, den wir nicht fixen können. Sei präzise.</span>
+
+            <label>8. Erwartetes Verhalten</label>
+            <input type="text" name="Expected_Behavior" required placeholder="Was hätte laut System-Logik eigentlich passieren sollen?">
+
+            <button type="submit" class="submit-btn">ANOMALIE MELDEN</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
