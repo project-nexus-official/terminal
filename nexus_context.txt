@@ -7717,6 +7717,839 @@ Die Metamorphose: Der globale Wandel und der Aufstieg zu einer neuen Zivilisatio
 F: Warum hast du einen Roman geschrieben und kein Sachbuch?
 A: Fakten informieren, aber Geschichten bewegen. Wir müssen fühlen, wie diese neue Welt sein könnte, bevor wir sie bauen können. David, Sarah und Robert zeigen uns, dass es möglich ist. Die Trilogie ist eine "Simulation der Hoffnung".
 
++++++++++Die Bedieungsanleitung für die N.E.X.U.S. OneApp++++++++
+
+Einleitung
+Willkommen in der Menschheitsfamilie
+Du hältst gerade mehr in Händen als eine App.
+Die NEXUS OneApp ist ein Werkzeug für Menschen, die verstanden haben, dass echte Verbindung — zwischen Personen, zwischen Gemeinschaften, zwischen Ideen — nicht durch Konzerne vermittelt werden sollte. Keine Werbung. Kein Datenhandel. Kein unsichtbarer Dritter, der mitlest, mitdenkt oder mitentscheidet.
+Diese App gehört dir. Deine Nachrichten gehören dir. Deine Identität gehört dir.
+
+Für wen ist diese Anleitung?
+Diese Anleitung wurde für Menschen geschrieben, die noch nie eine dezentrale App genutzt haben. Du musst kein Technik-Profi sein. Du musst nichts über Blockchain, Server oder Programmierung wissen.
+Was du brauchst: ein Android-Smartphone, etwas Zeit für den ersten Start — und einen Stift und Papier. (Warum Papier? Das erfährst du gleich im ersten Kapitel.)
+
+Was bedeutet eigentlich „dezentral"?
+Die meisten Apps, die du kennst — WhatsApp, Instagram, Gmail — funktionieren so: Deine Nachrichten landen zuerst auf einem Computer, der einem Unternehmen gehört. Dieses Unternehmen entscheidet, wer deine Nachrichten sieht, ob sie gelöscht werden, und was mit deinen Daten passiert. Du bist Gast in ihrem Haus.
+Die NEXUS OneApp funktioniert anders. Stell dir vor, statt in einem Haus mit einem einzigen Besitzer in einem Netz aus gleichwertigen Teilnehmern zu kommunizieren — wie Nachbarn, die direkt miteinander sprechen, ohne dass jemand in der Mitte sitzt und zuhört.
+Deine Nachrichten gehen direkt. Über Bluetooth, über dein WLAN oder — wenn nötig — über das Internet. Aber immer verschlüsselt. Immer nur für dich und dein Gegenüber lesbar.
+Das ist es, was „dezentral" bedeutet: Keine zentrale Macht, die den Fluss kontrolliert.
+
+
+Was kann die App heute?
+Die NEXUS OneApp befindet sich in der Version v0.1.3-alpha. Das bedeutet: Sie ist noch jung, aber bereits vollständig nutzbar für das Wesentliche.
+Was du heute tun kannst:
+* Eine eigene, selbstbestimmte digitale Identität erstellen
+* Sicher und verschlüsselt mit anderen NEXUS-Nutzern schreiben
+* Bilder und Sprachnachrichten teilen
+* Menschen in deiner Nähe über Bluetooth entdecken
+* Öffentlichen Kanälen beitreten und Gemeinschaft erleben
+* Selbst bestimmen, wer welche Informationen über dich sehen darf
+Was noch kommt: Governance (gemeinsame Entscheidungsfindung per Liquid Democracy), ein internes Tauschmittel (AETHER Wallet) und vieles mehr. Du bist früh dabei — und das ist gut so.
+
+Ein Hinweis vor dem Start
+Die NEXUS OneApp läuft derzeit auf Android-Smartphones (ab Android 8). Eine iOS-Version ist in Planung.
+Die App ist ausschließlich auf Deutsch verfügbar. Weitere Sprachen folgen mit dem Wachstum der Gemeinschaft.
+Und noch etwas, bevor du startest: Halte beim ersten Öffnen der App Stift und Papier bereit. Im ersten Schritt wirst du gebeten, 12 Wörter aufzuschreiben. Diese 12 Wörter sind dein einziger Schlüssel zu deiner Identität — und sie können nicht wiederhergestellt werden, wenn du sie verlierst. Mehr dazu im nächsten Kapitel.
+Bereit? Dann fangen wir an.
+
+Kapitel 1 – Dein erster Start: Deine Identität erstellen
+
+Was passiert hier eigentlich?
+Wenn du eine normale App zum ersten Mal öffnest, gibst du eine E-Mail-Adresse ein, wählst ein Passwort — und irgendwo auf einem fremden Server entsteht ein Konto, das dir gehört. Oder besser gesagt: das für dich verwaltet wird.
+Die NEXUS OneApp macht das anders.
+Hier entsteht deine Identität auf deinem Gerät — und nur dort. Kein Server, kein Unternehmen, keine E-Mail-Adresse. Stattdessen bekommst du etwas, das in der digitalen Welt einzigartig ist: 12 Wörter, die nur dir gehören.
+Diese 12 Wörter — deine sogenannte Seed Phrase — sind dein Schlüssel. Sie erzeugen deine Identität, deine Verschlüsselung, deinen gesamten digitalen Fingerabdruck in der NEXUS-Welt. Wer diese 12 Wörter kennt, kann auf deine Identität zugreifen. Wer sie nicht kennt — auch du selbst nicht mehr, wenn du sie verlierst — hat keinen Weg hinein.
+Das ist Freiheit. Und Verantwortung zugleich.
+?? Bevor du weiterliest: Lege jetzt Stift und Papier bereit. Du wirst sie gleich brauchen.
+
+Die 5 Schritte des Onboardings
+Beim ersten Start führt dich die App durch fünf Schritte. Das dauert insgesamt etwa 3–5 Minuten.
+
+Schritt 1 – Willkommen
+Die App begrüßt dich und erklärt kurz, was dich erwartet. Lies dir den Text in Ruhe durch. Dann tippe auf Weiter.
+
+Schritt 2 – Deine Seed Phrase wird erzeugt
+Die App generiert jetzt deine 12 Wörter. Diese Wörter sind zufällig — niemand sonst hat genau diese Kombination.
+Du siehst 12 deutsche Wörter, nummeriert von 1 bis 12.
+?? Schreibe jetzt alle 12 Wörter in der richtigen Reihenfolge auf Papier. Nutze kein Foto, keine Notiz-App, keine Cloud. Nur Papier.
+Warum? Weil alles Digitale gehackt, gelöscht oder verloren werden kann. Ein Blatt Papier in einer Schublade ist sicherer als jedes Passwort auf einem Server.
+
+Schritt 3 – Aufschreiben bestätigen
+Die App fragt dich, ob du die Wörter notiert hast. Bestätige erst, wenn du sie wirklich aufgeschrieben hast. Dieser Schritt schützt dich vor dir selbst — denn viele Menschen überspringen ihn und bereuen es später.
+
+Schritt 4 – Drei Wörter bestätigen
+Als Kontrolle fragt die App nach drei zufällig gewählten Wörtern aus deiner Liste — zum Beispiel: „Was war Wort Nummer 4?"
+Das ist kein Test, den du bestehen oder scheitern kannst. Es ist eine freundliche Erinnerung: Deine Seed Phrase ist wichtig. Schau auf dein Papier und tipp die richtigen Wörter ein.
+
+Schritt 5 – Dein Nickname
+Wähle einen Namen, unter dem dich andere in der NEXUS-Welt kennen. Das kann dein echter Name sein, ein Spitzname oder ein frei gewählter Ausdruck — ganz wie du möchtest. Du kannst ihn später jederzeit ändern.
+Tippe auf Fertig — und deine Identität ist erstellt.
+
+Deine Identität sichern – das Wichtigste nochmal
+Die Seed Phrase ist kein Passwort, das du zurücksetzen kannst. Es gibt keine „Passwort vergessen"-Funktion, keinen Support, der dir helfen kann, und keine Möglichkeit, sie nachträglich wiederherzustellen.
+Bewahre dein Papier sicher auf. Hier ein paar bewährte Wege:
+* Zuhause in einem verschlossenen Ort — zum Beispiel ein Notizbuch im Bücherregal oder ein kleiner Tresor
+* Zwei Kopien an verschiedenen Orten — falls eine verloren geht
+* Niemals fotografieren oder in eine App eintippen — nicht mal in eine Notiz-App
+Wenn du dein Handy verlierst, kaputt geht oder die App neu installierst: Mit deiner Seed Phrase kannst du deine Identität auf jedem neuen Gerät vollständig wiederherstellen. Mit diesen 12 Wörtern bist du nie verloren.
+
+?? Tipps
+* Schreib deutlich. Unleserliche Handschrift kann später zum Problem werden.
+* Reihenfolge zählt. „Wort 1 bis 12" — nicht durchmischen.
+* Teile deine Seed Phrase mit niemandem. Nicht mit Freunden, nicht mit NEXUS-Mitgliedern, nicht mit dem Support. Niemand der legitim handelt, wird dich je danach fragen.
+* Nickname ? Identität. Deinen Nickname kannst du später ändern. Deine Seed Phrase bleibt immer dieselbe.
+
+
+Schritt 6 – Ein besonderer Moment
+Bevor du zum ersten Mal dein Dashboard siehst, macht die App eine kurze Pause.
+Du wirst gebeten, die Grundsätze der Menschheitsfamilie zu lesen — die drei Säulen, auf denen diese Gemeinschaft aufgebaut ist: Schade niemandem. Radikale Wahrheit. Macht der Basis. Dazu deine unveräußerlichen Rechte als Mitglied. Und ein persönliches Bekenntnis.
+Das ist kein Kleingedrucktes. Kein juristischer Vertrag. Es sind die Worte, auf die sich alle einigen, die diesen Raum betreten.
+Nimm dir die Zeit, sie wirklich zu lesen. Zwei Häkchen am Ende — und du bist drin.
+?? Du kannst die Grundsätze jederzeit wieder nachlesen: Einstellungen ? Unsere Grundsätze
+
+Kapitel 2 – Dein Profil: Wer bist du in der NEXUS-Welt?
+Was ist das?
+Dein Profil ist deine Visitenkarte innerhalb der Menschheitsfamilie. Es ist der Ort, an dem du entscheidest, wie du dich anderen gegenüber zeigst — wie viel, wie wenig, und vor allem: wem gegenüber.
+Das klingt selbstverständlich. Ist es aber in den meisten Apps nicht. Normalerweise siehst du ein Profil — und alle anderen auch. Auf Facebook, Instagram oder WhatsApp gibt es zwar Privatsphäre-Einstellungen, aber sie sind kompliziert, versteckt, und am Ende entscheidet doch das Unternehmen, was mit deinen Daten passiert.
+In der NEXUS OneApp hast du ein Werkzeug, das sich Selective Disclosure nennt — auf Deutsch: selektive Weitergabe. Jedes einzelne Feld in deinem Profil hat eine eigene Sichtbarkeit. Du bestimmst für jede Information separat, wer sie sehen darf.
+
+Wie richte ich mein Profil ein?
+Tippe in der unteren Navigation auf das Profil-Symbol (ganz rechts). Dort findest du alle Felder, die du ausfüllen kannst:
+* Profilbild — ein Foto von dir, ein Avatar, oder gar nichts
+* Anzeigename — dein Nickname, den du beim Onboarding gewählt hast
+* Klarname — dein richtiger Name
+* Bio — ein kurzer Satz über dich, deine Werte, dein Warum
+* Standort — Stadt, Region oder einfach „Irgendwo auf der Erde"
+* Sprachen — welche Sprachen du sprichst
+* Geburtsdatum — wichtig für spätere Governance Prozesse
+Tippe auf ein Feld, um es zu bearbeiten. Tippe auf das Schloss-Symbol neben dem Feld, um die Sichtbarkeit einzustellen.
+
+Selective Disclosure: Du entscheidest, wer was sieht
+Neben jedem Profilfeld siehst du ein kleines Schloss-Symbol. Tippst du darauf, öffnet sich eine Auswahl mit vier Stufen:
+Stufe
+Bedeutung
+?? Alle
+Jeder NEXUS-Nutzer kann dieses Feld sehen
+?? Kontakte
+Nur Menschen, die du als Kontakt hinzugefügt hast
+?? Vertrauenspersonen
+Nur Menschen, denen du besonders vertraust
+?? Privat
+Nur du siehst dieses Feld
+Ein Beispiel: Dein Name ist für alle sichtbar — dein Geburtsdatum nur für Vertrauenspersonen, dein Standort nur für Kontakte, deine Bio für alle. Das entscheidest alles du.
+Diese Stufen hängen direkt mit deinen Kontakten zusammen — mehr dazu im nächsten Kapitel.
+
+Dein QR-Code: Deine digitale Visitenkarte
+Jede Identität in der NEXUS-Welt hat einen einzigartigen QR-Code. Er enthält nichts weiter als deinen öffentlichen Schlüssel — also die Information, die andere brauchen, um dir eine verschlüsselte Nachricht zu schicken oder dich als Kontakt hinzuzufügen.
+So findest du deinen QR-Code: Tippe auf Profil in der Navigation und in der Profilübersicht findest du das QR-Code-Bild. Es enthält deinen persönlichen öffentlichen Schlüssel.
+Von hier aus kannst du ihn:
+* Teilen — über andere Apps (Signal, Telegram, E-Mail, ausgedruckt auf Papier)
+* Als Bild speichern — in deiner Galerie, zum späteren Teilen
+?? Tipp: Drucke deinen QR-Code aus und nimm ihn mit zu NEXUS-Treffen, Veranstaltungen oder Gemeinschaftsprojekten. So können Menschen dich in Sekunden als Kontakt hinzufügen — ganz ohne Telefonnummer, ohne E-Mail, ohne Datenweitergabe.
+
+?? Tipps
+* Weniger ist mehr beim ersten Start. Fülle nur aus, was du wirklich teilen möchtest. Du kannst jederzeit mehr hinzufügen — aber nichts, was du nie eingegeben hast, kann jemals geleakt werden.
+* Deine Bio ist dein erster Eindruck. Ein kurzer Satz über deine Werte oder dein Warum sagt mehr als ein langer Lebenslauf.
+* Profilbild ja oder nein? Kein Profilbild ist völlig legitim. Viele NEXUS-Mitglieder nutzen Avatare oder Symbole statt echter Fotos — besonders in der Aufbauphase.
+* Sichtbarkeit jederzeit änderbar. Du kannst jedes Feld jederzeit auf privat stellen oder wieder öffnen. Es gibt keine falsche Entscheidung — nur deine Entscheidung.
+
+Kapitel 3 – Kontakte: Menschen finden und vertrauen
+Was ist das?
+In der NEXUS-Welt gibt es keine Freundeslisten, die ein Algorithmus befüllt. Keine Vorschläge, die auf deinem Surfverhalten basieren. Keine versteckten Verbindungen zwischen dir und Menschen, die du gar nicht kennst.
+Hier baust du dein Netzwerk bewusst und persönlich auf — einen Menschen nach dem anderen. Und du entscheidest nicht nur, wen du hinzufügst, sondern auch wie sehr du dieser Person vertraust. Denn Vertrauen ist keine Ein/Aus-Entscheidung. Es wächst.
+
+Wie füge ich einen Kontakt hinzu?
+Es gibt zwei Wege:
+
+Weg 1 – QR-Code scannen (empfohlen)
+Das ist der direkteste und sicherste Weg. Ihr seid im selben Raum — oder die andere Person schickt dir ihren QR-Code per Bild.
+1. Tippe in der unteren Navigation auf Chat
+2. Tippe oben rechts auf das QR-Scanner-Symbol
+3. Halte die Kamera auf den QR-Code der anderen Person
+4. Die App erkennt den Code automatisch — kein Knopf drücken
+5. Bestätige das Hinzufügen
+Fertig. Die Person erscheint in deiner Kontaktliste.
+
+Weg 2 – Peer-Radar
+Der Radar auf deinem Dashboard zeigt dir NEXUS-Nutzer in deiner unmittelbaren Nähe — über Bluetooth oder lokales WLAN erreichbar.
+1. Tippe auf dem Dashboard auf den Radar
+2. Du siehst Punkte für Nutzer in deiner Nähe
+3. Tippe auf einen Punkt, um das Profil anzusehen
+4. Tippe auf Kontakt hinzufügen
+?? Hinweis: Der Radar zeigt nur Nutzer, die gerade aktiv in der App sind und sich in deiner Nähe befinden. Er ist kein dauerhaftes Tracking — sobald jemand die App schließt oder den Bereich verlässt, verschwindet der Punkt.
+
+Die 4 Vertrauensstufen
+Jeder neue Kontakt beginnt auf der untersten Stufe — und du entscheidest, ob und wann du ihn höherstufst. Es gibt vier Stufen:
+Stufe
+Name
+Bedeutung
+1
+?? Entdeckt
+Ihr habt Kontakt aufgenommen, aber noch kaum Erfahrung miteinander
+2
+?? Kontakt
+Du kennst die Person und kommunizierst regelmäßig
+3
+?? Vertrauensperson
+Du vertraust dieser Person — sie sieht mehr von dir
+4
+?? Bürge
+Höchste Stufe — diese Person kann für deine Identität bürgen
+Die Vertrauensstufe bestimmt direkt, welche Felder deines Profils diese Person sehen kann — genau das, was du in Kapitel 2 mit Selective Disclosure eingestellt hast.
+So änderst du die Vertrauensstufe: Öffne den Kontakt ? tippe auf die aktuelle Stufe ? wähle die neue Stufe.
+
+Schlüssel-Verifikation: Bist du wirklich du?
+In einer verschlüsselten Welt gibt es eine wichtige Frage: Woher weißt du, dass der Mensch hinter einem Profil wirklich derjenige ist, für den er sich ausgibt?
+Die NEXUS OneApp gibt dir ein Werkzeug dafür: die Schlüssel-Verifikation.
+Jede Identität hat einen einzigartigen Fingerabdruck — eine kurze Zeichenfolge, die aus dem persönlichen Schlüssel erzeugt wird. Wenn du einer Person wirklich vertraust — besonders bevor du sie zur Vertrauensperson oder Bürgin machst — kannst du diesen Fingerabdruck abgleichen.
+So geht es:
+1. Öffne den Kontakt
+2. Tippe auf Schlüssel verifizieren
+3. Ihr seht beide eure gegenseitigen Fingerabdrücke
+4. Lest sie euch gegenseitig vor — am besten persönlich oder per Telefon
+5. Stimmen sie überein? Dann ist die Verbindung echt ?
+Du musst das nicht bei jedem Kontakt machen. Aber bei Menschen, denen du sehr vertraust, lohnt es sich.
+
+Weitere Funktionen im Kontakt-Bereich
+Stilles Blockieren Wenn du eine Person blockierst, bemerkt sie es nicht. Sie kann dir keine Nachrichten mehr schicken — bekommt aber keine Fehlermeldung. Diskret und konfliktfrei.
+Öffne den Kontakt ? Menü (drei Punkte) ? Blockieren
+
+Persönliche Notizen Du kannst zu jedem Kontakt eine private Notiz hinterlegen — nur für dich sichtbar. Nützlich um festzuhalten, wo ihr euch kennengelernt habt, woran die Person arbeitet, oder einfach etwas, das du nicht vergessen möchtest.
+Öffne den Kontakt ? tippe auf das Notiz-Symbol
+
+Kontakte exportieren und importieren Du kannst deine gesamte Kontaktliste exportieren — als verschlüsselte Datei, die du sicher aufbewahrst. Bei einem Gerätewechsel importierst du sie einfach wieder und hast alle Kontakte sofort zurück.
+Einstellungen ? Kontakte ? Exportieren / Importieren
+
+?? Tipps
+* Fange mit Menschen an, die du kennst. Das erste echte Gespräch in der App fühlt sich anders an als jede WhatsApp-Nachricht. Gut anders.
+* Nicht jeder muss eine Vertrauensperson werden. Es ist völlig normal, viele Kontakte auf Stufe 1 oder 2 zu lassen.
+* Die Bürgen-Stufe ist etwas Besonderes. Sie bedeutet: Diese Person steht für meine Identität ein. Vergib sie mit Bedacht — und als Zeichen echter Verbundenheit.
+* Exportiere deine Kontakte regelmäßig. Besonders wenn du viele Verbindungen aufgebaut hast. Ein Backup kostet eine Minute und kann viel retten.
+Kapitel 4 – Chatten: Sicher und direkt kommunizieren
+Was ist das?
+Nachrichten schreiben kennt jeder. Aber wie eine Nachricht von dir zu deinem Gegenüber gelangt — das ist in der NEXUS OneApp grundlegend anders als bei allem, was du bisher genutzt hast.
+Kein Server eines Unternehmens liest mit. Kein Algorithmus entscheidet, ob deine Nachricht ankommt. Kein Dritter speichert deine Unterhaltungen.
+Deine Nachrichten sind von dem Moment an verschlüsselt, in dem du auf Senden tippst — und werden erst auf dem Gerät deines Gegenübers wieder lesbar. Nicht irgendwo dazwischen. Nur dort.
+
+Wie findet meine Nachricht ihren Weg?
+Die App wählt automatisch den besten verfügbaren Weg — du musst nichts einstellen:
+Weg
+Wann
+Was bedeutet das?
+?? Bluetooth (BLE)
+Ihr seid in unmittelbarer Nähe (bis ~50m)
+Direkt von Gerät zu Gerät — völlig ohne Internet
+?? WLAN (LAN)
+Ihr seid im selben Netzwerk
+Schnell, lokal, kein Internet nötig
+?? Internet (Nostr)
+Ihr seid weit voneinander entfernt
+Über das dezentrale Nostr-Netzwerk — kein zentraler Server
+Das goldene Schloss-Symbol im Chat zeigt dir jederzeit: Diese Unterhaltung ist verschlüsselt. Niemand außer euch kann sie lesen.
+?? Gut zu wissen: Bluetooth und WLAN funktionieren auch dann, wenn das Internet ausgefallen ist. Solange ihr euch in der Nähe seid, könnt ihr kommunizieren — unabhängig vom Rest der Welt.
+Und das ist erst der Anfang.
+NEXUS baut an einer Infrastruktur, die Kommunikation auch dann möglich macht, wenn nicht nur das Internet — sondern die gesamte digitale Infrastruktur ausfällt oder abgeschaltet wird. In Zukunft werden weitere Transportwege hinzukommen:
+* LoRa — ein energieeffizienter Langstreckenfunk (bis zu 10 km Reichweite), der mit günstigen, kleinen Geräten funktioniert. Reicht für Textnachrichten — und das selbst bei totalem Stromausfall oder Internet-Blackout. Das digitale Äquivalent eines Walkie-Talkies, das niemand abschalten kann.
+* Mesh-Netzwerke — Geräte verbinden sich zu einem selbstheilenden Schwarm. Fällt ein Knoten aus, findet die Nachricht automatisch einen anderen Weg — wie Wasser, das immer einen Weg findet. Hier kommt dann noch Verbindungshopping dazu, die Verbindung springt von einem Knotenpunkt zum anderen.
+* Weitere Protokolle — darunter Laser-Links zwischen Gebäuden, Richtfunk und langfristig sogar stratosphärische Verbindungen für Regionen ohne jede Infrastruktur.
+Das Prinzip dahinter: Eine Nachricht kommt an — egal was passiert. Vielleicht nicht immer in Echtzeit. Aber sie kommt an.
+
+Eine Nachricht schreiben
+1. Tippe in der unteren Navigation auf Chat
+2. Wähle einen bestehenden Kontakt — oder tippe oben rechts auf das Stift-Symbol für ein neues Gespräch
+3. Tippe deine Nachricht in das Textfeld unten ein
+4. Tippe auf den Senden-Pfeil
+So einfach ist das. Der Rest passiert automatisch.
+
+Bilder senden
+Tippe neben dem Textfeld auf das Bild-Symbol. Du kannst wählen zwischen:
+* Kamera — mach direkt ein Foto
+* Galerie — wähle ein vorhandenes Bild
+Das Bild wird automatisch verschlüsselt und gesendet. Dein Gegenüber tippt darauf, um es zu öffnen.
+
+Sprachnachrichten
+Manchmal sagt eine Stimme mehr als tausend Wörter.
+1. Halte das Mikrofon-Symbol gedrückt — die Aufnahme startet sofort
+2. Lass los — die Nachricht wird automatisch gesendet
+3. Zum Abhören tippt dein Gegenüber auf die Wellenform und sieht eine visuelle Darstellung der Aufnahme
+?? Hinweis: Sprachnachrichten werden lokal gespeichert. Bei einem Neustart der App kann es in seltenen Fällen vorkommen, dass ältere Sprachnachrichten nicht mehr abspielbar sind. Wir arbeiten daran.
+
+Auf eine Nachricht antworten
+Wenn du auf eine bestimmte Nachricht antworten möchtest — nicht einfach nur weiterschreiben:
+Wische die Nachricht nach rechts. Das Textfeld öffnet sich automatisch mit einem Zitat der ursprünglichen Nachricht. Deine Antwort erscheint dann direkt darunter — für beide Seiten klar zugeordnet.
+
+Weitere Aktionen: Langer Druck
+Halte eine Nachricht etwas länger gedrückt — ein Menü öffnet sich mit folgenden Optionen:
+* Antworten — wie das Wischen, nur per Tipp
+* Kopieren — Nachrichtentext in die Zwischenablage
+* Weiterleiten — Leite die Nachricht an einen anderen Kontakt weiter
+* Löschen — Nachricht bei dir entfernen
+
+Nachrichten suchen
+Du erinnerst dich an eine Nachricht, weißt aber nicht mehr wo? Die NEXUS OneApp hat eine Suchfunktion — in zwei Varianten:
+* Globale Suche: Tippe oben im Chat-Bereich auf das Lupen-Symbol — durchsucht alle deine Unterhaltungen gleichzeitig
+* Suche im Chat: Öffne eine einzelne Unterhaltung ? tippe oben auf das Lupen-Symbol — durchsucht nur dieses Gespräch
+
+Aufbewahrungsdauer einstellen
+Du kannst bestimmen, wie lange Nachrichten in der App gespeichert bleiben. Nach Ablauf der Zeit werden sie automatisch gelöscht.
+Öffne eine Unterhaltung ? Menü (drei Punkte oben rechts) ? Aufbewahrungsdauer
+Wähle zwischen verschiedenen Zeiträumen — von wenigen Tagen bis unbegrenzt. Das gilt für dein Gerät. Dein Gegenüber entscheidet für sich selbst.
+
+Das goldene Schloss — was bedeutet Verschlüsselung wirklich?
+Stell dir vor, du steckst einen Brief in eine Kiste, die nur dein Gegenüber öffnen kann. Nicht der Postbote. Nicht das Unternehmen, das die Kiste hergestellt hat. Nur die Person, für die der Brief bestimmt ist.
+Genau das passiert bei jeder Nachricht in der NEXUS OneApp. Das goldene Schloss-Symbol ist keine Dekoration — es bedeutet: Diese Unterhaltung ist mathematisch geschützt. Selbst wenn jemand die Daten abfangen würde, sähe er nur unlesbares Rauschen.
+
+?? Tipps
+* Wischen zum Antworten ist schnell zur Lieblingsgeste vieler Nutzer geworden. Probier es aus — es macht das Gespräch viel übersichtlicher.
+* Sprachnachrichten für Tiefe. Eine kurze Sprachnachricht kann eine Verbindung herstellen, die kein Text schafft. Besonders in einer Gemeinschaft wie der Menschheitsfamilie.
+* Aufbewahrungsdauer nutzen. Nicht jedes Gespräch muss für immer gespeichert bleiben. Kürzere Aufbewahrungszeiten schützen deine Privatsphäre — besonders auf geteilten Geräten.
+* Kein Internet? Kein Problem. Solange du und dein Kontakt im selben WLAN oder in Bluetooth-Reichweite seid, könnt ihr schreiben. Die App findet den Weg.
+Kapitel 5 – Benachrichtigungen: Du behältst die Kontrolle
+Was ist das?
+Jede große App der alten Welt hat ein gemeinsames Ziel: möglichst viel von deiner Aufmerksamkeit. Benachrichtigungen sind ihr wichtigstes Werkzeug dafür — ein endloser Strom aus Tönen, Vibrationen und roten Punkten, der dich immer wieder zurückzieht.
+Die NEXUS OneApp denkt anders. Benachrichtigungen sind hier kein Instrument der Ablenkung, sondern ein Werkzeug deiner Kontrolle. Du entscheidest, wann du erreichbar bist — und wann nicht.
+Und noch etwas Wichtiges: Die NEXUS OneApp sendet ihre Benachrichtigungen ohne Google. Die meisten Android-Apps nutzen Googles Push-Dienst, der dabei automatisch Metadaten sammelt — wer dir schreibt, wann, wie oft. Die OneApp umgeht das vollständig. Deine Benachrichtigungen bleiben zwischen dir und deinem Gerät.
+
+Push-Benachrichtigungen einrichten
+Beim ersten Start fragt die App, ob sie dir Benachrichtigungen senden darf. Tippe auf Erlauben.
+Falls du das beim ersten Mal übersprungen hast:
+1. Gehe zu Einstellungen (über den Entdecken-Tab oder die Desktop-Seitenleiste)
+2. Tippe auf Benachrichtigungen
+3. Aktiviere den Schalter Benachrichtigungen aktivieren
+Ab jetzt wirst du informiert, wenn jemand dir schreibt — auch wenn die App im Hintergrund läuft.
+
+Einzelne Kontakte stummschalten
+Manchmal möchtest du für bestimmte Menschen nicht ständig erreichbar sein — ohne die Person zu blockieren oder die App ganz stumm zu schalten.
+So schaltest du einen Kontakt stumm:
+1. Öffne das Gespräch mit dem Kontakt
+2. Tippe oben rechts auf das Menü (drei Punkte)
+3. Wähle Stummschalten
+4. Wähle einen Zeitraum — oder dauerhaft
+Der Kontakt bemerkt nichts davon. Du bekommst weiterhin die Nachrichten — nur keine Benachrichtigung mehr. Alles wartet ruhig auf dich, bis du bereit bist.
+
+Nicht-Stören-Zeiten einrichten
+Du kannst der App sagen: In diesem Zeitraum bin ich nicht erreichbar. Kein Ton, keine Vibration — egal wer schreibt.
+So richtest du Nicht-Stören ein:
+1. Gehe zu Einstellungen ? Benachrichtigungen
+2. Tippe auf Nicht-Stören-Zeiten
+3. Lege Start- und Endzeit fest — zum Beispiel 22:00 bis 07:00 Uhr
+4. Aktiviere den Schalter
+In diesem Zeitraum schweigt die App. Die Nachrichten kommen trotzdem an — du siehst sie, wenn du bereit bist.
+
+Nachrichtenvorschau ein- oder ausschalten
+Wenn eine Benachrichtigung erscheint, zeigt sie standardmäßig den Anfang der Nachricht — damit du auf einen Blick siehst, worum es geht, ohne die App öffnen zu müssen.
+Das ist praktisch. Aber nicht immer erwünscht — zum Beispiel wenn andere auf deinen Bildschirm schauen könnten.
+So schaltest du die Vorschau aus:
+1. Gehe zu Einstellungen ? Benachrichtigungen
+2. Tippe auf Nachrichtenvorschau
+3. Wähle zwischen: 
+o Immer anzeigen — voller Nachrichtentext in der Benachrichtigung
+o Nur Name — du siehst wer geschrieben hat, aber nicht was
+o Keine Vorschau — nur ein neutrales „Neue Nachricht"
+
+?? Tipps
+* Nicht-Stören schützt deine Ruhe. Schlaf, Mahlzeiten, Gespräche mit echten Menschen vor dir — das alles verdient Schutz vor digitalen Unterbrechungen. Richte Nicht-Stören-Zeiten bewusst ein, nicht erst wenn du genervt bist.
+* Stummschalten ist kein Ablehnen. Du lehnst niemanden ab — du bestimmst nur, wann du antwortest. Das ist Selbstfürsorge, kein Desinteresse.
+* Keine Vorschau bei sensiblen Gesprächen. Wenn du über persönliche, politische oder vertrauliche Themen kommunizierst, ist "Nur Name" oder "Keine Vorschau" eine kluge Wahl — besonders in öffentlichen Räumen.
+* Google bleibt draußen. Die Tatsache, dass NEXUS keine Google-Push-Dienste nutzt, ist keine technische Kleinigkeit — sie bedeutet, dass ein weiteres Stück deines digitalen Lebens nicht mehr überwacht wird.
+
+Kapitel 6 – Gruppenkanäle: Gemeinsam denken
+Was ist das?
+Ein Gespräch zwischen zwei Menschen ist wertvoll. Aber manche Gedanken, Fragen und Ideen gehören in einen größeren Raum — zu vielen Menschen gleichzeitig, die ein gemeinsames Interesse teilen.
+Dafür gibt es in der NEXUS OneApp die Gruppenkanäle. Sie sind der Ort, wo aus einzelnen Stimmen ein gemeinsames Gespräch wird — offen, dezentral, ohne Algorithmus, der entscheidet, was du siehst und was nicht.
+Der Unterschied zu einem normalen Gruppen-Chat: Kanäle sind nicht für enge Freundeskreise gedacht, sondern für Themen, Gemeinschaften und Bewegungen. Du musst niemanden persönlich kennen, um in einem Kanal mitzulesen oder mitzuschreiben.
+
+Chats und Kanäle — was ist der Unterschied?
+Im Chat-Bereich der App findest du oben zwei Tabs:
+
+Chats
+Kanäle
+Für
+Private Gespräche mit einzelnen Kontakten
+Themenräume für Gruppen und Gemeinschaften
+Wer schreibt
+Nur du und dein Kontakt
+Alle Mitglieder des Kanals
+Verschlüsselung
+Ende-zu-Ende, nur ihr beide
+Ende-zu-Ende innerhalb des Kanals
+Beispiel
+Gespräch mit einer Vertrauensperson
+#nexus-global, ein lokaler Nachbarschaftskanal
+Tippe oben im Chat-Bereich auf Chats oder Kanäle, um zwischen beiden zu wechseln.
+
+Einem Kanal beitreten
+Weg 1 – #nexus-global
+Dieser Kanal ist für alle NEXUS-Nutzer weltweit offen. Er ist dein erster Anlaufpunkt — um zu sehen, was in der Menschheitsfamilie gerade bewegt, Fragen zu stellen und andere Mitglieder kennenzulernen.
+Der Kanal erscheint automatisch in deiner Kanalliste, sobald du die App eingerichtet hast.
+
+Weg 2 – Kanal-Discovery
+Du möchtest andere öffentliche Kanäle entdecken — zu bestimmten Themen, Regionen oder Projekten?
+1. Wechsle im Chat-Bereich auf den Tab Kanäle
+2. Tippe auf das Plus Symbol und Kanäle entdecken
+3. Du siehst eine Liste verfügbarer öffentlicher Kanäle
+4. Tippe auf einen Kanal, um ihn anzusehen
+5. Tippe auf Beitreten
+Ab jetzt erscheint der Kanal in deiner Kanalliste und du bekommst neue Nachrichten dort angezeigt.
+
+Weg 3 – Einladung per Link oder QR-Code
+Jemand aus der Gemeinschaft teilt einen Kanal mit dir — per Link oder QR-Code. Tippe darauf, die App öffnet den Kanal automatisch und du kannst beitreten.
+
+Einen eigenen Kanal erstellen
+Du möchtest einen Raum für deine lokale Zelle, dein Projekt oder ein bestimmtes Thema eröffnen?
+1. Wechsle auf den Tab Kanäle
+2. Tippe oben rechts auf das Plus-Symbol
+3. Gib dem Kanal einen Namen — beginnt automatisch mit #
+4. Wähle: Öffentlich (jeder kann beitreten und ihn entdecken) oder Privat (nur per Einladung)
+5. Optional: Füge eine kurze Beschreibung hinzu
+6. Tippe auf Erstellen
+Dein Kanal ist sofort aktiv. Du kannst andere einladen, indem du ihnen den Kanal-Link oder QR-Code teilst.
+?? Tipp: Gib deinem Kanal einen klaren, einladenden Namen und eine kurze Beschreibung — so finden ihn die richtigen Menschen leichter.
+
+In einem Kanal schreiben
+Das Schreiben in einem Kanal funktioniert genauso wie im normalen Chat:
+* Textnachrichten tippen und senden
+* Auf eine Nachricht antworten — nach rechts wischen oder langer Druck ? Antworten
+* Langer Druck für weitere Optionen (Kopieren, Löschen)
+Ein Unterschied zum privaten Chat: Im Kanal schreiben potenziell viele Menschen gleichzeitig. Antworte direkt auf eine Nachricht, damit klar ist, worauf du dich beziehst — das hält das Gespräch übersichtlich.
+
+?? Tipps
+* #nexus-global ist dein Marktplatz der Ideen. Lies erst eine Weile mit, bevor du dich aktiv einbringst — so bekommst du ein Gefühl für den Ton und die Themen der Gemeinschaft.
+* Öffentlich oder privat? Öffentliche Kanäle wachsen organisch — jeder kann beitreten und den Kanal weiterempfehlen. Private Kanäle eignen sich für Arbeitsgruppen, lokale Zellen oder vertraulichere Themen.
+* Qualität vor Quantität. Ein Kanal mit wenigen aktiven, engagierten Menschen ist wertvoller als einer mit vielen stillen Mitgliedern. Starte klein und lass ihn natürlich wachsen.
+* Kanäle sind dezentral. Kein Unternehmen kann deinen Kanal löschen, sperren oder seinen Inhalt zensieren. Was die Gemeinschaft baut, gehört der Gemeinschaft.
+
+Kapitel 7 – Das Dashboard: Dein Zuhause in der App
+Was ist das?
+Wenn du die NEXUS OneApp öffnest, landet du zuerst auf dem Dashboard. Es ist dein persönlicher Überblick — eine ruhige, übersichtliche Fläche, die dir auf einen Blick zeigt, was gerade wichtig ist, wer in deiner Nähe ist und wohin du als nächstes möchtest.
+Kein endloser Feed. Keine Werbung. Keine versteckten Algorithmen, die entscheiden, was du siehst. Nur das, was dir gehört — dein Netzwerk, deine Gemeinschaft, dein Stand in der Menschheitsfamilie.
+
+Die Begrüßung
+Ganz oben begrüßt dich die App mit deinem Namen und einer Tageszeit-abhängigen Nachricht — morgens anders als abends. Eine kleine Geste, aber eine bewusste: Du bist hier kein anonymer Nutzer. Du bist Joachim. Du bist Maria. Du bist du.
+
+Der Live-Radar
+Das Herzstück des Dashboards ist der Live-Radar — ein runder, pulsierender Kreis, der dir zwei Dinge zeigt:
+Lokale Peers — NEXUS-Nutzer in deiner unmittelbaren Umgebung, die gerade aktiv in der App sind und über Bluetooth oder WLAN erreichbar sind. Als Punkte auf dem Radar sichtbar. Je näher, desto weiter innen.
+Globale NEXUS-Nodes — eine Zahl, die zeigt, wie viele aktive Knotenpunkte weltweit gerade mit dem NEXUS-Netzwerk verbunden sind. Ein stiller Beweis: Du bist nicht allein. Irgendwo auf der Welt ist gerade jemand anderes auch online.
+?? Was ist ein Node? Ein Node (Knoten) ist ein Gerät, das aktiv am NEXUS-Netzwerk teilnimmt — also Nachrichten weiterleitet und das Netz stärkt. Jedes Gerät, auf dem die OneApp läuft, ist automatisch ein kleiner Teil dieses Netzes.
+Der Radar aktualisiert sich automatisch. Wer verschwindet, verschwindet — wer auftaucht, taucht auf. Kein Tracking, keine gespeicherten Bewegungsprofile. Nur der lebendige Moment.
+
+
+Die Übersichtskarten
+Unterhalb des Radars findest du Karten für die wichtigsten Bereiche der App. Jede Karte zeigt dir auf einen Blick den aktuellen Stand — und ein Tipp darauf bringt dich direkt dorthin:
+Karte
+Was sie zeigt
+Wohin sie führt
+?? Nachrichten
+Anzahl ungelesener Nachrichten
+Chat-Bereich
+?? Kanäle
+Neue Beiträge in deinen Kanälen
+Kanal-Übersicht
+?? Kontakte
+Deine Kontaktanzahl, neue Anfragen
+Kontaktliste
+??? Governance
+Offene Abstimmungen und Vorschläge
+Governance-Bereich
+Die Governance-Karte ist bereits sichtbar — der Bereich selbst füllt sich, sobald du einer Zelle angehörst und gemeinsame Entscheidungen anstehen. Mehr dazu in einem späteren Kapitel.
+
+Der Update-Banner
+Wenn eine neue Version der NEXUS OneApp verfügbar ist, erscheint auf dem Dashboard ein goldener Banner mit dem Hinweis. Ein Tipp darauf führt dich direkt zum Download auf GitHub. Die App prüft alle 6 Stunden automatisch auf neue Versionen — du musst nichts manuell nachschauen.
+Mehr zum Thema Updates findest du in Kapitel 8.
+
+Der Grundsätze-Reminder
+Falls du beim ersten Start die Grundsätze der Menschheitsfamilie übersprungen hast, erscheint auf dem Dashboard ein dezenter Hinweis-Banner. Er erinnert dich daran, dass du sie noch nicht bestätigt hast — und bietet dir mit einem Tipp die Möglichkeit, es nachzuholen.
+Der Banner verschwindet dauerhaft, sobald du die Grundsätze gelesen und bestätigt hast.
+
+Navigation: Die 5 Tabs
+Am unteren Rand der App — auf dem Smartphone als Tab-Leiste, auf dem Desktop als Seitenleiste — findest du fünf Bereiche:
+Tab
+Symbol
+Inhalt
+?? Home
+Haus
+Das Dashboard — dein Ausgangspunkt
+?? Chat
+Sprechblase
+Private Nachrichten und Gruppenkanäle
+??? Governance
+Säulen
+Gemeinsame Entscheidungen deiner Zelle
+?? Entdecken
+Kompass
+Alle Sphären, Einstellungen, Kanal-Discovery
+?? Profil
+Person
+Dein Profil, QR-Code, Einstellungen
+Ein Tipp auf einen Tab bringt dich sofort dorthin — von überall in der App.
+
+Der Entdecken-Hub
+Der Entdecken-Tab ist mehr als eine Sammlung von Links. Er ist ein Ausblick auf das, was NEXUS werden wird — und was bereits entsteht.
+Hier findest du:
+* Kanal-Discovery — öffentliche Kanäle entdecken und beitreten
+* Alle Sphären — Gesundheit, Bildung, Wirtschaft, Wohnen und mehr. Manche sind bereits aktiv, andere noch in Entwicklung. Du siehst, wohin die Reise geht.
+* Einstellungen — der Zugang zu allen persönlichen Einstellungen der App
+
+?? Tipps
+* Das Dashboard ist dein Morgenritual. Öffne die App, wirf einen Blick auf den Radar, schau was neue Nachrichten warten — und entscheide dann bewusst, was du als nächstes tust. Nicht die App entscheidet. Du entscheidest.
+* Der Radar ist lebendig. Wenn du unterwegs bist — auf einem Treffen, einer Veranstaltung, in einem neuen Ort — schau auf den Radar. Vielleicht ist jemand aus der Menschheitsfamilie näher als du denkst.
+* Die Governance-Karte wächst mit dir. Im Moment mag sie noch ruhig sein. Aber wenn deine Zelle wächst und gemeinsame Entscheidungen anstehen, wird sie zum aktivsten Teil deines Dashboards.
+
+
+Kapitel 7 – Das Dashboard: Dein Zuhause in der App
+Was ist das?
+Wenn du die NEXUS OneApp öffnest, landet du zuerst auf dem Dashboard. Es ist dein persönlicher Überblick — eine ruhige, übersichtliche Fläche, die dir auf einen Blick zeigt, was gerade wichtig ist, wer in deiner Nähe ist und wohin du als nächstes möchtest.
+Kein endloser Feed. Keine Werbung. Keine versteckten Algorithmen, die entscheiden, was du siehst. Nur das, was dir gehört — dein Netzwerk, deine Gemeinschaft, dein Stand in der Menschheitsfamilie.
+
+Die Begrüßung
+Ganz oben begrüßt dich die App mit deinem Namen und einer Tageszeit-abhängigen Nachricht — morgens anders als abends. Eine kleine Geste, aber eine bewusste: Du bist hier kein anonymer Nutzer. Du bist Joachim. Du bist Maria. Du bist du.
+
+Der Live-Radar
+Das Herzstück des Dashboards ist der Live-Radar — ein runder, pulsierender Kreis, der dir zwei Dinge zeigt:
+Lokale Peers — NEXUS-Nutzer in deiner unmittelbaren Umgebung, die gerade aktiv in der App sind und über Bluetooth oder WLAN erreichbar sind. Als Punkte auf dem Radar sichtbar. Je näher, desto weiter innen.
+Globale NEXUS-Nodes — eine Zahl, die zeigt, wie viele aktive Knotenpunkte weltweit gerade mit dem NEXUS-Netzwerk verbunden sind. Ein stiller Beweis: Du bist nicht allein. Irgendwo auf der Welt ist gerade jemand anderes auch online.
+?? Was ist ein Node? Ein Node (Knoten) ist ein Gerät, das aktiv am NEXUS-Netzwerk teilnimmt — also Nachrichten weiterleitet und das Netz stärkt. Jedes Gerät, auf dem die OneApp läuft, ist automatisch ein kleiner Teil dieses Netzes.
+Der Radar aktualisiert sich automatisch. Wer verschwindet, verschwindet — wer auftaucht, taucht auf. Kein Tracking, keine gespeicherten Bewegungsprofile. Nur der lebendige Moment.
+
+Die Übersichtskarten
+Unterhalb des Radars findest du Karten für die wichtigsten Bereiche der App. Jede Karte zeigt dir auf einen Blick den aktuellen Stand — und ein Tipp darauf bringt dich direkt dorthin:
+Karte
+Was sie zeigt
+Wohin sie führt
+?? Nachrichten
+Anzahl ungelesener Nachrichten
+Chat-Bereich
+?? Kanäle
+Neue Beiträge in deinen Kanälen
+Kanal-Übersicht
+?? Kontakte
+Deine Kontaktanzahl, neue Anfragen
+Kontaktliste
+??? Governance
+Offene Abstimmungen und Vorschläge
+Governance-Bereich
+Die Governance-Karte ist bereits sichtbar — der Bereich selbst füllt sich, sobald du einer Zelle angehörst und gemeinsame Entscheidungen anstehen. Mehr dazu in einem späteren Kapitel.
+
+Der Update-Banner
+Wenn eine neue Version der NEXUS OneApp verfügbar ist, erscheint auf dem Dashboard ein goldener Banner mit dem Hinweis. Ein Tipp darauf führt dich direkt zum Download auf GitHub. Die App prüft alle 6 Stunden automatisch auf neue Versionen — du musst nichts manuell nachschauen.
+Mehr zum Thema Updates findest du in Kapitel 8.
+
+Der Grundsätze-Reminder
+Falls du beim ersten Start die Grundsätze der Menschheitsfamilie übersprungen hast, erscheint auf dem Dashboard ein dezenter Hinweis-Banner. Er erinnert dich daran, dass du sie noch nicht bestätigt hast — und bietet dir mit einem Tipp die Möglichkeit, es nachzuholen.
+Der Banner verschwindet dauerhaft, sobald du die Grundsätze gelesen und bestätigt hast.
+
+Navigation: Die 5 Tabs
+Am unteren Rand der App — auf dem Smartphone als Tab-Leiste, auf dem Desktop als Seitenleiste — findest du fünf Bereiche:
+Tab
+Symbol
+Inhalt
+?? Home
+Haus
+Das Dashboard — dein Ausgangspunkt
+?? Chat
+Sprechblase
+Private Nachrichten und Gruppenkanäle
+??? Governance
+Säulen
+Gemeinsame Entscheidungen deiner Zelle
+?? Entdecken
+Kompass
+Alle Sphären, Einstellungen, Kanal-Discovery
+?? Profil
+Person
+Dein Profil, QR-Code, Einstellungen
+Ein Tipp auf einen Tab bringt dich sofort dorthin — von überall in der App.
+
+Der Entdecken-Hub
+Der Entdecken-Tab ist mehr als eine Sammlung von Links. Er ist ein Ausblick auf das, was NEXUS werden wird — und was bereits entsteht.
+Hier findest du:
+* Kanal-Discovery — öffentliche Kanäle entdecken und beitreten
+* Alle Sphären — Gesundheit, Bildung, Wirtschaft, Wohnen und mehr. Manche sind bereits aktiv, andere noch in Entwicklung. Du siehst, wohin die Reise geht.
+* Einstellungen — der Zugang zu allen persönlichen Einstellungen der App
+
+?? Tipps
+* Das Dashboard ist dein Morgenritual. Öffne die App, wirf einen Blick auf den Radar, schau was neue Nachrichten warten — und entscheide dann bewusst, was du als nächstes tust. Nicht die App entscheidet. Du entscheidest.
+* Der Radar ist lebendig. Wenn du unterwegs bist — auf einem Treffen, einer Veranstaltung, in einem neuen Ort — schau auf den Radar. Vielleicht ist jemand aus der Menschheitsfamilie näher als du denkst.
+* Die Governance-Karte wächst mit dir. Im Moment mag sie noch ruhig sein. Aber wenn deine Zelle wächst und gemeinsame Entscheidungen anstehen, wird sie zum aktivsten Teil deines Dashboards.
+
+Weiter mit Kapitel 8 – Updates: Die App aktuell halten?
+weiter bitte
+12:28
+Orchestrated continuation of narrative progression
+Orchestrated continuation of narrative progression
+Kapitel 8 – Updates: Die App aktuell halten
+
+Kapitel 8 – Updates: Die App aktuell halten
+Was ist das?
+Software wächst. Fehler werden behoben, neue Funktionen kommen hinzu, die Sicherheit wird verbessert. Das gilt besonders für eine App wie die NEXUS OneApp, die sich noch in aktiver Entwicklung befindet und von einer wachsenden Gemeinschaft mitgestaltet wird.
+Ein Update zu installieren ist deshalb kein lästiger Pflichtschritt — es ist ein aktiver Beitrag. Du trägst dazu bei, dass die App stabiler, sicherer und leistungsfähiger wird. Für dich. Für alle.
+
+Wie erfährt die App von neuen Versionen?
+Die NEXUS OneApp prüft automatisch alle 6 Stunden, ob eine neue Version verfügbar ist — still im Hintergrund, ohne dass du etwas tun musst. Die App fragt dabei direkt bei GitHub Releases nach, dem öffentlichen Ort, an dem alle Versionen der OneApp veröffentlicht werden.
+Das bedeutet auch: Jeder kann nachschauen, was sich in einer neuen Version geändert hat. Kein verstecktes Update, keine stillen Änderungen. Alles offen, alles nachvollziehbar.
+
+Das Update-Banner auf dem Dashboard
+Sobald eine neue Version verfügbar ist, erscheint auf deinem Dashboard ein goldener Banner:
+„Eine neue Version der NEXUS OneApp ist verfügbar."
+Mit einem Tipp auf den Banner öffnet sich die Download-Seite auf GitHub. Dort findest du:
+* Die neue Versionsnummer
+* Eine Liste der Änderungen — was neu ist, was behoben wurde
+* Den Download-Link für dein Gerät
+
+Ein Update installieren — Schritt für Schritt
+Auf Android:
+1. Tippe auf den Update-Banner auf dem Dashboard
+2. Du wirst zur GitHub-Seite weitergeleitet
+3. Lade die Datei app-release.apk herunter
+4. Öffne die heruntergeladene Datei
+5. Android fragt: „Diese App installieren?" — tippe auf Installieren
+6. Die App aktualisiert sich. Deine Daten, Kontakte und Nachrichten bleiben erhalten.
+?? Hinweis: Android fragt beim ersten Mal möglicherweise, ob du Apps aus unbekannten Quellen erlauben möchtest. Das ist normal — da die NEXUS OneApp nicht über den Google Play Store verteilt wird, kommt sie direkt von GitHub. Tippe auf Einstellungen und aktiviere die Installation für deinen Browser oder Dateimanager.
+
+Auf Windows:
+1. Tippe auf den Update-Banner auf dem Dashboard
+2. Du wirst zur GitHub-Seite weitergeleitet
+3. Lade die ZIP-Datei für Windows herunter
+4. Entpacke die ZIP-Datei in einen Ordner deiner Wahl
+5. Starte die neue Version über die nexus_oneapp.exe
+6. Deine bestehenden Daten bleiben erhalten — sie liegen in einem separaten Datenordner
+?? Tipp für Windows: Du kannst die neue Version in denselben Ordner wie die alte entpacken und einfach überschreiben — oder einen neuen Ordner anlegen und die Verknüpfung auf dem Desktop aktualisieren.
+
+Muss ich jedes Update sofort installieren?
+Nein. Die App funktioniert weiterhin, auch wenn du nicht sofort aktualisierst. Der Banner bleibt sichtbar, bis du das Update installiert hast oder die neue Version geprüft und bewusst zurückgestellt hast.
+Empfehlenswert ist es jedoch, Updates zeitnah einzuspielen — besonders wenn sie Sicherheitsverbesserungen enthalten. Das wird in den Release-Notizen auf GitHub klar kommuniziert.
+
+Wo finde ich ältere Versionen?
+Alle bisherigen Versionen der NEXUS OneApp sind auf GitHub archiviert und öffentlich zugänglich. Falls eine neue Version ein Problem mitbringt, kannst du jederzeit auf eine ältere Version zurückgehen.
+GitHub-Adresse: github.com/project-nexus-official/oneapp
+
+?? Tipps
+* Lies die Release-Notizen. Jede neue Version wird auf GitHub mit einer Liste der Änderungen veröffentlicht — auf Deutsch, verständlich geschrieben. Ein kurzer Blick lohnt sich, um zu wissen, was sich verändert hat.
+* Sichere deine Kontakte vor großen Updates. Besonders bei Versionssprüngen (z.B. von v0.1 auf v0.2) ist ein Export deiner Kontaktliste eine gute Idee. Wie das geht, steht in Kapitel 3.
+* Deine Seed Phrase bleibt immer gültig. Egal welche Version du installierst — deine 12 Wörter funktionieren immer. Ein Update ändert nie deine Identität.
+* Updates sind Gemeinschaftsarbeit. Wenn du nach einem Update etwas Ungewöhnliches bemerkst — ein Fehler, ein seltsames Verhalten — melde es auf unserer Bugreport  Seite:
+
+https://project-nexus-official.github.io/terminal/bugreport.html
+
+Du hilfst damit nicht nur dir, sondern der gesamten Menschheitsfamilie.
+Kapitel 9 – Was kommt noch? Ein Ausblick
+Wo wir heute stehen
+Die NEXUS OneApp ist in Version v0.1.3-alpha. Das Alpha bedeutet nicht "unfertig im Sinne von wertlos" — es bedeutet: Das Fundament steht. Jetzt wächst das Haus.
+Was du heute in den Händen hältst — sichere Identität, verschlüsselter Chat, Kontaktnetz, Kanäle, Radar — ist der erste Baustein eines sehr viel größeren Lebensraums. Dieses Kapitel gibt dir einen ehrlichen Blick darauf, was als nächstes kommt und wohin die Reise langfristig geht.
+
+Als nächstes: Governance — gemeinsam entscheiden
+Der Governance-Tab ist bereits in der App sichtbar. Er wartet. Und er wird bald das aktivste Element der gesamten OneApp sein.
+
+Was ist Governance in NEXUS?
+In der alten Welt bedeutet Demokratie: alle vier Jahre ein Kreuz auf einem Zettel. In NEXUS bedeutet Demokratie: der tägliche Pulsschlag einer bewussten Gemeinschaft.
+Das konkrete Werkzeug dafür heißt Liquid Democracy — eine Mischung aus direkter und repräsentativer Demokratie, die das Beste aus beiden Welten verbindet:
+* Du kannst direkt abstimmen — über jede Frage, die deine Zelle betrifft
+* Du kannst deine Stimme delegieren — an eine Person, der du in einem bestimmten Thema vertraust
+* Du kannst deine Delegation jederzeit zurückziehen — ohne Erklärung, sofort
+Das bedeutet: Wer sich gut auskennt, kann mehr Gewicht bekommen — aber niemand hat dauerhaft Macht über jemand anderen. Stimmen fließen wie Wasser: dorthin, wo Vertrauen und Kompetenz tief verwurzelt sind.
+Was wird konkret abstimmbar sein?
+* Zellen-Vorschläge — Ideen und Entscheidungen innerhalb deiner lokalen Gemeinschaft
+* Föderations-Fragen — wenn mehrere Zellen gemeinsam etwas beschließen müssen
+* Globale Grundsatzfragen — bei denen jede Stimme in der Menschheitsfamilie gleich viel zählt
+Das Prinzip der Subsidiarität gilt dabei immer: Was lokal entschieden werden kann, wird lokal entschieden. Nur was wirklich alle betrifft, geht nach oben.
+?? Quadratic Voting: Für besonders wichtige Fragen wird ein besonderes Verfahren genutzt — Quadratic Voting. Es stellt sicher, dass eine leidenschaftliche Minderheit nicht von einer gleichgültigen Mehrheit überstimmt wird. Du kannst mehrere Stimmen für ein Thema einsetzen, das dir sehr wichtig ist — aber jede zusätzliche Stimme kostet mehr. So zählt Tiefe der Überzeugung, nicht nur Kopfzahl.
+
+Sprach- und Videotelefonie
+Textnachrichten und Sprachnachrichten sind ein Anfang. Aber manchmal braucht es mehr — eine echte Stimme, ein Gesicht.
+Direkte Sprachanrufe und Videoanrufe sind in Planung. Sie werden — wie alles in NEXUS — direkt von Gerät zu Gerät laufen, ohne Server eines Unternehmens in der Mitte. Ende-zu-Ende verschlüsselt. Über dasselbe Netzwerk wie der Chat: Bluetooth, WLAN oder Internet — je nachdem, was verfügbar ist.
+
+
+Die AETHER Wallet — eine Währung der Gemeinschaft
+Geld, wie wir es kennen, ist ein Versprechen. Ein Schuldschein. Gedruckt von Zentralbanken, gedeckt durch nichts außer Vertrauen in den Staat.
+NEXUS baut eine andere Art von Wert-Austausch. Das AETHER-Protokoll ist das Wirtschaftsfundament — und VITA ? ist die Einheit, mit der innerhalb der Menschheitsfamilie gerechnet wird.
+Was ein VITA ? wirklich ist: kein spekulativer Token, sondern ein Beweis für erbrachten Wert — gedeckt durch Zeit (geleistete Arbeit), Energie (bereitgestellte Kilowattstunden) und Ressourcen (eingebrachte Güter und Infrastruktur).
+Das AETHER-Wallet wird direkt in die OneApp integriert sein. Es ermöglicht:
+* VITA ? verdienen — durch Arbeit, Beiträge, Dienstleistungen für die Gemeinschaft
+* VITA ? ausgeben — für Waren und Dienstleistungen anderer Mitglieder
+* VITA ? in Projekte investieren — die zu TERRA ? werden: das Fundament für gemeinsame Infrastruktur, Gebäude, Maschinen
+Der Aufbau geschieht schrittweise — von ersten Tauschgeschäften über eine interne Testwährung bis hin zu einer vollständig souveränen Ökonomie, die nicht mehr auf Euro angewiesen ist. Jede Schicht muss funktionieren, bevor die nächste kommt.
+
+Die Sphären — ein vollständiger Lebensraum
+Die OneApp ist heute vor allem ein Kommunikationswerkzeug. Aber sie ist als Cockpit eines vollständigen Lebensraums gedacht. Schrittweise werden weitere Bereiche — sogenannte Sphären — hinzukommen:
+Sphäre
+Was sie bietet
+?? Asklepios
+Gesundheit als Gemeinschaftsgut — Prävention, Forschung, Pflege ohne Profitmotiv
+?? Athena
+Bildung als Entfaltung — individuell, frei, nicht gleichgeschaltet
+?? Demeter
+Ernährung und Landwirtschaft — regional, regenerativ, gerecht
+?? Hestia
+Wohnen — Gemeinschaftliches Eigentum, kein Spekulationsobjekt
+??? Agora
+Politik und Meinungsbildung — Konsens statt Empörung
+Diese Sphären sind keine fernen Träume. Sie sind der nächste logische Schritt — und sie alle nutzen dieselbe Identität, die du heute in fünf Minuten erstellt hast.
+
+
+Weitere Sprachen
+Die OneApp ist derzeit ausschließlich auf Deutsch verfügbar. Weitere Sprachen folgen — in dem Maße, wie die Menschheitsfamilie wächst und internationale Gemeinschaften entstehen.
+
+Ein Wort zum Schluss dieses Kapitels
+NEXUS baut nicht alles auf einmal. Das ist kein Fehler — das ist Prinzip. Ein Haus, das auf soliden Fundamenten steht, hält länger als eines, das in aller Eile hochgezogen wurde.
+Du bist jetzt Teil dieses Aufbaus. Nicht als Zuschauer. Als Mitbauende.
+„Wir bauen nicht einfach eine App. Wir bauen das Fundament für eine Welt, die wir uns wünschen."
+
+FAQ – Häufige Fragen
+Hier findest du Antworten auf die Fragen, die Menschen am häufigsten stellen — besonders beim ersten Kontakt mit der NEXUS OneApp.
+
+Meine Identität & Sicherheit
+
+Was passiert, wenn ich meine Seed Phrase verliere?
+Dann verlierst du den Zugang zu deiner Identität — dauerhaft und unwiederbringlich. Es gibt keine "Passwort vergessen"-Funktion, keinen Support, der dir helfen kann, und keine technische Möglichkeit zur Wiederherstellung. Deine Seed Phrase ist der einzige Schlüssel. Bewahre sie sicher auf Papier auf — am besten an zwei verschiedenen Orten.
+
+Was passiert, wenn ich mein Handy verliere oder es kaputt geht?
+Nichts Schlimmes — wenn du deine Seed Phrase hast. Installiere die App auf einem neuen Gerät, gib beim Start deine 12 Wörter ein und deine Identität ist vollständig wiederhergestellt. Deine Kontakte, dein Profil, alles kommt zurück. Ohne Seed Phrase gibt es keinen Weg zurück.
+
+Kann jemand meine Nachrichten lesen?
+Nein. Alle Nachrichten in der NEXUS OneApp sind Ende-zu-Ende verschlüsselt. Das bedeutet: Sie werden auf deinem Gerät verschlüsselt und erst auf dem Gerät deines Gegenübers wieder lesbar gemacht. Kein Server, kein Unternehmen, kein Dritter kann sie lesen — selbst wenn die Daten abgefangen würden, wäre nur unlesbares Rauschen zu sehen.
+
+Wer kann mein Profil sehen?
+Nur das, was du explizit freigibst. Jedes Profilfeld hat eine eigene Sichtbarkeit — von "Alle" bis "Privat". Du entscheidest für jede Information separat, wer sie sehen darf. Nichts wird ohne deine Zustimmung geteilt.
+
+Kann NEXUS mein Konto löschen oder sperren?
+Nein. Deine Identität existiert auf deinem Gerät — nicht auf einem Server von NEXUS oder irgendeinem Unternehmen. Niemand kann sie löschen, sperren oder einschränken. Das ist der Kern der selbstbestimmten Identität.
+
+Sollte ich meine Seed Phrase fotografieren oder in einer App speichern?
+Nein — niemals. Fotos können in der Cloud landen, Apps können gehackt werden, Geräte können verloren gehen. Die einzig sichere Aufbewahrung ist handschriftlich auf Papier, an einem sicheren Ort. Viele Mitglieder schreiben die Seed Phrase auf zwei separate Zettel und bewahren sie an verschiedenen Orten auf.
+
+Was ist eine DID und brauche ich sie zu verstehen?
+DID steht für "Decentralized Identifier" — eine dezentrale Identitätskennung nach einem internationalen Standard. Kurz gesagt: Es ist deine eindeutige digitale Adresse in der NEXUS-Welt, die aus deiner Seed Phrase erzeugt wird. Du musst sie nicht verstehen oder dir merken — die App kümmert sich darum. Wichtig ist nur: Sie gehört dir allein.
+
+
+
+Verbindung & Kommunikation
+
+Brauche ich immer Internet, um die App zu nutzen?
+Nein. Die App nutzt automatisch den besten verfügbaren Weg. Bluetooth und WLAN funktionieren komplett ohne Internet — solange du und dein Kontakt in der Nähe sind. Nur für Kontakte, die weit entfernt sind, wird das Internet (über Nostr) genutzt.
+
+Was ist Nostr und warum nutzt NEXUS das?
+Nostr ist ein dezentrales Kommunikationsprotokoll — kein Unternehmen, kein zentraler Server, keine Kontrolle durch Dritte. Nachrichten werden über ein weltweites Netz aus unabhängigen Knotenpunkten weitergeleitet. NEXUS nutzt Nostr für die Internetverbindung, weil es das Prinzip der Dezentralität auf Protokollebene umsetzt — niemand kann es abschalten.
+
+Was passiert mit meinen Nachrichten, wenn die andere Person offline ist?
+Die Nachricht wird gesendet und wartet. Sobald dein Kontakt wieder online ist — über welchen Weg auch immer — wird sie zugestellt. Im dezentralen Netz gibt es keine "Server-Ausfälle", die alles blockieren. Die Nachricht findet ihren Weg.
+
+Wie weit reicht Bluetooth?
+In der Regel bis zu etwa 10-50 Meter — durch Wände etwas weniger. Bluetooth ist ideal für direkte Begegnungen: Treffen, Veranstaltungen, Nachbarschaft. Für größere Entfernungen schaltet die App automatisch auf WLAN oder Internet um.
+
+Kann ich die App ohne SIM-Karte nutzen?
+Ja. Die App benötigt keine Telefonnummer und keine SIM-Karte. Für Bluetooth und WLAN-Kommunikation reicht ein Gerät mit aktiviertem WLAN. Nur für die Internetverbindung (Nostr) brauchst du Zugang zu einem Netzwerk — über WLAN oder Mobilfunk.
+
+
+Kontakte & Vertrauen
+
+Muss ich meinen echten Namen verwenden?
+Nein. Du kannst jeden Nickname wählen — deinen echten Namen, einen Spitznamen oder einen vollständig frei gewählten Ausdruck. Die App verknüpft keinen Namen mit deiner Identität, solange du es nicht selbst freigibst.
+
+Was bedeutet "Stilles Blockieren"?
+Wenn du jemanden blockierst, bemerkt die Person es nicht. Sie bekommt keine Fehlermeldung und keine Benachrichtigung. Ihre Nachrichten kommen bei dir nicht mehr an — aber sie weiß nichts davon. Das ermöglicht einen diskreten Rückzug ohne Konfrontation.
+
+Was ist der Unterschied zwischen Vertrauensperson und Bürge?
+Eine Vertrauensperson ist jemand, dem du im Alltag vertraust — sie sieht mehr von deinem Profil. Ein Bürge geht einen Schritt weiter: Diese Person steht aktiv für deine Identität ein und kann in zukünftigen Funktionen als Referenz dienen. Die Bürgen-Stufe ist für enge, geprüfte Beziehungen gedacht — vergib sie mit Bedacht.
+
+Was ist die Schlüssel-Verifikation und muss ich das machen?
+Die Schlüssel-Verifikation ist ein optionaler Schritt, bei dem du und ein Kontakt eure gegenseitigen kryptografischen Fingerabdrücke vergleicht — am besten persönlich oder per Telefon. Sie bestätigt: Diese Person ist wirklich diejenige, für die sie sich ausgibt. Du musst das nicht bei jedem Kontakt machen — aber bei engen Vertrauenspersonen und Bürgen ist es empfehlenswert.
+
+
+
+
+
+
+Die App allgemein
+
+Ist die App kostenlos?
+Ja. Die NEXUS OneApp ist kostenlos und wird es bleiben. Es gibt keine versteckten Abos, keine Premium-Funktionen hinter einer Bezahlschranke, keine Werbung. Der Quellcode ist öffentlich einsehbar — jeder kann prüfen, was die App wirklich tut.
+
+Warum ist die App nicht im Google Play Store?
+Weil der Play Store von Google kontrolliert wird — und Google jederzeit entscheiden könnte, eine App zu entfernen oder einzuschränken. NEXUS verteilt die App direkt über GitHub, um unabhängig zu bleiben. Das bedeutet: Du lädst die APK-Datei herunter und installierst sie direkt. Das klingt komplizierter als es ist — Kapitel 8 erklärt es Schritt für Schritt.
+
+Gibt es eine iOS-Version?
+Noch nicht. Die NEXUS OneApp ist derzeit für Android und Windows verfügbar. Eine iOS-Version ist geplant — der Zeitpunkt hängt von der Entwicklung und den Ressourcen der Gemeinschaft ab.
+
+Was ist der Governance-Tab — und warum ist er noch leer?
+Der Governance-Tab ist der Bereich für gemeinsame Entscheidungen in deiner Zelle. Er ist bereits in der App vorhanden, füllt sich aber erst mit Leben, wenn du einer aktiven Zelle angehörst und gemeinsame Abstimmungen anstehen. Die Funktionen — Liquid Democracy, Vorschläge, Delegationen — sind in aktiver Entwicklung und kommen bald.
+
+Was sind Zellen?
+Zellen sind lokale Gemeinschaften innerhalb von NEXUS — eine Nachbarschaft, eine Stadt, eine Gruppe von Menschen, die sich zusammengeschlossen haben. Die Zelle ist die grundlegende Einheit der Selbstorganisation: Hier werden lokale Entscheidungen getroffen, Ressourcen geteilt und gemeinsam gewirtschaftet. Alles, was lokal entschieden werden kann, bleibt in der Zelle.
+
+Meine App zeigt einen Fehler — was soll ich tun?
+Zuerst: keine Panik. Die App ist in aktiver Entwicklung — gelegentliche Fehler sind normal und werden mit jedem Update weniger. Prüfe zunächst, ob ein Update verfügbar ist (Dashboard-Banner oder GitHub). Wenn der Fehler nach dem Update noch besteht, melde ihn auf GitHub unter github.com/project-nexus-official/oneapp — mit einer kurzen Beschreibung, was passiert ist. Du hilfst damit der gesamten Menschheitsfamilie.
+
+Ich habe eine Idee für die App — wo kann ich sie einbringen?
+Auf GitHub unter github.com/project-nexus-official/oneapp kannst du Ideen als "Feature Request" einreichen. Oder du bringst sie in einem der NEXUS-Kanäle ein — besonders im #nexus-global-Kanal wird aktiv diskutiert, was als nächstes gebaut werden soll. Die Menschheitsfamilie baut gemeinsam.
+
+Glossar – Fachbegriffe einfach erklärt
+Hier findest du alle technischen Begriffe, die in dieser Anleitung vorkommen — erklärt ohne Fachwissen, so verständlich wie möglich.
+
+AETHER-Protokoll Das Wirtschaftsfundament von NEXUS. Ein dezentrales System für Wertaustausch innerhalb der Menschheitsfamilie — ohne Banken, ohne Zentralinstanz. Aus dem AETHER-Protokoll entstehen die drei Ausdrucksformen von Wert: VITA ?, TERRA ? und AURA ?. Noch nicht aktiv in v0.1.3-alpha.
+
+Alpha Eine frühe Entwicklungsstufe einer Software. "Alpha" bedeutet nicht "unbrauchbar" — es bedeutet: Die Kerffunktionen laufen, aber die App wächst noch. Fehler sind möglich und werden aktiv behoben. Wer jetzt dabei ist, ist früh dabei.
+
+AURA ? Eine der drei Ausdrucksformen des AETHER-Protokolls. AURA steht für Einfluss und Stimmgewicht — sie entsteht nicht durch Kauf, sondern durch Beitrag zur Gemeinschaft. Nicht übertragbar, verfällt bei Inaktivität. Noch nicht aktiv.
+
+BLE (Bluetooth Low Energy) Eine energiesparende Variante von Bluetooth, die für kurze Datenübertragungen über kurze Distanzen optimiert ist. Die NEXUS OneApp nutzt BLE, um Geräte in unmittelbarer Nähe direkt miteinander zu verbinden — ganz ohne Internet.
+
+Bürge Die höchste Vertrauensstufe in der NEXUS OneApp. Ein Bürge ist jemand, der aktiv für deine Identität einsteht. Diese Stufe ist für enge, geprüfte Beziehungen gedacht — vergib sie mit Bedacht, denn sie hat in zukünftigen Funktionen reale Bedeutung.
+
+DID (Decentralized Identifier) Eine dezentrale Identitätskennung nach internationalem W3C-Standard. Deine DID ist deine eindeutige digitale Adresse in der NEXUS-Welt — erzeugt aus deiner Seed Phrase, gehört dir allein, existiert auf keinem fremden Server. Du musst sie nicht kennen oder verstehen — die App verwaltet sie für dich.
+
+Ed25519 Ein kryptografisches Verfahren zur Erzeugung digitaler Schlüssel und Signaturen. Die NEXUS OneApp nutzt Ed25519, um deine Identität mathematisch eindeutig und fälschungssicher zu machen. Der Name klingt kompliziert — das Ergebnis ist einfach: Deine Identität ist sicher.
+
+Ende-zu-Ende-Verschlüsselung (E2E) Eine Verschlüsselungsmethode, bei der Nachrichten nur auf den Geräten der Kommunizierenden lesbar sind — nirgendwo dazwischen. Kein Server, kein Unternehmen, kein Dritter kann mitlesen. In der NEXUS OneApp ist jede Nachricht standardmäßig Ende-zu-Ende verschlüsselt.
+
+Fingerabdruck (kryptografischer) Eine kurze, eindeutige Zeichenfolge, die aus dem öffentlichen Schlüssel einer Identität erzeugt wird. Beim Verifizieren eines Kontakts vergleicht ihr eure gegenseitigen Fingerabdrücke — stimmen sie überein, ist die Verbindung echt. Wie ein digitaler Personalausweis, den man vorzeigen kann.
+
+Föderations-Governance Die Entscheidungsebene, auf der mehrere Zellen gemeinsam beschließen, was alle betrifft. Jede Zelle entsendet einen Delegierten — keinen Diktator, sondern einen Botschafter, der an die Entscheidungen seiner Zelle gebunden ist. Alles, was lokal entschieden werden kann, bleibt in der Zelle.
+
+GitHub Eine öffentliche Plattform, auf der Softwareprojekte verwaltet und geteilt werden. Der gesamte Quellcode der NEXUS OneApp ist dort offen einsehbar. Über GitHub werden auch neue Versionen der App veröffentlicht und Fehler gemeldet. Adresse: github.com/project-nexus-official/oneapp
+
+Governance Auf Deutsch: Selbstverwaltung, gemeinsame Entscheidungsfindung. In NEXUS bezeichnet Governance den gesamten Bereich, in dem Gemeinschaften gemeinsam Entscheidungen treffen — von lokalen Zellenfragen bis zu globalen Grundsatzabstimmungen. Kein Berufspolitiker, keine Partei — nur Menschen, die gemeinsam organisieren.
+
+LAN (Local Area Network) Ein lokales Netzwerk — zum Beispiel dein WLAN zuhause oder das WLAN in einem Gemeinschaftsraum. Die NEXUS OneApp nutzt LAN für schnelle, lokale Kommunikation ohne Internetanbindung.
+
+Liquid Democracy Eine Mischform aus direkter und repräsentativer Demokratie. Du kannst direkt abstimmen — oder deine Stimme an jemanden delegieren, dem du in einem Thema vertraust. Die Delegation ist jederzeit widerrufbar. Stimmgewicht fließt wie Wasser: zu Kompetenz und Vertrauen hin, weg von Passivität.
+
+LoRa (Long Range) Ein Funkkommunikationsstandard für sehr große Reichweiten bei sehr geringem Energieverbrauch. Mit günstigen LoRa-Chips können Textnachrichten über bis zu 10 Kilometer übertragen werden — selbst bei komplettem Stromausfall oder Internet-Blackout. Der digitale Walkie-Talkie des 21. Jahrhunderts.
+
+Mesh-Netzwerk Ein selbstheilendes Netzwerk, in dem jedes Gerät gleichzeitig Empfänger und Weiterleitungspunkt ist. Fällt ein Knoten aus, findet die Nachricht automatisch einen anderen Weg. Kein zentraler Server, keine Schwachstelle — wie ein Spinnennetz, das an einer Stelle reißen kann, ohne zu zerfallen.
+
+NIP-44 Ein technischer Standard des Nostr-Protokolls für verschlüsselte Direktnachrichten. Die NEXUS OneApp nutzt NIP-44 für die Ende-zu-Ende-Verschlüsselung aller Chats über das Internet. Der Name ist für normale Nutzer unwichtig — das Ergebnis ist: Nachrichten sind sicher.
+
+Node (Knoten) Ein Gerät, das aktiv am NEXUS-Netzwerk teilnimmt — Nachrichten empfängt, weiterleitet und das Netz dadurch stärkt. Jedes Gerät, auf dem die OneApp läuft, ist automatisch ein kleiner Knoten. Je mehr Knoten, desto stabiler und unzerstörbarer das Netz.
+
+Nostr Ein dezentrales Kommunikationsprotokoll — kein Unternehmen, kein zentraler Server. Nostr steht für "Notes and Other Stuff Transmitted by Relays". Nachrichten werden über ein weltweites Netz unabhängiger Relays weitergeleitet. Niemand kontrolliert es, niemand kann es abschalten. Die NEXUS OneApp nutzt Nostr für die Internetverbindung zwischen Nutzern.
+
+Peer Ein gleichwertiger Teilnehmer im Netzwerk. In NEXUS gibt es keine Server und keine Clients — nur Peers, die direkt miteinander kommunizieren. "Lokale Peers" auf dem Radar sind NEXUS-Nutzer in deiner unmittelbaren Nähe.
+
+Proto-POD Der verschlüsselte lokale Datentresor auf deinem Gerät. Hier werden deine Identität, deine Kontakte und deine Nachrichten sicher gespeichert — AES-256-GCM-verschlüsselt, nur für dich zugänglich. Nichts davon liegt auf einem fremden Server.
+
+QR-Code Ein zweidimensionaler Strichcode, der Informationen visuell kodiert. In der NEXUS OneApp enthält dein QR-Code deinen öffentlichen Schlüssel — die Information, die andere brauchen, um dir Nachrichten zu schicken oder dich als Kontakt hinzuzufügen. Kein Name, keine Telefonnummer, keine E-Mail — nur dein kryptografischer Fingerabdruck.
+
+Quadratic Voting Ein Abstimmungsverfahren, das die Intensität von Überzeugungen berücksichtigt. Du kannst mehrere Stimmen für ein Thema einsetzen, das dir besonders wichtig ist — aber jede zusätzliche Stimme kostet mehr. So können leidenschaftliche Minderheiten nicht von gleichgültigen Mehrheiten überstimmt werden.
+
+Seed Phrase Deine 12 Wörter. Der einzige Schlüssel zu deiner Identität in der NEXUS-Welt. Aus diesen 12 Wörtern wird deine gesamte Kryptografie erzeugt — deine Identität, deine Verschlüsselung, dein digitaler Fingerabdruck. Wer sie kennt, kann auf deine Identität zugreifen. Wer sie verliert, verliert den Zugang für immer. Aufbewahren: handschriftlich auf Papier, sicher, offline.
+
+Selective Disclosure Auf Deutsch: selektive Weitergabe. Ein Prinzip, nach dem du für jede Information in deinem Profil separat entscheidest, wer sie sehen darf — von "Alle" bis "Privat". In der NEXUS OneApp hat jedes Profilfeld eine eigene Sichtbarkeitseinstellung.
+
+Self-Sovereign Identity (SSI) Selbstbestimmte Identität. Das Prinzip, dass deine digitale Identität dir gehört — nicht einem Unternehmen, nicht einem Staat, nicht einem Server. Sie existiert auf deinem Gerät, wird von dir kontrolliert und kann von niemandem ohne deine Zustimmung geändert oder gelöscht werden.
+
+Subsidiarität Das Prinzip: Entscheidungen werden dort getroffen, wo sie wirken. Was eine lokale Gemeinschaft selbst verantworten kann, entscheidet sie selbst. Nur was wirklich alle betrifft, geht auf eine höhere Ebene. In NEXUS gilt Subsidiarität auf allen Ebenen — von der Zelle bis zur Föderation.
+
+TERRA ? Eine der drei Ausdrucksformen des AETHER-Protokolls. TERRA steht für gemeinsame Infrastruktur — Gebäude, Maschinen, Solaranlagen. Wenn du VITA ? in ein Gemeinschaftsprojekt investierst, werden sie zu TERRA ?. Nicht vererbbar, dient dem Gemeinwohl. Noch nicht aktiv.
+
+VITA ? Die Tauscheinheit innerhalb der Menschheitsfamilie. Kein spekulativer Token, sondern ein Beweis für erbrachten Wert — gedeckt durch Zeit (geleistete Arbeit), Energie (Kilowattstunden) und Ressourcen (eingebrachte Güter). VITA bedeutet Leben — denn Lebenszeit ist die kostbarste Ressource, die wir haben. Noch nicht aktiv in v0.1.3-alpha.
+
+X25519 ECDH Ein kryptografisches Verfahren zum sicheren Schlüsselaustausch zwischen zwei Parteien — ohne dass der Schlüssel jemals übertragen wird. Beide Seiten berechnen unabhängig voneinander denselben gemeinsamen Schlüssel. Die NEXUS OneApp nutzt X25519 ECDH für die Ende-zu-Ende-Verschlüsselung aller Direktnachrichten.
+
+Zelle Die grundlegende Einheit der Selbstorganisation in NEXUS. Eine Zelle ist eine lokale Gemeinschaft — eine Nachbarschaft, eine Gruppe, eine Stadt. Hier werden lokale Entscheidungen getroffen, Ressourcen geteilt und gemeinsam gewirtschaftet. Zellen können sich zu Föderationen zusammenschließen, bleiben aber in allem, was sie selbst betrifft, souverän.
+
+
 
 
 
