@@ -158,4 +158,13 @@ We are looking for the **first 100 architects** — not spectators, not follower
 
 © 2026 Projekt N.E.X.U.S. — Open Source. Open Mind. Open Future.
 
+## Lizenz
+
+Der Quellcode dieser Website steht unter der AGPL v3.
+
+Die Inhalte (Bauplan, Volksversion, Romantrilogie) sind 
+urheberrechtlich geschützt (© Josh Richman 2024–2026, 
+Alle Rechte vorbehalten) und NICHT unter der AGPL lizenziert.
+Siehe Copyright-Vermerk in den jeweiligen Dokumenten.
+
 </div>
