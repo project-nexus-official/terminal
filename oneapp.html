@@ -47,7 +47,7 @@
         }
         .back-btn:hover { background: #fff; color: #000; }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 20px 20px 100px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px 20px 100px 20px; }
 
         h1 { font-size: 2.8rem; text-align: center; color: var(--text-main); text-transform: uppercase; margin-bottom: 5px; text-shadow: 0 0 15px rgba(0, 243, 255, 0.4); }
         .version-badge { display: block; text-align: center; color: var(--accent-cyan); font-family: monospace; font-size: 1.1rem; margin-bottom: 40px; letter-spacing: 1px;}
@@ -168,7 +168,7 @@
     <div class="container">
         
         <h1>Das Cockpit der Souveränität</h1>
-        <span class="version-badge">Stand: 31. März 2026 | Build: v0.1.3-alpha</span>
+        <span class="version-badge">Aktueller Build: v0.1.8-alpha</span>
 
         <div class="intro-box">
             <p>Die N.E.X.U.S. OneApp ist eine dezentrale App, die Schritt für Schritt die digitale Infrastruktur der Menschheitsfamilie baut. Sie ersetzt zentrale Dienste (WhatsApp, Banken, Parlamente) durch souveräne Alternativen — alles in einer App, alles auf deinem Gerät, alles unter deiner Kontrolle.</p>
@@ -177,18 +177,19 @@
         </div>
 
         <!-- LIVE FEATURES -->
-        <h2 style="border-bottom-color: var(--accent-green);"><span style="color: var(--accent-green);">●</span> BEREITS IMPLEMENTIERT</h2>
+        <h2 style="border-bottom-color: var(--accent-green);"><span style="color: var(--accent-green);">●</span> BEREITS IMPLEMENTIERT (PHASE 1A)</h2>
         
         <div class="feature-grid">
             
             <!-- Identität -->
             <div class="feature-card">
-                <h3>🛡️ IDENTITÄT & DATENSOUVERÄNITÄT</h3>
+                <h3>🛡️ IDENTITÄT & DATENSCHUTZ</h3>
                 <ul class="tech-list">
-                    <li>Self-Sovereign Identity (Seed Phrase, eigene kryptografische Schlüssel, dezentrale ID nach W3C-Standard)</li>
-                    <li>Verschlüsselter lokaler Datentresor (AES-256)</li>
-                    <li>Profil mit Datenkontrolle — du bestimmst pro Feld, wer was sehen darf (Alle / Kontakte / Vertrauenspersonen / Privat)</li>
-                    <li>QR-Code zum Teilen der eigenen Identität + Scanner</li>
+                    <li>Self-Sovereign Identity (SSI) via Seed Phrase. Du bist dein eigener Server.</li>
+                    <li>Verschlüsselter lokaler Datentresor (AES-256).</li>
+                    <li>Profil mit Selective Disclosure: Du bestimmst pro Feld, wer es sehen darf.</li>
+                    <li>Grundsätze-Flow: Verbindliches Onboarding in die Werte der Menschheitsfamilie.</li>
+                    <li>Automatisches, verschlüsseltes lokales Backup-System.</li>
                 </ul>
             </div>
 
@@ -196,48 +197,55 @@
             <div class="feature-card">
                 <h3>🤝 KONTAKTE & VERTRAUEN</h3>
                 <ul class="tech-list">
-                    <li>4 Vertrauensstufen: Entdeckt → Kontakt → Vertrauensperson → Bürge</li>
-                    <li>Vertrauensstufe bestimmt Profilsichtbarkeit</li>
-                    <li>Stilles Blockieren, persönliche Notizen</li>
-                    <li>Schlüssel-Verifikation wie bei Signal</li>
-                    <li>QR-Code Scanner für Face-to-Face Kontaktaustausch</li>
+                    <li>4 Trust-Levels: Entdeckt → Kontakt → Vertrauensperson → Bürge.</li>
+                    <li>Kontaktanfrage-System mit Status-Tracking.</li>
+                    <li>QR-Code Scanner für sofortigen, verifizierten Face-to-Face Austausch.</li>
+                    <li>App-Einladungsfunktion via Deep-Link & QR.</li>
+                    <li>Stilles Blockieren & persönliche Notizen.</li>
                 </ul>
             </div>
 
             <!-- Kommunikation -->
-            <div class="feature-card" style="grid-column: 1 / -1;">
+            <div class="feature-card">
                 <h3>💬 KOMMUNIKATION (MESSENGER)</h3>
-                <ul class="tech-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px;">
-                    <li>Chat über 3 Wege: Bluetooth (offline), WLAN (LAN), Nostr (weltweit dezentral)</li>
-                    <li>App wählt automatisch den besten Weg</li>
-                    <li>Ende-zu-Ende-Verschlüsselung (X25519, NIP-44)</li>
-                    <li>Text, Emojis, Bilder, Sprachnachrichten</li>
-                    <li>Antworten & Zitieren (Swipe-Geste)</li>
-                    <li>Nachrichtensuche (global + innerhalb eines Chats)</li>
-                    <li>Gruppenkanäle (#nexus-global, eigene Kanäle)</li>
-                    <li>Push-Benachrichtigungen ohne Google/Firebase</li>
-                    <li>Nachrichten-Sync bei App-Neustart</li>
-                    <li>Aufbewahrungsdauer einstellbar (global + pro Chat)</li>
+                <ul class="tech-list">
+                    <li>Multi-Transport: Bluetooth (offline), WLAN (LAN), Nostr (weltweit dezentral).</li>
+                    <li>Echte E2E-Verschlüsselung (X25519, NIP-44).</li>
+                    <li>Voice-Nachrichten (E2E-verschlüsselt) mit Playback-Speed.</li>
+                    <li>Antworten & Zitieren via Swipe-to-Reply Geste.</li>
+                    <li>Globale In-App Nachrichtensuche & Chat-Historie-Sync.</li>
+                </ul>
+            </div>
+
+            <!-- Dorfplatz -->
+            <div class="feature-card">
+                <h3>🏛️ DORFPLATZ & KANÄLE</h3>
+                <ul class="tech-list">
+                    <li>Dezentraler Social Feed (Dorfplatz) für Posts, Bilder und Umfragen.</li>
+                    <li>Verschachtelte Kommentar-Bäume & Post-Reposts.</li>
+                    <li>Benannte Gruppenkanäle (z.B. #nexus-global).</li>
+                    <li>Erweitertes Rollen-System: Superadmins, System-Admins & Kanal-Moderatoren.</li>
+                </ul>
+            </div>
+
+            <!-- Governance -->
+            <div class="feature-card">
+                <h3>⚖️ GOVERNANCE (G1: ZELLEN)</h3>
+                <ul class="tech-list">
+                    <li>Zellen-Hub: Lokale oder thematische Zellen gründen und beitreten.</li>
+                    <li>Erstellung von Proposals (Anträgen) für Zelle, Föderation oder Global.</li>
+                    <li>Diskussions-Phasen, direkt an den Zellen-Chat gekoppelt.</li>
                 </ul>
             </div>
 
             <!-- Dashboard & Tech -->
             <div class="feature-card">
-                <h3>📊 DASHBOARD (STARTBILDSCHIRM)</h3>
+                <h3>📊 DASHBOARD & TECH</h3>
                 <ul class="tech-list">
-                    <li>Persönliche Begrüßung nach Tageszeit</li>
-                    <li>Live-Radar mit lokalen Peers und globaler NEXUS-Node-Anzahl</li>
-                    <li>Übersichtskarten für Nachrichten, Kanäle, Kontakte, Governance</li>
-                    <li>Automatischer Update-Checker über GitHub</li>
-                </ul>
-            </div>
-
-            <div class="feature-card" style="border-top-color: #555;">
-                <h3 style="color: #ccc;">⚙️ TECHNISCHE BASIS</h3>
-                <ul class="tech-list">
-                    <li style="color: #888;">315+ automatisierte Tests bestanden</li>
-                    <li style="color: #888;">Open Source, AGPL v3 Lizenz</li>
-                    <li style="color: #888;">Flutter/Dart (Eine Codebase für alle Plattformen)</li>
+                    <li>Live-Radar: Erkennt Knotenpunkte (Nodes) in deiner Nähe.</li>
+                    <li>Automatischer Update-Checker direkt via GitHub Releases.</li>
+                    <li>Robustes Fundament: 315+ automatisierte Unit-Tests bestanden.</li>
+                    <li>Eine Codebase (Flutter/Dart) + Substrate/Rust.</li>
                 </ul>
             </div>
 
@@ -246,15 +254,13 @@
         <!-- IN DEVELOPMENT -->
         <h2 style="border-bottom-color: var(--accent-orange); color: var(--accent-orange);">AKTUELL IN ENTWICKLUNG</h2>
         <div class="dev-box">
-            <h3>GOVERNANCE — Liquid Democracy</h3>
-            <p style="color: #ccc; margin-bottom: 20px;">Das nächste große Modul verwandelt die App in eine Wahlkabine der Zukunft.</p>
+            <h3>GOVERNANCE G2 — Abstimmungen & Liquid Democracy</h3>
+            <p style="color: #ccc; margin-bottom: 20px;">Das nächste große Modul verwandelt die App in eine unzensierbare Wahlkabine der Zukunft.</p>
             <ul class="dev-list">
-                <li>Zellen erstellen und beitreten (Basiseinheit bis 150 Personen)</li>
-                <li>Proposals erstellen mit Scope (Zelle / Föderation / Global)</li>
-                <li>Diskussionsphase verknüpft mit Chat</li>
-                <li>Direkte Abstimmung + Stimme delegieren</li>
-                <li>Quadratic Voting (Schutz vor Fanatismus)</li>
-                <li>Subsidiaritätsprinzip: Entscheidungen dort wo sie wirken</li>
+                <li>Direkte Abstimmung über Proposals in deiner Zelle oder global.</li>
+                <li>Stimme delegieren (Liquid Democracy) — flexibel und jederzeit widerrufbar.</li>
+                <li>Quadratic Voting (Schutz vor Fanatismus und lauten Minderheiten).</li>
+                <li>P2P Sprach- & Videotelefonie ohne zentrale Server.</li>
             </ul>
         </div>
 
@@ -262,14 +268,12 @@
         <h2 style="border-bottom-color: var(--accent-gold); color: var(--accent-gold); margin-top: 60px;">GEPLANTE NÄCHSTE SCHRITTE</h2>
         
         <div class="roadmap-stage">
-            <h4>▶ KURZFRISTIG (Nach Governance)</h4>
+            <h4>▶ KURZFRISTIG (Nach Governance G2)</h4>
             <ul class="plan-list">
-                <li>Dashboard/Cockpit mit Governance-Karten</li>
-                <li>Sprach- und Videotelefonie (WebRTC, P2P, kein Server)</li>
-                <li>Verfassungs-/Grundsätze-Bildschirm vor dem ersten Beitritt</li>
-                <li>Multi-Hop Relay (Nachrichten springen über Geräte)</li>
-                <li>Emergency Wipe (Notfall-Löschung aller Daten)</li>
-                <li>Mehrsprachigkeit (i18n-Vorbereitung läuft)</li>
+                <li>Dashboard/Cockpit mit Live-Governance-Karten</li>
+                <li>Multi-Hop Relay (Nachrichten springen passiv über Geräte, um Reichweite zu erhöhen)</li>
+                <li>Emergency Wipe (Notfall-Löschung aller Daten auf Knopfdruck)</li>
+                <li>Mehrsprachigkeit (i18n-Vorbereitung abgeschlossen, Rollout folgt)</li>
             </ul>
         </div>
 
@@ -277,8 +281,8 @@
             <h4>▶ MITTELFRISTIG</h4>
             <ul class="plan-list">
                 <li><strong>AETHER Wallet</strong> (Integration von VITA Ꝟ, TERRA ₮, AURA ₳)</li>
-                <li>Lokaler Marktplatz (Ressourcen-Tausch)</li>
-                <li>Care-System (Pflege-Matching)</li>
+                <li>Lokaler Marktplatz (Ressourcen-Tausch ohne Banken)</li>
+                <li>Care-System (Dezentrales Pflege-Matching)</li>
             </ul>
         </div>
 
@@ -300,19 +304,20 @@
             
             <div class="action-box" style="border-color: var(--accent-cyan);">
                 <h3 style="color: var(--accent-cyan);">1. SOFTWARE LADEN</h3>
-                <p style="color: #aaa; font-size: 0.95rem;">Lade dir die aktuelle Alpha-Version für Android oder Windows herunter. Der Quellcode (AGPL v3) gehört uns allen.</p>
+                <p style="color: #aaa; font-size: 0.95rem;">Lade dir die aktuelle Alpha-Version für Android oder Windows herunter. Der Quellcode gehört uns allen.</p>
                 <div style="margin-top: auto;">
                     <a href="https://github.com/project-nexus-official/oneapp/releases" target="_blank" class="btn btn-cyan">ZUM GITHUB RELEASE</a>
                     <a href="https://github.com/project-nexus-official/oneapp" target="_blank" style="display:block; margin-top: 15px; color: #666; font-size: 0.9rem; text-decoration: underline;">Quellcode ansehen</a>
                 </div>
             </div>
 
-            <!-- NEU: BEDIENUNGSANLEITUNG -->
+            <!-- BEDIENUNGSANLEITUNG -->
             <div class="action-box" style="border-color: var(--accent-gold); background: rgba(255, 215, 0, 0.05);">
                 <h3 style="color: var(--accent-gold);">2. BEDIENUNGSANLEITUNG</h3>
-                <p style="color: #aaa; font-size: 0.95rem;">Ein dezentrales System funktioniert anders. Wie sichere ich meine 12 Wörter? Wie funktioniert das 4-stufige Trust-Level? Lies das Handbuch, bevor du startest.</p>
+                <p style="color: #aaa; font-size: 0.95rem;">Ein dezentrales System funktioniert anders. Wie sichere ich meine 12 Wörter? Lies das Handbuch, bevor du startest.</p>
                 <div style="margin-top: auto;">
-                    <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/NEXUS_OneApp_Bedienungsanleitung_v0.1.5.pdf" target="_blank" class="btn btn-gold">ANLEITUNG ÖFFNEN (PDF)</a>
+                    <!-- WICHTIG: LINK ZUR VERSION 0.1.8 AKTUALISIERT -->
+                    <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/NEXUS_OneApp_Bedienungsanleitung_v0.1.8.pdf" target="_blank" class="btn btn-gold">ANLEITUNG ÖFFNEN (PDF)</a>
                 </div>
             </div>
 
@@ -462,6 +467,7 @@
             msgDiv.scrollTop = msgDiv.scrollHeight;
         }
     </script>
+
     <!-- UNIVERSAL FOOTER INKL. RECHTLICHEM HINWEIS -->
     <footer style="text-align: center; padding: 60px 20px; background: #080808; color: #777; border-top: 1px solid #222; margin-top: 50px; font-family: 'Courier New', Courier, monospace;">
         
