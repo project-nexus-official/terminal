@@ -32,6 +32,8 @@ Projekt N.E.X.U.S. ist der Blueprint für eine souveräne, gemeinwohlorientierte
 
 Keine Geheimnisse. Kein Profitstreben. Nur der Code der Freiheit.
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W71XP24H)
+
 ---
 
 ### 🏗️ Der Genesis Circle
