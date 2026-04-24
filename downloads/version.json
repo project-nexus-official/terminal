@@ -1,4 +1,5 @@
 {
-  "version": "1.0.0",
-  "url": "https://project-nexus-official.github.io/terminal/downloads/app-release.apk"
+  "version": "0.1.9",
+  "android_url": "https://project-nexus-official.github.io/terminal/downloads/app-release.apk",
+  "windows_url": "https://project-nexus-official.github.io/terminal/downloads/app-release.exe"
 }
