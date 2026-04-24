@@ -15,7 +15,7 @@
 </div>
 
 > **SYSTEM STATUS:** GENESIS PHASE  
-> **ARCHITEKTEN:** 3 / 100  
+> **ARCHITEKTEN:** 8 / 100  
 > **SIGNAL:** ACTIVE  
 > **ENCRYPTION:** END-TO-END  
 
@@ -158,7 +158,7 @@ We are looking for the **first 100 architects** — not spectators, not follower
 *"Wir warten nicht auf die Zukunft. Wir schreiben sie."*
 *"We don't wait for the future. We write it."*
 
-© 2026 Projekt N.E.X.U.S. — Open Source. Open Mind. Open Future.
+© 2026 Projekt N.E.X.U.S. — Open Mind. Open Future.
 
 ## Lizenz
 
