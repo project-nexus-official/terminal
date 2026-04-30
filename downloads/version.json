@@ -1,6 +1,6 @@
 {
-  "version": "0.1.10",
-  "version_code": 10,
+  "version": "0.1.11",
+  "version_code": 11,
   "apk_url": "https://github.com/project-nexus-official/terminal/releases/download/v0.1.11/NexusOneApp_v0.1.11.apk",
   "exe_url": "https://github.com/project-nexus-official/terminal/releases/download/v0.1.11/Setup_NexusOneApp_v0.1.11.exe",
   "release_notes": "Synchronisation gehärtet, Auto-Recovery für Gründer-Zellen, keine Geister mehr",
