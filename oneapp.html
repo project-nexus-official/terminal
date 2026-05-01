@@ -168,7 +168,7 @@
     <div class="container">
         
         <h1>Das Cockpit der Souveränität</h1>
-        <span class="version-badge">Aktueller Build: v0.1.8-alpha</span>
+        <span class="version-badge">Aktueller Build: v0.1.11-alpha</span>
 
         <div class="intro-box">
             <p>Die N.E.X.U.S. OneApp ist eine dezentrale App, die Schritt für Schritt die digitale Infrastruktur der Menschheitsfamilie baut. Sie ersetzt zentrale Dienste (WhatsApp, Banken, Parlamente) durch souveräne Alternativen — alles in einer App, alles auf deinem Gerät, alles unter deiner Kontrolle.</p>
@@ -177,7 +177,7 @@
         </div>
 
         <!-- LIVE FEATURES -->
-        <h2 style="border-bottom-color: var(--accent-green);"><span style="color: var(--accent-green);">●</span> BEREITS IMPLEMENTIERT (PHASE 1A)</h2>
+        <h2 style="border-bottom-color: var(--accent-green);"><span style="color: var(--accent-green);">●</span> BEREITS IMPLEMENTIERT</h2>
         
         <div class="feature-grid">
             
@@ -186,8 +186,8 @@
                 <h3>🛡️ IDENTITÄT & DATENSCHUTZ</h3>
                 <ul class="tech-list">
                     <li>Self-Sovereign Identity (SSI) via Seed Phrase. Du bist dein eigener Server.</li>
-                    <li>Verschlüsselter lokaler Datentresor (AES-256).</li>
-                    <li>Profil mit Selective Disclosure: Du bestimmst pro Feld, wer es sehen darf.</li>
+                    <li>Verschlüsselter lokaler Datentresor (SQLite mit AES-256-GCM).</li>
+                    <li>Selective Disclosure: Du bestimmst pro Profilfeld, wer es sehen darf.</li>
                     <li>Grundsätze-Flow: Verbindliches Onboarding in die Werte der Menschheitsfamilie.</li>
                     <li>Automatisches, verschlüsseltes lokales Backup-System.</li>
                 </ul>
@@ -198,10 +198,9 @@
                 <h3>🤝 KONTAKTE & VERTRAUEN</h3>
                 <ul class="tech-list">
                     <li>4 Trust-Levels: Entdeckt → Kontakt → Vertrauensperson → Bürge.</li>
-                    <li>Kontaktanfrage-System mit Status-Tracking.</li>
-                    <li>QR-Code Scanner für sofortigen, verifizierten Face-to-Face Austausch.</li>
-                    <li>App-Einladungsfunktion via Deep-Link & QR.</li>
-                    <li>Stilles Blockieren & persönliche Notizen.</li>
+                    <li>Spamschutz: Kontaktanfrage-System mit Status-Tracking & Cooldowns.</li>
+                    <li>QR-Code Scanner für Face-to-Face Schlüsselaustausch.</li>
+                    <li>Sichere App-Einladungsfunktion via Deep-Link & Code.</li>
                 </ul>
             </div>
 
@@ -209,11 +208,10 @@
             <div class="feature-card">
                 <h3>💬 KOMMUNIKATION (MESSENGER)</h3>
                 <ul class="tech-list">
-                    <li>Multi-Transport: Bluetooth (offline), WLAN (LAN), Nostr (weltweit dezentral).</li>
-                    <li>Echte E2E-Verschlüsselung (X25519, NIP-44).</li>
-                    <li>Voice-Nachrichten (E2E-verschlüsselt) mit Playback-Speed.</li>
-                    <li>Antworten & Zitieren via Swipe-to-Reply Geste.</li>
-                    <li>Globale In-App Nachrichtensuche & Chat-Historie-Sync.</li>
+                    <li>Multi-Transport: Bluetooth, lokales WLAN (LAN) und Nostr (Internet-Fallback).</li>
+                    <li>NIP-04 kompatible E2E-Verschlüsselung (X25519) für Direktnachrichten.</li>
+                    <li>Voice-Nachrichten (E2E-verschlüsselt) mit intelligenter Komprimierung.</li>
+                    <li>Zitieren via Swipe-to-Reply & lokale In-App Nachrichtensuche.</li>
                 </ul>
             </div>
 
@@ -221,20 +219,21 @@
             <div class="feature-card">
                 <h3>🏛️ DORFPLATZ & KANÄLE</h3>
                 <ul class="tech-list">
-                    <li>Dezentraler Social Feed (Dorfplatz) für Posts, Bilder und Umfragen.</li>
-                    <li>Verschachtelte Kommentar-Bäume & Post-Reposts.</li>
-                    <li>Benannte Gruppenkanäle (z.B. #nexus-global).</li>
-                    <li>Erweitertes Rollen-System: Superadmins, System-Admins & Kanal-Moderatoren.</li>
+                    <li>Zensurresistenter Social Feed (Dorfplatz) mit Posts, Bildern & Umfragen.</li>
+                    <li>Verschachtelte Kommentar-Bäume, Emoji-Reaktionen & Reposts.</li>
+                    <li>E2E-verschlüsselte private Gruppenkanäle mit "Shared Secrets".</li>
+                    <li>Rollen-System: Superadmins, System-Admins & Kanal-Moderatoren.</li>
                 </ul>
             </div>
 
-            <!-- Governance -->
+            <!-- Governance G2 -->
             <div class="feature-card">
-                <h3>⚖️ GOVERNANCE (G1: ZELLEN)</h3>
+                <h3>⚖️ GOVERNANCE (G2-FUNDAMENT)</h3>
                 <ul class="tech-list">
-                    <li>Zellen-Hub: Lokale oder thematische Zellen gründen und beitreten.</li>
-                    <li>Erstellung von Proposals (Anträgen) für Zelle, Föderation oder Global.</li>
-                    <li>Diskussions-Phasen, direkt an den Zellen-Chat gekoppelt.</li>
+                    <li>Zellen-Hub: Lokale (GPS-basiert) oder thematische Gemeinschaften gründen.</li>
+                    <li>Anträge (Proposals) mit Diskussions-, Abstimmungs- und Nachfristen (Grace Period).</li>
+                    <li>Radikale Transparenz: Unveränderliches Audit-Log für alle Aktionen.</li>
+                    <li>Hash-Chains: Abstimmungsergebnisse (Decision Records) sind kryptografisch verkettet.</li>
                 </ul>
             </div>
 
@@ -242,10 +241,10 @@
             <div class="feature-card">
                 <h3>📊 DASHBOARD & TECH</h3>
                 <ul class="tech-list">
-                    <li>Live-Radar: Erkennt Knotenpunkte (Nodes) in deiner Nähe.</li>
+                    <li>Live-Radar: Entdeckt Nodes im lokalen Netzwerk & zeigt globales Wachstum.</li>
+                    <li>Robustes Tombstone-System: Verhindert "Zombie-Daten" netzwerkweit.</li>
+                    <li>Nuclear-Wipe: Vollständige Datenlöschung auf Knopfdruck.</li>
                     <li>Automatischer Update-Checker direkt via GitHub Releases.</li>
-                    <li>Robustes Fundament: 315+ automatisierte Unit-Tests bestanden.</li>
-                    <li>Eine Codebase (Flutter/Dart) + Substrate/Rust.</li>
                 </ul>
             </div>
 
@@ -254,51 +253,31 @@
         <!-- IN DEVELOPMENT -->
         <h2 style="border-bottom-color: var(--accent-orange); color: var(--accent-orange);">AKTUELL IN ENTWICKLUNG</h2>
         <div class="dev-box">
-            <h3>GOVERNANCE G2 — Abstimmungen & Liquid Democracy</h3>
-            <p style="color: #ccc; margin-bottom: 20px;">Das nächste große Modul verwandelt die App in eine unzensierbare Wahlkabine der Zukunft.</p>
+            <h3>AETHER GOVERNANCE & WALLET (Phase 1b & 1c)</h3>
+            <p style="color: #ccc; margin-bottom: 20px;">Das Fundament steht. Jetzt wird N.E.X.U.S. zu einer liquiden Demokratie und Ökonomie ausgebaut.</p>
             <ul class="dev-list">
-                <li>Direkte Abstimmung über Proposals in deiner Zelle oder global.</li>
-                <li>Stimme delegieren (Liquid Democracy) — flexibel und jederzeit widerrufbar.</li>
-                <li>Quadratic Voting (Schutz vor Fanatismus und lauten Minderheiten).</li>
-                <li>P2P Sprach- & Videotelefonie ohne zentrale Server.</li>
+                <li><strong>Liquid Democracy:</strong> Delegiere deine Stimme dynamisch pro Thema an Vertrauenspersonen.</li>
+                <li><strong>Quadratic Voting:</strong> Stimmgewichtung via Voice Credits – schützt vor lauten Minderheiten.</li>
+                <li><strong>AETHER Wallet:</strong> Integration der Werteinheiten VITA (Ꝟ), TERRA (₮) und AURA (₳).</li>
+                <li>Multi-Hop Routing (Mesh-Ausbau: Nachrichten springen passiv über Geräte).</li>
             </ul>
         </div>
 
         <!-- ROADMAP -->
-        <h2 style="border-bottom-color: var(--accent-gold); color: var(--accent-gold); margin-top: 60px;">GEPLANTE NÄCHSTE SCHRITTE</h2>
+        <h2 style="border-bottom-color: var(--accent-gold); color: var(--accent-gold); margin-top: 60px;">LANGFRISTIGE VISION (SPHÄREN)</h2>
         
         <div class="roadmap-stage">
-            <h4>▶ KURZFRISTIG (Nach Governance G2)</h4>
+            <p style="color: #aaa; margin-bottom: 20px;">Zukünftige Module werden als "Sphären" (offene Plugin-Architektur) direkt in die App integriert:</p>
             <ul class="plan-list">
-                <li>Dashboard/Cockpit mit Live-Governance-Karten</li>
-                <li>Multi-Hop Relay (Nachrichten springen passiv über Geräte, um Reichweite zu erhöhen)</li>
-                <li>Emergency Wipe (Notfall-Löschung aller Daten auf Knopfdruck)</li>
-                <li>Mehrsprachigkeit (i18n-Vorbereitung abgeschlossen, Rollout folgt)</li>
+                <li><strong>Lokaler Marktplatz:</strong> Direkter Ressourcen-Tausch in der Zelle.</li>
+                <li><strong>Asklepios (Gesundheit):</strong> KI-Schutzengel lokal auf deinem Gerät.</li>
+                <li><strong>Paideia (Bildung):</strong> Dezentraler, persönlicher KI-Tutor.</li>
+                <li><strong>Demeter (Ernährung):</strong> Food-Coops & Farm-to-Fork Netzwerke.</li>
+                <li><strong>Hestia (Wohnen):</strong> Fluid Living & Wohnungstausch.</li>
             </ul>
         </div>
 
-        <div class="roadmap-stage">
-            <h4>▶ MITTELFRISTIG</h4>
-            <ul class="plan-list">
-                <li><strong>AETHER Wallet</strong> (Integration von VITA Ꝟ, TERRA ₮, AURA ₳)</li>
-                <li>Lokaler Marktplatz (Ressourcen-Tausch ohne Banken)</li>
-                <li>Care-System (Dezentrales Pflege-Matching)</li>
-            </ul>
-        </div>
-
-        <div class="roadmap-stage">
-            <h4>▶ LANGFRISTIG (Sphären als Plugins)</h4>
-            <ul class="plan-list">
-                <li><strong>Asklepios (Gesundheit):</strong> KI-Schutzengel auf deinem Gerät</li>
-                <li><strong>Paideia (Bildung):</strong> Persönlicher KI-Tutor</li>
-                <li><strong>Demeter (Ernährung):</strong> Food-Coop, Farm-to-Fork Netzwerke</li>
-                <li><strong>Hestia (Wohnen):</strong> Fluid Living, Wohnungstausch</li>
-                <li><strong>Agora (Politik):</strong> Föderations-Governance, Bürgerräte</li>
-                <li>Community-entwickelte Sphären (offene Plugin-Architektur)</li>
-            </ul>
-        </div>
-
-        <!-- NEUER CTA BEREICH (3 SPALTEN) -->
+        <!-- CALL TO ACTION BEREICH -->
         <h2 style="margin-top: 60px;">DOWNLOAD, SUPPORT & MITMACHEN</h2>
         <div class="action-grid">
             
@@ -316,7 +295,6 @@
                 <h3 style="color: var(--accent-gold);">2. BEDIENUNGSANLEITUNG</h3>
                 <p style="color: #aaa; font-size: 0.95rem;">Ein dezentrales System funktioniert anders. Wie sichere ich meine 12 Wörter? Lies das Handbuch, bevor du startest.</p>
                 <div style="margin-top: auto;">
-                    <!-- WICHTIG: LINK ZUR VERSION 0.1.8 AKTUALISIERT -->
                     <a href="https://github.com/project-nexus-official/terminal/blob/docs/de/NEXUS_OneApp_Bedienungsanleitung_v0.1.8.pdf" target="_blank" class="btn btn-gold">ANLEITUNG ÖFFNEN (PDF)</a>
                 </div>
             </div>
