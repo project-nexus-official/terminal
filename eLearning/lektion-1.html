@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lektion 1 | Warum alles gleichzeitig zerbricht</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+
+:root {
+    --bg-color: #000000;
+    --panel-bg: #0a0a0a;
+    --panel-soft: #111111;
+    --text-main: #ffffff;
+    --text-muted: #b8b8b8;
+    --text-soft: #888888;
+    --accent-cyan: #00f3ff;
+    --accent-orange: #ff9d00;
+    --accent-gold: #ffd700;
+    --border-dark: #333333;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    padding-top: 90px;
+}
+
+a { color: inherit; text-decoration: none; transition: 0.3s; }
+p { margin: 0 0 22px 0; }
+strong { color: #fff; }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    background: rgba(0,0,0,0.95);
+    border-bottom: 1px solid var(--border-dark);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(5px);
+    gap: 15px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    font-weight: bold;
+    color: var(--accent-cyan);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    color: #aaa;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 8px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+.hero {
+    min-height: 58vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 20px;
+    background:
+        radial-gradient(circle at center, rgba(0, 243, 255, 0.12), rgba(0,0,0,0.85) 55%),
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+    border-bottom: 1px solid #222;
+}
+
+.kicker {
+    display: inline-block;
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+    padding: 7px 15px;
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,0.7);
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    line-height: 1.08;
+    margin: 0 0 22px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 22px rgba(0, 243, 255, 0.8);
+}
+
+.subline {
+    max-width: 900px;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: rgba(0,0,0,0.6);
+    border-left: 4px solid var(--accent-orange);
+    padding: 18px 22px;
+}
+
+.section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 55px 20px;
+    border-bottom: 1px solid #222;
+}
+
+.section-title {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 6px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding-left: 18px;
+    margin: 0 0 30px 0;
+}
+
+.section-title.gold {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.section-title.orange {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.lead {
+    font-size: 1.15rem;
+    color: #e8e8e8;
+    max-width: 900px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.course-card {
+    background: var(--panel-bg);
+    border: 1px solid #252525;
+    border-top: 3px solid var(--accent-cyan);
+    padding: 24px;
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 5px 25px rgba(0,243,255,0.15);
+}
+
+.course-card.available {
+    border-top-color: var(--accent-orange);
+}
+
+.course-card.available:hover {
+    border-color: var(--accent-orange);
+    box-shadow: 0 5px 25px rgba(255,157,0,0.18);
+}
+
+.lesson-number {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.course-card h3 {
+    margin: 0 0 14px 0;
+    color: #fff;
+    font-size: 1.22rem;
+    text-transform: uppercase;
+}
+
+.course-card p {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    margin-bottom: 18px;
+}
+
+.card-cta {
+    display: inline-block;
+    margin-top: auto;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    padding: 10px 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.available .card-cta {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.card-cta:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+.available .card-cta:hover {
+    background: var(--accent-orange);
+    color: #000;
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lesson-box {
+    background: var(--panel-bg);
+    border: 1px solid #262626;
+    border-left: 4px solid var(--accent-cyan);
+    padding: 26px;
+    margin: 30px 0;
+}
+
+.lesson-box.orange {
+    border-left-color: var(--accent-orange);
+}
+
+.lesson-box.gold {
+    border-left-color: var(--accent-gold);
+}
+
+.lesson-box h2,
+.lesson-box h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lesson-box h2 { color: var(--accent-cyan); }
+.lesson-box.orange h2, .lesson-box.orange h3 { color: var(--accent-orange); }
+.lesson-box.gold h2, .lesson-box.gold h3 { color: var(--accent-gold); }
+
+ul.clean {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul.clean li {
+    border-bottom: 1px solid #222;
+    padding: 10px 0;
+    color: #ddd;
+}
+
+.quote {
+    font-size: 1.2rem;
+    color: var(--accent-orange);
+    border-left: 4px solid var(--accent-orange);
+    background: rgba(255,157,0,0.06);
+    padding: 20px;
+    margin: 32px 0;
+    font-weight: bold;
+}
+
+.task-list {
+    counter-reset: task;
+    padding: 0;
+    list-style: none;
+}
+
+.task-list li {
+    counter-increment: task;
+    margin: 18px 0;
+    padding: 18px;
+    background: #0f0f0f;
+    border: 1px solid #222;
+}
+
+.task-list li::before {
+    content: counter(task) ". ";
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.nav-button {
+    display: inline-block;
+    border: 2px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding: 14px 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-button.orange {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+
+.nav-button:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+.nav-button.orange:hover {
+    background: var(--accent-orange);
+    color: #000;
+}
+
+.placeholder-note {
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px dashed #333;
+    padding-top: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    background: #080808;
+    color: #777;
+    border-top: 1px solid #222;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    body { padding-top: 140px; font-size: 17px; }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .main-nav { gap: 10px; }
+    .hero { min-height: 52vh; padding-top: 35px; }
+    .subline { font-size: 1.05rem; }
+    .nav-bottom { flex-direction: column; }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <div class="logo-container">
+                <img src="../logo.png" alt="Nexus Logo" class="logo-img">
+                <div class="logo-text">PROJECT N.E.X.U.S.</div>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+            <a href="../vision_short.html" class="nav-link">Vision</a>
+            <a href="../oneapp.html" class="nav-link">OneApp</a>
+            <a href="../index.html#system" class="nav-link">Bauplan</a>
+            <a href="index.html" class="nav-link active">Lernpfad</a>
+            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);">Genesis Circle</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="kicker">Lektion 1 · N.E.X.U.S. Lernpfad 0.1</div>
+            <h1>Warum alles<br>gleichzeitig zerbricht</h1>
+            <div class="subline">
+                Du bildest dir das Chaos nicht ein. Die Krisen unserer Zeit hängen zusammen.
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="content">
+                <div class="lesson-box gold">
+                    <h2>Ziel dieser Lektion</h2>
+                    <p>
+                        Nach dieser Lektion soll ein neuer Mensch verstehen:
+                    </p>
+                    <p>
+                        <strong>„Ich bilde mir das Chaos nicht ein. Die Krisen unserer Zeit hängen zusammen.
+                        Und genau deshalb reicht es nicht mehr, einzelne Symptome zu reparieren.“</strong>
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>1. Das Gefühl, dass etwas nicht mehr stimmt</h2>
+                    <p>Viele Menschen spüren es längst.</p>
+                    <p><strong>Etwas stimmt nicht.</strong></p>
+                    <p>
+                        Nicht nur in der Politik. Nicht nur in der Wirtschaft. Nicht nur beim Klima.
+                        Nicht nur im Gesundheitssystem. Nicht nur in den Medien.
+                        Sondern irgendwie überall gleichzeitig.
+                    </p>
+                    <ul class="clean">
+                        <li>Die Preise steigen.</li>
+                        <li>Menschen arbeiten viel und kommen trotzdem kaum voran.</li>
+                        <li>Familien zerbrechen unter Druck.</li>
+                        <li>Kinder wachsen in einer Welt aus Bildschirmen, Angst und Vergleich auf.</li>
+                        <li>Alte Menschen vereinsamen.</li>
+                        <li>Gesundheit wird teurer.</li>
+                        <li>Wohnen wird unbezahlbar.</li>
+                        <li>Politik wirkt oft hilflos.</li>
+                        <li>Medien machen nervös statt klar.</li>
+                    </ul>
+                    <p>
+                        Und viele Menschen fühlen sich innerlich erschöpft, obwohl sie äußerlich funktionieren.
+                    </p>
+                    <p>
+                        Das ist kein persönliches Versagen. Es ist ein Zeichen dafür, dass das Betriebssystem
+                        unserer Gesellschaft an seine Grenzen gekommen ist.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>2. Die zentrale Erkenntnis</h2>
+                    <p>
+                        N.E.X.U.S. beginnt mit einer unbequemen, aber befreienden Erkenntnis:
+                    </p>
+                    <p>
+                        <strong>Die heutigen Krisen sind nicht voneinander getrennt.
+                        Sie sind Symptome desselben Grundproblems.</strong>
+                    </p>
+                    <p>
+                        Wir erleben nicht einfach viele einzelne Krisen. Wir erleben eine Systemkrise.
+                    </p>
+                    <p>
+                        Das bedeutet: Die Probleme verstärken sich gegenseitig.
+                    </p>
+                    <p>
+                        Wenn Wohnen unbezahlbar wird, steigt psychischer Druck.
+                        Wenn psychischer Druck steigt, werden Menschen anfälliger für Angst und Wut.
+                        Wenn Medien Angst und Wut verstärken, zerfällt Vertrauen.
+                        Wenn Vertrauen zerfällt, wird Politik härter und kurzsichtiger.
+                        Wenn Politik kurzsichtiger wird, werden ökologische und soziale Probleme weiter verschoben.
+                        Und je länger alles verschoben wird, desto größer wird der Druck.
+                    </p>
+                    <p>
+                        So entsteht ein Kreislauf. Nicht ein einzelner Fehler.
+                        Sondern ein System, das dauerhaft falsche Ergebnisse produziert.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>3. Das Bild: Ein altes Haus</h2>
+                    <p>Stell dir vor, du wohnst in einem alten Haus.</p>
+                    <p>
+                        Zuerst tropft das Dach. Dann bekommt die Wand Risse. Dann fällt die Heizung aus.
+                        Dann riecht es im Keller nach Schimmel. Dann flackert der Strom. Dann klemmt die Tür.
+                    </p>
+                    <p>Du könntest jetzt sagen:</p>
+                    <ul class="clean">
+                        <li>Wir brauchen einen neuen Eimer fürs Wasser.</li>
+                        <li>Wir brauchen neue Farbe für die Wand.</li>
+                        <li>Wir brauchen einen Elektriker.</li>
+                        <li>Wir brauchen einen Handwerker für die Tür.</li>
+                    </ul>
+                    <p>Das kann kurzfristig helfen.</p>
+                    <p>Aber irgendwann musst du ehrlich werden:</p>
+                    <p><strong>Das Problem ist nicht der einzelne Riss. Das Fundament ist beschädigt.</strong></p>
+                    <p>
+                        Genau so betrachtet N.E.X.U.S. unsere Gesellschaft.
+                    </p>
+                    <p>
+                        Wir sagen nicht: Diese eine Partei ist schuld. Diese eine Technologie ist gefährlich.
+                        Diese eine Gruppe ist das Problem.
+                    </p>
+                    <p>
+                        Wir sagen: Das Fundament des alten Systems erzeugt immer wieder Trennung, Angst,
+                        Konkurrenz, Knappheit und Machtkonzentration.
+                    </p>
+                    <p><strong>Darum brauchen wir nicht nur Reparatur. Wir brauchen einen Neubau.</strong></p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>4. Warum Reformen oft nicht reichen</h2>
+                    <p>
+                        Viele Menschen wollen das Richtige. Sie engagieren sich, demonstrieren, gründen Initiativen,
+                        arbeiten in sozialen Berufen, helfen anderen, schreiben Petitionen oder wählen in der Hoffnung,
+                        dass es besser wird.
+                    </p>
+                    <p>Das ist wertvoll.</p>
+                    <p>
+                        Aber N.E.X.U.S. stellt eine entscheidende Frage:
+                    </p>
+                    <p><strong>Was passiert, wenn gute Menschen in einem falsch programmierten System arbeiten?</strong></p>
+                    <p>
+                        Dann kämpfen sie ständig gegen die Folgen des Systems, aber nicht gegen die Ursache.
+                    </p>
+                    <ul class="clean">
+                        <li>Ein Arzt behandelt Krankheiten, die durch Stress, schlechte Ernährung, Einsamkeit und Umweltgifte entstehen.</li>
+                        <li>Ein Lehrer versucht Kinder zu stärken, die in einem überforderten System aufwachsen.</li>
+                        <li>Ein Sozialarbeiter hilft Menschen, die durch Miete, Bürokratie und Arbeitsdruck zerbrechen.</li>
+                        <li>Ein Politiker will etwas verbessern, ist aber gefangen in Parteien, Lobbydruck, Wahlzyklen und Staatslogik.</li>
+                        <li>Ein Unternehmer will fair handeln, muss aber gegen Konkurrenten bestehen, die billiger und rücksichtsloser arbeiten.</li>
+                    </ul>
+                    <p>
+                        Das Problem ist nicht, dass niemand helfen will.
+                        Das Problem ist, dass das alte System falsches Verhalten oft belohnt und menschliches Verhalten oft bestraft.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>5. Die N.E.X.U.S.-Perspektive</h2>
+                    <p>
+                        N.E.X.U.S. sagt: Wir müssen aufhören, nur gegen Symptome zu kämpfen.
+                    </p>
+                    <p><strong>Wir brauchen eine neue Architektur.</strong></p>
+                    <ul class="clean">
+                        <li>Eine Gesellschaft, in der Verbindung stärker ist als Vereinzelung.</li>
+                        <li>Eine Ökonomie, in der Arbeit, Beitrag und Versorgung wieder sinnvoll verbunden sind.</li>
+                        <li>Eine Technologie, die dem Menschen dient und ihn nicht überwacht.</li>
+                        <li>Eine Governance, in der Menschen wirklich mitentscheiden können.</li>
+                        <li>Eine Bildung, die Fähigkeiten entfaltet statt Menschen zu sortieren.</li>
+                        <li>Eine Gesundheitskultur, die Heilung vor Profit stellt.</li>
+                        <li>Eine Infrastruktur, die lokal, resilient und gemeinschaftlich getragen wird.</li>
+                    </ul>
+                    <p>
+                        N.E.X.U.S. ist deshalb nicht einfach eine Idee.
+                        Es ist der Versuch, ein neues Betriebssystem für menschliches Zusammenleben zu entwerfen.
+                    </p>
+                    <p>
+                        Nicht perfekt. Nicht fertig. Nicht von oben verordnet.
+                        Sondern als lernendes, dezentrales, menschliches Projekt.
+                    </p>
+                </div>
+
+                <div class="quote">
+                    Du bist nicht verrückt, wenn du spürst, dass etwas grundlegend falsch läuft.
+                    Du spürst den Riss zwischen einer alten Systemlogik und einer neuen menschlichen Möglichkeit.
+                </div>
+
+                <div class="lesson-box gold">
+                    <h2>6. Kleine Aufgabe</h2>
+                    <p>Nimm dir 5 Minuten und beantworte diese drei Fragen:</p>
+                    <ol class="task-list">
+                        <li>In welchem Bereich spürst du persönlich am stärksten, dass das alte System nicht mehr funktioniert?</li>
+                        <li>Ist dieses Problem wirklich isoliert, oder hängt es mit anderen Bereichen zusammen?</li>
+                        <li>Wie würde eine menschlichere Lösung aussehen, wenn Geld, Angst und Bürokratie nicht das Zentrum wären?</li>
+                    </ol>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>7. Kurzfassung für Video</h2>
+                    <p><strong>Titel:</strong> Warum alles gleichzeitig zerbricht – und warum du dir das nicht einbildest</p>
+                    <p>
+                        Viele Menschen spüren, dass etwas nicht mehr stimmt. Aber sie glauben oft, sie seien allein mit diesem Gefühl.
+                        N.E.X.U.S. beginnt mit der Erkenntnis: Die Krisen unserer Zeit sind nicht getrennt.
+                        Wirtschaft, Gesundheit, Medien, Politik, Einsamkeit, Klima und Krieg hängen zusammen.
+                        Sie sind Symptome eines alten Betriebssystems, das auf Konkurrenz, Knappheit, Machtkonzentration und Angst basiert.
+                        Darum reicht es nicht, einzelne Risse zu flicken. Wenn das Fundament beschädigt ist, braucht es einen Neubau.
+                        N.E.X.U.S. ist dieser Versuch: eine neue Architektur für menschliches Zusammenleben.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>8. Grafik-Idee</h2>
+                    <p><strong>Links:</strong> Altes System · Angst → Konkurrenz → Knappheit → Kontrolle → Erschöpfung</p>
+                    <p><strong>Rechts:</strong> N.E.X.U.S. · Vertrauen → Kooperation → Versorgung → Freiheit → Entwicklung</p>
+                    <p><strong>In der Mitte:</strong> Der Übergang beginnt mit Verstehen.</p>
+                </div>
+
+                <div class="nav-bottom">
+                    <a href="index.html" class="nav-button">← Zur Übersicht</a>
+                    <a href="index.html" class="nav-button orange">Lektion 2 folgt →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        PROJECT N.E.X.U.S. · Lektion 1 · Warum alles gleichzeitig zerbricht<br>
+        <span style="color: var(--accent-cyan);">www.nexus-terminal.org</span>
+    </footer>
+</body>
+</html>
