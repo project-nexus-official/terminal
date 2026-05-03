@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N.E.X.U.S. Lernpfad 0.1 | Vom Erwachen zum Mitbauen</title>
+    <title>Lernpfad abgeschlossen | N.E.X.U.S.</title>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <style>
-
 :root {
     --bg-color: #000000;
     --panel-bg: #0a0a0a;
@@ -393,7 +392,52 @@ footer {
     .subline { font-size: 1.05rem; }
     .nav-bottom { flex-direction: column; }
 }
-
+.next-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+.next-card {
+    background: var(--panel-bg);
+    border: 1px solid #252525;
+    border-top: 3px solid var(--accent-gold);
+    padding: 24px;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.next-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 5px 25px rgba(255,215,0,0.18);
+}
+.next-card h3 {
+    margin: 0 0 14px 0;
+    color: var(--accent-gold);
+    font-size: 1.18rem;
+    text-transform: uppercase;
+}
+.next-card p {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+}
+.next-cta {
+    display: inline-block;
+    margin-top: auto;
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold);
+    padding: 10px 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+.next-cta:hover {
+    background: var(--accent-gold);
+    color: #000;
+}
     </style>
 </head>
 <body>
@@ -416,126 +460,98 @@ footer {
 
     <main>
         <section class="hero">
-            <div class="kicker">N.E.X.U.S. Lernpfad 0.1</div>
-            <h1>Vom Erwachen<br>zum Mitbauen</h1>
+            <div class="kicker">N.E.X.U.S. Lernpfad 0.1 abgeschlossen</div>
+            <h1>Du hast den ersten<br>Schritt gemacht</h1>
             <div class="subline">
-                Der einfache Einstieg in das Betriebssystem einer freien Welt.
-                Kein Vorwissen. Keine Ideologie. Nur Verstehen, Einordnen und der erste praktische Schritt.
+                Aus einem diffusen Gefühl ist Orientierung geworden. Jetzt beginnt der Übergang vom Verstehen zum Mitbauen.
             </div>
         </section>
 
         <section class="section">
-            <h2 class="section-title orange">Warum dieser Lernpfad existiert</h2>
-            <p class="lead">
-                N.E.X.U.S. ist groß. Der Bauplan ist tief. Die OneApp wächst. Die Trilogie macht den Wandel fühlbar.
-                Dieser Lernpfad baut die Brücke: Er hilft neuen Menschen, den Kern von N.E.X.U.S. Schritt für Schritt zu verstehen,
-                ohne sofort vom Gesamtumfang überfordert zu werden.
-            </p>
-            <p class="lead">
-                Ziel ist nicht, alles perfekt zu wissen. Ziel ist, den inneren Übergang zu beginnen:
-                vom Gefühl, dass etwas nicht stimmt, hin zur Frage, wie wir eine bessere Struktur gemeinsam bauen können.
-            </p>
-        </section>
+            <div class="content">
+                <div class="lesson-box gold">
+                    <h2>Was du jetzt verstanden hast</h2>
+                    <p>Du hast den ersten Einstiegspfad abgeschlossen. Du kennst jetzt die Grundlogik von N.E.X.U.S.:</p>
+                    <ul class="clean">
+                        <li>Die Krisen unserer Zeit hängen zusammen.</li>
+                        <li>Reformen reichen oft nicht, wenn die Systemregeln falsch bleiben.</li>
+                        <li>N.E.X.U.S. kämpft nicht gegen das Alte, sondern baut eine bessere Parallelstruktur.</li>
+                        <li>N.E.X.U.S. ist ein dezentrales Betriebssystem für freie Gemeinschaften.</li>
+                        <li>Die OneApp ist das erste praktische Einstiegstor.</li>
+                        <li>Gemeinschaft beginnt in kleinen, vertrauensfähigen Zellen.</li>
+                        <li>Mitmachen beginnt nicht mit Perfektion, sondern mit einem konkreten nächsten Schritt.</li>
+                    </ul>
+                </div>
 
-        <section class="section">
-            <h2 class="section-title gold">Die 7 Lektionen</h2>
+                <div class="quote">Der erste Lernpfad ist kein Abschluss. Er ist eine Schwelle.</div>
 
-            <div class="course-grid">
-                <a href="lektion-1.html" class="course-card available">
-                    <div>
-                        <div class="lesson-number">Lektion 1</div>
-                        <h3>Warum alles gleichzeitig zerbricht</h3>
-                        <p>Du verstehst, warum die Krisen unserer Zeit nicht getrennt sind, sondern Symptome desselben Systemfehlers.</p>
+                <div class="lesson-box">
+                    <h2>Wähle deinen nächsten Schritt</h2>
+                    <p>Je nachdem, wo du gerade stehst, kannst du jetzt auf unterschiedliche Weise weitergehen.</p>
+
+                    <div class="next-grid">
+                        <a href="../oneapp.html" class="next-card">
+                            <div>
+                                <h3>1. OneApp ansehen</h3>
+                                <p>Du möchtest praktisch verstehen, welches digitale Werkzeug bereits entsteht: Identität, Chat, Dorfplatz, Kontakte, Zellen und erste Governance.</p>
+                            </div>
+                            <span class="next-cta">Zur OneApp</span>
+                        </a>
+
+                        <a href="../index.html#system" class="next-card">
+                            <div>
+                                <h3>2. Bauplan vertiefen</h3>
+                                <p>Du möchtest tiefer in die Architektur einsteigen: Ökonomie, Governance, Infrastruktur, Bildung, Gesundheit, Wohnen und ökologische Regeneration.</p>
+                            </div>
+                            <span class="next-cta">Zum Bauplan</span>
+                        </a>
+
+                        <a href="../thinktank.html" class="next-card">
+                            <div>
+                                <h3>3. Genesis Circle verstehen</h3>
+                                <p>Du möchtest sehen, wie sich die ersten Mitbauer, Entwickler, Erzähler, Juristen, Praktiker und Strategen organisieren.</p>
+                            </div>
+                            <span class="next-cta">Zum Genesis Circle</span>
+                        </a>
+
+                        <a href="../genesis.html" class="next-card">
+                            <div>
+                                <h3>4. Mitbauen</h3>
+                                <p>Du spürst Resonanz und möchtest prüfen, ob du Teil der ersten Kohorte werden willst.</p>
+                            </div>
+                            <span class="next-cta">Genesis Pakt ansehen</span>
+                        </a>
                     </div>
-                    <span class="card-cta">Lektion starten</span>
-                </a>
+                </div>
 
-                <a href="lektion-2.html" class="course-card available">
-                    <div>
-                        <div class="lesson-number">Lektion 2</div>
-                        <h3>Warum Reformen nicht mehr reichen</h3>
-                        <p>Du erkennst, warum gute Absichten in einem falsch programmierten System oft verpuffen.</p>
-                    </div>
-                    <span class="card-cta">Lektion starten</span>
-                </a>
+                <div class="lesson-box orange">
+                    <h2>Empfohlener einfacher Weg</h2>
+                    <ul class="clean">
+                        <li>1. OneApp-Seite ansehen.</li>
+                        <li>2. Ein Kapitel des Bauplans auswählen, das dich wirklich interessiert.</li>
+                        <li>3. Eine konkrete Frage oder Kritik notieren.</li>
+                        <li>4. Einen Menschen einladen, dem du N.E.X.U.S. ruhig erklären kannst.</li>
+                        <li>5. Später prüfen, ob der Genesis Circle zu dir passt.</li>
+                    </ul>
+                </div>
 
-                <a href="lektion-3.html" class="course-card available">
-                    <div>
-                        <div class="lesson-number">Lektion 3</div>
-                        <h3>Warum wir nicht kämpfen, sondern neu bauen</h3>
-                        <p>Du lernst das Prinzip der parallelen Konstruktion kennen: das Alte nicht bekämpfen, sondern überflüssig machen.</p>
-                    </div>
-                    <span class="card-cta">Lektion starten</span>
-                </a>
+                <div class="lesson-box gold">
+                    <h2>Merksatz</h2>
+                    <p>N.E.X.U.S. braucht keine Zuschauer, die alles bewundern.</p>
+                    <p>N.E.X.U.S. braucht Menschen, die mit klarem Herzen, wachem Verstand und kleinen konkreten Schritten anfangen.</p>
+                </div>
 
-                <a href="lektion-4.html" class="course-card available">
-                    <div>
-                        <div class="lesson-number">Lektion 4</div>
-                        <h3>Was N.E.X.U.S. eigentlich ist</h3>
-                        <p>Du verstehst N.E.X.U.S. als dezentrales Betriebssystem für freie, menschliche Gemeinschaften.</p>
-                    </div>
-                    <span class="card-cta">Lektion starten</span>
-                </a>
-
-                <a href="lektion-5.html" class="course-card available">
-                    <div>
-                        <div class="lesson-number">Lektion 5</div>
-                        <h3>Die OneApp als Einstiegstor</h3>
-                        <p>Du erkennst, warum die OneApp nicht nur Messenger ist, sondern Identität, Verbindung und Mitwirkung ermöglicht.</p>
-                    </div>
-                    <span class="card-cta">Lektion starten</span>
-                </a>
-
-                <a href="lektion-6.html" class="course-card available">
-                    <div>
-                        <div class="lesson-number">Lektion 6</div>
-                        <h3>Die neue Gemeinschaft</h3>
-                        <p>Du lernst, was Zellen sind und wie kleine Vertrauensräume große gesellschaftliche Veränderung tragen können.</p>
-                    </div>
-                    <span class="card-cta">Lektion starten</span>
-                </a>
-
-                <a href="lektion-7.html" class="course-card available">
-                    <div>
-                        <div class="lesson-number">Lektion 7</div>
-                        <h3>Wie du mitmachen kannst</h3>
-                        <p>Du bekommst konkrete erste Schritte: lesen, testen, Feedback geben, Menschen einladen, lokale Ideen sammeln.</p>
-                    </div>
-                    <span class="card-cta">Lektion starten</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="lesson-box gold">
-                <h2>Nach dem Lernpfad</h2>
-                <p>
-                    Wenn du alle 7 Lektionen abgeschlossen hast, führt dich die Abschlussseite zu den nächsten sinnvollen Schritten:
-                    OneApp ansehen, Bauplan vertiefen, Genesis Circle verstehen oder direkt den Genesis Pakt prüfen.
-                </p>
-                <a href="abschluss.html" class="nav-button orange">Abschluss & nächste Schritte ansehen →</a>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="lesson-box gold">
-                <h2>So nutzt du diesen Lernpfad</h2>
-                <ul class="clean">
-                    <li>Lies eine Lektion vollständig durch.</li>
-                    <li>Beantworte am Ende die kleine Aufgabe für dich selbst.</li>
-                    <li>Sprich mit einem anderen Menschen darüber.</li>
-                    <li>Gehe erst dann zur nächsten Lektion weiter.</li>
-                </ul>
-                <p class="placeholder-note">
-                    Der Einstiegspfad 0.1 ist vollständig. Später können hier Videos, Audio-Versionen, Quizfragen, PDFs und OneApp-Verknüpfungen ergänzt werden.
-                    Für diese Version zählt zuerst Klarheit, nicht Perfektion.
-                </p>
+                <div class="nav-bottom">
+                    <a href="lektion-7.html" class="nav-button">← Zurück zu Lektion 7</a>
+                    <a href="index.html" class="nav-button">Zur Kursübersicht</a>
+                    <a href="../genesis.html" class="nav-button orange">Genesis Pakt ansehen →</a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        PROJECT N.E.X.U.S. · Lernpfad 0.1 · Vom Erwachen zum Mitbauen<br>
+        PROJECT N.E.X.U.S. · Lernpfad abgeschlossen<br>
         <span style="color: var(--accent-cyan);">www.nexus-terminal.org</span>
     </footer>
 </body>
