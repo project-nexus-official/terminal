@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lektion 7 | Wie du mitmachen kannst</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+:root {
+    --bg-color: #000000;
+    --panel-bg: #0a0a0a;
+    --panel-soft: #111111;
+    --text-main: #ffffff;
+    --text-muted: #b8b8b8;
+    --text-soft: #888888;
+    --accent-cyan: #00f3ff;
+    --accent-orange: #ff9d00;
+    --accent-gold: #ffd700;
+    --border-dark: #333333;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    padding-top: 90px;
+}
+
+a { color: inherit; text-decoration: none; transition: 0.3s; }
+p { margin: 0 0 22px 0; }
+strong { color: #fff; }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    background: rgba(0,0,0,0.95);
+    border-bottom: 1px solid var(--border-dark);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(5px);
+    gap: 15px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    font-weight: bold;
+    color: var(--accent-cyan);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    color: #aaa;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 8px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+.hero {
+    min-height: 58vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 20px;
+    background:
+        radial-gradient(circle at center, rgba(0, 243, 255, 0.12), rgba(0,0,0,0.85) 55%),
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+    border-bottom: 1px solid #222;
+}
+
+.kicker {
+    display: inline-block;
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+    padding: 7px 15px;
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,0.7);
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    line-height: 1.08;
+    margin: 0 0 22px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 22px rgba(0, 243, 255, 0.8);
+}
+
+.subline {
+    max-width: 900px;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: rgba(0,0,0,0.6);
+    border-left: 4px solid var(--accent-orange);
+    padding: 18px 22px;
+}
+
+.section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 55px 20px;
+    border-bottom: 1px solid #222;
+}
+
+.section-title {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 6px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding-left: 18px;
+    margin: 0 0 30px 0;
+}
+
+.section-title.gold {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.section-title.orange {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.lead {
+    font-size: 1.15rem;
+    color: #e8e8e8;
+    max-width: 900px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.course-card {
+    background: var(--panel-bg);
+    border: 1px solid #252525;
+    border-top: 3px solid var(--accent-cyan);
+    padding: 24px;
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 5px 25px rgba(0,243,255,0.15);
+}
+
+.course-card.available {
+    border-top-color: var(--accent-orange);
+}
+
+.course-card.available:hover {
+    border-color: var(--accent-orange);
+    box-shadow: 0 5px 25px rgba(255,157,0,0.18);
+}
+
+.lesson-number {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.course-card h3 {
+    margin: 0 0 14px 0;
+    color: #fff;
+    font-size: 1.22rem;
+    text-transform: uppercase;
+}
+
+.course-card p {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    margin-bottom: 18px;
+}
+
+.card-cta {
+    display: inline-block;
+    margin-top: auto;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    padding: 10px 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.available .card-cta {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.card-cta:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+.available .card-cta:hover {
+    background: var(--accent-orange);
+    color: #000;
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lesson-box {
+    background: var(--panel-bg);
+    border: 1px solid #262626;
+    border-left: 4px solid var(--accent-cyan);
+    padding: 26px;
+    margin: 30px 0;
+}
+
+.lesson-box.orange {
+    border-left-color: var(--accent-orange);
+}
+
+.lesson-box.gold {
+    border-left-color: var(--accent-gold);
+}
+
+.lesson-box h2,
+.lesson-box h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lesson-box h2 { color: var(--accent-cyan); }
+.lesson-box.orange h2, .lesson-box.orange h3 { color: var(--accent-orange); }
+.lesson-box.gold h2, .lesson-box.gold h3 { color: var(--accent-gold); }
+
+ul.clean {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul.clean li {
+    border-bottom: 1px solid #222;
+    padding: 10px 0;
+    color: #ddd;
+}
+
+.quote {
+    font-size: 1.2rem;
+    color: var(--accent-orange);
+    border-left: 4px solid var(--accent-orange);
+    background: rgba(255,157,0,0.06);
+    padding: 20px;
+    margin: 32px 0;
+    font-weight: bold;
+}
+
+.task-list {
+    counter-reset: task;
+    padding: 0;
+    list-style: none;
+}
+
+.task-list li {
+    counter-increment: task;
+    margin: 18px 0;
+    padding: 18px;
+    background: #0f0f0f;
+    border: 1px solid #222;
+}
+
+.task-list li::before {
+    content: counter(task) ". ";
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.nav-button {
+    display: inline-block;
+    border: 2px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding: 14px 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-button.orange {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+
+.nav-button:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+.nav-button.orange:hover {
+    background: var(--accent-orange);
+    color: #000;
+}
+
+.placeholder-note {
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px dashed #333;
+    padding-top: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    background: #080808;
+    color: #777;
+    border-top: 1px solid #222;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    body { padding-top: 140px; font-size: 17px; }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .main-nav { gap: 10px; }
+    .hero { min-height: 52vh; padding-top: 35px; }
+    .subline { font-size: 1.05rem; }
+    .nav-bottom { flex-direction: column; }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <div class="logo-container">
+                <img src="../logo.png" alt="Nexus Logo" class="logo-img">
+                <div class="logo-text">PROJECT N.E.X.U.S.</div>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+            <a href="../vision_short.html" class="nav-link">Vision</a>
+            <a href="../oneapp.html" class="nav-link">OneApp</a>
+            <a href="../index.html#system" class="nav-link">Bauplan</a>
+            <a href="index.html" class="nav-link active">Lernpfad</a>
+            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);">Genesis Circle</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="kicker">Lektion 7 · N.E.X.U.S. Lernpfad 0.1</div>
+            <h1>Wie du<br>mitmachen kannst</h1>
+            <div class="subline">
+                N.E.X.U.S. beginnt nicht irgendwann. Es beginnt mit deinem nächsten kleinen Schritt.
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="content">
+                <div class="lesson-box gold">
+                    <h2>Ziel dieser Lektion</h2>
+                    <p>
+                        Nach dieser Lektion soll ein neuer Mensch verstehen:
+                    </p>
+                    <p>
+                        <strong>„Ich muss nicht alles verstehen und nicht perfekt vorbereitet sein. Ich kann klein anfangen: lernen, testen, teilen, beitragen und mit anderen erste konkrete Schritte gehen.“</strong>
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>1. Der wichtigste Irrtum</h2>
+                    <p>
+                        Viele Menschen glauben, sie könnten bei einem großen Projekt wie N.E.X.U.S. erst mitmachen,
+                        wenn sie Experten sind.
+                    </p>
+                    <p>
+                        Sie denken:
+                    </p>
+                    <ul class="clean">
+                        <li>Ich verstehe die Technik noch nicht genug.</li>
+                        <li>Ich kenne mich mit Governance nicht aus.</li>
+                        <li>Ich bin kein Entwickler.</li>
+                        <li>Ich habe kein Geld zu investieren.</li>
+                        <li>Ich weiß nicht, wo ich anfangen soll.</li>
+                    </ul>
+                    <p>
+                        Aber N.E.X.U.S. braucht nicht nur Spezialisten.
+                    </p>
+                    <p>
+                        N.E.X.U.S. braucht Menschen.
+                    </p>
+                    <p>
+                        Menschen, die fühlen, dass das Alte nicht mehr reicht.
+                        Menschen, die lernen wollen.
+                        Menschen, die ehrlich prüfen.
+                        Menschen, die kleine Aufgaben übernehmen.
+                        Menschen, die Verbindung statt Zynismus wählen.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>2. Mitmachen beginnt mit Verstehen</h2>
+                    <p>
+                        Der erste Beitrag ist nicht Geld.
+                    </p>
+                    <p>
+                        Der erste Beitrag ist Aufmerksamkeit.
+                    </p>
+                    <p>
+                        Nimm dir Zeit, N.E.X.U.S. wirklich zu verstehen.
+                    </p>
+                    <ul class="clean">
+                        <li>Lies diesen Lernpfad vollständig.</li>
+                        <li>Lies die Kurzvision auf der Webseite.</li>
+                        <li>Höre oder lies die Trilogie, wenn du den emotionalen Zugang suchst.</li>
+                        <li>Vertiefe später einzelne Kapitel des Bauplans.</li>
+                        <li>Stelle Fragen, statt vorschnell zu urteilen.</li>
+                    </ul>
+                    <p>
+                        Verstehen ist kein passiver Akt.
+                    </p>
+                    <p>
+                        Wer wirklich versteht, verändert bereits seine innere Ausrichtung.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>3. Der zweite Schritt: ehrlich prüfen</h2>
+                    <p>
+                        N.E.X.U.S. braucht keine blinden Anhänger.
+                    </p>
+                    <p>
+                        Es braucht wache Mitbauer.
+                    </p>
+                    <p>
+                        Darum ist Kritik willkommen, wenn sie konstruktiv ist.
+                    </p>
+                    <p>
+                        Konstruktive Kritik fragt:
+                    </p>
+                    <ul class="clean">
+                        <li>Wo ist eine Idee noch unklar?</li>
+                        <li>Wo gibt es praktische Risiken?</li>
+                        <li>Welche Begriffe verwirren neue Menschen?</li>
+                        <li>Welche Funktion fehlt in der OneApp?</li>
+                        <li>Welche Regel könnte Machtmissbrauch ermöglichen?</li>
+                        <li>Welche Annahme muss geprüft werden?</li>
+                    </ul>
+                    <p>
+                        In N.E.X.U.S. ist gute Kritik kein Angriff.
+                    </p>
+                    <p>
+                        Gute Kritik ist Bug-Hunting am Bauplan.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>4. Der dritte Schritt: die OneApp testen</h2>
+                    <p>
+                        Die OneApp ist der praktische Einstieg.
+                    </p>
+                    <p>
+                        Wer sie testet, hilft nicht nur sich selbst, sondern dem ganzen Projekt.
+                    </p>
+                    <p>
+                        Beim Testen geht es nicht darum, alles perfekt zu bedienen.
+                    </p>
+                    <p>
+                        Es geht darum, echte Erfahrungen zurückzugeben.
+                    </p>
+                    <ul class="clean">
+                        <li>War das Onboarding verständlich?</li>
+                        <li>Hast du deine Seed Phrase verstanden?</li>
+                        <li>Fühlte sich das Profil klar an?</li>
+                        <li>War die Kontaktaufnahme nachvollziehbar?</li>
+                        <li>Hat der Chat funktioniert?</li>
+                        <li>Verstehst du den Dorfplatz?</li>
+                        <li>Ist der Bereich „Meine Zelle“ verständlich?</li>
+                    </ul>
+                    <p>
+                        Jede Rückmeldung hilft, N.E.X.U.S. für die nächsten Menschen leichter zugänglich zu machen.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>5. Der vierte Schritt: übersetzen</h2>
+                    <p>
+                        N.E.X.U.S. ist komplex.
+                    </p>
+                    <p>
+                        Deshalb brauchen wir Menschen, die übersetzen.
+                    </p>
+                    <p>
+                        Nicht nur zwischen Sprachen, sondern zwischen Welten.
+                    </p>
+                    <ul class="clean">
+                        <li>Technik in Alltagssprache.</li>
+                        <li>Systemtheorie in einfache Bilder.</li>
+                        <li>Governance in konkrete Beispiele.</li>
+                        <li>Ökonomie in menschliche Geschichten.</li>
+                        <li>Vision in fühlbare Sprache.</li>
+                    </ul>
+                    <p>
+                        Wenn du einem anderen Menschen N.E.X.U.S. ruhig und verständlich erklären kannst,
+                        leistest du bereits einen wichtigen Beitrag.
+                    </p>
+                    <p>
+                        Nicht jeder muss Code schreiben.
+                    </p>
+                    <p>
+                        Manche bauen Brücken durch Sprache.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>6. Der fünfte Schritt: Menschen einladen</h2>
+                    <p>
+                        N.E.X.U.S. wächst nicht durch Druck.
+                    </p>
+                    <p>
+                        Es wächst durch Resonanz.
+                    </p>
+                    <p>
+                        Lade nicht wahllos alle ein.
+                    </p>
+                    <p>
+                        Beginne mit Menschen, die wirklich offen sind.
+                    </p>
+                    <ul class="clean">
+                        <li>Menschen, die den Schmerz der alten Welt spüren.</li>
+                        <li>Menschen, die nicht nur schimpfen, sondern bauen wollen.</li>
+                        <li>Menschen mit Herz und Verstand.</li>
+                        <li>Menschen mit praktischen Fähigkeiten.</li>
+                        <li>Menschen, die Verantwortung übernehmen können.</li>
+                    </ul>
+                    <p>
+                        Eine gute Einladung sagt nicht:
+                    </p>
+                    <p><strong>„Du musst daran glauben.“</strong></p>
+                    <p>
+                        Sie sagt:
+                    </p>
+                    <p><strong>„Schau es dir an. Prüfe es. Vielleicht ist das ein Ort, an dem du mitbauen möchtest.“</strong></p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>7. Der sechste Schritt: eine kleine Aufgabe übernehmen</h2>
+                    <p>
+                        Ein Projekt wie N.E.X.U.S. wächst nicht nur durch große Strategien.
+                    </p>
+                    <p>
+                        Es wächst durch konkrete Aufgaben.
+                    </p>
+                    <p>
+                        Beispiele:
+                    </p>
+                    <ul class="clean">
+                        <li>Eine Lektion gegenlesen.</li>
+                        <li>Einen unklaren Begriff erklären.</li>
+                        <li>Einen Fehler auf der Webseite melden.</li>
+                        <li>Eine OneApp-Funktion testen.</li>
+                        <li>Eine lokale Gesprächsrunde organisieren.</li>
+                        <li>Ein kurzes Erklärvideo aufnehmen.</li>
+                        <li>Eine Grafik gestalten.</li>
+                        <li>Eine rechtliche Frage recherchieren.</li>
+                        <li>Ein technisches Issue präzise beschreiben.</li>
+                    </ul>
+                    <p>
+                        Kleine Aufgaben sind nicht klein, wenn sie ein System in Bewegung bringen.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>8. Der siebte Schritt: deine Rolle finden</h2>
+                    <p>
+                        Nicht jeder trägt auf dieselbe Weise bei.
+                    </p>
+                    <p>
+                        N.E.X.U.S. braucht verschiedene Archetypen.
+                    </p>
+                    <ul class="clean">
+                        <li><strong>Architekten:</strong> denken Systeme, Strukturen und Zusammenhänge.</li>
+                        <li><strong>Entwickler:</strong> bauen Code, Infrastruktur und technische Lösungen.</li>
+                        <li><strong>Bewahrer:</strong> achten auf Ethik, Menschlichkeit, Schutz und Würde.</li>
+                        <li><strong>Erzähler:</strong> machen die Vision verständlich und fühlbar.</li>
+                        <li><strong>Macher:</strong> bringen Dinge praktisch in die Umsetzung.</li>
+                        <li><strong>Brückenbauer:</strong> verbinden Menschen, Gruppen und Perspektiven.</li>
+                        <li><strong>Prüfer:</strong> finden Schwachstellen, Risiken und blinde Flecken.</li>
+                    </ul>
+                    <p>
+                        Es geht nicht darum, eine perfekte Rolle zu erfüllen.
+                    </p>
+                    <p>
+                        Es geht darum, ehrlich zu erkennen, wo deine natürliche Kraft liegt.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>9. Der achte Schritt: lokal denken</h2>
+                    <p>
+                        N.E.X.U.S. ist global gedacht, aber lokal erfahrbar.
+                    </p>
+                    <p>
+                        Frage dich:
+                    </p>
+                    <ul class="clean">
+                        <li>Welche Menschen in meiner Nähe könnten offen sein?</li>
+                        <li>Welches Problem in meinem Umfeld ist konkret spürbar?</li>
+                        <li>Wo fehlt Verbindung?</li>
+                        <li>Wo fehlt Versorgung?</li>
+                        <li>Wo fehlt Orientierung?</li>
+                        <li>Wo könnten drei Menschen anfangen, etwas Kleines zu verbessern?</li>
+                    </ul>
+                    <p>
+                        Eine lokale Zelle muss nicht sofort groß sein.
+                    </p>
+                    <p>
+                        Drei ernsthafte Menschen sind wertvoller als hundert passive Zuschauer.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>10. Was du nicht tun musst</h2>
+                    <p>
+                        Du musst nicht sofort dein Leben umwerfen.
+                    </p>
+                    <p>
+                        Du musst nicht alles glauben.
+                    </p>
+                    <p>
+                        Du musst nicht alles verstehen.
+                    </p>
+                    <p>
+                        Du musst nicht jeden überzeugen.
+                    </p>
+                    <p>
+                        Du musst nicht perfekt sein.
+                    </p>
+                    <p>
+                        Du musst nur anfangen, ehrlich hinzusehen und einen kleinen Beitrag zu leisten.
+                    </p>
+                    <p>
+                        N.E.X.U.S. ist kein Sprung ins Nichts.
+                    </p>
+                    <p>
+                        Es ist ein Weg.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>11. Der einfachste Einstiegspfad</h2>
+                    <p>
+                        Wenn du jetzt konkret starten willst, nimm diese Reihenfolge:
+                    </p>
+                    <ul class="clean">
+                        <li>1. Lernpfad vollständig lesen.</li>
+                        <li>2. Eine Frage oder Kritik notieren.</li>
+                        <li>3. Die OneApp-Seite ansehen.</li>
+                        <li>4. Die App testen, sobald sie für dich verfügbar ist.</li>
+                        <li>5. Einen Menschen einladen, der wirklich offen sein könnte.</li>
+                        <li>6. Eine kleine Aufgabe übernehmen.</li>
+                        <li>7. Später einer Zelle oder dem Genesis Circle beitreten.</li>
+                    </ul>
+                    <p>
+                        Mehr braucht es am Anfang nicht.
+                    </p>
+                </div>
+
+                <div class="quote">
+                    Die Geschichte wird nicht von denen geschrieben, die alles verstanden haben. Sie wird von denen geschrieben, die auftauchen.
+                </div>
+
+                <div class="lesson-box gold">
+                    <h2>12. Abschlussaufgabe</h2>
+                    <p>Nimm dir 10 Minuten und beantworte diese fünf Fragen:</p>
+                    <ol class="task-list">
+                        <li>Was hat dich in diesem Lernpfad am meisten berührt oder beschäftigt?</li>
+                        <li>Welche Frage ist für dich noch offen?</li>
+                        <li>Welche Rolle könnte zu dir passen: Architekt, Entwickler, Bewahrer, Erzähler, Macher, Brückenbauer oder Prüfer?</li>
+                        <li>Wen könntest du als ersten Menschen auf N.E.X.U.S. aufmerksam machen?</li>
+                        <li>Was ist dein nächster kleiner konkreter Schritt?</li>
+                    </ol>
+                </div>
+
+                <div class="lesson-box gold">
+                    <h2>Du hast den Einstiegspfad abgeschlossen</h2>
+                    <p>
+                        Wenn du bis hier gelesen hast, hast du den ersten inneren Weg bereits begonnen:
+                        vom diffusen Gefühl, dass etwas nicht stimmt, hin zur bewussten Frage,
+                        wie eine neue Struktur entstehen kann.
+                    </p>
+                    <p>
+                        N.E.X.U.S. ist nicht fertig.
+                    </p>
+                    <p>
+                        Genau deshalb kannst du mitbauen.
+                    </p>
+                </div>
+
+                <div class="nav-bottom">
+                    <a href="lektion-6.html" class="nav-button">← Lektion 6</a>
+                    <a href="index.html" class="nav-button">Zur Übersicht</a>
+                    <a href="../genesis.html" class="nav-button orange">Genesis Pakt ansehen →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        PROJECT N.E.X.U.S. · Lektion 7 · Wie du mitmachen kannst<br>
+        <span style="color: var(--accent-cyan);">www.nexus-terminal.org</span>
+    </footer>
+</body>
+</html>

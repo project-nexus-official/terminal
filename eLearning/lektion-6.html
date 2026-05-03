@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lektion 6 | Die neue Gemeinschaft</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+:root {
+    --bg-color: #000000;
+    --panel-bg: #0a0a0a;
+    --panel-soft: #111111;
+    --text-main: #ffffff;
+    --text-muted: #b8b8b8;
+    --text-soft: #888888;
+    --accent-cyan: #00f3ff;
+    --accent-orange: #ff9d00;
+    --accent-gold: #ffd700;
+    --border-dark: #333333;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    padding-top: 90px;
+}
+
+a { color: inherit; text-decoration: none; transition: 0.3s; }
+p { margin: 0 0 22px 0; }
+strong { color: #fff; }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    background: rgba(0,0,0,0.95);
+    border-bottom: 1px solid var(--border-dark);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(5px);
+    gap: 15px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    font-weight: bold;
+    color: var(--accent-cyan);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    color: #aaa;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 8px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+.hero {
+    min-height: 58vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 20px;
+    background:
+        radial-gradient(circle at center, rgba(0, 243, 255, 0.12), rgba(0,0,0,0.85) 55%),
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+    border-bottom: 1px solid #222;
+}
+
+.kicker {
+    display: inline-block;
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+    padding: 7px 15px;
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,0.7);
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    line-height: 1.08;
+    margin: 0 0 22px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 22px rgba(0, 243, 255, 0.8);
+}
+
+.subline {
+    max-width: 900px;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: rgba(0,0,0,0.6);
+    border-left: 4px solid var(--accent-orange);
+    padding: 18px 22px;
+}
+
+.section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 55px 20px;
+    border-bottom: 1px solid #222;
+}
+
+.section-title {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 6px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding-left: 18px;
+    margin: 0 0 30px 0;
+}
+
+.section-title.gold {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.section-title.orange {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.lead {
+    font-size: 1.15rem;
+    color: #e8e8e8;
+    max-width: 900px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.course-card {
+    background: var(--panel-bg);
+    border: 1px solid #252525;
+    border-top: 3px solid var(--accent-cyan);
+    padding: 24px;
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 5px 25px rgba(0,243,255,0.15);
+}
+
+.course-card.available {
+    border-top-color: var(--accent-orange);
+}
+
+.course-card.available:hover {
+    border-color: var(--accent-orange);
+    box-shadow: 0 5px 25px rgba(255,157,0,0.18);
+}
+
+.lesson-number {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.course-card h3 {
+    margin: 0 0 14px 0;
+    color: #fff;
+    font-size: 1.22rem;
+    text-transform: uppercase;
+}
+
+.course-card p {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    margin-bottom: 18px;
+}
+
+.card-cta {
+    display: inline-block;
+    margin-top: auto;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    padding: 10px 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.available .card-cta {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.card-cta:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+.available .card-cta:hover {
+    background: var(--accent-orange);
+    color: #000;
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lesson-box {
+    background: var(--panel-bg);
+    border: 1px solid #262626;
+    border-left: 4px solid var(--accent-cyan);
+    padding: 26px;
+    margin: 30px 0;
+}
+
+.lesson-box.orange {
+    border-left-color: var(--accent-orange);
+}
+
+.lesson-box.gold {
+    border-left-color: var(--accent-gold);
+}
+
+.lesson-box h2,
+.lesson-box h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lesson-box h2 { color: var(--accent-cyan); }
+.lesson-box.orange h2, .lesson-box.orange h3 { color: var(--accent-orange); }
+.lesson-box.gold h2, .lesson-box.gold h3 { color: var(--accent-gold); }
+
+ul.clean {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul.clean li {
+    border-bottom: 1px solid #222;
+    padding: 10px 0;
+    color: #ddd;
+}
+
+.quote {
+    font-size: 1.2rem;
+    color: var(--accent-orange);
+    border-left: 4px solid var(--accent-orange);
+    background: rgba(255,157,0,0.06);
+    padding: 20px;
+    margin: 32px 0;
+    font-weight: bold;
+}
+
+.task-list {
+    counter-reset: task;
+    padding: 0;
+    list-style: none;
+}
+
+.task-list li {
+    counter-increment: task;
+    margin: 18px 0;
+    padding: 18px;
+    background: #0f0f0f;
+    border: 1px solid #222;
+}
+
+.task-list li::before {
+    content: counter(task) ". ";
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.nav-button {
+    display: inline-block;
+    border: 2px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding: 14px 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-button.orange {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+
+.nav-button:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+.nav-button.orange:hover {
+    background: var(--accent-orange);
+    color: #000;
+}
+
+.placeholder-note {
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px dashed #333;
+    padding-top: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    background: #080808;
+    color: #777;
+    border-top: 1px solid #222;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    body { padding-top: 140px; font-size: 17px; }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .main-nav { gap: 10px; }
+    .hero { min-height: 52vh; padding-top: 35px; }
+    .subline { font-size: 1.05rem; }
+    .nav-bottom { flex-direction: column; }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <div class="logo-container">
+                <img src="../logo.png" alt="Nexus Logo" class="logo-img">
+                <div class="logo-text">PROJECT N.E.X.U.S.</div>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+            <a href="../vision_short.html" class="nav-link">Vision</a>
+            <a href="../oneapp.html" class="nav-link">OneApp</a>
+            <a href="../index.html#system" class="nav-link">Bauplan</a>
+            <a href="index.html" class="nav-link active">Lernpfad</a>
+            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);">Genesis Circle</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="kicker">Lektion 6 · N.E.X.U.S. Lernpfad 0.1</div>
+            <h1>Die neue<br>Gemeinschaft</h1>
+            <div class="subline">
+                N.E.X.U.S. wird nicht durch Masse real, sondern durch kleine vertrauensfähige Einheiten.
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="content">
+                <div class="lesson-box gold">
+                    <h2>Ziel dieser Lektion</h2>
+                    <p>
+                        Nach dieser Lektion soll ein neuer Mensch verstehen:
+                    </p>
+                    <p>
+                        <strong>„N.E.X.U.S. beginnt nicht als anonyme Massenbewegung. Es beginnt in kleinen Gemeinschaften, in denen Vertrauen, Verantwortung und konkrete Zusammenarbeit wachsen können.“</strong>
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>1. Warum Gemeinschaft neu gedacht werden muss</h2>
+                    <p>
+                        Viele Menschen sehnen sich nach Gemeinschaft.
+                    </p>
+                    <p>
+                        Aber gleichzeitig haben viele schlechte Erfahrungen gemacht:
+                        mit Gruppen, Vereinen, Parteien, Bewegungen, Familien, religiösen Strukturen oder Online-Communities.
+                    </p>
+                    <p>
+                        Gemeinschaft klingt schön, kann aber auch eng, übergriffig, manipulativ oder chaotisch werden.
+                    </p>
+                    <p>
+                        Deshalb muss N.E.X.U.S. Gemeinschaft nicht romantisieren, sondern bewusst gestalten.
+                    </p>
+                    <p>
+                        Die Frage lautet nicht:
+                    </p>
+                    <p><strong>„Wie bekommen wir möglichst viele Menschen in einen Topf?“</strong></p>
+                    <p>
+                        Sondern:
+                    </p>
+                    <p><strong>„Wie entstehen Räume, in denen Menschen frei bleiben und trotzdem füreinander tragfähig werden?“</strong></p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>2. Das Problem anonymer Masse</h2>
+                    <p>
+                        Das alte Internet hat uns mit Millionen Menschen verbunden.
+                    </p>
+                    <p>
+                        Aber diese Verbindung ist oft oberflächlich.
+                    </p>
+                    <ul class="clean">
+                        <li>Viele Kontakte, aber wenig echtes Vertrauen.</li>
+                        <li>Viele Meinungen, aber wenig Verantwortung.</li>
+                        <li>Viele Gruppen, aber wenig Verbindlichkeit.</li>
+                        <li>Viele Likes, aber wenig tatsächliche Hilfe.</li>
+                        <li>Viele Diskussionen, aber wenig gemeinsames Handeln.</li>
+                    </ul>
+                    <p>
+                        Anonyme Masse ist leicht zu manipulieren.
+                        Sie kann schnell kippen, sich aufregen, spalten und wieder zerfallen.
+                    </p>
+                    <p>
+                        N.E.X.U.S. braucht deshalb keine bloße Reichweite.
+                    </p>
+                    <p>
+                        N.E.X.U.S. braucht Beziehungsfähigkeit.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>3. Die Zelle als kleinste lebendige Einheit</h2>
+                    <p>
+                        In N.E.X.U.S. ist die kleinste soziale Grundeinheit die Zelle.
+                    </p>
+                    <p>
+                        Eine Zelle ist eine überschaubare Gruppe von Menschen, die sich lokal oder thematisch organisiert.
+                    </p>
+                    <p>
+                        Lokal bedeutet zum Beispiel:
+                    </p>
+                    <ul class="clean">
+                        <li>eine Stadt,</li>
+                        <li>ein Dorf,</li>
+                        <li>ein Stadtteil,</li>
+                        <li>eine Insel,</li>
+                        <li>eine Nachbarschaft.</li>
+                    </ul>
+                    <p>
+                        Thematisch bedeutet zum Beispiel:
+                    </p>
+                    <ul class="clean">
+                        <li>Entwicklung der OneApp,</li>
+                        <li>Gesundheit,</li>
+                        <li>Bildung,</li>
+                        <li>Kommunikation,</li>
+                        <li>Recht,</li>
+                        <li>Landwirtschaft,</li>
+                        <li>Storytelling oder Medienarbeit.</li>
+                    </ul>
+                    <p>
+                        Eine Zelle ist kein Befehlsempfänger.
+                    </p>
+                    <p>
+                        Sie ist ein kleiner lebendiger Organismus innerhalb des größeren N.E.X.U.S.-Netzwerks.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>4. Warum klein besser skaliert als groß</h2>
+                    <p>
+                        Große Gruppen wirken mächtig, sind aber oft schwer handlungsfähig.
+                    </p>
+                    <p>
+                        Je größer eine Gruppe wird, desto schwieriger werden:
+                    </p>
+                    <ul class="clean">
+                        <li>Vertrauen,</li>
+                        <li>Kommunikation,</li>
+                        <li>Konfliktlösung,</li>
+                        <li>Verantwortung,</li>
+                        <li>Verbindlichkeit,</li>
+                        <li>echte Beteiligung.</li>
+                    </ul>
+                    <p>
+                        Kleine Gruppen können schneller lernen.
+                        Sie können Fehler machen, korrigieren, Vertrauen aufbauen und konkrete Projekte testen.
+                    </p>
+                    <p>
+                        Wenn viele kleine Gruppen miteinander verbunden sind, entsteht etwas sehr Starkes:
+                    </p>
+                    <p><strong>ein Netzwerk aus lebendigen Einheiten statt eine zentrale Massenorganisation.</strong></p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>5. Vertrauen wächst in Stufen</h2>
+                    <p>
+                        Vertrauen ist nicht binär.
+                    </p>
+                    <p>
+                        Es gibt nicht nur „fremd“ oder „voll vertraut“.
+                    </p>
+                    <p>
+                        Deshalb denkt N.E.X.U.S. Vertrauen schrittweise.
+                    </p>
+                    <ul class="clean">
+                        <li>Ich entdecke jemanden.</li>
+                        <li>Ich nehme Kontakt auf.</li>
+                        <li>Ich lerne die Person besser kennen.</li>
+                        <li>Ich vertraue ihr mehr.</li>
+                        <li>Vielleicht wird sie irgendwann eine Vertrauensperson oder ein Bürge.</li>
+                    </ul>
+                    <p>
+                        Das schützt beide Seiten.
+                    </p>
+                    <p>
+                        Nicht jeder bekommt sofort vollen Zugang.
+                        Aber niemand muss dauerhaft fremd bleiben.
+                    </p>
+                    <p>
+                        Vertrauen wird nicht behauptet. Es wächst durch Verhalten.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>6. Rollen statt Herrschaft</h2>
+                    <p>
+                        Jede Gemeinschaft braucht Struktur.
+                    </p>
+                    <p>
+                        Aber Struktur muss nicht Herrschaft bedeuten.
+                    </p>
+                    <p>
+                        In N.E.X.U.S. sind Rollen Werkzeuge, keine Kronen.
+                    </p>
+                    <ul class="clean">
+                        <li>Ein Gründer hilft, eine Zelle ins Leben zu bringen.</li>
+                        <li>Ein Moderator hilft, Ordnung und Gesprächskultur zu halten.</li>
+                        <li>Ein Mitglied trägt bei, lernt mit und entscheidet mit.</li>
+                        <li>Ein Admin verwaltet technische oder organisatorische Übergänge.</li>
+                    </ul>
+                    <p>
+                        Entscheidend ist:
+                    </p>
+                    <p><strong>Rollen sollen Verantwortung sichtbar machen, nicht Menschen über andere stellen.</strong></p>
+                    <p>
+                        Macht muss überprüfbar, begrenzt und korrigierbar bleiben.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>7. Gemeinschaft braucht Aufgaben</h2>
+                    <p>
+                        Gemeinschaft entsteht nicht nur dadurch, dass Menschen im selben Chat sind.
+                    </p>
+                    <p>
+                        Gemeinschaft entsteht durch gemeinsame Wirklichkeit.
+                    </p>
+                    <p>
+                        Das heißt: Menschen tun etwas zusammen.
+                    </p>
+                    <ul class="clean">
+                        <li>Sie lösen ein lokales Problem.</li>
+                        <li>Sie testen eine App-Funktion.</li>
+                        <li>Sie schreiben eine bessere Erklärung.</li>
+                        <li>Sie organisieren ein Treffen.</li>
+                        <li>Sie helfen einem Mitglied.</li>
+                        <li>Sie bauen eine kleine Versorgungsstruktur.</li>
+                        <li>Sie entwickeln einen Vorschlag.</li>
+                    </ul>
+                    <p>
+                        Eine N.E.X.U.S.-Zelle sollte deshalb nie nur Diskussionsraum sein.
+                    </p>
+                    <p>
+                        Sie sollte immer auch Lernraum und Handlungsraum sein.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>8. Konflikte sind kein Scheitern</h2>
+                    <p>
+                        Wo Menschen zusammenkommen, entstehen Konflikte.
+                    </p>
+                    <p>
+                        Das ist normal.
+                    </p>
+                    <p>
+                        Eine gute Gemeinschaft ist nicht konfliktfrei.
+                        Eine gute Gemeinschaft kann mit Konflikten heilsam umgehen.
+                    </p>
+                    <p>
+                        Das alte System reagiert oft mit Ausschluss, Strafe, Scham oder Macht.
+                    </p>
+                    <p>
+                        N.E.X.U.S. will lernen:
+                    </p>
+                    <ul class="clean">
+                        <li>zuzuhören, bevor geurteilt wird,</li>
+                        <li>Schaden sichtbar zu machen,</li>
+                        <li>Verantwortung einzufordern,</li>
+                        <li>Wiedergutmachung zu ermöglichen,</li>
+                        <li>Menschen nicht vorschnell wegzuwerfen,</li>
+                        <li>aber klare Grenzen zu setzen, wo Schutz nötig ist.</li>
+                    </ul>
+                    <p>
+                        Gemeinschaft bedeutet nicht, alles zu erlauben.
+                    </p>
+                    <p>
+                        Gemeinschaft bedeutet, Verantwortung nicht durch Kälte zu ersetzen.
+                    </p>
+                </div>
+
+                <div class="lesson-box">
+                    <h2>9. Von der Zelle zum Netzwerk</h2>
+                    <p>
+                        Eine einzelne Zelle kann nur begrenzt wirken.
+                    </p>
+                    <p>
+                        Aber viele Zellen können sich verbinden.
+                    </p>
+                    <p>
+                        Jede Zelle bleibt eigenständig, aber nicht isoliert.
+                    </p>
+                    <ul class="clean">
+                        <li>Lokale Zellen können Erfahrungen teilen.</li>
+                        <li>Thematische Zellen können Wissen bereitstellen.</li>
+                        <li>Entwickler können Werkzeuge bauen.</li>
+                        <li>Juristen können rechtliche Rahmen prüfen.</li>
+                        <li>Erzähler können die Vision verständlich machen.</li>
+                        <li>Praktiker können zeigen, was wirklich funktioniert.</li>
+                    </ul>
+                    <p>
+                        So entsteht keine Weltregierung.
+                    </p>
+                    <p>
+                        Es entsteht ein föderiertes Netzwerk freier Gemeinschaften.
+                    </p>
+                </div>
+
+                <div class="lesson-box orange">
+                    <h2>10. Der erste soziale Schritt</h2>
+                    <p>
+                        Viele Menschen warten auf den großen Moment.
+                    </p>
+                    <p>
+                        Aber N.E.X.U.S. beginnt viel einfacher.
+                    </p>
+                    <p>
+                        Es beginnt, wenn ein Mensch zu einem anderen sagt:
+                    </p>
+                    <p><strong>„Ich sehe auch, dass etwas falsch läuft. Lass uns nicht nur darüber reden. Lass uns etwas Kleines gemeinsam bauen.“</strong></p>
+                    <p>
+                        Eine neue Gesellschaft beginnt nicht mit einem perfekten System.
+                    </p>
+                    <p>
+                        Sie beginnt mit einer neuen Qualität von Beziehung.
+                    </p>
+                </div>
+
+                <div class="quote">
+                    Die Zelle ist kein Käfig. Sie ist ein lebendiger Raum, in dem Vertrauen wieder wachsen kann.
+                </div>
+
+                <div class="lesson-box gold">
+                    <h2>11. Kleine Aufgabe</h2>
+                    <p>Nimm dir 5 Minuten und beantworte diese drei Fragen:</p>
+                    <ol class="task-list">
+                        <li>Welche 3 bis 5 Menschen kennst du, mit denen du ehrlich über N.E.X.U.S. sprechen könntest?</li>
+                        <li>Wäre dein erster Einstieg eher lokal oder thematisch?</li>
+                        <li>Welche kleine gemeinsame Aufgabe könnte eine erste Zelle in deinem Umfeld sinnvoll angehen?</li>
+                    </ol>
+                </div>
+
+                <div class="nav-bottom">
+                    <a href="lektion-5.html" class="nav-button">← Lektion 5</a>
+                    <a href="index.html" class="nav-button">Zur Übersicht</a>
+                    <a href="lektion-7.html" class="nav-button orange">Weiter zu Lektion 7 →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        PROJECT N.E.X.U.S. · Lektion 6 · Die neue Gemeinschaft<br>
+        <span style="color: var(--accent-cyan);">www.nexus-terminal.org</span>
+    </footer>
+</body>
+</html>
