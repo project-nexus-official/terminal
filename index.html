@@ -19,6 +19,7 @@
             --accent-cyan: #00f3ff;
             --accent-orange: #ff9d00;
             --accent-gold: #ffd700;
+            --accent-green: #4ade80; /* NEU für Academy */
         }
 
         html { scroll-behavior: smooth; }
@@ -233,10 +234,26 @@
         }
         .pulse-button:hover { background: var(--accent-orange); color: #000; animation: none; }
 
+        /* NEUER ACADEMY BUTTON IM HERO */
+        .btn-academy {
+            display: inline-block; background: transparent; color: var(--accent-green);
+            border: 2px solid var(--accent-green); padding: 15px 30px; font-size: 1.1rem;
+            font-weight: bold; text-transform: uppercase; cursor: pointer; text-decoration: none;
+            box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); animation: pulse-green 2s infinite; letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .btn-academy:hover { background: var(--accent-green); color: #000; animation: none; box-shadow: 0 0 20px var(--accent-green); }
+
         @keyframes pulse-orange {
             0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 157, 0, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 157, 0, 0); }
             100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 157, 0, 0); }
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+            100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
         }
 
         .video-intro { padding: 40px 20px; background: #000; text-align: center; border-bottom: 1px solid #222; }
@@ -398,6 +415,7 @@
             <a href="vision_short.html" class="nav-link">Vision</a>
             <a href="oneapp.html" class="nav-link active-app">OneApp [Live]</a>
             <a href="#system" class="nav-link">Bauplan</a>
+            <a href="eLearning/index.html" class="nav-link" style="color: var(--accent-green);">Academy</a>
             <a href="thinktank.html" class="nav-link" style="color: var(--accent-gold);">Genesis Circle</a>
         </nav>
         
@@ -431,6 +449,10 @@
 
             <a href="analyse.html" class="pulse-button">
                 ⚠️ STARTE DEINE SYSTEM-ANALYSE
+            </a>
+
+            <a href="eLearning/index.html" class="btn-academy">
+                🎓 ZUR N.E.X.U.S. ACADEMY
             </a>
         </div>
 
@@ -622,6 +644,20 @@
         </div>
     </div>
 
+    <!-- ACADEMY (E-LEARNING BEREICH) NEU HINZUGEFÜGT -->
+    <div id="academy" class="section">
+        <h2 class="section-title" style="border-color: var(--accent-green); color: var(--accent-green);">N.E.X.U.S. ACADEMY [NEU]</h2>
+        <div style="background: #0a0a0c; border: 1px dashed var(--accent-green); padding: 40px; text-align: center; border-radius: 4px; box-shadow: 0 0 20px rgba(74, 222, 128, 0.05);">
+            <h3 style="color: #fff; margin-top: 0; font-size: 1.5rem;">DER LERNPFAD: VOM ERWACHEN ZUM MITBAUEN</h3>
+            <p style="max-width: 800px; margin: 0 auto 30px auto; color: #ccc; font-size: 1.1rem; line-height: 1.8;">
+                Wir bauen ein neues System auf. Aber um es zu bauen, müssen wir es erst verstehen. In der N.E.X.U.S. Academy lernst du die fundamentalen Fehler des alten Systems kennen und erfährst, wie unsere dezentrale Alternative funktioniert. <strong>Die Ausbildung für die Architekten von morgen.</strong>
+            </p>
+            <a href="eLearning/index.html" class="btn-academy">
+                > LEKTION 1 STARTEN
+            </a>
+        </div>
+    </div>
+
     <!-- COMMUNITY -->
     <div class="section" style="border-bottom:none; text-align:center; padding-top: 30px;">
         <h2 style="color:var(--accent-gold); margin-bottom:20px;">WERDE TEIL DES GENESIS CIRCLE</h2>
@@ -629,7 +665,7 @@
             Allein ist es eine Idee. Gemeinsam wird es Realität.<br>
             Der Think Tank der 95% formiert sich. Wir suchen Architekten, keine Zuschauer.
         </p>
-        <a href="thinktank.html" class="architekt-button" style="border: 2px solid var(--accent-gold); color: var(--accent-gold); margin-right: 15px;">
+        <a href="thinktank.html" class="header-architekt-btn" style="border: 2px solid var(--accent-gold); color: var(--accent-gold); margin-right: 15px; padding: 13px 30px; font-size: 1.1rem;">
             MEHR ERFAHREN
         </a>
         <a href="https://t.me/Nexus_Project_official" target="_blank" class="cta-button cta-telegram" style="width: auto; padding: 13px 30px; display: inline-block;">
@@ -735,7 +771,7 @@
                     throw new Error("API-Zugriff verweigert: " + data.error.message);
                 }
 
-                const models = data.models || [];
+                const models = data.models ||[];
                 let bestModel = models.find(m => m.name.includes("gemini-1.5-flash") && m.supportedGenerationMethods.includes("generateContent"));
                 if (!bestModel) bestModel = models.find(m => m.name.includes("gemini") && m.supportedGenerationMethods.includes("generateContent"));
 
@@ -817,7 +853,7 @@
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/${ACTIVE_MODEL_NAME}:generateContent?key=${API_KEY}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: fullPrompt }] }] })
+                    body: JSON.stringify({ contents: [{ parts:[{ text: fullPrompt }] }] })
                 });
 
                 const data = await response.json();
