@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.E.X.U.S. Lernpfad 0.1 | Vom Erwachen zum Mitbauen</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+
+:root {
+    --bg-color: #000000;
+    --panel-bg: #0a0a0a;
+    --panel-soft: #111111;
+    --text-main: #ffffff;
+    --text-muted: #b8b8b8;
+    --text-soft: #888888;
+    --accent-cyan: #00f3ff;
+    --accent-orange: #ff9d00;
+    --accent-gold: #ffd700;
+    --border-dark: #333333;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    padding-top: 90px;
+}
+
+a { color: inherit; text-decoration: none; transition: 0.3s; }
+p { margin: 0 0 22px 0; }
+strong { color: #fff; }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    background: rgba(0,0,0,0.95);
+    border-bottom: 1px solid var(--border-dark);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(5px);
+    gap: 15px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    font-weight: bold;
+    color: var(--accent-cyan);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    color: #aaa;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 8px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+.hero {
+    min-height: 58vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 20px;
+    background:
+        radial-gradient(circle at center, rgba(0, 243, 255, 0.12), rgba(0,0,0,0.85) 55%),
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+    border-bottom: 1px solid #222;
+}
+
+.kicker {
+    display: inline-block;
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+    padding: 7px 15px;
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,0.7);
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    line-height: 1.08;
+    margin: 0 0 22px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 22px rgba(0, 243, 255, 0.8);
+}
+
+.subline {
+    max-width: 900px;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: rgba(0,0,0,0.6);
+    border-left: 4px solid var(--accent-orange);
+    padding: 18px 22px;
+}
+
+.section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 55px 20px;
+    border-bottom: 1px solid #222;
+}
+
+.section-title {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 6px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding-left: 18px;
+    margin: 0 0 30px 0;
+}
+
+.section-title.gold {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.section-title.orange {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.lead {
+    font-size: 1.15rem;
+    color: #e8e8e8;
+    max-width: 900px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.course-card {
+    background: var(--panel-bg);
+    border: 1px solid #252525;
+    border-top: 3px solid var(--accent-cyan);
+    padding: 24px;
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 5px 25px rgba(0,243,255,0.15);
+}
+
+.course-card.available {
+    border-top-color: var(--accent-orange);
+}
+
+.course-card.available:hover {
+    border-color: var(--accent-orange);
+    box-shadow: 0 5px 25px rgba(255,157,0,0.18);
+}
+
+.lesson-number {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.course-card h3 {
+    margin: 0 0 14px 0;
+    color: #fff;
+    font-size: 1.22rem;
+    text-transform: uppercase;
+}
+
+.course-card p {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    margin-bottom: 18px;
+}
+
+.card-cta {
+    display: inline-block;
+    margin-top: auto;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    padding: 10px 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.available .card-cta {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.card-cta:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+.available .card-cta:hover {
+    background: var(--accent-orange);
+    color: #000;
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lesson-box {
+    background: var(--panel-bg);
+    border: 1px solid #262626;
+    border-left: 4px solid var(--accent-cyan);
+    padding: 26px;
+    margin: 30px 0;
+}
+
+.lesson-box.orange {
+    border-left-color: var(--accent-orange);
+}
+
+.lesson-box.gold {
+    border-left-color: var(--accent-gold);
+}
+
+.lesson-box h2,
+.lesson-box h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lesson-box h2 { color: var(--accent-cyan); }
+.lesson-box.orange h2, .lesson-box.orange h3 { color: var(--accent-orange); }
+.lesson-box.gold h2, .lesson-box.gold h3 { color: var(--accent-gold); }
+
+ul.clean {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul.clean li {
+    border-bottom: 1px solid #222;
+    padding: 10px 0;
+    color: #ddd;
+}
+
+.quote {
+    font-size: 1.2rem;
+    color: var(--accent-orange);
+    border-left: 4px solid var(--accent-orange);
+    background: rgba(255,157,0,0.06);
+    padding: 20px;
+    margin: 32px 0;
+    font-weight: bold;
+}
+
+.task-list {
+    counter-reset: task;
+    padding: 0;
+    list-style: none;
+}
+
+.task-list li {
+    counter-increment: task;
+    margin: 18px 0;
+    padding: 18px;
+    background: #0f0f0f;
+    border: 1px solid #222;
+}
+
+.task-list li::before {
+    content: counter(task) ". ";
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.nav-button {
+    display: inline-block;
+    border: 2px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding: 14px 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-button.orange {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+
+.nav-button:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+.nav-button.orange:hover {
+    background: var(--accent-orange);
+    color: #000;
+}
+
+.placeholder-note {
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px dashed #333;
+    padding-top: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    background: #080808;
+    color: #777;
+    border-top: 1px solid #222;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    body { padding-top: 140px; font-size: 17px; }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .main-nav { gap: 10px; }
+    .hero { min-height: 52vh; padding-top: 35px; }
+    .subline { font-size: 1.05rem; }
+    .nav-bottom { flex-direction: column; }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <div class="logo-container">
+                <img src="../logo.png" alt="Nexus Logo" class="logo-img">
+                <div class="logo-text">PROJECT N.E.X.U.S.</div>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+            <a href="../vision_short.html" class="nav-link">Vision</a>
+            <a href="../oneapp.html" class="nav-link">OneApp</a>
+            <a href="../index.html#system" class="nav-link">Bauplan</a>
+            <a href="index.html" class="nav-link active">Lernpfad</a>
+            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);">Genesis Circle</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="kicker">N.E.X.U.S. Lernpfad 0.1</div>
+            <h1>Vom Erwachen<br>zum Mitbauen</h1>
+            <div class="subline">
+                Der einfache Einstieg in das Betriebssystem einer freien Welt.
+                Kein Vorwissen. Keine Ideologie. Nur Verstehen, Einordnen und der erste praktische Schritt.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title orange">Warum dieser Lernpfad existiert</h2>
+            <p class="lead">
+                N.E.X.U.S. ist groß. Der Bauplan ist tief. Die OneApp wächst. Die Trilogie macht den Wandel fühlbar.
+                Dieser Lernpfad baut die Brücke: Er hilft neuen Menschen, den Kern von N.E.X.U.S. Schritt für Schritt zu verstehen,
+                ohne sofort vom Gesamtumfang überfordert zu werden.
+            </p>
+            <p class="lead">
+                Ziel ist nicht, alles perfekt zu wissen. Ziel ist, den inneren Übergang zu beginnen:
+                vom Gefühl, dass etwas nicht stimmt, hin zur Frage, wie wir eine bessere Struktur gemeinsam bauen können.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title gold">Die 7 Lektionen</h2>
+
+            <div class="course-grid">
+                <a href="lektion-1.html" class="course-card available">
+                    <div>
+                        <div class="lesson-number">Lektion 1</div>
+                        <h3>Warum alles gleichzeitig zerbricht</h3>
+                        <p>Du verstehst, warum die Krisen unserer Zeit nicht getrennt sind, sondern Symptome desselben Systemfehlers.</p>
+                    </div>
+                    <span class="card-cta">Lektion starten</span>
+                </a>
+
+                <div class="course-card">
+                    <div>
+                        <div class="lesson-number">Lektion 2</div>
+                        <h3>Warum Reformen nicht mehr reichen</h3>
+                        <p>Du erkennst, warum gute Absichten in einem falsch programmierten System oft verpuffen.</p>
+                    </div>
+                    <span class="card-cta">Folgt als Nächstes</span>
+                </div>
+
+                <div class="course-card">
+                    <div>
+                        <div class="lesson-number">Lektion 3</div>
+                        <h3>Warum wir nicht kämpfen, sondern neu bauen</h3>
+                        <p>Du lernst das Prinzip der parallelen Konstruktion kennen: das Alte nicht bekämpfen, sondern überflüssig machen.</p>
+                    </div>
+                    <span class="card-cta">In Vorbereitung</span>
+                </div>
+
+                <div class="course-card">
+                    <div>
+                        <div class="lesson-number">Lektion 4</div>
+                        <h3>Was N.E.X.U.S. eigentlich ist</h3>
+                        <p>Du verstehst N.E.X.U.S. als dezentrales Betriebssystem für freie, menschliche Gemeinschaften.</p>
+                    </div>
+                    <span class="card-cta">In Vorbereitung</span>
+                </div>
+
+                <div class="course-card">
+                    <div>
+                        <div class="lesson-number">Lektion 5</div>
+                        <h3>Die OneApp als Einstiegstor</h3>
+                        <p>Du erkennst, warum die OneApp nicht nur Messenger ist, sondern Identität, Verbindung und Mitwirkung ermöglicht.</p>
+                    </div>
+                    <span class="card-cta">In Vorbereitung</span>
+                </div>
+
+                <div class="course-card">
+                    <div>
+                        <div class="lesson-number">Lektion 6</div>
+                        <h3>Die neue Gemeinschaft</h3>
+                        <p>Du lernst, was Zellen sind und wie kleine Vertrauensräume große gesellschaftliche Veränderung tragen können.</p>
+                    </div>
+                    <span class="card-cta">In Vorbereitung</span>
+                </div>
+
+                <div class="course-card">
+                    <div>
+                        <div class="lesson-number">Lektion 7</div>
+                        <h3>Wie du mitmachen kannst</h3>
+                        <p>Du bekommst konkrete erste Schritte: lesen, testen, Feedback geben, Menschen einladen, lokale Ideen sammeln.</p>
+                    </div>
+                    <span class="card-cta">In Vorbereitung</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="lesson-box gold">
+                <h2>So nutzt du diesen Lernpfad</h2>
+                <ul class="clean">
+                    <li>Lies eine Lektion vollständig durch.</li>
+                    <li>Beantworte am Ende die kleine Aufgabe für dich selbst.</li>
+                    <li>Sprich mit einem anderen Menschen darüber.</li>
+                    <li>Gehe erst dann zur nächsten Lektion weiter.</li>
+                </ul>
+                <p class="placeholder-note">
+                    Später können hier Videos, Audio-Versionen, Quizfragen, PDFs und OneApp-Verknüpfungen ergänzt werden.
+                    Für Version 0.1 zählt zuerst Klarheit, nicht Perfektion.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        PROJECT N.E.X.U.S. · Lernpfad 0.1 · Vom Erwachen zum Mitbauen<br>
+        <span style="color: var(--accent-cyan);">www.nexus-terminal.org</span>
+    </footer>
+</body>
+</html>
