@@ -392,7 +392,129 @@ footer {
     .subline { font-size: 1.05rem; }
     .nav-bottom { flex-direction: column; }
 }
-    </style>
+    
+/* --- READABILITY UPDATE 0.9 --- */
+body {
+    font-size: 20px;
+    line-height: 1.78;
+    letter-spacing: 0.01em;
+    color: #f2f2f2;
+}
+
+.hero {
+    min-height: 52vh;
+}
+
+.subline {
+    max-width: 980px;
+    font-size: 1.25rem;
+    line-height: 1.55;
+}
+
+.section {
+    max-width: 1120px;
+    padding: 64px 24px;
+}
+
+.content {
+    max-width: 980px;
+}
+
+.lead {
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: #eeeeee;
+}
+
+.lesson-box {
+    background: #0d0d0d;
+    border-color: #343434;
+    padding: 34px;
+    margin: 38px 0;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+.lesson-box p {
+    max-width: 860px;
+}
+
+.lesson-box h2 {
+    font-size: 1.55rem;
+    line-height: 1.35;
+    margin-bottom: 22px;
+}
+
+.lesson-box h3 {
+    margin-top: 28px;
+    margin-bottom: 14px;
+    font-size: 1.12rem;
+}
+
+ul.clean li {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    padding: 13px 0;
+    color: #e7e7e7;
+}
+
+.course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 26px;
+}
+
+.course-card {
+    min-height: 285px;
+    padding: 28px;
+    background: #0d0d0d;
+    border-color: #343434;
+}
+
+.course-card h3 {
+    font-size: 1.22rem;
+    line-height: 1.35;
+}
+
+.course-card p {
+    font-size: 1rem;
+    line-height: 1.62;
+    color: #d7d7d7;
+}
+
+.card-cta, .nav-button {
+    line-height: 1.35;
+}
+
+.quote {
+    font-size: 1.28rem;
+    line-height: 1.55;
+    padding: 26px;
+}
+
+.task-list li {
+    line-height: 1.65;
+    color: #e7e7e7;
+}
+
+@media (max-width: 900px) {
+    body {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    .section {
+        padding: 46px 16px;
+    }
+    .lesson-box {
+        padding: 24px 18px;
+    }
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+    .course-card {
+        min-height: auto;
+    }
+}
+
+</style>
 </head>
 <body>
     <header>

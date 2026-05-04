@@ -392,7 +392,129 @@ footer {
     .subline { font-size: 1.05rem; }
     .nav-bottom { flex-direction: column; }
 }
-    </style>
+    
+/* --- READABILITY UPDATE 0.9 --- */
+body {
+    font-size: 20px;
+    line-height: 1.78;
+    letter-spacing: 0.01em;
+    color: #f2f2f2;
+}
+
+.hero {
+    min-height: 52vh;
+}
+
+.subline {
+    max-width: 980px;
+    font-size: 1.25rem;
+    line-height: 1.55;
+}
+
+.section {
+    max-width: 1120px;
+    padding: 64px 24px;
+}
+
+.content {
+    max-width: 980px;
+}
+
+.lead {
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: #eeeeee;
+}
+
+.lesson-box {
+    background: #0d0d0d;
+    border-color: #343434;
+    padding: 34px;
+    margin: 38px 0;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+.lesson-box p {
+    max-width: 860px;
+}
+
+.lesson-box h2 {
+    font-size: 1.55rem;
+    line-height: 1.35;
+    margin-bottom: 22px;
+}
+
+.lesson-box h3 {
+    margin-top: 28px;
+    margin-bottom: 14px;
+    font-size: 1.12rem;
+}
+
+ul.clean li {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    padding: 13px 0;
+    color: #e7e7e7;
+}
+
+.course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 26px;
+}
+
+.course-card {
+    min-height: 285px;
+    padding: 28px;
+    background: #0d0d0d;
+    border-color: #343434;
+}
+
+.course-card h3 {
+    font-size: 1.22rem;
+    line-height: 1.35;
+}
+
+.course-card p {
+    font-size: 1rem;
+    line-height: 1.62;
+    color: #d7d7d7;
+}
+
+.card-cta, .nav-button {
+    line-height: 1.35;
+}
+
+.quote {
+    font-size: 1.28rem;
+    line-height: 1.55;
+    padding: 26px;
+}
+
+.task-list li {
+    line-height: 1.65;
+    color: #e7e7e7;
+}
+
+@media (max-width: 900px) {
+    body {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    .section {
+        padding: 46px 16px;
+    }
+    .lesson-box {
+        padding: 24px 18px;
+    }
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+    .course-card {
+        min-height: auto;
+    }
+}
+
+</style>
 </head>
 <body>
     <header>
@@ -486,12 +608,12 @@ footer {
                 </div>
 
                 <div class="lesson-box">
-                    <h2>3. Die Zelle als kleinste lebendige Einheit</h2>
+                    <h2>3. Die Gemeinschaft als kleinste lebendige Einheit</h2>
                     <p>
-                        In N.E.X.U.S. ist die kleinste soziale Grundeinheit die Zelle.
+                        In N.E.X.U.S. ist die kleinste soziale Grundeinheit eine überschaubare Gemeinschaft.
                     </p>
                     <p>
-                        Eine Zelle ist eine überschaubare Gruppe von Menschen, die sich lokal oder thematisch organisiert.
+                        Eine Gemeinschaft ist eine überschaubare Gruppe von Menschen, die sich lokal oder thematisch organisiert.
                     </p>
                     <p>
                         Lokal bedeutet zum Beispiel:
@@ -516,7 +638,7 @@ footer {
                         <li>Storytelling oder Medienarbeit.</li>
                     </ul>
                     <p>
-                        Eine Zelle ist kein Befehlsempfänger.
+                        Eine Gemeinschaft ist kein Befehlsempfänger.
                     </p>
                     <p>
                         Sie ist ein kleiner lebendiger Organismus innerhalb des größeren N.E.X.U.S.-Netzwerks.
@@ -591,7 +713,7 @@ footer {
                         In N.E.X.U.S. sind Rollen Werkzeuge, keine Kronen.
                     </p>
                     <ul class="clean">
-                        <li>Ein Gründer hilft, eine Zelle ins Leben zu bringen.</li>
+                        <li>Ein Gründer hilft, eine Gemeinschaft ins Leben zu bringen.</li>
                         <li>Ein Moderator hilft, Ordnung und Gesprächskultur zu halten.</li>
                         <li>Ein Mitglied trägt bei, lernt mit und entscheidet mit.</li>
                         <li>Ein Admin verwaltet technische oder organisatorische Übergänge.</li>
@@ -626,7 +748,7 @@ footer {
                         <li>Sie entwickeln einen Vorschlag.</li>
                     </ul>
                     <p>
-                        Eine N.E.X.U.S.-Zelle sollte deshalb nie nur Diskussionsraum sein.
+                        Eine N.E.X.U.S.-Gemeinschaft sollte deshalb nie nur Diskussionsraum sein.
                     </p>
                     <p>
                         Sie sollte immer auch Lernraum und Handlungsraum sein.
@@ -668,19 +790,19 @@ footer {
                 </div>
 
                 <div class="lesson-box">
-                    <h2>9. Von der Zelle zum Netzwerk</h2>
+                    <h2>9. Von der Gemeinschaft zum Netzwerk</h2>
                     <p>
-                        Eine einzelne Zelle kann nur begrenzt wirken.
+                        Eine einzelne Gemeinschaft kann nur begrenzt wirken.
                     </p>
                     <p>
-                        Aber viele Zellen können sich verbinden.
+                        Aber viele Gemeinschaften können sich verbinden.
                     </p>
                     <p>
-                        Jede Zelle bleibt eigenständig, aber nicht isoliert.
+                        Jede Gemeinschaft bleibt eigenständig, aber nicht isoliert.
                     </p>
                     <ul class="clean">
-                        <li>Lokale Zellen können Erfahrungen teilen.</li>
-                        <li>Thematische Zellen können Wissen bereitstellen.</li>
+                        <li>Lokale Gemeinschaften können Erfahrungen teilen.</li>
+                        <li>Thematische Gemeinschaften können Wissen bereitstellen.</li>
                         <li>Entwickler können Werkzeuge bauen.</li>
                         <li>Juristen können rechtliche Rahmen prüfen.</li>
                         <li>Erzähler können die Vision verständlich machen.</li>
@@ -715,7 +837,7 @@ footer {
                 </div>
 
                 <div class="quote">
-                    Die Zelle ist kein Käfig. Sie ist ein lebendiger Raum, in dem Vertrauen wieder wachsen kann.
+                    Die Gemeinschaft ist kein Käfig. Sie ist ein lebendiger Raum, in dem Vertrauen wieder wachsen kann.
                 </div>
 
                 <div class="lesson-box gold">
@@ -724,7 +846,7 @@ footer {
                     <ol class="task-list">
                         <li>Welche 3 bis 5 Menschen kennst du, mit denen du ehrlich über N.E.X.U.S. sprechen könntest?</li>
                         <li>Wäre dein erster Einstieg eher lokal oder thematisch?</li>
-                        <li>Welche kleine gemeinsame Aufgabe könnte eine erste Zelle in deinem Umfeld sinnvoll angehen?</li>
+                        <li>Welche kleine gemeinsame Aufgabe könnte eine erste Gemeinschaft in deinem Umfeld sinnvoll angehen?</li>
                     </ol>
                 </div>
 
