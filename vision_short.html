@@ -16,9 +16,12 @@
             --soft-bg: #101010;
             --muted: #aaa;
             --border: #333;
+            --warm-panel: #120d06;
         }
 
         * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
@@ -69,14 +72,41 @@
             text-decoration: none;
         }
 
+        .page-hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            margin-top: -10px;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,0.70), rgba(0,0,0,0.36)),
+                linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.78)),
+                url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png?v=20260509');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(0,243,255,0.18);
+        }
+
+        .hero-inner {
+            max-width: 960px;
+            background: rgba(0,0,0,0.42);
+            border: 1px solid rgba(0,243,255,0.22);
+            border-left: 4px solid var(--accent-orange);
+            padding: 34px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+        }
+
         .container {
-            max-width: 920px;
+            max-width: 980px;
             margin: 0 auto;
             padding: 20px 20px 100px 20px;
         }
 
         h1 {
-            font-size: 2.7rem;
+            font-size: 2.9rem;
             text-align: center;
             color: var(--accent-cyan);
             text-transform: uppercase;
@@ -113,11 +143,13 @@
 
         a:hover { text-decoration: underline; }
 
+        img { max-width: 100%; height: auto; display: block; }
+
         .lead {
             font-size: 1.2rem;
             color: #fff;
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 0;
             font-style: italic;
         }
 
@@ -143,6 +175,64 @@
             margin-top: 25px;
         }
 
+        .image-strip {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 26px;
+            align-items: center;
+            margin: 45px 0;
+            padding: 26px;
+            border: 1px solid rgba(255,157,0,0.22);
+            background: linear-gradient(145deg, rgba(18,13,6,0.72), rgba(5,8,10,0.96));
+        }
+
+        .image-strip.reverse { grid-template-columns: 0.9fr 1.1fr; }
+
+        .image-frame {
+            min-height: 260px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+            overflow: hidden;
+        }
+
+        .image-frame.community {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.45)),
+                url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png?v=20260509');
+        }
+
+        .image-frame.blueprint {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.48)),
+                url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/Blueprint.png');
+            background-position: center top;
+        }
+
+        .image-text h2 { margin-top: 0; }
+        .image-text p { color: #d8d8d8; }
+
+        .book-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 24px 0 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .book-row a { display: block; }
+        .book-row img {
+            width: 128px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            box-shadow: 0 14px 32px rgba(0,0,0,0.65);
+            transition: 0.25s;
+        }
+        .book-row img:hover { transform: translateY(-4px) scale(1.03); border-color: var(--accent-orange); }
+
         .box {
             background: #111;
             padding: 25px;
@@ -152,15 +242,8 @@
         }
 
         .box strong { color: var(--accent-cyan); }
-
-        .box-highlight {
-            border-left: 4px solid var(--accent-cyan);
-        }
-
-        .box-warm {
-            border-left: 4px solid var(--accent-orange);
-            background: #120d06;
-        }
+        .box-highlight { border-left: 4px solid var(--accent-cyan); }
+        .box-warm { border-left: 4px solid var(--accent-orange); background: var(--warm-panel); }
 
         .bridge {
             text-align: center;
@@ -225,13 +308,29 @@
         .proof-item {
             background: #0d0d0d;
             border: 1px solid #252525;
-            padding: 18px;
             border-radius: 4px;
             display: block;
             color: var(--text-main);
             text-decoration: none;
             transition: 0.25s;
+            overflow: hidden;
         }
+
+        .proof-thumb {
+            height: 118px;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #252525;
+        }
+
+        .proof-thumb.bauplan { background-image: linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.35)), url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/Blueprint.png'); }
+        .proof-thumb.trilogie { background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.35)), url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_1_4.jpg'); background-size: contain; background-repeat: no-repeat; background-color: #050505; }
+        .proof-thumb.lernpfad { background-image: linear-gradient(rgba(0,0,0,0.14), rgba(0,0,0,0.48)), url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png?v=20260509'); }
+        .proof-thumb.gemeinschaft { background-image: linear-gradient(rgba(0,0,0,0.14), rgba(0,0,0,0.42)), url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/background_image.png?v=20260509'); }
+        .proof-thumb.denkfabrik { background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.55)), url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png'); background-size: contain; background-repeat: no-repeat; background-color: #030303; }
+        .proof-thumb.oneapp { background-image: linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.50)), url('https://raw.githubusercontent.com/project-nexus-official/terminal/main/logo.png'); background-size: contain; background-repeat: no-repeat; background-color: #050505; }
+
+        .proof-body { padding: 18px; }
 
         .proof-item:hover {
             border-color: var(--accent-cyan);
@@ -283,10 +382,7 @@
 
         .step-num:first-of-type { margin-top: 10px; }
 
-        .btn {
-            background: transparent;
-            color: var(--accent-cyan);
-            border: 2px solid var(--accent-cyan);
+        .btn, .btn-gold, .btn-telegram {
             padding: 12px 22px;
             font-weight: bold;
             display: inline-block;
@@ -294,6 +390,12 @@
             margin-top: 10px;
             text-transform: uppercase;
             transition: 0.3s;
+        }
+
+        .btn {
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan);
         }
 
         .btn:hover {
@@ -307,13 +409,6 @@
             background: transparent;
             color: var(--accent-gold);
             border: 2px solid var(--accent-gold);
-            padding: 12px 22px;
-            font-weight: bold;
-            display: inline-block;
-            border-radius: 2px;
-            margin-top: 10px;
-            text-transform: uppercase;
-            transition: 0.3s;
         }
 
         .btn-gold:hover {
@@ -327,13 +422,6 @@
             background: #229ED9;
             color: #fff;
             border: none;
-            padding: 12px 22px;
-            font-weight: bold;
-            display: inline-block;
-            border-radius: 2px;
-            margin-top: 10px;
-            text-transform: uppercase;
-            transition: 0.3s;
         }
 
         .btn-telegram:hover {
@@ -388,10 +476,14 @@
 
         @media (max-width: 760px) {
             body { font-size: 16px; padding-top: 75px; }
-            h1 { font-size: 1.9rem; }
+            h1 { font-size: 2rem; }
             h2 { font-size: 1.25rem; }
+            .page-hero { min-height: 450px; padding: 55px 15px; }
+            .hero-inner { padding: 24px; }
             .container { padding: 15px 15px 80px 15px; }
             .intro-card { padding: 22px; }
+            .image-strip, .image-strip.reverse { grid-template-columns: 1fr; padding: 18px; }
+            .image-frame { min-height: 220px; }
             .path-grid, .proof-grid { grid-template-columns: 1fr; }
             .role-list { columns: 1; }
             .logo-text { font-size: 0.9rem; }
@@ -406,10 +498,14 @@
         <a href="index.html" class="back-btn">X Schliessen</a>
     </header>
 
-    <div class="container">
-        <h1>Neu hier? Beginne hier.</h1>
-        <p class="lead">Ein einfacher Einstieg in N.E.X.U.S. — ohne Vorwissen, ohne Fachsprache, ohne Überforderung.</p>
+    <section class="page-hero">
+        <div class="hero-inner">
+            <h1>Neu hier? Beginne hier.</h1>
+            <p class="lead">Ein einfacher Einstieg in N.E.X.U.S. — ohne Vorwissen, ohne Fachsprache, ohne Überforderung.</p>
+        </div>
+    </section>
 
+    <div class="container">
         <div class="intro-card">
             <p class="question">Du bist auf N.E.X.U.S. gestoßen und fragst dich vielleicht:</p>
             <p><strong>Was ist das eigentlich?</strong><br>
@@ -420,14 +516,16 @@
             <p class="answer">Hier bekommst du einen einfachen ersten Überblick.</p>
         </div>
 
-        <h2>Du bist nicht allein</h2>
-        <p>Viele Menschen spüren heute, dass etwas nicht mehr stimmt.</p>
-        <p>Nicht nur in der Politik. Nicht nur in der Wirtschaft. Nicht nur in den Medien. Nicht nur im Umgang mit Technik.</p>
-        <p>Sondern tiefer.</p>
-        <p>Im Grundgefühl des Lebens.</p>
-        <p>Menschen sind ständig verbunden — und fühlen sich trotzdem einsam. Sie arbeiten viel — und kommen doch kaum zur Ruhe. Sie informieren sich — und wissen immer weniger, wem sie noch vertrauen können. Sie leben in einer hochentwickelten Welt — und spüren doch, dass Menschlichkeit, Nähe und Sinn verloren gehen.</p>
-        <p>Vielleicht kennst du dieses Gefühl.</p>
-        <p>Das Gefühl, dass unser Zusammenleben aus dem Gleichgewicht geraten ist. Dass viele Systeme nicht mehr dem Menschen dienen, sondern der Mensch den Systemen dienen muss. Dass Angst, Druck, Konkurrenz und Spaltung zu oft stärker sind als Vertrauen, Gemeinschaft und Mitgefühl.</p>
+        <div class="image-strip">
+            <div class="image-text">
+                <h2>Du bist nicht allein</h2>
+                <p>Viele Menschen spüren heute, dass etwas nicht mehr stimmt.</p>
+                <p>Nicht nur in der Politik. Nicht nur in der Wirtschaft. Nicht nur in den Medien. Nicht nur im Umgang mit Technik. Sondern tiefer: im Grundgefühl des Lebens.</p>
+                <p>Menschen sind ständig verbunden — und fühlen sich trotzdem einsam. Sie arbeiten viel — und kommen doch kaum zur Ruhe. Sie informieren sich — und wissen immer weniger, wem sie noch vertrauen können.</p>
+                <p>Vielleicht kennst du dieses Gefühl: dass unser Zusammenleben aus dem Gleichgewicht geraten ist.</p>
+            </div>
+            <div class="image-frame community" aria-label="Gemeinschaft als Bildmotiv"></div>
+        </div>
 
         <div class="quote">
             N.E.X.U.S. beginnt nicht mit Wut, nicht mit Schuldzuweisungen und nicht mit einem Feindbild. N.E.X.U.S. beginnt mit der Frage: <strong>Wie können wir wieder menschlicher miteinander leben?</strong>
@@ -481,48 +579,68 @@
             </ul>
         </div>
 
-        <h2>Der Kern ist Gemeinschaft</h2>
-        <p>N.E.X.U.S. ist nicht zuerst Technik. Nicht zuerst Geld. Nicht zuerst Verwaltung. Nicht zuerst ein Bauplan. Nicht zuerst eine Anwendung.</p>
-        <p>Der Kern ist der Mensch in echter Gemeinschaft.</p>
-        <p>Denn viele unserer heutigen Probleme entstehen dadurch, dass Menschen vereinzelt werden:</p>
-        <p>Jeder kämpft für sich. Jeder muss funktionieren. Jeder soll sich selbst optimieren. Jeder ist Kunde, Nutzer, Wähler, Arbeitskraft — aber oft nicht mehr wirklich Mensch im Kreis anderer Menschen.</p>
-        <p>N.E.X.U.S. setzt genau hier an.</p>
-        <p>Menschen sollen sich wieder finden. Miteinander sprechen. Miteinander lernen. Miteinander entscheiden. Miteinander arbeiten. Miteinander feiern. Miteinander Verantwortung tragen.</p>
-        <p>Aus einzelnen Menschen sollen wieder tragfähige Gemeinschaften entstehen. Lokal vor Ort. Und verbunden über sichere, dezentrale Technik.</p>
+        <div class="image-strip reverse">
+            <div class="image-frame community" aria-label="Gemeinschaft wird lebendig"></div>
+            <div class="image-text">
+                <h2>Der Kern ist Gemeinschaft</h2>
+                <p>N.E.X.U.S. ist nicht zuerst Technik. Nicht zuerst Geld. Nicht zuerst Verwaltung. Nicht zuerst ein Bauplan. Nicht zuerst eine Anwendung.</p>
+                <p>Der Kern ist der Mensch in echter Gemeinschaft.</p>
+                <p>Menschen sollen sich wieder finden. Miteinander sprechen. Miteinander lernen. Miteinander entscheiden. Miteinander arbeiten. Miteinander feiern. Miteinander Verantwortung tragen.</p>
+                <p>Aus einzelnen Menschen sollen wieder tragfähige Gemeinschaften entstehen. Lokal vor Ort. Und verbunden über sichere, dezentrale Technik.</p>
+            </div>
+        </div>
 
         <h2>Was gibt es bereits?</h2>
         <p>N.E.X.U.S. ist nicht mehr nur eine Idee. In den letzten Monaten und Jahren ist bereits viel entstanden:</p>
 
         <div class="proof-grid">
             <a class="proof-item" href="index.html#system">
-                <strong>Der Bauplan</strong>
-                Ein umfassendes Grundlagenwerk für eine neue gesellschaftliche Ordnung: Gemeinschaft, Wirtschaft, Bildung, Entscheidungsfindung, Technik, Versorgung und Verantwortung.
-                <span class="proof-link">Zum Bauplan</span>
+                <div class="proof-thumb bauplan"></div>
+                <div class="proof-body">
+                    <strong>Der Bauplan</strong>
+                    Ein umfassendes Grundlagenwerk für eine neue gesellschaftliche Ordnung: Gemeinschaft, Wirtschaft, Bildung, Entscheidungsfindung, Technik, Versorgung und Verantwortung.
+                    <span class="proof-link">Zum Bauplan</span>
+                </div>
             </a>
             <a class="proof-item" href="https://www.amazon.de/dp/B0GGL1ZD7B?binding=kindle_edition&ref_=saga_dp_ss_dsk_sdp" target="_blank">
-                <strong>Die Roman-Trilogie</strong>
-                Die Romane machen die Vision fühlbar: Menschen, Konflikte, Ängste, Hoffnung und der Weg aus einer zerfallenden Welt in eine neue Form des Zusammenlebens.
-                <span class="proof-link">Zur Trilogie</span>
+                <div class="proof-thumb trilogie"></div>
+                <div class="proof-body">
+                    <strong>Die Roman-Trilogie</strong>
+                    Die Romane machen die Vision fühlbar: Menschen, Konflikte, Ängste, Hoffnung und der Weg aus einer zerfallenden Welt in eine neue Form des Zusammenlebens.
+                    <span class="proof-link">Zur Trilogie</span>
+                </div>
             </a>
             <a class="proof-item" href="eLearning/index.html">
-                <strong>Der Lernpfad</strong>
-                Ein einfacher Einstieg für Menschen, die N.E.X.U.S. Schritt für Schritt verstehen möchten — ohne Fachsprache und ohne Überforderung.
-                <span class="proof-link">Zum Lernpfad</span>
+                <div class="proof-thumb lernpfad"></div>
+                <div class="proof-body">
+                    <strong>Der Lernpfad</strong>
+                    Ein einfacher Einstieg für Menschen, die N.E.X.U.S. Schritt für Schritt verstehen möchten — ohne Fachsprache und ohne Überforderung.
+                    <span class="proof-link">Zum Lernpfad</span>
+                </div>
             </a>
             <a class="proof-item" href="https://t.me/Nexus_Project_official" target="_blank">
-                <strong>Die Gemeinschaftsräume</strong>
-                Es gibt bereits eine wachsende Telegram-Gemeinschaft, einen Nachrichtenkanal und Arbeitsräume für Menschen, die tiefer mitdenken und mitbauen möchten.
-                <span class="proof-link">Zur Telegram-Gemeinschaft</span>
+                <div class="proof-thumb gemeinschaft"></div>
+                <div class="proof-body">
+                    <strong>Die Gemeinschaftsräume</strong>
+                    Es gibt bereits eine wachsende Telegram-Gemeinschaft, einen Nachrichtenkanal und Arbeitsräume für Menschen, die tiefer mitdenken und mitbauen möchten.
+                    <span class="proof-link">Zur Telegram-Gemeinschaft</span>
+                </div>
             </a>
             <a class="proof-item" href="https://project-nexus-official.github.io/terminal/thinktank.html">
-                <strong>Die Denkfabrik</strong>
-                Menschen aus verschiedenen Bereichen beginnen, N.E.X.U.S. gemeinsam weiterzudenken: gesellschaftlich, technisch, wirtschaftlich, geistig, rechtlich und praktisch.
-                <span class="proof-link">Zur Denkfabrik</span>
+                <div class="proof-thumb denkfabrik"></div>
+                <div class="proof-body">
+                    <strong>Die Denkfabrik</strong>
+                    Menschen aus verschiedenen Bereichen beginnen, N.E.X.U.S. gemeinsam weiterzudenken: gesellschaftlich, technisch, wirtschaftlich, geistig, rechtlich und praktisch.
+                    <span class="proof-link">Zur Denkfabrik</span>
+                </div>
             </a>
             <a class="proof-item" href="oneapp.html">
-                <strong>Die zentrale N.E.X.U.S.-Anwendung: OneApp</strong>
-                Eine erste Anwendung wird bereits entwickelt. Sie soll Menschen sicher, selbstbestimmt und dezentral miteinander verbinden.
-                <span class="proof-link">Zur OneApp</span>
+                <div class="proof-thumb oneapp"></div>
+                <div class="proof-body">
+                    <strong>Die zentrale N.E.X.U.S.-Anwendung: OneApp</strong>
+                    Eine erste Anwendung wird bereits entwickelt. Sie soll Menschen sicher, selbstbestimmt und dezentral miteinander verbinden.
+                    <span class="proof-link">Zur OneApp</span>
+                </div>
             </a>
         </div>
 
@@ -544,6 +662,12 @@
             <strong>Die Trilogie ist das Herz.</strong><br>
             <strong>Die OneApp ist das erste Werkzeug.</strong><br>
             <strong>Die Gemeinschaften sind der Ort, an dem N.E.X.U.S. lebendig wird.</strong>
+        </div>
+
+        <div class="book-row">
+            <a href="https://www.amazon.de/dp/B0GGL1ZD7B?binding=kindle_edition&ref_=saga_dp_ss_dsk_sdp" target="_blank"><img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_1_4.jpg" alt="N.E.X.U.S. Roman Band 1"></a>
+            <a href="https://www.amazon.de/dp/B0GGL1ZD7B?binding=kindle_edition&ref_=saga_dp_ss_dsk_sdp" target="_blank"><img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_2_2.jpg" alt="N.E.X.U.S. Roman Band 2"></a>
+            <a href="https://www.amazon.de/dp/B0GGL1ZD7B?binding=kindle_edition&ref_=saga_dp_ss_dsk_sdp" target="_blank"><img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_3_2.jpg" alt="N.E.X.U.S. Roman Band 3"></a>
         </div>
 
         <h2>Was N.E.X.U.S. nicht ist</h2>
@@ -657,7 +781,7 @@
             <a href="https://t.me/Nexus_Project_official" target="_blank" class="btn-telegram">Zur Telegram-Gemeinschaft</a>
 
             <span class="step-num">3. Wenn du tiefer mitbauen willst</span>
-            <a href="https://project-nexus-official.github.io/terminal/thinktank.html" class="btn-gold">Zum Genesis-Pakt</a>
+            <a href="https://project-nexus-official.github.io/terminal/thinktank.html" class="btn-gold">Meinen Platz finden</a>
 
             <p style="margin-top: 30px; color: #fff;"><strong>N.E.X.U.S. beginnt nicht irgendwann.<br>
             N.E.X.U.S. beginnt mit den Menschen, die jetzt anfangen, gemeinsam neu zu bauen.</strong></p>
