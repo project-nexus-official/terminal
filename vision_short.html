@@ -177,7 +177,7 @@
 
         .image-strip {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
             gap: 26px;
             align-items: center;
             margin: 45px 0;
@@ -186,10 +186,14 @@
             background: linear-gradient(145deg, rgba(18,13,6,0.72), rgba(5,8,10,0.96));
         }
 
-        .image-strip.reverse { grid-template-columns: 0.9fr 1.1fr; }
+        .image-strip.reverse { grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr); }
 
         .image-frame {
-            min-height: 260px;
+            width: 100%;
+            max-width: 360px;
+            aspect-ratio: 4 / 5;
+            min-height: 0;
+            justify-self: center;
             border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.12);
             background-size: cover;
@@ -489,7 +493,7 @@
             .container { padding: 15px 15px 80px 15px; }
             .intro-card { padding: 22px; }
             .image-strip, .image-strip.reverse { grid-template-columns: 1fr; padding: 18px; }
-            .image-frame { min-height: 220px; }
+            .image-frame { max-width: 340px; aspect-ratio: 4 / 5; min-height: 0; }
             .path-grid, .proof-grid { grid-template-columns: 1fr; }
             .role-list { columns: 1; }
             .logo-text { font-size: 0.9rem; }
