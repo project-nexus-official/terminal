@@ -3,342 +3,628 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N.E.X.U.S. | Genesis Circle</title>
+    <title>N.E.X.U.S. | Mitbauen</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
     <style>
         :root {
             --bg-color: #000000;
             --text-main: #e0e0e0;
+            --text-soft: #b8b8b8;
             --accent-cyan: #00f3ff;
             --accent-orange: #ff9d00;
             --accent-gold: #ffd700;
-            --accent-green: #00ff41; 
-            --accent-purple: #bd00ff; 
-            --accent-white: #ffffff; 
+            --accent-green: #4ade80;
+            --accent-purple: #bd00ff;
+            --accent-white: #ffffff;
             --panel-bg: #0a0a0a;
+            --panel-soft: #111111;
+            --border: #333333;
         }
 
+        * { box-sizing: border-box; }
+
         body {
-            margin: 0; padding: 0;
-            background-color: var(--bg-color); color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             font-family: 'Courier New', Courier, monospace;
-            line-height: 1.6; font-size: 18px;
+            line-height: 1.6;
+            font-size: 18px;
             padding-top: 80px;
         }
 
-        /* HEADER */
         header {
-            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
-            background: rgba(0,0,0,0.95); border-bottom: 1px solid #333;
-            z-index: 1000; display: flex; justify-content: space-between;
-            align-items: center; padding: 0 20px; box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(0,0,0,0.95);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
-        .logo-text { font-weight: bold; color: var(--accent-gold); letter-spacing: 1px; font-size: 1.2rem; }
+
+        .logo-text {
+            font-weight: bold;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+
         .back-btn {
-            border: 1px solid #fff; color: #fff;
-            padding: 8px 15px; text-decoration: none; font-weight: bold; font-size: 0.9rem;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
             text-transform: uppercase;
         }
-        .back-btn:hover { background: #fff; color: #000; }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 20px 20px 100px 20px; }
+        .back-btn:hover {
+            background: #fff;
+            color: #000;
+        }
 
-        /* HERO */
-        h1 { font-size: 2.5rem; text-align: center; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 10px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
-        .lead { font-size: 1.2rem; color: #fff; text-align: center; margin-bottom: 50px; }
+        .container {
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 20px 20px 100px 20px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            text-align: center;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin: 20px 0 10px 0;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            line-height: 1.15;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            display: inline-block;
+            padding-bottom: 10px;
+            line-height: 1.25;
+        }
+
+        h3, h4 { text-transform: uppercase; letter-spacing: 1px; }
+
+        p { margin: 0 0 18px 0; }
+
+        a { transition: 0.3s; }
+
+        .lead {
+            font-size: 1.2rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .center { text-align: center; }
 
         .manifest-box {
             border-left: 4px solid var(--accent-gold);
-            background: #111; padding: 30px; margin-bottom: 50px;
-            font-size: 1.1rem;
+            background: linear-gradient(145deg, #111, #0a0a0a);
+            padding: 30px;
+            margin-bottom: 50px;
+            font-size: 1.08rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
         }
 
-        /* TITEL STYLES */
-        h2 { text-align: center; color: #fff; text-transform: uppercase; margin-top: 60px; margin-bottom: 20px; border-bottom: 1px solid #333; display: inline-block; padding-bottom: 10px;}
-        .sub-desc { text-align: center; color: #888; margin-bottom: 40px; font-size: 1.05rem; }
+        .manifest-box strong { color: #fff; }
 
-        /* ARCHETYPEN GRID */
+        .sub-desc {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        .intro-path-box {
+            background: #0f1515;
+            border: 1px solid rgba(0,243,255,0.35);
+            padding: 26px;
+            margin: 35px 0 50px 0;
+        }
+
+        .intro-path-box strong { color: var(--accent-cyan); }
+
         .archetype-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px; margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
         }
 
         .archetype-card {
-            background: #0f0f0f; border: 1px solid #333; padding: 25px;
-            transition: 0.3s; position: relative; overflow: hidden;
+            background: #0f0f0f;
+            border: 1px solid var(--border);
+            padding: 25px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            min-height: 190px;
         }
-        .archetype-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
-        .role-title { font-size: 1.4rem; font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 10px; }
-        .role-desc { font-size: 0.95rem; color: #aaa; }
-        
+
+        .archetype-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .role-title {
+            font-size: 1.28rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .role-desc {
+            font-size: 0.95rem;
+            color: #aaa;
+        }
+
         .role-architekt { color: var(--accent-cyan); border-top: 3px solid var(--accent-cyan); }
         .role-macher { color: var(--accent-orange); border-top: 3px solid var(--accent-orange); }
         .role-denker { color: var(--accent-purple); border-top: 3px solid var(--accent-purple); }
         .role-bewahrer { color: var(--accent-green); border-top: 3px solid var(--accent-green); }
         .role-erzaehler { color: var(--accent-gold); border-top: 3px solid var(--accent-gold); }
-        .role-investor { color: var(--accent-white); border-top: 3px solid var(--accent-white); }
+        .role-unterstuetzer { color: var(--accent-white); border-top: 3px solid var(--accent-white); }
 
-        /* NEU: ABLAUF BOX (Was passiert dann?) */
         .process-box {
             background: #111;
-            border: 1px solid #333;
+            border: 1px solid var(--border);
             padding: 30px;
             margin: 50px 0;
         }
-        .process-step { margin-bottom: 20px; padding-left: 30px; position: relative; }
-        .process-step::before {
-            content: "►"; color: var(--accent-gold); position: absolute; left: 0; font-size: 1.2rem; top: -2px;
-        }
-        .process-step strong { color: #fff; font-size: 1.1rem; }
-        .process-step p { margin-top: 5px; color: #aaa; font-size: 0.95rem; }
 
-        /* WERKZEUGE & TRANSPARENZ */
-        .tools-box { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-        .tool-item { background: #111; padding: 20px; border: 1px solid #333; text-align: center; }
-        .tool-name { display: block; font-weight: bold; color: #fff; margin-bottom: 10px; font-size: 1.2rem;}
-        .tool-status { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;}
+        .process-step {
+            margin-bottom: 22px;
+            padding-left: 32px;
+            position: relative;
+        }
+
+        .process-step:last-child { margin-bottom: 0; }
+
+        .process-step::before {
+            content: "►";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            top: -2px;
+        }
+
+        .process-step strong {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .process-step p {
+            margin-top: 5px;
+            color: #aaa;
+            font-size: 0.96rem;
+        }
+
+        .tools-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .tool-item {
+            background: #111;
+            padding: 22px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .tool-name {
+            display: block;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+        }
+
+        .tool-status {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
         .status-live { color: var(--accent-green); }
         .status-soon { color: #888; }
-        .tool-link { display: inline-block; padding: 8px 15px; border: 1px solid #555; color: #ccc; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        .tool-link:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
 
-        /* FINANCE / AURA - ÜBERARBEITET */
-        .finance-box {
-            border: 1px solid var(--accent-orange); background: #0d0d0d;
-            padding: 30px; margin-top: 50px;
+        .tool-link {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid #555;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            margin: 5px;
         }
-        .finance-title { color: var(--accent-orange); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 15px; display: block; font-weight: bold; }
-        .aura-info { background: rgba(255, 157, 0, 0.1); padding: 15px; border-left: 3px solid var(--accent-orange); margin: 20px 0; font-size: 0.95rem; color: #ddd; }
-        
-        /* Neue Milestones Tabelle */
-        .milestone-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95rem; }
-        .milestone-table td { padding: 10px; border-bottom: 1px solid #333; }
-        .milestone-table td:last-child { text-align: right; color: var(--accent-orange); font-weight: bold; font-family: monospace; }
-        .ms-done { color: #555; text-decoration: line-through; }
+
+        .tool-link:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .finance-box {
+            border: 1px solid var(--accent-orange);
+            background: #0d0d0d;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .finance-title {
+            color: var(--accent-orange);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .aura-info {
+            background: rgba(255, 157, 0, 0.1);
+            padding: 15px;
+            border-left: 3px solid var(--accent-orange);
+            margin: 20px 0;
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+
+        .milestone-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .milestone-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .milestone-table td:last-child {
+            text-align: right;
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-family: monospace;
+            white-space: nowrap;
+        }
+
+        .ms-done { color: #aaa; background: rgba(255,255,255,0.05); }
         .ms-active { color: #fff; }
 
-        /* NEU: COUNTER & FINAL CTA */
-        .final-cta { text-align: center; margin-top: 80px; padding: 40px 20px; background: #0a0a0a; border: 1px solid var(--accent-gold); }
-        
+        .finance-note {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        .coming-soon-label {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            border: 1px solid #555;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .final-cta {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px 20px;
+            background: #0a0a0a;
+            border: 1px solid var(--accent-gold);
+            box-shadow: 0 0 25px rgba(255,215,0,0.12);
+        }
+
         .counter-box { margin-bottom: 30px; }
-        .counter-text { font-size: 1.2rem; color: #fff; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: block; }
-        .counter-bar-bg { width: 100%; max-width: 400px; height: 10px; background: #222; margin: 0 auto; border-radius: 5px; overflow: hidden; position: relative;}
-        .counter-bar-fill { width: 3%; /* Hier steht der aktuelle Wert (3/100) */ height: 100%; background: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold); }
+
+        .counter-text {
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .counter-bar-bg {
+            width: 100%;
+            max-width: 400px;
+            height: 10px;
+            background: #222;
+            margin: 0 auto;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .counter-bar-fill {
+            width: 9%;
+            height: 100%;
+            background: var(--accent-gold);
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
 
         .apply-btn {
-            background: var(--accent-gold); color: #000; padding: 20px 40px;
-            font-size: 1.3rem; font-weight: bold; text-decoration: none;
-            display: inline-block; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-            text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
+            background: var(--accent-gold);
+            color: #000;
+            padding: 20px 40px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
-        .apply-btn:hover { background: #fff; box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); transform: scale(1.02); }
+
+        .apply-btn:hover {
+            background: #fff;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #080808;
+            color: #777;
+            border-top: 1px solid #222;
+            margin-top: 50px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1rem;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover { color: var(--accent-cyan); }
+
+        .legal-note {
+            max-width: 800px;
+            margin: 30px auto 0 auto;
+            padding: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            line-height: 1.6;
+        }
 
         @media (max-width: 700px) {
+            body { font-size: 16px; }
             h1 { font-size: 2rem; }
             .tools-box { grid-template-columns: 1fr; }
-            .milestone-table td { display: block; text-align: left !important; border-bottom: none; padding: 5px 10px; }
+            .milestone-table td { display: block; text-align: left !important; border-bottom: none; padding: 5px 10px; white-space: normal !important; }
             .milestone-table tr { border-bottom: 1px solid #333; padding-bottom: 10px; display: block; margin-bottom: 10px; }
+            .apply-btn { width: 100%; padding: 18px 20px; font-size: 1.05rem; }
+            header { padding: 0 12px; }
+            .logo-text { font-size: 0.9rem; }
+            .back-btn { font-size: 0.8rem; padding: 7px 10px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-text">N.E.X.U.S. GENESIS CIRCLE</div>
+        <div class="logo-text">N.E.X.U.S. · MITBAUEN</div>
         <a href="index.html" class="back-btn">X ZURÜCK</a>
     </header>
 
     <div class="container">
-        
-        <h1>Der Think Tank der 95%</h1>
-        <p class="lead">"Sie haben Milliarden. Wir haben uns."</p>
+        <h1>Finde deinen Platz im Aufbau</h1>
+        <p class="lead">N.E.X.U.S. braucht Menschen mit Herz, Verstand, Erfahrung und Tatkraft.</p>
 
         <div class="manifest-box">
-            <p><strong>Die Eliten arbeiten nicht zufällig.</strong> Sie nutzen Think Tanks, bezahlen Experten und arbeiten hinter verschlossenen Türen Strategien aus, um ihre Macht zu sichern.</p>
-            <p>Wir drehen den Spieß um. <strong>N.E.X.U.S. ist der Gegenentwurf.</strong> Ein offener Think Tank für die Menschheitsfamilie. Wir nutzen Schwarmintelligenz, radikale Transparenz und die besten Köpfe, um eine Alternative zu bauen, die funktioniert.</p>
-            <p>Keine Geheimnisse. Kein Profitstreben. Nur der Code der Freiheit.</p>
+            <p><strong>N.E.X.U.S. entsteht nicht durch eine einzelne Person.</strong> Eine große Vision wird erst dann real, wenn Menschen mit unterschiedlichen Gaben zusammenkommen.</p>
+            <p>Manche können bauen. Manche können erklären. Manche können prüfen. Manche können heilen, organisieren, gestalten, finanzieren oder Menschen miteinander verbinden.</p>
+            <p>Diese Seite hilft dir, deinen möglichen Platz im Aufbau zu erkennen — ohne Druck, ohne Perfektion und ohne dass du sofort alles verstehen musst.</p>
+            <p><strong>N.E.X.U.S. ist kein Fanclub. Es ist ein gemeinsamer Denk- und Arbeitsraum für Menschen, die ernsthaft an einer menschlicheren Zukunft mitbauen möchten.</strong></p>
         </div>
 
-        <!-- 6 ARCHETYPEN -->
-        <div style="text-align: center;">
-            <h2>Finde deinen Platz</h2>
-            <p class="sub-desc">Ein System braucht mehr als nur Coder. Welcher Archetyp bist du?</p>
+        <div class="intro-path-box">
+            <p><strong>Wichtig:</strong> Mitbauen bedeutet nicht, dass du sofort eine große Aufgabe übernehmen musst. Der erste Schritt kann einfach sein: verstehen, mitlesen, Fragen stellen, dich vorstellen und spüren, ob du mit dieser Vision in Resonanz gehst.</p>
+        </div>
+
+        <div class="center">
+            <h2>Welche Gabe bringst du mit?</h2>
+            <p class="sub-desc">Du musst nicht alles können. Entscheidend ist, was du ehrlich beitragen kannst.</p>
         </div>
 
         <div class="archetype-grid">
             <div class="archetype-card role-architekt">
                 <span class="role-title">1. Der Architekt</span>
-                <p class="role-desc">Du sprichst Code, Tech oder Struktur. Du baust die App, die Blockchain oder die rechtlichen Verträge.</p>
+                <p class="role-desc">Du denkst in Strukturen, Technik, Recht oder Systemen. Du hilfst, aus der Vision tragfähige Grundlagen zu machen.</p>
             </div>
             <div class="archetype-card role-macher">
                 <span class="role-title">2. Der Macher</span>
-                <p class="role-desc">Du bist Realist. Du baust Autarkie, Landwirtschaft, Energie oder Hardware. Du erdest die Vision.</p>
+                <p class="role-desc">Du bist praktisch veranlagt. Du denkst in Versorgung, Handwerk, Energie, Landwirtschaft, Infrastruktur oder konkretem Aufbau.</p>
             </div>
             <div class="archetype-card role-denker">
                 <span class="role-title">3. Der Denker</span>
-                <p class="role-desc">Du analysierst Systeme, Philosophie oder Ökonomie. Du prüfst den Bauplan auf Fehler und Ethik.</p>
+                <p class="role-desc">Du prüfst, hinterfragst und vertiefst. Du arbeitest an Philosophie, Ökonomie, Ethik, Recht oder Gesellschaftsmodellen.</p>
             </div>
             <div class="archetype-card role-bewahrer">
                 <span class="role-title">4. Der Bewahrer</span>
-                <p class="role-desc">Du kümmerst dich um den Menschen. Psychologie, Gesundheit, Konfliktlösung. Du hältst die Gruppe gesund.</p>
+                <p class="role-desc">Du achtest auf den Menschen. Gesundheit, Psychologie, Konfliktlösung, Fürsorge und Gemeinschaftskultur sind dein Feld.</p>
             </div>
             <div class="archetype-card role-erzaehler">
                 <span class="role-title">5. Der Erzähler</span>
-                <p class="role-desc">Du übersetzt den Code in Emotion. Design, Video, Text, Marketing. Du verbreitest das Signal.</p>
+                <p class="role-desc">Du kannst erklären, schreiben, gestalten, filmen oder sprechen. Du hilfst, N.E.X.U.S. verständlich und fühlbar zu machen.</p>
             </div>
-            <div class="archetype-card role-investor">
+            <div class="archetype-card role-unterstuetzer">
                 <span class="role-title">6. Der Unterstützer</span>
-                <p class="role-desc">Du hast Ressourcen, aber keine Zeit? Du ermöglichst die Infrastruktur. Du gießt das Fundament mit Energie (Geld).</p>
+                <p class="role-desc">Du kannst Ressourcen, Kontakte, Reichweite, Räume, Werkzeug, Geld oder Erfahrung einbringen und dadurch anderen den Aufbau ermöglichen.</p>
             </div>
         </div>
 
-        <!-- NEU: DER ABLAUF -->
-        <div style="text-align: center;">
-            <h2>Der Ablauf</h2>
-            <p class="sub-desc">Was passiert, nachdem du auf "Bewerben" geklickt hast?</p>
+        <div class="center">
+            <h2>Wie der Einstieg abläuft</h2>
+            <p class="sub-desc">Du musst nicht sofort alles wissen. Der Einstieg geschieht Schritt für Schritt.</p>
         </div>
 
         <div class="process-box">
             <div class="process-step">
-                <strong>1. Verifizierung</strong>
-                <p>Wir prüfen deine Motivation. N.E.X.U.S. ist kein Debattierclub, sondern ein Arbeitskreis. Wenn es passt, erhältst du deinen Zugangs-Code.</p>
+                <strong>1. Erstes Ankommen</strong>
+                <p>Du liest dich ein, startest den Lernpfad, kommst in die Telegram-Gemeinschaft und stellst erste Fragen.</p>
             </div>
             <div class="process-step">
-                <strong>2. Interner Workspace</strong>
-                <p>Du erhältst Zugang zum geschlossenen Notion-Workspace und dem internen Architekten-Discord. Dort liegt die unzensierte Roadmap.</p>
+                <strong>2. Kurze Vorstellung</strong>
+                <p>Wenn du aktiv mitbauen möchtest, stellst du dich kurz vor: Wer bist du, was bewegt dich, was kannst du beitragen?</p>
             </div>
             <div class="process-step">
-                <strong>3. Zuweisung & Meilensteine</strong>
-                <p>Du wirst anhand deines Archetyps einem Departement zugeordnet (Code, Law, Soil, Mind). Dort nimmst du dir konkrete, kleine Aufgabenpakete (Bugs, Designs, Recherchen).</p>
+                <strong>3. Passender Arbeitsraum</strong>
+                <p>Gemeinsam schauen wir, welches Arbeitsfeld zu dir passt: Technik, Texte, Gemeinschaft, Recht, Organisation, Bildung, Finanzierung oder lokaler Aufbau.</p>
             </div>
             <div class="process-step">
-                <strong>4. Der Genesis-Block</strong>
-                <p>Jede geleistete Arbeit, jede Zeile Code und jedes Konzept wird dokumentiert. Deine Energie fließt offiziell als AURA in den Genesis-Block der neuen Zivilisation ein.</p>
+                <strong>4. Kleine erste Aufgabe</strong>
+                <p>Du beginnst nicht mit Überforderung, sondern mit einem überschaubaren Beitrag. Aus kleinen Beiträgen wächst Vertrauen.</p>
             </div>
         </div>
 
-
-        <!-- WERKZEUGE & TRANSPARENZ -->
-        <div style="text-align: center;">
-            <h2>Radikale Transparenz</h2>
-            <p class="sub-desc">Die Eliten arbeiten im Dunkeln. Wir arbeiten im Licht.</p>
+        <div class="center">
+            <h2>Transparenz und gemeinsame Arbeit</h2>
+            <p class="sub-desc">Damit Vertrauen wachsen kann, muss nachvollziehbar sein, woran gearbeitet wird.</p>
         </div>
 
         <div class="tools-box">
             <div class="tool-item">
-                <span class="tool-name">DER CODE (GITHUB)</span>
+                <span class="tool-name">Öffentliche Unterlagen</span>
                 <span class="tool-status status-live">● LIVE</span>
-                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Hier liegen Bauplan, Whitepaper und öffentliche Diskussionen.</p>
+                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Hier liegen öffentliche Unterlagen, Diskussionen und technische Bausteine.</p>
                 <a href="https://github.com/project-nexus-official/terminal/discussions" target="_blank" class="tool-link">ZUR DISKUSSION</a>
-                <a href="https://github.com/project-nexus-official/terminal/wiki" target="_blank" class="tool-link" style="margin-left:10px;">ZUM WIKI</a>
+                <a href="https://github.com/project-nexus-official/terminal/wiki" target="_blank" class="tool-link">ZUM WIKI</a>
             </div>
 
             <div class="tool-item">
-                <span class="tool-name">DAS BÜRO (NOTION)</span>
+                <span class="tool-name">Interner Arbeitsraum</span>
                 <span class="tool-status status-soon">○ WIRD EINGERICHTET</span>
-                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Projektmanagement, Aufgabenverteilung und interne Roadmap.</p>
-                <span style="color:#555; border:1px solid #333; padding:5px 10px; font-size:0.8rem;">NUR FÜR ARCHITEKTEN</span>
+                <p style="font-size:0.9rem; color:#ccc; margin-bottom:20px;">Geplanter Raum für Aufgaben, Dokumente, gemeinsame Planung und Arbeitsfelder.</p>
+                <span style="color:#777; border:1px solid #333; padding:5px 10px; font-size:0.8rem;">FÜR AKTIVE MITBAUER</span>
             </div>
         </div>
 
-       <!-- FINANZEN / AURA -->
         <div class="finance-box">
-            <span class="finance-title">Crowdfunding & Energie</span>
+            <span class="finance-title">Gemeinschaftsfinanzierung und Wertschätzung</span>
             
-            <p>Freiheit kostet in der Entstehungsphase Geld. Server, Domains, Lizenzen, Gründungskosten. Aber bei N.E.X.U.S. verschwindet kein Cent im Dunkeln.</p>
+            <p>Auch ein Aufbauprojekt braucht in der Anfangsphase reale Mittel: Webseiten, Werkzeuge, Infrastruktur, Dokumentation, rechtliche Prüfung, Reisekosten, Treffen und technische Entwicklung.</p>
+            <p>Gleichzeitig soll bei N.E.X.U.S. nichts im Dunkeln verschwinden. Ziel ist ein möglichst transparentes öffentliches Kassenbuch, sobald die passende Struktur dafür eingerichtet ist.</p>
             
             <div class="aura-info">
-                <strong>⚡ DAS AURA-PRINZIP (RÜCKFLUSS):</strong><br>
-                Deine Unterstützung ist keine Spende, sondern eine energetische Investition. Jeder Euro und jede Stunde wird als <strong>AURA (Reputation/Energie)</strong> im Genesis-Block vermerkt. Wenn das System steht, fließt diese Energie an dich zurück.
+                <strong>⚡ DAS AURA-PRINZIP:</strong><br>
+                Jede Form von Unterstützung — Zeit, Wissen, Kontakte, Geld oder praktische Arbeit — soll sichtbar und wertgeschätzt werden. Langfristig soll daraus ein faires Anerkennungssystem entstehen. In der jetzigen Aufbauphase ist AURA jedoch noch kein Zahlungsversprechen und kein Finanzprodukt, sondern ein Grundprinzip der dokumentierten Wertschätzung.
             </div>
 
-            <!-- KONKRETE MEILENSTEINE -->
-            <h4 style="color: #fff; margin-top:30px; margin-bottom: 10px;">Aktuelle Finanzierungs-Ziele (Live auf Open Collective):</h4>
+            <h4 style="color: #fff; margin-top:30px; margin-bottom: 10px;">Aktuelle Aufbauziele</h4>
             <table class="milestone-table">
-                <!-- PHASE 0: Das Fundament (Der Initiator) -->
-                <tr class="ms-done" style="color: #aaa; background: rgba(255, 255, 255, 0.05);">
+                <tr class="ms-done">
                     <td style="padding: 15px;">
-                        <strong style="color: #ccc;">Phase 0: Das Fundament (Erbracht)</strong><br>
+                        <strong style="color: #ccc;">Phase 0: Das Fundament</strong><br>
                         <span style="font-size: 0.85rem; display: block; margin-top: 5px;">
-                            • Domains, Server-Infrastruktur, Lizenzen & Software (ca. 2800 € out of pocket).<br>
-                            • 3.000+ Stunden Lebenszeit (Konzeption, 3 Romane, 400-Seiten Bauplan, Hörbuch, Code, Think Tank).<br>
-                            <em>(Fiat-Gegenwert im alten System: ca. 150.000 €).</em><br>
-                            <span style="color: var(--accent-gold); font-weight: bold;">Eingebracht als bedingungslose AURA durch den Initiator.</span>
+                            • Domains, Webseiten, Dokumente, Lernpfad, Roman-Trilogie, Bauplan und erste OneApp-Entwicklung.<br>
+                            • Viele Stunden Konzeption, Schreiben, Abstimmung, technische Umsetzung und Gemeinschaftsaufbau.<br>
+                            <span style="color: var(--accent-gold); font-weight: bold;">Eingebracht als Vorleistung durch den Initiator und erste Unterstützer.</span>
                         </span>
                     </td>
-                    <td style="padding: 15px; vertical-align: top;"><strong>Genesis</strong></td>
+                    <td style="padding: 15px; vertical-align: top;"><strong>Erbracht</strong></td>
                 </tr>
 
-                <!-- PHASE 1 & 2: Die Community -->
                 <tr class="ms-active">
                     <td style="padding: 15px;">
-                        <strong>Phase 1: Notion-Workspace & Cloud-Infrastruktur (Genesis)</strong><br>
-                        <span style="font-size: 0.85rem; color: #888;">Lizenzen für die ersten 100 Architekten, sicheres File-Hosting, API-Kosten.</span>
+                        <strong>Phase 1: Arbeitsraum und Infrastruktur</strong><br>
+                        <span style="font-size: 0.85rem; color: #888;">Werkzeuge für die ersten aktiven Mitbauer, Dateiablage, Aufgabenplanung und technische Infrastruktur.</span>
                     </td>
                     <td style="padding: 15px; vertical-align: top;"><strong>1.500 €</strong></td>
                 </tr>
                 <tr class="ms-active">
                     <td style="padding: 15px; border-bottom: none;">
-                        Phase 2: Rechtliche Prüfung & Struktur<br>
-                        <span style="font-size: 0.85rem; color: #888;">Gründungskosten (Genossenschafts-Modell / Verein) zum Schutz der Architekten.</span>
+                        Phase 2: Rechtliche Prüfung und tragfähige Struktur<br>
+                        <span style="font-size: 0.85rem; color: #888;">Prüfung geeigneter Formen wie Verein, Stiftung, Genossenschaft oder andere Schutzstrukturen.</span>
                     </td>
                     <td style="padding: 15px; border-bottom: none; vertical-align: top;">3.500 €</td>
                 </tr>
             </table>
 
-            <p style="font-size: 0.9rem; color:#888; margin-top:20px;">
-                Wir nutzen <strong>Open Collective</strong> (öffentliches Kassenbuch), damit jeder Cent nachvollziehbar ist.
+            <p class="finance-note">
+                Ein transparentes öffentliches Kassenbuch ist geplant. Bis dahin werden konkrete Unterstützungswege erst freigeschaltet, wenn sie sauber eingerichtet sind.
             </p>
-            <span style="background:#333; color:#fff; padding:10px 20px; font-size:0.9rem; border:1px solid #555; display:inline-block;">
-                KONTO WIRD AKTUELL ERÖFFNET...
-            </span>
+            <span class="coming-soon-label">TRANSPARENTE FINANZIERUNG WIRD VORBEREITET</span>
         </div>
 
-        <!-- FINAL CTA MIT COUNTER -->
         <div class="final-cta">
-            <h2 style="border:none; margin-top: 0;">Bereit für den Bau?</h2>
+            <h2 style="border:none; margin-top: 0;">Bereit, näherzukommen?</h2>
             
-            <!-- NEU: Zähler -->
             <div class="counter-box">
-                <span class="counter-text">Aktueller Status: 9 / 100 Architekten</span>
+                <span class="counter-text">Aktueller Stand: 9 / 100 Pioniere im Aufbaukreis</span>
                 <div class="counter-bar-bg">
                     <div class="counter-bar-fill"></div>
                 </div>
-                <p style="font-size:0.9rem; color:#888; margin-top:10px;">Der Genesis Pakt schließt, sobald die erste Kohorte vollständig ist.</p>
+                <p style="font-size:0.9rem; color:#888; margin-top:10px;">Der erste Aufbaukreis wächst langsam und bewusst. Qualität ist wichtiger als Geschwindigkeit.</p>
             </div>
 
-            <a href="genesis.html" class="apply-btn">BEWERBUNG STARTEN</a>
+            <a href="genesis.html" class="apply-btn">MEINEN PLATZ FINDEN</a>
         </div>
 
     </div>
-<!-- UNIVERSAL FOOTER INKL. RECHTLICHEM HINWEIS -->
-    <footer style="text-align: center; padding: 60px 20px; background: #080808; color: #777; border-top: 1px solid #222; margin-top: 50px; font-family: 'Courier New', Courier, monospace;">
-        
-        <div style="margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 1rem;">
-            <a href="https://youtube.com/@project-n.e.x.u.s-official?si=FNOZnjE-wVSmu60b" target="_blank" style="color: #fff; text-decoration: none;">YouTube</a> | 
-            <a href="https://amzn.eu/d/eWMNOTG" target="_blank" style="color: #fff; text-decoration: none;">Amazon</a> |
-            <a href="https://t.me/NexusProjectOfficial" target="_blank" style="color: #fff; text-decoration: none;">Telegram Kanal</a> |
-            <a href="https://t.me/Nexus_Project_official" target="_blank" style="color: #fff; text-decoration: none;">Telegram Gruppe</a> |
-            <a href="https://www.facebook.com/NexusTerminal" target="_blank" style="color: #fff; text-decoration: none;">Facebook</a> |
-            <a href="https://www.instagram.com/n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;">Instagram</a> |
-            <a href="https://www.threads.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;">Threads</a> |
-            <a href="https://www.tiktok.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;">TikTok</a> |
-            <a href="https://x.com/nexusxnavigator" target="_blank" style="color: #fff; text-decoration: none;">X</a> |
-            <a href="https://bsky.app/profile/nexus-navigator.bsky.social" target="_blank" style="color: #fff; text-decoration: none;">Bluesky</a> |
-            <a href="https://github.com/project-nexus-official/terminal/blob/main/datenschutz.html" target="_blank" style="color: #fff; text-decoration: none;">Datenschutz</a> |
-            <a href="https://github.com/project-nexus-official/terminal/blob/main/impressum.html" target="_blank" style="color: #fff; text-decoration: none;">Impressum</a>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://youtube.com/@project-n.e.x.u.s-official?si=FNOZnjE-wVSmu60b" target="_blank">YouTube</a> | 
+            <a href="https://amzn.eu/d/eWMNOTG" target="_blank">Amazon</a> |
+            <a href="https://t.me/NexusProjectOfficial" target="_blank">Telegram Kanal</a> |
+            <a href="https://t.me/Nexus_Project_official" target="_blank">Telegram Gruppe</a> |
+            <a href="https://www.facebook.com/NexusTerminal" target="_blank">Facebook</a> |
+            <a href="https://www.instagram.com/n.e.x.u.s._navigator" target="_blank">Instagram</a> |
+            <a href="https://www.threads.com/@n.e.x.u.s._navigator" target="_blank">Threads</a> |
+            <a href="https://www.tiktok.com/@n.e.x.u.s._navigator" target="_blank">TikTok</a> |
+            <a href="https://x.com/nexusxnavigator" target="_blank">X</a> |
+            <a href="https://bsky.app/profile/nexus-navigator.bsky.social" target="_blank">Bluesky</a> |
+            <a href="https://github.com/project-nexus-official/terminal/blob/main/datenschutz.html" target="_blank">Datenschutz</a> |
+            <a href="https://github.com/project-nexus-official/terminal/blob/main/impressum.html" target="_blank">Impressum</a>
         </div>
         
         <p style="margin-bottom: 10px; font-size: 1.1rem;">Kontakt: <a href="mailto:nexus.blueprint@proton.me" style="color: #00f3ff; text-decoration: none;">nexus.blueprint@proton.me</a></p>
         
-        <!-- RECHTLICHER HINWEIS -->
-        <div style="max-width: 800px; margin: 30px auto 0 auto; padding: 20px; border-top: 1px solid #333; font-size: 0.85rem; color: #888; text-align: center; line-height: 1.6;">
+        <div class="legal-note">
             <p style="margin-bottom: 10px;">
                 Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>
                 Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.
-            </p>
-            <p style="margin-bottom: 0;">
-                
             </p>
         </div>
     </footer>
