@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.E.X.U.S. Wissen | Dokumente & Praxisbibliothek</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+
+:root {
+    --bg-color: #000000;
+    --panel-bg: #0d0d0d;
+    --text-main: #f2f2f2;
+    --text-muted: #d7d7d7;
+    --accent-cyan: #00f3ff;
+    --accent-orange: #ff9d00;
+    --accent-gold: #ffd700;
+    --border-dark: #343434;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 19px;
+    line-height: 1.72;
+    overflow-x: hidden;
+    padding-top: 90px;
+}
+a { color: inherit; text-decoration: none; transition: 0.3s; }
+p { margin: 0 0 20px 0; }
+strong { color: #ffffff; }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    background: rgba(0,0,0,0.95);
+    border-bottom: 1px solid var(--border-dark);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(5px);
+    gap: 15px;
+}
+.logo-container { display: flex; align-items: center; gap: 15px; }
+.logo-img { height: 50px; width: auto; }
+.logo-text {
+    font-weight: bold;
+    color: var(--accent-cyan);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+.main-nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.nav-link {
+    color: #aaa;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 8px;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+}
+.hero {
+    min-height: 54vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 20px;
+    background:
+        radial-gradient(circle at center, rgba(255, 215, 0, 0.12), rgba(0,0,0,0.88) 58%),
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.92));
+    border-bottom: 1px solid #222;
+}
+.kicker {
+    display: inline-block;
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+    padding: 7px 15px;
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,0.7);
+}
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    line-height: 1.08;
+    margin: 0 0 22px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 22px rgba(255, 215, 0, 0.55);
+}
+.subline {
+    max-width: 980px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.55;
+    background: rgba(0,0,0,0.62);
+    border-left: 4px solid var(--accent-orange);
+    padding: 18px 22px;
+}
+.section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 62px 24px;
+    border-bottom: 1px solid #222;
+}
+.section-title {
+    font-size: clamp(1.6rem, 4vw, 2.25rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 6px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding-left: 18px;
+    margin: 0 0 30px 0;
+}
+.section-title.gold { color: var(--accent-gold); border-color: var(--accent-gold); }
+.section-title.orange { color: var(--accent-orange); border-color: var(--accent-orange); }
+.lead {
+    font-size: 1.12rem;
+    color: #eeeeee;
+    max-width: 920px;
+}
+.path-box {
+    background: #0d0d0d;
+    border: 1px solid #343434;
+    border-left: 4px solid var(--accent-gold);
+    padding: 30px;
+    margin: 30px 0;
+}
+.path-box h3 {
+    margin-top: 0;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+}
+.quick-link {
+    background: #0d0d0d;
+    border: 1px solid #333;
+    padding: 18px;
+    color: var(--accent-cyan);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.quick-link:hover { background: var(--accent-cyan); color: #000; }
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 26px;
+    margin-top: 34px;
+}
+.doc-card {
+    background: var(--panel-bg);
+    border: 1px solid #343434;
+    border-top: 3px solid var(--accent-cyan);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    min-height: 410px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
+}
+.doc-card.gold { border-top-color: var(--accent-gold); }
+.doc-card.orange { border-top-color: var(--accent-orange); }
+.doc-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 5px 25px rgba(0,243,255,0.14);
+}
+.doc-card.gold:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 5px 25px rgba(255,215,0,0.16);
+}
+.doc-card.orange:hover {
+    border-color: var(--accent-orange);
+    box-shadow: 0 5px 25px rgba(255,157,0,0.16);
+}
+.doc-meta {
+    color: var(--accent-gold);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+.doc-card h3 {
+    margin: 0 0 14px 0;
+    color: #fff;
+    font-size: 1.22rem;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+.doc-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.62;
+}
+.doc-card .label {
+    color: var(--accent-orange);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+.doc-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 18px;
+}
+.btn {
+    display: inline-block;
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding: 10px 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    line-height: 1.35;
+}
+.btn:hover { background: var(--accent-cyan); color: #000; }
+.btn.gold { border-color: var(--accent-gold); color: var(--accent-gold); }
+.btn.gold:hover { background: var(--accent-gold); color: #000; }
+.btn.orange { border-color: var(--accent-orange); color: var(--accent-orange); }
+.btn.orange:hover { background: var(--accent-orange); color: #000; }
+ol.steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0 0;
+}
+ol.steps li {
+    counter-increment: step;
+    background: #0d0d0d;
+    border: 1px solid #333;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    color: #e7e7e7;
+}
+ol.steps li::before {
+    content: counter(step) ". ";
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    background: #080808;
+    color: #777;
+    border-top: 1px solid #222;
+    font-size: 0.95rem;
+}
+@media (max-width: 900px) {
+    body {
+        padding-top: 140px;
+        font-size: 17px;
+        line-height: 1.68;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .main-nav { gap: 10px; }
+    .section { padding: 46px 16px; }
+    .doc-grid { grid-template-columns: 1fr; }
+    .doc-card {
+        min-height: auto;
+        padding: 24px 18px;
+    }
+    .quick-grid { grid-template-columns: 1fr; }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <div class="logo-container">
+                <img src="logo.png" alt="Nexus Logo" class="logo-img">
+                <div class="logo-text">PROJECT N.E.X.U.S.</div>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+            <a href="vision_short.html" class="nav-link">Vision</a>
+            <a href="oneapp.html" class="nav-link">OneApp</a>
+            <a href="eLearning/index.html" class="nav-link">Lernpfad</a>
+            <a href="wissen.html" class="nav-link active">Wissen</a>
+            <a href="index.html#system" class="nav-link">Bauplan</a>
+            <a href="thinktank.html" class="nav-link" style="color: var(--accent-gold);">Genesis Circle</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="kicker">N.E.X.U.S. Wissensbibliothek</div>
+            <h1>Dokumente,<br>Leitfäden & Praxis</h1>
+            <div class="subline">
+                Hier findest du die wichtigsten N.E.X.U.S.-Dokumente zum Lesen, Teilen, Ausdrucken und Anwenden.
+                Nicht alles auf einmal. Wähle den Einstieg, der zu deinem nächsten Schritt passt.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title orange">Der einfache Einstieg</h2>
+            <p class="lead">
+                N.E.X.U.S. ist groß. Diese Bibliothek soll nicht überfordern, sondern führen.
+                Beginne nicht mit allen Dokumenten gleichzeitig. Nutze die folgende Reihenfolge.
+            </p>
+
+            <div class="path-box">
+                <h3>Wenn du neu bist</h3>
+                <ol class="steps">
+                    <li>Lies zuerst die <strong>Charta-Kurzfassung</strong>.</li>
+                    <li>Starte danach den <strong>Lernpfad</strong> oder lies den <strong>Aufruf an die Menschheitsfamilie</strong>.</li>
+                    <li>Wenn du Resonanz spürst, lies den <strong>Genesis-Pakt</strong>.</li>
+                    <li>Wenn du mit Menschen starten willst, nutze den <strong>Gemeinschafts-Leitfaden</strong>.</li>
+                    <li>Wenn ihr bereits 5–15 Menschen seid, arbeitet mit <strong>PB-01: Die ersten 90 Tage</strong>.</li>
+                    <li>Bei Fragen zu AURA oder politischen Einwänden nutze die einfachen Erklärdokumente.</li>
+                </ol>
+            </div>
+
+            <div class="quick-grid">
+                <a href="#schnellstart" class="quick-link">Schnellstart</a>
+                <a href="#werte" class="quick-link">Werte & Ordnung</a>
+                <a href="#mitmachen" class="quick-link">Mitmachen</a>
+                <a href="#konzepte" class="quick-link">Konzepte</a>
+            </div>
+        </section>
+
+
+        <section id="schnellstart" class="section">
+            <h2 class="section-title gold">1. Schnellstart</h2>
+            <p class="lead">Für Menschen, die N.E.X.U.S. zum ersten Mal begegnen.</p>
+            <div class="doc-grid">
+
+                <div class="doc-card gold">
+                    <div class="doc-meta">1 Seite · Wertekompass</div>
+                    <h3>Charta der Menschheitsfamilie – Kurzfassung</h3>
+                    <p>Der schnellste Einstieg in die Werte von N.E.X.U.S.: Würde, Freiheit, Gewaltfreiheit, Datenschutz, Machtbegrenzung und Gemeinschaft.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Neue Menschen, Erstkontakt, Gruppenstart.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Gemeinsam lesen und prüfen: Kann ich diesen Grundwerten zustimmen?</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_Charta_Kurzfassung.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_Charta_Kurzfassung.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+                <div class="doc-card orange">
+                    <div class="doc-meta">9 Seiten · Einstieg &amp; Überblick</div>
+                    <h3>Aufruf an die Menschheitsfamilie</h3>
+                    <p>Emotionaler und inhaltlicher Einstieg: Warum die Polykrise keine Ansammlung einzelner Fehler ist und welche N.E.X.U.S.-Antworten bereits gedacht sind.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Menschen, die erst verstehen wollen, warum N.E.X.U.S. überhaupt nötig ist.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Weitergeben an Menschen, die spüren, dass etwas nicht stimmt.</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_Aufruf_Menschheitsfamilie.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_Aufruf_Menschheitsfamilie.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-meta">2 Seiten · Teilen &amp; Ausdrucken</div>
+                    <h3>N.E.X.U.S. Flyer A4</h3>
+                    <p>Kompakter Flyer mit Kernbotschaft, Problembild, Antworten und Einstiegspfaden. Geeignet für Veranstaltungen, Gespräche und lokale Gruppen.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Offline-Verteilung, Infotische, Treffen, Gespräche.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Ausdrucken oder digital an offene Menschen weitergeben.</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_Flyer_A4.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_Flyer_A4.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="werte" class="section">
+            <h2 class="section-title gold">2. Werte &amp; Ordnung</h2>
+            <p class="lead">Für Menschen, die den Werte-, Schutz- und Ordnungsrahmen verstehen wollen.</p>
+            <div class="doc-grid">
+
+                <div class="doc-card gold">
+                    <div class="doc-meta">11 Seiten · Werte, Schutz, Orientierung</div>
+                    <h3>Charta der Menschheitsfamilie V3.1</h3>
+                    <p>Der zentrale Kompass von N.E.X.U.S. Er beschreibt Würde, Freiheit, Nächstenliebe, Gewaltfreiheit, Machtbegrenzung, DAO, rechtliche Hüllen und lokale Gemeinschaften.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Alle, die ernsthaft mitdenken oder mitbauen wollen.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Vor Genesis-Pakt, Gemeinschaftsgründung oder Rollenübernahme vollständig lesen.</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_Charta.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_Charta.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-meta">20 Seiten · Begriffe &amp; Verfahren</div>
+                    <h3>Grundordnung zur Charta</h3>
+                    <p>Präzisiert die Charta: faire Verfahren, Datenschutz, Schutzstrukturen, Ombudsstelle, Ausschlussverfahren, Kinderschutz, Finanz- und Technikmacht.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Moderatoren, Beirat, Gemeinschaftsgründer, Entwickler, Organisatoren.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Nutzen, wenn Verantwortung, Schutz, Konflikte oder Verfahren konkret werden.</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_Charta_Grundordnung.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_Charta_Grundordnung.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="mitmachen" class="section">
+            <h2 class="section-title gold">3. Mitmachen &amp; Gemeinschaft gründen</h2>
+            <p class="lead">Für Menschen, die aus Verstehen konkrete Praxis machen wollen.</p>
+            <div class="doc-grid">
+
+                <div class="doc-card orange">
+                    <div class="doc-meta">4 Seiten · Drei Versprechen</div>
+                    <h3>Genesis-Pakt</h3>
+                    <p>Ein persönlicher Pakt mit dir selbst und der Zukunft: Beitrag leisten, friedlich bleiben, Wissen teilen. Kein Vertrag mit einer Organisation.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Menschen, die vom Zuschauer zum Mitbauer werden möchten.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Bewusst lesen. Nur sprechen, wenn es sich ehrlich und frei anfühlt.</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_Genesis-Pakt_V1.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_Genesis-Pakt_V1.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+                <div class="doc-card gold">
+                    <div class="doc-meta">8 Seiten · Diese Woche anfangen</div>
+                    <h3>Gemeinschafts-Leitfaden</h3>
+                    <p>Praktische Anleitung für die ersten 5–12 Menschen: Werte, Rollen, Konsent, Aufnahme neuer Menschen, Streitkultur, OneApp und erste Checkliste.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Lokale oder thematische Startgruppen.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Beim ersten Treffen gemeinsam verwenden und die Checkliste am Ende durchgehen.</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_Gemeinschafts-Leitfaden_V1.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_Gemeinschafts-Leitfaden_V1.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-meta">8 Seiten · Praxis-Bibliothek</div>
+                    <h3>PB-01: Die ersten 90 Tage</h3>
+                    <p>Playbook für das erste Vierteljahr: Rhythmus aufbauen, Konsent üben, erstes Projekt abschließen, Rollen wandern lassen und Erfahrungen zurückgeben.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Gemeinschaften von 5–15 Menschen nach dem ersten Start.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Nach dem Gemeinschafts-Leitfaden nutzen. Nicht vorher.</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_PB-01_Die_ersten_90_Tage_V0_1.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_PB-01_Die_ersten_90_Tage_V0_1.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="konzepte" class="section">
+            <h2 class="section-title gold">4. Konzepte einfach erklärt</h2>
+            <p class="lead">Für häufige Fragen, Einwände und Missverständnisse.</p>
+            <div class="doc-grid">
+
+                <div class="doc-card">
+                    <div class="doc-meta">17 Seiten · Reputation ohne Social Credit</div>
+                    <h3>AURA einfach erklärt</h3>
+                    <p>Erklärt AURA als Vertrauens- und Beitragssignal. Zeigt klar, warum AURA kein Geld, kein Social Credit und kein Überwachungssystem sein darf.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Menschen mit Fragen zu Reputation, Einfluss und Missbrauchsschutz.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Lesen, bevor über AURA diskutiert oder kritisiert wird.</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_AURA_Einfach_V2.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_AURA_Einfach_V2.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+                <div class="doc-card orange">
+                    <div class="doc-meta">7 Seiten · Abgrenzung</div>
+                    <h3>Warum N.E.X.U.S. kein Sozialismus ist</h3>
+                    <p>Klare Abgrenzung zu zentraler Planung, Staatseigentum und Parteimacht. Erklärt dezentrale Koordination, Liquid Democracy, Commons, Exit-Recht und Märkte mit ethischen Grenzen.</p>
+                    <div class="label">Für wen?</div>
+                    <p>Menschen, die N.E.X.U.S. vorschnell in alte politische Kategorien einordnen.</p>
+                    <div class="label">Handlungsanweisung</div>
+                    <p>Bei Einwänden wie „Das ist doch Sozialismus“ weitergeben.</p>
+                    <div class="doc-actions">
+                        <a href="wissen/NEXUS_vs_Sozialismus.pdf" class="btn gold" download>PDF herunterladen</a>
+                        <a href="wissen/NEXUS_vs_Sozialismus.pdf" class="btn" target="_blank" rel="noopener">Im Browser öffnen</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="section">
+            <h2 class="section-title orange">Hinweis zur Nutzung</h2>
+            <p class="lead">
+                Diese Dokumente sind lebende Arbeitsdokumente. Sie dienen Orientierung, gemeinsamer Prüfung,
+                praktischer Anwendung und Weiterentwicklung. Lies sie nicht als Dogma, sondern als Einladung:
+                verstehen, prüfen, verbessern, anwenden.
+            </p>
+            <div class="path-box">
+                <h3>Empfehlung für Gruppen</h3>
+                <p>
+                    Druckt beim ersten Treffen die Charta-Kurzfassung und den Genesis-Pakt aus.
+                    Nutzt danach den Gemeinschafts-Leitfaden als gemeinsame Arbeitsgrundlage.
+                    Haltet Erfahrungen fest und gebt sie an die größere N.E.X.U.S.-Menschheitsfamilie zurück.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        PROJECT N.E.X.U.S. · Wissensbibliothek<br>
+        <span style="color: var(--accent-cyan);">www.nexus-terminal.org/wissen.html</span>
+    </footer>
+</body>
+</html>
