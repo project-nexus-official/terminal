@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
+<!DOCTYPE html><html lang="de"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N.E.X.U.S. | Souveränitäts-Diagnose</title>
@@ -210,11 +208,11 @@
 <body>
 
     <div class="top-nav">
-        <a href="index.html" class="back-link">&lt; ZURÜCK ZUM TERMINAL</a>
+        <a href="index.html" class="back-link" data-i18n="analyse.a_1">&lt; ZURÜCK ZUM TERMINAL</a>
     </div>
 
-    <h1>Souveränitäts-Diagnose</h1>
-    <p class="subtitle">Bestimme deinen Standort zwischen alter und neuer Welt. Sei ehrlich zu dir selbst.</p>
+    <h1 data-i18n="analyse.h1_1">Souveränitäts-Diagnose</h1>
+    <p class="subtitle" data-i18n="analyse.p_1">Bestimme deinen Standort zwischen alter und neuer Welt. Sei ehrlich zu dir selbst.</p>
 
     <!-- FORMULAR START -->
     <form action="https://formspree.io/f/mbdoorpz" method="POST" class="analysis-container" id="nexusForm">
@@ -226,9 +224,7 @@
             
             <span class="slider-value-display" id="val1">NEUTRAL / UNENTSCHIEDEN</span>
             
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_System" id="s1" 
-                   data-left="GLAUBE AN POLITIK" data-right="REALITÄTS-ERWACHEN"
-                   oninput="updateText('s1', 'val1')">
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_System" id="s1" data-left="GLAUBE AN POLITIK" data-right="REALITÄTS-ERWACHEN" oninput="updateText('s1', 'val1')">
             
             <div class="range-labels">
                 <span>Vertraue dem System</span>
@@ -243,9 +239,7 @@
             
             <span class="slider-value-display" id="val2">NEUTRAL / UNENTSCHIEDEN</span>
             
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Economy" id="s2" 
-                   data-left="ABHÄNGIGKEIT (FIAT)" data-right="WERT-SCHÖPFER"
-                   oninput="updateText('s2', 'val2')">
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Economy" id="s2" data-left="ABHÄNGIGKEIT (FIAT)" data-right="WERT-SCHÖPFER" oninput="updateText('s2', 'val2')">
             
             <div class="range-labels">
                 <span>Zeit gegen Geld</span>
@@ -260,9 +254,7 @@
             
             <span class="slider-value-display" id="val3">NEUTRAL / UNENTSCHIEDEN</span>
             
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Tech" id="s3" 
-                   data-left="GLÄSERNER BÜRGER" data-right="DIGITAL SOUVERÄN"
-                   oninput="updateText('s3', 'val3')">
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Tech" id="s3" data-left="GLÄSERNER BÜRGER" data-right="DIGITAL SOUVERÄN" oninput="updateText('s3', 'val3')">
             
             <div class="range-labels">
                 <span>"Nichts zu verbergen"</span>
@@ -277,9 +269,7 @@
             
             <span class="slider-value-display" id="val4">NEUTRAL / UNENTSCHIEDEN</span>
             
-            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Action" id="s4" 
-                   data-left="KONSUMENT (WARTEN)" data-right="KONSTRUKTEUR (BAUEN)"
-                   oninput="updateText('s4', 'val4')">
+            <input type="range" min="0" max="100" value="50" class="slider" name="Score_Action" id="s4" data-left="KONSUMENT (WARTEN)" data-right="KONSTRUKTEUR (BAUEN)" oninput="updateText('s4', 'val4')">
             
             <div class="range-labels">
                 <span>Beobachter</span>
@@ -289,33 +279,33 @@
 
         <!-- BUTTON -->
         <div id="calc-step">
-            <button type="button" class="calc-btn" onclick="calculateResult()">>> DIAGNOSE ERSTELLEN</button>
+            <button type="button" class="calc-btn" onclick="calculateResult()" data-i18n="analyse.button_1">&gt;&gt; DIAGNOSE ERSTELLEN</button>
         </div>
 
         <!-- ERGEBNIS -->
         <div id="result-area">
-            <p class="result-title">DEINE DIAGNOSE:</p>
+            <p class="result-title" data-i18n="analyse.p_2">DEINE DIAGNOSE:</p>
             <div class="result-score" id="result-score-val">Souveränitäts-Index: 0%</div>
             <div class="result-type" id="result-type-text">BERECHNE...</div>
-            <p class="result-desc" id="result-desc-text">...</p>
+            <p class="result-desc" id="result-desc-text" data-i18n="analyse.p_3">...</p>
             
             <div class="result-action">
-                <strong>EMPFEHLUNG DES NAVIGATORS:</strong><br>
+                <strong data-i18n="analyse.strong_1">EMPFEHLUNG DES NAVIGATORS:</strong><br>
                 <span id="result-action-text">...</span>
             </div>
             
             <hr style="border-color: #333; margin: 30px 0;">
             
-            <p style="color: var(--accent-orange); font-weight: bold; font-size: 1.2rem;">SICHERE DIR DAS PROTOKOLL</p>
-            <p>Trage dich ein, um das detaillierte Ergebnis und die strategischen Schritte für deinen Typ zu erhalten.</p>
+            <p style="color: var(--accent-orange); font-weight: bold; font-size: 1.2rem;" data-i18n="analyse.p_4">SICHERE DIR DAS PROTOKOLL</p>
+            <p data-i18n="analyse.p_5">Trage dich ein, um das detaillierte Ergebnis und die strategischen Schritte für deinen Typ zu erhalten.</p>
             
             <input type="hidden" name="Ergebnis_Typ" id="hidden-type">
             <input type="hidden" name="Souveraenitaets_Score" id="hidden-score">
 
-            <input type="text" name="Name" placeholder="Dein Name / Codename" class="email-input" required>
-            <input type="email" name="Email" placeholder="Deine E-Mail Adresse" class="email-input" required>
+            <input type="text" name="Name" placeholder="Dein Name / Codename" class="email-input" required="">
+            <input type="email" name="Email" placeholder="Deine E-Mail Adresse" class="email-input" required="">
             
-            <button type="submit" class="submit-btn">PROTOKOLL ANFORDERN</button>
+            <button type="submit" class="submit-btn" data-i18n="analyse.button_2">PROTOKOLL ANFORDERN</button>
         </div>
 
     </form>
@@ -383,26 +373,26 @@
     <footer style="text-align: center; padding: 60px 20px; background: #080808; color: #777; border-top: 1px solid #222; margin-top: 50px; font-family: 'Courier New', Courier, monospace;">
         
         <div style="margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 1rem;">
-            <a href="https://youtube.com/@project-n.e.x.u.s-official?si=FNOZnjE-wVSmu60b" target="_blank" style="color: #fff; text-decoration: none;">YouTube</a> | 
-            <a href="https://amzn.eu/d/eWMNOTG" target="_blank" style="color: #fff; text-decoration: none;">Amazon</a> |
+            <a href="https://youtube.com/@project-n.e.x.u.s-official?si=FNOZnjE-wVSmu60b" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="analyse.a_2">YouTube</a> | 
+            <a href="https://amzn.eu/d/eWMNOTG" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="analyse.a_3">Amazon</a> |
             <a href="https://t.me/NexusProjectOfficial" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.tg_channel">Telegram Kanal</a> |
             <a href="https://t.me/Nexus_Project_official" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.tg_group">Telegram Gruppe</a> |
-            <a href="https://www.facebook.com/NexusTerminal" target="_blank" style="color: #fff; text-decoration: none;">Facebook</a> |
-            <a href="https://www.instagram.com/n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;">Instagram</a> |
-            <a href="https://www.threads.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;">Threads</a> |
-            <a href="https://www.tiktok.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;">TikTok</a> |
+            <a href="https://www.facebook.com/NexusTerminal" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="analyse.a_4">Facebook</a> |
+            <a href="https://www.instagram.com/n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="analyse.a_5">Instagram</a> |
+            <a href="https://www.threads.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="analyse.a_6">Threads</a> |
+            <a href="https://www.tiktok.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="analyse.a_7">TikTok</a> |
             <a href="https://x.com/nexusxnavigator" target="_blank" style="color: #fff; text-decoration: none;">X</a> |
-            <a href="https://bsky.app/profile/nexus-navigator.bsky.social" target="_blank" style="color: #fff; text-decoration: none;">Bluesky</a> |
+            <a href="https://bsky.app/profile/nexus-navigator.bsky.social" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="analyse.a_8">Bluesky</a> |
             <a href="https://github.com/project-nexus-official/terminal/blob/main/datenschutz.html" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.privacy">Datenschutz</a> |
             <a href="https://github.com/project-nexus-official/terminal/blob/main/impressum.html" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.imprint">Impressum</a>
         </div>
         
-        <p style="margin-bottom: 10px; font-size: 1.1rem;"><span data-i18n="footer.contact">Kontakt:</span> <a href="mailto:nexus.blueprint@proton.me" style="color: #00f3ff; text-decoration: none;">nexus.blueprint@proton.me</a></p>
+        <p style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="analyse.p_6"><span data-i18n="footer.contact">Kontakt:</span> <a href="mailto:nexus.blueprint@proton.me" style="color: #00f3ff; text-decoration: none;" data-i18n="analyse.a_9">nexus.blueprint@proton.me</a></p>
         
         <!-- RECHTLICHER HINWEIS -->
         <div style="max-width: 800px; margin: 30px auto 0 auto; padding: 20px; border-top: 1px solid #333; font-size: 0.85rem; color: #888; text-align: center; line-height: 1.6;">
-            <p style="margin-bottom: 10px;">
-                <span data-i18n="footer.legal_notice">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</span>
+            <p style="margin-bottom: 10px;" data-i18n="analyse.p_7">
+                <span data-i18n="footer.legal_notice">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (© 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</span>
             </p>
             <p style="margin-bottom: 0;">
                 
@@ -411,5 +401,6 @@
     </footer>
     <!-- i18n ENGINE SCRIPT -->
     <script src="js/i18n.js"></script>
-</body>
-</html>
+
+
+</body></html>

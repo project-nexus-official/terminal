@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
+<!DOCTYPE html><html lang="de"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N.E.X.U.S. | The OneApp</title>
@@ -385,9 +383,9 @@
         
         <div class="header-nav-right">
             <div class="lang-selector">
-                <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')">DE</button>
+                <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')" data-i18n="oneapp.button_1">DE</button>
                 <span class="lang-divider">|</span>
-                <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')">ES</button>
+                <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')" data-i18n="oneapp.button_2">ES</button>
             </div>
             <a href="thinktank.html" class="header-architekt-btn" data-i18n="nav.find_place">FINDE DEINEN PLATZ</a>
         </div>
@@ -405,13 +403,13 @@
         </div>
 
         <!-- LIVE FEATURES -->
-        <h2 style="border-bottom-color: var(--accent-green);"><span style="color: var(--accent-green);">●</span> <span data-i18n="oneapp_cockpit.implemented_h2">BEREITS IMPLEMENTIERT</span></h2>
+        <h2 style="border-bottom-color: var(--accent-green);" data-i18n="oneapp.h2_1"><span style="color: var(--accent-green);">●</span> <span data-i18n="oneapp_cockpit.implemented_h2">BEREITS IMPLEMENTIERT</span></h2>
         
         <div class="feature-grid">
             
             <!-- Identität -->
             <div class="feature-card">
-                <h3 data-i18n="oneapp_cockpit.feat1_h3">🛡️ IDENTITÄT & DATENSCHUTZ</h3>
+                <h3 data-i18n="oneapp_cockpit.feat1_h3">🛡️ IDENTITÄT &amp; DATENSCHUTZ</h3>
                 <ul class="tech-list">
                     <li data-i18n="oneapp_cockpit.feat1_li1">Self-Sovereign Identity (SSI) via Seed Phrase. Du bist dein eigener Server.</li>
                     <li data-i18n="oneapp_cockpit.feat1_li2">Verschlüsselter lokaler Datentresor (SQLite mit AES-256-GCM).</li>
@@ -423,40 +421,40 @@
 
             <!-- Kontakte -->
             <div class="feature-card">
-                <h3 data-i18n="oneapp_cockpit.feat2_h3">🤝 KONTAKTE & VERTRAUEN</h3>
+                <h3 data-i18n="oneapp_cockpit.feat2_h3">🤝 KONTAKTE &amp; VERTRAUEN</h3>
                 <ul class="tech-list">
                     <li data-i18n="oneapp_cockpit.feat2_li1">4 Trust-Levels: Entdeckt → Kontakt → Vertrauensperson → Bürge.</li>
-                    <li data-i18n="oneapp_cockpit.feat2_li2">Spamschutz: Kontaktanfrage-System mit Status-Tracking & Cooldowns.</li>
+                    <li data-i18n="oneapp_cockpit.feat2_li2">Spamschutz: Kontaktanfrage-System mit Status-Tracking &amp; Cooldowns.</li>
                     <li data-i18n="oneapp_cockpit.feat2_li3">QR-Code Scanner für Face-to-Face Schlüsselaustausch.</li>
-                    <li data-i18n="oneapp_cockpit.feat2_li4">Sichere App-Einladungsfunktion via Deep-Link & Code.</li>
+                    <li data-i18n="oneapp_cockpit.feat2_li4">Sichere App-Einladungsfunktion via Deep-Link &amp; Code.</li>
                 </ul>
             </div>
 
             <!-- Kommunikation -->
             <div class="feature-card">
-                <h3>💬 KOMMUNIKATION (MESSENGER)</h3>
+                <h3 data-i18n="oneapp.h3_1">💬 KOMMUNIKATION (MESSENGER)</h3>
                 <ul class="tech-list">
                     <li data-i18n="oneapp_cockpit.feat3_li1">Multi-Transport: Bluetooth, lokales WLAN (LAN) und Nostr (Internet-Fallback).</li>
                     <li data-i18n="oneapp_cockpit.feat3_li2">NIP-04 kompatible E2E-Verschlüsselung (X25519) für Direktnachrichten.</li>
                     <li data-i18n="oneapp_cockpit.feat3_li3">Voice-Nachrichten (E2E-verschlüsselt) mit intelligenter Komprimierung.</li>
-                    <li data-i18n="oneapp_cockpit.feat3_li4">Zitieren via Swipe-to-Reply & lokale In-App Nachrichtensuche.</li>
+                    <li data-i18n="oneapp_cockpit.feat3_li4">Zitieren via Swipe-to-Reply &amp; lokale In-App Nachrichtensuche.</li>
                 </ul>
             </div>
 
             <!-- Dorfplatz -->
             <div class="feature-card">
-                <h3 data-i18n="oneapp_cockpit.feat4_h3">🏛️ DORFPLATZ & KANÄLE</h3>
+                <h3 data-i18n="oneapp_cockpit.feat4_h3">🏛️ DORFPLATZ &amp; KANÄLE</h3>
                 <ul class="tech-list">
-                    <li data-i18n="oneapp_cockpit.feat4_li1">Zensurresistenter Social Feed (Dorfplatz) mit Posts, Bildern & Umfragen.</li>
-                    <li data-i18n="oneapp_cockpit.feat4_li2">Verschachtelte Kommentar-Bäume, Emoji-Reaktionen & Reposts.</li>
+                    <li data-i18n="oneapp_cockpit.feat4_li1">Zensurresistenter Social Feed (Dorfplatz) mit Posts, Bildern &amp; Umfragen.</li>
+                    <li data-i18n="oneapp_cockpit.feat4_li2">Verschachtelte Kommentar-Bäume, Emoji-Reaktionen &amp; Reposts.</li>
                     <li data-i18n="oneapp_cockpit.feat4_li3">E2E-verschlüsselte private Gruppenkanäle mit "Shared Secrets".</li>
-                    <li data-i18n="oneapp_cockpit.feat4_li4">Rollen-System: Superadmins, System-Admins & Kanal-Moderatoren.</li>
+                    <li data-i18n="oneapp_cockpit.feat4_li4">Rollen-System: Superadmins, System-Admins &amp; Kanal-Moderatoren.</li>
                 </ul>
             </div>
 
             <!-- Gemeinschaften & Governance -->
             <div class="feature-card">
-                <h3 data-i18n="oneapp_cockpit.feat5_h3">⚖️ GEMEINSCHAFTEN & GOVERNANCE</h3>
+                <h3 data-i18n="oneapp_cockpit.feat5_h3">⚖️ GEMEINSCHAFTEN &amp; GOVERNANCE</h3>
                 <ul class="tech-list">
                     <li data-i18n="oneapp_cockpit.feat5_li1">Gemeinschaften-Hub: Lokale (GPS-basiert) oder thematische Gemeinschaften gründen.</li>
                     <li data-i18n="oneapp_cockpit.feat5_li2">Drei Abstimmungsarten: Ja/Nein/Enthaltung, Auswahl aus Optionen, Kandidatenwahl.</li>
@@ -471,7 +469,7 @@
             <div class="feature-card">
                 <h3 data-i18n="oneapp_cockpit.feat6_h3">🌊 LIQUID DEMOCRACY</h3>
                 <ul class="tech-list">
-                    <li>Stimme pro Antrag delegieren — keine Dauer-Vollmacht, kein Weiterreichen.</li>
+                    <li data-i18n="oneapp.li_1">Stimme pro Antrag delegieren — keine Dauer-Vollmacht, kein Weiterreichen.</li>
                     <li data-i18n="oneapp_cockpit.feat6_li2">Auto-Revoke: Direkte Stimme widerruft die Delegation automatisch.</li>
                     <li data-i18n="oneapp_cockpit.feat6_li3">Multi-Device-konsistent: Delegation und Widerruf synchronisieren über alle Geräte.</li>
                     <li data-i18n="oneapp_cockpit.feat6_li4">Empfänger sieht "Dir wurde 1 Stimme delegiert" als klaren Hinweis.</li>
@@ -481,11 +479,11 @@
 
             <!-- Dashboard & Tech -->
             <div class="feature-card">
-                <h3 data-i18n="oneapp_cockpit.feat7_h3">📊 DASHBOARD & TECH</h3>
+                <h3 data-i18n="oneapp_cockpit.feat7_h3">📊 DASHBOARD &amp; TECH</h3>
                 <ul class="tech-list">
-                    <li data-i18n="oneapp_cockpit.feat7_li1">Live-Radar: Entdeckt Nodes im lokalen Netzwerk & zeigt globales Wachstum.</li>
+                    <li data-i18n="oneapp_cockpit.feat7_li1">Live-Radar: Entdeckt Nodes im lokalen Netzwerk &amp; zeigt globales Wachstum.</li>
                     <li data-i18n="oneapp_cockpit.feat7_li2">Robustes Tombstone-System: Verhindert "Zombie-Daten" netzwerkweit.</li>
-                    <li data-i18n="oneapp_cockpit.feat7_li3">Zuverlässige Datenverteilung mit Relay-Tracking & automatischer Wiederholungs-Warteschlange.</li>
+                    <li data-i18n="oneapp_cockpit.feat7_li3">Zuverlässige Datenverteilung mit Relay-Tracking &amp; automatischer Wiederholungs-Warteschlange.</li>
                     <li data-i18n="oneapp_cockpit.feat7_li4">Über 600 automatische Tests — Cross-Device verifiziert auf Android + Windows.</li>
                     <li data-i18n="oneapp_cockpit.feat7_li5">Nuclear-Wipe: Vollständige Datenlöschung auf Knopfdruck.</li>
                     <li data-i18n="oneapp_cockpit.feat7_li6">Automatischer Update-Checker direkt via GitHub Releases.</li>
@@ -497,28 +495,28 @@
         <!-- IN DEVELOPMENT -->
         <h2 style="border-bottom-color: var(--accent-orange); color: var(--accent-orange);" data-i18n="oneapp_cockpit.dev_h2">AKTUELL IN ENTWICKLUNG</h2>
         <div class="dev-box">
-            <h3 data-i18n="oneapp_cockpit.dev_h3">GOVERNANCE-AUSBAU & KOMMUNIKATION (G2-Block 2-3 + Voice/Video)</h3>
+            <h3 data-i18n="oneapp_cockpit.dev_h3">GOVERNANCE-AUSBAU &amp; KOMMUNIKATION (G2-Block 2-3 + Voice/Video)</h3>
             <p style="color: #ccc; margin-bottom: 20px;" data-i18n="oneapp_cockpit.dev_p">Das Governance-Fundament steht und Liquid Democracy ist live. Die nächsten Schritte vertiefen die Entscheidungsfähigkeit der Gemeinschaften und öffnen den Kommunikationskanal weiter.</p>
             <ul class="dev-list">
-                <li data-i18n="oneapp_cockpit.dev_li1"><strong>Quadratic Voting:</strong> Stimmgewichtung via Voice Credits — die Intensität der Präferenz zählt, nicht nur das Ja/Nein.</li>
-                <li data-i18n="oneapp_cockpit.dev_li2"><strong>Superadmin-Recall via Grundstimm-Recht:</strong> Genesis-Rollen können gemeinschaftlich abgewählt werden.</li>
-                <li data-i18n="oneapp_cockpit.dev_li3"><strong>Kandidatenwahl im Erstellungs-Dialog:</strong> Personenwahlen direkt als eigene Antragsart anlegen (Backend-Logik bereits vollständig).</li>
-                <li data-i18n="oneapp_cockpit.dev_li4"><strong>Sprach- und Videoanrufe:</strong> WebRTC mit Nostr-Signalisierung — Peer-to-Peer, ohne zentrale Server.</li>
-                <li data-i18n="oneapp_cockpit.dev_li5"><strong>Echtzeit-Übersetzung im Chat:</strong> Lokales KI-Modell — du schreibst auf Deutsch, dein Gegenüber liest in der eigenen Sprache.</li>
-                <li data-i18n="oneapp_cockpit.dev_li6"><strong>Multi-Device-Sync:</strong> Nachrichten und Kontakte folgen dir auf jedes Gerät, plus verschlüsseltes Backup über Bürgen (Social Recovery).</li>
+                <li data-i18n="oneapp_cockpit.dev_li1"><strong data-i18n="oneapp.strong_1">Quadratic Voting:</strong> Stimmgewichtung via Voice Credits — die Intensität der Präferenz zählt, nicht nur das Ja/Nein.</li>
+                <li data-i18n="oneapp_cockpit.dev_li2"><strong data-i18n="oneapp.strong_2">Superadmin-Recall via Grundstimm-Recht:</strong> Genesis-Rollen können gemeinschaftlich abgewählt werden.</li>
+                <li data-i18n="oneapp_cockpit.dev_li3"><strong data-i18n="oneapp.strong_3">Kandidatenwahl im Erstellungs-Dialog:</strong> Personenwahlen direkt als eigene Antragsart anlegen (Backend-Logik bereits vollständig).</li>
+                <li data-i18n="oneapp_cockpit.dev_li4"><strong data-i18n="oneapp.strong_4">Sprach- und Videoanrufe:</strong> WebRTC mit Nostr-Signalisierung — Peer-to-Peer, ohne zentrale Server.</li>
+                <li data-i18n="oneapp_cockpit.dev_li5"><strong data-i18n="oneapp.strong_5">Echtzeit-Übersetzung im Chat:</strong> Lokales KI-Modell — du schreibst auf Deutsch, dein Gegenüber liest in der eigenen Sprache.</li>
+                <li data-i18n="oneapp_cockpit.dev_li6"><strong data-i18n="oneapp.strong_6">Multi-Device-Sync:</strong> Nachrichten und Kontakte folgen dir auf jedes Gerät, plus verschlüsseltes Backup über Bürgen (Social Recovery).</li>
             </ul>
         </div>
 
         <!-- ROADMAP -->
-        <h2 style="border-bottom-color: var(--accent-gold); color: var(--accent-gold); margin-top: 60px;" data-i18n="oneapp_cockpit.vision_h2">LANGFRISTIGE VISION (REICHWEITE & SPHÄREN)</h2>
+        <h2 style="border-bottom-color: var(--accent-gold); color: var(--accent-gold); margin-top: 60px;" data-i18n="oneapp_cockpit.vision_h2">LANGFRISTIGE VISION (REICHWEITE &amp; SPHÄREN)</h2>
         
         <div class="roadmap-stage">
             <h4 data-i18n="oneapp_cockpit.reach_h4">REICHWEITE — Mesh-Ausbau</h4>
             <p style="color: #aaa; margin-bottom: 15px;" data-i18n="oneapp_cockpit.reach_p">Die OneApp wächst über das Internet hinaus — Schritt für Schritt:</p>
             <ul class="plan-list">
-                <li data-i18n="oneapp_cockpit.reach_li1"><strong>Phase B: WiFi Direct</strong> — direkte Verbindung zwischen Geräten ohne Internet, 50–200 m.</li>
-                <li data-i18n="oneapp_cockpit.reach_li2"><strong>Phase C: LoRa-Gateway-Programm</strong> — für Pioniere mit spezieller Hardware, kilometerweit ohne Mobilfunk.</li>
-                <li data-i18n="oneapp_cockpit.reach_li3"><strong>Phase D: Reticulum</strong> — Meta-Transport-Schicht, die alle Verbindungswege intelligent kombiniert.</li>
+                <li data-i18n="oneapp_cockpit.reach_li1"><strong data-i18n="oneapp.strong_7">Phase B: WiFi Direct</strong> — direkte Verbindung zwischen Geräten ohne Internet, 50–200 m.</li>
+                <li data-i18n="oneapp_cockpit.reach_li2"><strong data-i18n="oneapp.strong_8">Phase C: LoRa-Gateway-Programm</strong> — für Pioniere mit spezieller Hardware, kilometerweit ohne Mobilfunk.</li>
+                <li data-i18n="oneapp_cockpit.reach_li3"><strong data-i18n="oneapp.strong_9">Phase D: Reticulum</strong> — Meta-Transport-Schicht, die alle Verbindungswege intelligent kombiniert.</li>
             </ul>
         </div>
 
@@ -526,17 +524,17 @@
             <h4 data-i18n="oneapp_cockpit.spheres_h4">SPHÄREN — Module der Menschheitsfamilie</h4>
             <p style="color: #aaa; margin-bottom: 15px;" data-i18n="oneapp_cockpit.spheres_p">Zukünftige Module werden als "Sphären" (offene Plugin-Architektur) direkt in die App integriert:</p>
             <ul class="plan-list">
-                <li data-i18n="oneapp_cockpit.spheres_li1"><strong>AETHER Wallet:</strong> Werteinheiten VITA (Ꝟ), TERRA (₮) und AURA (₳).</li>
-                <li data-i18n="oneapp_cockpit.spheres_li2"><strong>Lokaler Marktplatz:</strong> Direkter Ressourcen-Tausch in der Gemeinschaft.</li>
-                <li data-i18n="oneapp_cockpit.spheres_li3"><strong>Asklepios (Gesundheit):</strong> KI-Schutzengel lokal auf deinem Gerät.</li>
-                <li data-i18n="oneapp_cockpit.spheres_li4"><strong>Paideia (Bildung):</strong> Dezentraler, persönlicher KI-Tutor.</li>
-                <li data-i18n="oneapp_cockpit.spheres_li5"><strong>Demeter (Ernährung):</strong> Food-Coops & Farm-to-Fork Netzwerke.</li>
-                <li data-i18n="oneapp_cockpit.spheres_li6"><strong>Hestia (Wohnen):</strong> Fluid Living & Wohnungstausch.</li>
+                <li data-i18n="oneapp_cockpit.spheres_li1"><strong data-i18n="oneapp.strong_10">AETHER Wallet:</strong> Werteinheiten VITA (Ꝟ), TERRA (₮) und AURA (₳).</li>
+                <li data-i18n="oneapp_cockpit.spheres_li2"><strong data-i18n="oneapp.strong_11">Lokaler Marktplatz:</strong> Direkter Ressourcen-Tausch in der Gemeinschaft.</li>
+                <li data-i18n="oneapp_cockpit.spheres_li3"><strong data-i18n="oneapp.strong_12">Asklepios (Gesundheit):</strong> KI-Schutzengel lokal auf deinem Gerät.</li>
+                <li data-i18n="oneapp_cockpit.spheres_li4"><strong data-i18n="oneapp.strong_13">Paideia (Bildung):</strong> Dezentraler, persönlicher KI-Tutor.</li>
+                <li data-i18n="oneapp_cockpit.spheres_li5"><strong data-i18n="oneapp.strong_14">Demeter (Ernährung):</strong> Food-Coops &amp; Farm-to-Fork Netzwerke.</li>
+                <li data-i18n="oneapp_cockpit.spheres_li6"><strong data-i18n="oneapp.strong_15">Hestia (Wohnen):</strong> Fluid Living &amp; Wohnungstausch.</li>
             </ul>
         </div>
 
         <!-- CALL TO ACTION BEREICH -->
-        <h2 style="margin-top: 60px;" data-i18n="oneapp_cockpit.actions_h2">DOWNLOAD, SUPPORT & MITMACHEN</h2>
+        <h2 style="margin-top: 60px;" data-i18n="oneapp_cockpit.actions_h2">DOWNLOAD, SUPPORT &amp; MITMACHEN</h2>
         <div class="action-grid">
             
             <div class="action-box" style="border-color: var(--accent-cyan);">
@@ -544,7 +542,7 @@
                 <p style="color: #aaa; font-size: 0.95rem;" data-i18n="oneapp_cockpit.act1_p">Lade dir die aktuelle Alpha-Version für Android oder Windows herunter. Der Quellcode gehört uns allen.</p>
                 <div style="margin-top: auto;">
                     <a href="https://github.com/project-nexus-official/terminal/releases" target="_blank" class="btn btn-cyan" data-i18n="oneapp_cockpit.act1_btn">ZUM GITHUB RELEASE</a>
-                    <a href="https://github.com/project-nexus-official/oneapp" target="_blank" style="display:block; margin-top: 15px; color: #666; font-size: 0.9rem; text-decoration: underline;"><span data-i18n="oneapp_cockpit.act1_source">Quellcode ansehen</span></a>
+                    <a href="https://github.com/project-nexus-official/oneapp" target="_blank" style="display:block; margin-top: 15px; color: #666; font-size: 0.9rem; text-decoration: underline;" data-i18n="oneapp.a_1"><span data-i18n="oneapp_cockpit.act1_source">Quellcode ansehen</span></a>
                 </div>
             </div>
 
@@ -568,13 +566,13 @@
         </div>
 
         <div class="tech-footer">
-            PROJECT N.E.X.U.S. // THE ONEAPP CORE // ENCRYPTED & DECENTRALIZED
+            PROJECT N.E.X.U.S. // THE ONEAPP CORE // ENCRYPTED &amp; DECENTRALIZED
         </div>
 
     </div>
 
     <!-- NEXUS AI TERMINAL WIDGET (FÜR SUPPORT AUF DER APP-SEITE) -->
-    <div id="nexus-chat-btn" onclick="toggleChat()">> FRAG DEN NAVIGATOR</div>
+    <div id="nexus-chat-btn" onclick="toggleChat()">&gt; FRAG DEN NAVIGATOR</div>
 
     <div id="nexus-chat-window">
         <div class="chat-header">
@@ -587,7 +585,7 @@
         <div class="typing" id="typing-indicator">Navigator tippt...</div>
         <div class="chat-input-area">
             <input type="text" id="user-input" placeholder="Nachricht eingeben..." onkeypress="handleEnter(event)">
-            <button id="send-btn" onclick="sendMessage()">></button>
+            <button id="send-btn" onclick="sendMessage()" data-i18n="oneapp.button_3">&gt;</button>
         </div>
     </div>
 
@@ -707,32 +705,33 @@
     <!-- UNIVERSAL FOOTER INKL. RECHTLICHEM HINWEIS -->
     <footer>
         <div class="social-icons">
-            <a href="https://youtube.com/@project-n.e.x.u.s-official?si=FNOZnjE-wVSmu60b" target="_blank">YouTube</a> | 
-            <a href="https://amzn.eu/d/eWMNOTG" target="_blank">Amazon</a> |
+            <a href="https://youtube.com/@project-n.e.x.u.s-official?si=FNOZnjE-wVSmu60b" target="_blank" data-i18n="oneapp.a_2">YouTube</a> | 
+            <a href="https://amzn.eu/d/eWMNOTG" target="_blank" data-i18n="oneapp.a_3">Amazon</a> |
             <a href="https://t.me/NexusProjectOfficial" target="_blank" data-i18n="footer.tg_channel">Telegram Kanal</a>
             <a href="https://t.me/Nexus_Project_official" target="_blank" data-i18n="footer.tg_group">Telegram Gruppe</a>
-            <a href="https://www.facebook.com/NexusTerminal" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/n.e.x.u.s._navigator" target="_blank">Instagram</a>
-            <a href="https://www.threads.com/@n.e.x.u.s._navigator" target="_blank">Threads</a>
-            <a href="https://www.tiktok.com/@n.e.x.u.s._navigator" target="_blank">TikTok</a>
+            <a href="https://www.facebook.com/NexusTerminal" target="_blank" data-i18n="oneapp.a_4">Facebook</a>
+            <a href="https://www.instagram.com/n.e.x.u.s._navigator" target="_blank" data-i18n="oneapp.a_5">Instagram</a>
+            <a href="https://www.threads.com/@n.e.x.u.s._navigator" target="_blank" data-i18n="oneapp.a_6">Threads</a>
+            <a href="https://www.tiktok.com/@n.e.x.u.s._navigator" target="_blank" data-i18n="oneapp.a_7">TikTok</a>
             <a href="https://x.com/nexusxnavigator" target="_blank">X</a>
-            <a href="https://bsky.app/profile/nexus-navigator.bsky.social" target="_blank">Bluesky</a>
+            <a href="https://bsky.app/profile/nexus-navigator.bsky.social" target="_blank" data-i18n="oneapp.a_8">Bluesky</a>
             <a href="https://github.com/project-nexus-official/terminal/blob/main/datenschutz.html" target="_blank" data-i18n="footer.privacy">Datenschutz</a>
             <a href="https://github.com/project-nexus-official/terminal/blob/main/impressum.html" target="_blank" data-i18n="footer.imprint">Impressum</a>
         </div>
 
         <br>
-        <p><span data-i18n="footer.contact">Kontakt:</span> <a href="mailto:nexus.blueprint@proton.me" class="contact-mail" style="display:inline; margin:0;">nexus.blueprint@proton.me</a></p>
+        <p data-i18n="oneapp.p_1"><span data-i18n="footer.contact">Kontakt:</span> <a href="mailto:nexus.blueprint@proton.me" class="contact-mail" style="display:inline; margin:0;" data-i18n="oneapp.a_9">nexus.blueprint@proton.me</a></p>
 
         <!-- RECHTLICHER HINWEIS -->
         <div style="max-width: 800px; margin: 30px auto 0 auto; padding: 20px; border-top: 1px solid #333; font-size: 0.85rem; color: #666; text-align: center; line-height: 1.5;">
-            <p style="margin-bottom: 10px;">
-                <span data-i18n="footer.legal_notice">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</span>
+            <p style="margin-bottom: 10px;" data-i18n="oneapp.p_2">
+                <span data-i18n="footer.legal_notice">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (© 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</span>
             </p>
             <p style="margin-bottom: 0;"></p>
         </div>
     </footer>
     <!-- i18n ENGINE SCRIPT -->
     <script src="js/i18n.js"></script>
-</body>
-</html>
+
+
+</body></html>

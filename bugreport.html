@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
+<!DOCTYPE html><html lang="de"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N.E.X.U.S. | Bug-Hunting Protokoll</title>
@@ -118,27 +116,27 @@
     <header style="position: sticky; top: 0; left: 0; width: 100%; min-height: 70px; background: rgba(0,0,0,0.95); border-bottom: 1px solid #333; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; box-sizing: border-box;">
         <a href="index.html" style="text-decoration:none;"><div style="font-weight:bold; color:var(--accent-cyan); font-size:1.2rem;">N.E.X.U.S.</div></a>
         <div class="lang-selector" style="display:flex; gap:6px; background:rgba(10,15,25,0.8); border:1px solid #00f3ff; padding:4px 10px; border-radius:3px;">
-            <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')" style="background:transparent; border:none; color:#00f3ff; font-weight:bold; cursor:pointer;">DE</button>
+            <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')" style="background:transparent; border:none; color:#00f3ff; font-weight:bold; cursor:pointer;" data-i18n="bugreport.button_1">DE</button>
             <span style="color:#444;">|</span>
-            <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')" style="background:transparent; border:none; color:#888; font-weight:bold; cursor:pointer;">ES</button>
+            <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')" style="background:transparent; border:none; color:#888; font-weight:bold; cursor:pointer;" data-i18n="bugreport.button_2">ES</button>
         </div>
     </header>
 
 
     <div class="top-nav" style="max-width: 800px; margin: 20px auto 30px auto;">
-        <a href="index.html" class="back-link">&lt; ZURÜCK ZUM TERMINAL</a>
+        <a href="index.html" class="back-link" data-i18n="bugreport.a_1">&lt; ZURÜCK ZUM TERMINAL</a>
     </div>
 
-    <h1>OneApp Bug-Hunting</h1>
-    <p class="subtitle">Wir meckern nicht über Fehler. Wir isolieren und beseitigen sie. Trage die System-Anomalie hier ein, um den Code zu härten.</p>
+    <h1 data-i18n="bugreport.h1_1">OneApp Bug-Hunting</h1>
+    <p class="subtitle" data-i18n="bugreport.p_1">Wir meckern nicht über Fehler. Wir isolieren und beseitigen sie. Trage die System-Anomalie hier ein, um den Code zu härten.</p>
 
     <div class="form-container">
         
         <div class="known-bugs">
-            <h3>⚠️ Bekannte Anomalien (Bitte nicht mehr melden)</h3>
+            <h3 data-i18n="bugreport.h3_1">⚠️ Bekannte Anomalien (Bitte nicht mehr melden)</h3>
             <ul>
-                <li><strong>Missed-Message-Sync:</strong> Nostr Timestamps synchronisieren beim App-Neustart noch unzuverlässig. (Code Circle arbeitet bereits am Fix).</li>
-                <li><strong>Gruppen-Chats:</strong> Noch deaktiviert in dieser Alpha-Version.</li>
+                <li data-i18n="bugreport.li_1"><strong data-i18n="bugreport.strong_1">Missed-Message-Sync:</strong> Nostr Timestamps synchronisieren beim App-Neustart noch unzuverlässig. (Code Circle arbeitet bereits am Fix).</li>
+                <li data-i18n="bugreport.li_2"><strong data-i18n="bugreport.strong_2">Gruppen-Chats:</strong> Noch deaktiviert in dieser Alpha-Version.</li>
             </ul>
         </div>
 
@@ -146,18 +144,18 @@
         <form action="https://formspree.io/f/mzdkznlk" method="POST">
             
             <label>1. Dein Nickname (Telegram) / Name</label>
-            <input type="text" name="Reporter_Name" required placeholder="Wer meldet die Anomalie?">
+            <input type="text" name="Reporter_Name" required="" placeholder="Wer meldet die Anomalie?">
 
             <label>2. E-Mail Adresse (Für Rückfragen)</label>
-            <input type="email" name="Email" required placeholder="Damit die Architekten dich bei Fragen erreichen können">
+            <input type="email" name="Email" required="" placeholder="Damit die Architekten dich bei Fragen erreichen können">
 
-            <label>3. Verwendete Hardware & OS-Version</label>
-            <input type="text" name="Device_OS" required placeholder="z.B. Samsung Galaxy S23 (Android 14) oder iPhone 13 (iOS 17) oder Windows 10/11">
+            <label>3. Verwendete Hardware &amp; OS-Version</label>
+            <input type="text" name="Device_OS" required="" placeholder="z.B. Samsung Galaxy S23 (Android 14) oder iPhone 13 (iOS 17) oder Windows 10/11">
             <span class="help-text">Da wir plattformübergreifend arbeiten, ist diese Angabe essenziell.</span>
 
             <label>4. Netzwerk-Status beim Fehler</label>
-            <select name="Network_Status" required>
-                <option value="" disabled selected>Bitte auswählen...</option>
+            <select name="Network_Status" required="">
+                <option value="" disabled="" selected="">Bitte auswählen...</option>
                 <option value="Global_Nostr">Globales Netz (Internet / Nostr-Relays)</option>
                 <option value="Local_LAN">Lokales Netz (WLAN / LAN-Sync)</option>
                 <option value="BLE_Bluetooth">Bluetooth (BLE Mesh)</option>
@@ -165,8 +163,8 @@
             </select>
 
             <label>5. In welchem Modul trat der Fehler auf?</label>
-            <select name="App_Module" required>
-                <option value="" disabled selected>Bitte auswählen...</option>
+            <select name="App_Module" required="">
+                <option value="" disabled="" selected="">Bitte auswählen...</option>
                 <option value="Onboarding">Identitätserstellung / SSI-Onboarding</option>
                 <option value="Inbox_Chat">Inbox / Chat-Verlauf</option>
                 <option value="Contacts_Trust">Kontakte / 4-stufiges Trust-Level</option>
@@ -177,21 +175,21 @@
             </select>
 
             <label>6. Symptom: Was genau ist passiert?</label>
-            <textarea name="Bug_Description" rows="4" required placeholder="Beschreibe die Anomalie. Gab es eine Fehlermeldung auf dem Bildschirm? Ist die App eingefroren?"></textarea>
+            <textarea name="Bug_Description" rows="4" required="" placeholder="Beschreibe die Anomalie. Gab es eine Fehlermeldung auf dem Bildschirm? Ist die App eingefroren?"></textarea>
 
             <label>7. Reproduktion: Wie können wir das nachstellen?</label>
-            <textarea name="Bug_Steps" rows="4" required placeholder="Schritt 1: Ich habe auf X geklickt. Schritt 2: Dann habe ich Y eingegeben..."></textarea>
+            <textarea name="Bug_Steps" rows="4" required="" placeholder="Schritt 1: Ich habe auf X geklickt. Schritt 2: Dann habe ich Y eingegeben..."></textarea>
             <span class="help-text">Ein Bug, den wir nicht reproduzieren können, ist ein Bug, den wir nicht fixen können. Sei präzise.</span>
 
             <label>8. Erwartetes Verhalten</label>
-            <input type="text" name="Expected_Behavior" required placeholder="Was hätte laut System-Logik eigentlich passieren sollen?">
+            <input type="text" name="Expected_Behavior" required="" placeholder="Was hätte laut System-Logik eigentlich passieren sollen?">
 
             <!-- NEUER BEREICH FÜR SCREENSHOTS/VIDEOS -->
             <label>9. Beweismaterial (Screenshots / Videos)</label>
             <input type="url" name="Evidence_Link" placeholder="https://link-zu-deinem-screenshot.com">
             <span class="help-text">Um das System schlank und souverän zu halten, laden wir hier keine Dateien direkt hoch. Lade deinen Screenshot oder dein Video in deine eigene Cloud (Proton Drive, Mega, ungelistetes YouTube) und füge den Freigabelink hier ein. (Optional)</span>
 
-            <button type="submit" class="submit-btn">ANOMALIE MELDEN</button>
+            <button type="submit" class="submit-btn" data-i18n="bugreport.button_3">ANOMALIE MELDEN</button>
         </form>
 
     </div>
@@ -199,26 +197,26 @@
     <footer style="text-align: center; padding: 60px 20px; background: #080808; color: #777; border-top: 1px solid #222; margin-top: 50px; font-family: 'Courier New', Courier, monospace;">
         
         <div style="margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 1rem;">
-            <a href="https://youtube.com/@project-n.e.x.u.s-official?si=FNOZnjE-wVSmu60b" target="_blank" style="color: #fff; text-decoration: none;">YouTube</a> | 
-            <a href="https://amzn.eu/d/eWMNOTG" target="_blank" style="color: #fff; text-decoration: none;">Amazon</a> |
-            <a href="https://t.me/NexusProjectOfficial" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.tg_channel" data-i18n="footer.tg_channel">Telegram Kanal</a> |
-            <a href="https://t.me/Nexus_Project_official" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.tg_group" data-i18n="footer.tg_group">Telegram Gruppe</a> |
-            <a href="https://www.facebook.com/NexusTerminal" target="_blank" style="color: #fff; text-decoration: none;">Facebook</a> |
-            <a href="https://www.instagram.com/n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;">Instagram</a> |
-            <a href="https://www.threads.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;">Threads</a> |
-            <a href="https://www.tiktok.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;">TikTok</a> |
+            <a href="https://youtube.com/@project-n.e.x.u.s-official?si=FNOZnjE-wVSmu60b" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="bugreport.a_2">YouTube</a> | 
+            <a href="https://amzn.eu/d/eWMNOTG" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="bugreport.a_3">Amazon</a> |
+            <a href="https://t.me/NexusProjectOfficial" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.tg_channel">Telegram Kanal</a> |
+            <a href="https://t.me/Nexus_Project_official" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.tg_group">Telegram Gruppe</a> |
+            <a href="https://www.facebook.com/NexusTerminal" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="bugreport.a_4">Facebook</a> |
+            <a href="https://www.instagram.com/n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="bugreport.a_5">Instagram</a> |
+            <a href="https://www.threads.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="bugreport.a_6">Threads</a> |
+            <a href="https://www.tiktok.com/@n.e.x.u.s._navigator" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="bugreport.a_7">TikTok</a> |
             <a href="https://x.com/nexusxnavigator" target="_blank" style="color: #fff; text-decoration: none;">X</a> |
-            <a href="https://bsky.app/profile/nexus-navigator.bsky.social" target="_blank" style="color: #fff; text-decoration: none;">Bluesky</a> |
-            <a href="https://github.com/project-nexus-official/terminal/blob/main/datenschutz.html" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.privacy" data-i18n="footer.privacy">Datenschutz</a> |
-            <a href="https://github.com/project-nexus-official/terminal/blob/main/impressum.html" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.imprint" data-i18n="footer.imprint">Impressum</a>
+            <a href="https://bsky.app/profile/nexus-navigator.bsky.social" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="bugreport.a_8">Bluesky</a> |
+            <a href="https://github.com/project-nexus-official/terminal/blob/main/datenschutz.html" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.privacy">Datenschutz</a> |
+            <a href="https://github.com/project-nexus-official/terminal/blob/main/impressum.html" target="_blank" style="color: #fff; text-decoration: none;" data-i18n="footer.imprint">Impressum</a>
         </div>
         
-        <p style="margin-bottom: 10px; font-size: 1.1rem;"><span data-i18n="footer.contact"><span data-i18n="footer.contact">Kontakt:</span> </span> <a href="mailto:nexus.blueprint@proton.me" style="color: #00f3ff; text-decoration: none;">nexus.blueprint@proton.me</a></p>
+        <p style="margin-bottom: 10px; font-size: 1.1rem;" data-i18n="bugreport.p_2"><span data-i18n="footer.contact"><span data-i18n="footer.contact">Kontakt:</span> </span> <a href="mailto:nexus.blueprint@proton.me" style="color: #00f3ff; text-decoration: none;" data-i18n="bugreport.a_9">nexus.blueprint@proton.me</a></p>
         
         <!-- RECHTLICHER HINWEIS -->
         <div style="max-width: 800px; margin: 30px auto 0 auto; padding: 20px; border-top: 1px solid #333; font-size: 0.85rem; color: #888; text-align: center; line-height: 1.6;">
-            <p style="margin-bottom: 10px;">
-                <span data-i18n="footer.legal_notice">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</span>
+            <p style="margin-bottom: 10px;" data-i18n="bugreport.p_3">
+                <span data-i18n="footer.legal_notice">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (© 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</span>
             </p>
             <p style="margin-bottom: 0;">
                 
@@ -227,5 +225,6 @@
     </footer>
     <!-- i18n ENGINE SCRIPT -->
     <script src="js/i18n.js"></script>
-</body>
-</html>
+
+
+</body></html>
