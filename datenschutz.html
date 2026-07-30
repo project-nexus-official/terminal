@@ -1,4 +1,36 @@
-Datenschutzerklärung
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="legal.datenschutz_title">Datenschutzerklärung - N.E.X.U.S.</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body { margin: 0; padding: 90px 20px 40px 20px; background: #000; color: #ccc; font-family: 'Courier New', monospace; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; background: #0a0a0a; border: 1px solid #333; padding: 40px; }
+        h1, h2, h3 { color: #00f3ff; }
+        header { position: fixed; top: 0; left: 0; width: 100%; height: 70px; background: rgba(0,0,0,0.95); border-bottom: 1px solid #333; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; box-sizing: border-box; }
+        .logo-text { font-weight: bold; color: #00f3ff; font-size: 1.2rem; }
+        .lang-selector { display: flex; align-items: center; gap: 6px; background: rgba(10, 15, 25, 0.8); border: 1px solid #00f3ff; padding: 4px 10px; border-radius: 3px; }
+        .lang-btn { background: transparent; border: none; color: #888; font-family: inherit; font-size: 0.85rem; font-weight: bold; cursor: pointer; padding: 2px 4px; }
+        .lang-btn.active-lang { color: #00f3ff; border-bottom: 2px solid #00f3ff; }
+        footer { text-align: center; margin-top: 40px; border-top: 1px solid #222; padding-top: 20px; color: #666; font-size: 0.85rem; }
+        footer a { color: #fff; margin: 0 10px; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="text-decoration:none;"><div class="logo-text">N.E.X.U.S.</div></a>
+        <div class="lang-selector">
+            <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')">DE</button>
+            <span style="color:#444;">|</span>
+            <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')">ES</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Datenschutzerklärung</h1>
+        <pre style="white-space: pre-wrap; font-family: inherit;">Datenschutzerklärung
 
 1. Datenschutz auf einen Blick
 
@@ -70,3 +102,18 @@ Diese Website enthält Links zu unseren Inhalten auf YouTube und unseren Publika
 
 6. N.E.X.U.S. Philosophie zum Datenschutz
 Obwohl wir derzeit auf Standard-Webtechnologien angewiesen sind, verfolgt Projekt N.E.X.U.S. das Ziel der absoluten Privatsphäre. In künftigen Phasen der Entwicklung (siehe Whitepaper Kapitel 4) setzen wir auf Zero-Knowledge-Proofs und dezentrale Identitäten, um die Erhebung personenbezogener Daten systemisch unmöglich zu machen.
+</pre>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://t.me/Nexus_Project_official" target="_blank" data-i18n="footer.tg_group">Telegram Gruppe</a> |
+            <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a> |
+            <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+        </div>
+        <p data-i18n="footer.legal_notice" style="margin-top:15px;">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>
