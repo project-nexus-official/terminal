@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "N.E.X.U.S. | Reconstruir la Comunidad",
+    "description": "N.E.X.U.S. Terminal - Transformar el aislamiento en comunidad. Humano. Autodeterminado. Descentralizado."
+  },
+  "nav": {
+    "new_here": "¿Nuevo aquí?",
+    "elearning": "Ruta de Aprendizaje",
+    "library": "Biblioteca",
+    "oneapp": "OneApp [En Vivo]",
+    "blueprint": "Plano de Construcción",
+    "contribute": "Construir Juntos",
+    "find_place": "ENCUENTRA TU LUGAR"
+  },
+  "hero": {
+    "banner": "🔴 NUEVO: ESCUCHAR EL AUDIOLIBRO VOLUMEN 1 DE LA TRILOGÍA",
+    "title": "N.E.X.U.S.",
+    "subline": "Convertir el aislamiento en comunidad.<br>Humano. Autodeterminado. Descentralizado.",
+    "btn_new_here": "¿Nuevo aquí? Empieza aquí",
+    "btn_academy": "Iniciar ruta de aprendizaje",
+    "btn_library": "Abrir biblioteca",
+    "btn_building": "Lo que ya se está construyendo",
+    "btn_story": "Vivir la visión como una historia",
+    "btn_system": "Comprender el plano en profundidad"
+  },
+  "intro": {
+    "headline": "Un movimiento para una nueva comunidad",
+    "p1": "Muchas personas sienten que nuestra convivencia se ha desequilibrado. Estamos más conectados que nunca y, sin embargo, nos sentimos más solos. Trabajamos, funcionamos, consumimos y nos desplazamos por las pantallas, pero muchos pierden la cercanía, la confianza y el sentido.",
+    "p2": "N.E.X.U.S. no responde a esto con rabia, sino con construcción. Desarrollamos una nueva forma de comunidad: humana, descentralizada, autodeterminada y basada en la responsabilidad mutua.",
+    "p3": "<strong>N.E.X.U.S. es un movimiento de personas que convierten el aislamiento en comunidad.</strong> La tecnología, el plano de construcción, la ruta de aprendizaje y la OneApp son herramientas para ello; el núcleo sigue siendo el ser humano.",
+    "p4": "No queremos combatir lo viejo violentamente. Construimos lo nuevo tan bien que lo viejo con el tiempo se vuelve innecesario.",
+    "p5": "El poder siempre se ha organizado en centros de pensamiento, redes y estrategias a largo plazo. Si queremos un mundo más humano, nosotros también debemos empezar a colaborar de forma inteligente, amorosa y comprometida."
+  },
+  "manifest": {
+    "title": "Un sistema vivo – Sin dogma",
+    "p1": "Soy Josh Richman. Soy el iniciador, no el profeta. N.E.X.U.S. no es una doctrina acabada, sino un estado de trabajo abierto para un nuevo sistema operativo social.",
+    "p2": "Mi papel es el del primer arquitecto: mantengo el marco y los valores fundamentales. Pero el sistema no pertenece a una sola persona. Debe ser examinado, mejorado y construido conjuntamente.",
+    "p3": "Aquí la crítica no es un ataque, sino un examen. Deseo que cuestionéis este plano, lo mejoréis y lo reescribáis donde sea necesario. Lo construimos juntos.",
+    "promo_desc": "El círculo fundador de N.E.X.U.S. se está formando. Organizamos la inteligencia compartida en campos de trabajo como tecnología, derecho, comunidad, educación, narrativa y financiación.",
+    "btn_details": "VER DETALLES DEL THINK TANK",
+    "btn_place": "🏛 ENCUENTRA TU LUGAR"
+  },
+  "oneapp": {
+    "title": "OneApp: La primera herramienta para una comunidad autodeterminada",
+    "desc": "La OneApp es la aplicación central de N.E.X.U.S. Está diseñada para conectar a las personas sin vigilarlas. Devuelve la identidad, la comunicación, los espacios comunitarios y las decisiones compartidas a manos de las personas.",
+    "card1_title": "🌐 Conexión descentralizada",
+    "card1_desc": "Los mensajes pueden viajar por rutas descentralizadas. El objetivo es una conexión que no dependa de corporaciones individuales o autoridades centrales.",
+    "card2_title": "📡 Funciona incluso sin gran red",
+    "card2_desc": "La aplicación también debe permitir la conexión directa de dispositivo a dispositivo, por ejemplo a través de Bluetooth o Wi-Fi local.",
+    "card3_title": "🔐 Tu identidad te pertenece",
+    "card3_desc": "Debes poder gestionar tu identidad digital tú mismo, sin depender de números de teléfono o cuentas centrales.",
+    "card4_title": "⚡ Decidir juntos",
+    "card4_desc": "Paso a paso surgen los fundamentos para decisiones comunitarias, comunidades y futuros bloques económicos.",
+    "cta_title": "LA VERSIÓN ALPHA ESTÁ EN VIVO",
+    "cta_desc": "Actualmente estamos probando los fundamentos de identidad, conexión y comunicación. Mira lo que ya funciona y lo que vendrá a continuación.",
+    "btn_test": "⚙️ VER Y PROBAR ONEAPP",
+    "bug_link": "> ¿Probador Alpha? Registro de comprobaciones y errores aquí"
+  },
+  "story": {
+    "title": "La Trilogía: Vivir la visión como una historia",
+    "quote": "Algunas personas no entienden una nueva sociedad primero a través de conceptos. <br>Tienen que sentirla.",
+    "p1": "David, Sarah y Robert muestran en un futuro narrativo cómo las personas atraviesan la duda, el miedo, el colapso y la esperanza, y cómo de la soledad puede nacer de nuevo una comunidad real.",
+    "book1": "🔥 <strong>Volumen 1: Hora Cero</strong> – El momento en que las personas reconocen: esto no puede continuar así.",
+    "book2": "🌪 <strong>Volumen 2: El Fundamento</strong> – La laboriosa construcción de una verdadera comunidad.",
+    "book3": "🦅 <strong>Volumen 3: La Metamorfosis</strong> – La interconexión de muchas comunidades.",
+    "proof_text": "Por fin una distopía que no termina en caos, sino que muestra una salida real. Esto no es una novela, es una llamada de atención.",
+    "proof_author": "– Opinión de un lector en Signal",
+    "btn_amazon": "VER TRILOGÍA EN AMAZON",
+    "pdf_title": "📂 MUESTRAS EN PDF",
+    "pdf1": "> Descargar muestra Volumen 1",
+    "pdf2": "> Descargar muestra Volumen 2",
+    "pdf3": "> Descargar muestra Volumen 3"
+  },
+  "system": {
+    "title": "El Plano: La arquitectura detrás de la visión",
+    "intro": "<strong>Una visión debe convertirse en estructuras sostenibles.</strong>",
+    "desc": "El plano describe cómo se pueden concebir de forma concreta nuevas comunidades, formas de decisión, lógica económica, educación, suministro, tecnología y responsabilidad.",
+    "li1": "🛠 <strong>Decidir juntos:</strong> Nuevas formas de participación y responsabilidad.",
+    "li2": "📡 <strong>Permanecer conectado de forma segura:</strong> Vías de comunicación descentralizadas y redes robustas.",
+    "li3": "💡 <strong>Economía al servicio de la vida:</strong> La creación de valor debe sostener a la comunidad y el suministro.",
+    "btn_v14": "El plano completo para una civilización soberana (V 14.0)",
+    "btn_compass": "El plano en forma comprimida como brújula",
+    "btn_essence": "La esencia N.E.X.U.S. – Resumen de 10 páginas"
+  },
+  "academy": {
+    "title": "El paso más sencillo: La ruta de aprendizaje",
+    "box_title": "Comprender paso a paso",
+    "desc": "N.E.X.U.S. es grande. La ruta de aprendizaje te ayuda a entender paso a paso de qué se trata, sin jerga técnica, sin agobios, en lecciones claras.",
+    "btn_start": "INICIAR RUTA DE APRENDIZAJE"
+  },
+  "community": {
+    "title": "Encuentra tu lugar en la construcción",
+    "desc": "En soledad sigue siendo una idea. Juntos se convierte en realidad.<br>N.E.X.U.S. necesita personas con diferentes dones: pensadores, narradores, desarrolladores, anfitriones, prácticos y constructores de puentes.",
+    "btn_understand": "ENTENDER CÓMO CONSTRUIR JUNTOS",
+    "btn_telegram": "COMUNIDAD EN TELEGRAM"
+  },
+  "footer": {
+    "legal_note": "El plano de construcción, la versión popular y la trilogía novelesca son propiedad intelectual de Josh Richman (&copy; 2024–2026).<br>Se permite e incentiva la lectura y divulgación. No se permite su uso como base para proyectos propios sin autorización."
+  },
+  "chatbot": {
+    "btn_open": "PREGUNTA AL NAVEGADOR",
+    "title": "N.E.X.U.S. NAVIGATOR V1.7",
+    "welcome": "Bienvenido. Soy el N.E.X.U.S. Navigator. Pregúntame sobre el plano de construcción, la trilogía novelesca, la ruta de aprendizaje, la OneApp o tu primer paso.",
+    "typing": "El navegador está respondiendo...",
+    "placeholder": "Escribe un mensaje..."
+  }
+}

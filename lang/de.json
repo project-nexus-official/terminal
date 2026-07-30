@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "N.E.X.U.S. | Gemeinschaft neu aufbauen",
+    "description": "N.E.X.U.S. Terminal - Aus Vereinzelung wieder Gemeinschaft machen. Menschlich. Selbstbestimmt. Dezentral."
+  },
+  "nav": {
+    "new_here": "Neu hier?",
+    "elearning": "Lernpfad",
+    "library": "Bibliothek",
+    "oneapp": "OneApp [Live]",
+    "blueprint": "Bauplan",
+    "contribute": "Mitbauen",
+    "find_place": "FINDE DEINEN PLATZ"
+  },
+  "hero": {
+    "banner": "🔴 JETZT NEU: HÖRBUCH BAND 1 DER TRILOGIE HÖREN",
+    "title": "N.E.X.U.S.",
+    "subline": "Aus Vereinzelung wieder Gemeinschaft machen.<br>Menschlich. Selbstbestimmt. Dezentral.",
+    "btn_new_here": "Neu hier? Beginne hier",
+    "btn_academy": "Lernpfad starten",
+    "btn_library": "Bibliothek öffnen",
+    "btn_building": "Was bereits gebaut wird",
+    "btn_story": "Die Vision als Geschichte erleben",
+    "btn_system": "Den Bauplan tiefer verstehen"
+  },
+  "intro": {
+    "headline": "Eine Bewegung für neue Gemeinschaft",
+    "p1": "Viele Menschen spüren, dass unser Zusammenleben aus dem Gleichgewicht geraten ist. Wir sind vernetzter als je zuvor – und fühlen uns trotzdem einsamer. Wir arbeiten, funktionieren, konsumieren und scrollen – aber viele verlieren dabei Nähe, Vertrauen und Sinn.",
+    "p2": "N.E.X.U.S. antwortet darauf nicht mit Wut, sondern mit Aufbau. Wir entwickeln eine neue Form von Gemeinschaft: menschlich, dezentral, selbstbestimmt und getragen von Verantwortung füreinander.",
+    "p3": "<strong>N.E.X.U.S. ist eine Bewegung von Menschen, die aus Vereinzelung wieder Gemeinschaft machen.</strong> Technik, Bauplan, Lernpfad und OneApp sind Werkzeuge dafür – der Kern bleibt der Mensch.",
+    "p4": "Wir wollen das Alte nicht gewaltsam bekämpfen. Wir bauen das Neue so gut, dass das Alte irgendwann überflüssig wird.",
+    "p5": "Macht organisiert sich seit jeher in Denkfabriken, Netzwerken und langfristigen Strategien. Wenn wir eine menschlichere Welt wollen, müssen auch wir beginnen, klug, liebevoll und verbindlich zusammenzuarbeiten."
+  },
+  "manifest": {
+    "title": "Ein lebendes System – Kein Dogma",
+    "p1": "Ich bin Josh Richman. Ich bin der Initiator, nicht der Prophet. N.E.X.U.S. ist keine fertige Lehre, sondern ein offener Arbeitsstand für ein neues gesellschaftliches Betriebssystem.",
+    "p2": "Meine Rolle ist die des ersten Architekten – ich halte den Rahmen und die Grundwerte. Aber das System gehört nicht einer Person. Es soll gemeinsam geprüft, verbessert und aufgebaut werden.",
+    "p3": "Kritik ist hier kein Angriff, sondern Prüfung. Ich wünsche mir, dass ihr diesen Bauplan hinterfragt, verbessert und dort neu schreibt, wo es nötig ist. Wir bauen das zusammen.",
+    "promo_desc": "Der N.E.X.U.S. Gründungskreis formiert sich. Wir organisieren die gemeinsame Intelligenz in Arbeitsfeldern wie Technik, Recht, Gemeinschaft, Bildung, Erzählung und Finanzierung.",
+    "btn_details": "DETAILS ZUR DENKFABRIK ANSEHEN",
+    "btn_place": "🏛 FINDE DEINEN PLATZ"
+  },
+  "oneapp": {
+    "title": "OneApp: Das erste Werkzeug für selbstbestimmte Gemeinschaft",
+    "desc": "Die OneApp ist die zentrale Anwendung von N.E.X.U.S. Sie soll Menschen verbinden, ohne sie zu überwachen. Sie gibt Identität, Kommunikation, Gemeinschaftsräume und gemeinsame Entscheidungen zurück in die Hände der Menschen.",
+    "card1_title": "🌐 Dezentrale Verbindung",
+    "card1_desc": "Nachrichten können über dezentrale Wege laufen. Ziel ist eine Verbindung, die nicht von einzelnen Konzernen oder zentralen Stellen abhängig ist.",
+    "card2_title": "📡 Funktioniert auch ohne großes Netz",
+    "card2_desc": "Die App soll auch direkte Verbindung von Gerät zu Gerät ermöglichen – etwa über Bluetooth oder lokales WLAN.",
+    "card3_title": "🔐 Deine Identität gehört dir",
+    "card3_desc": "Du sollst deine digitale Identität selbst verwalten können – ohne Abhängigkeit von Telefonnummern oder zentralen Konten.",
+    "card4_title": "⚡ Gemeinsam entscheiden",
+    "card4_desc": "Schritt für Schritt entstehen Grundlagen für gemeinsame Entscheidungen, Gemeinschaften und spätere Wirtschaftsbausteine.",
+    "cta_title": "DIE ALPHA-VERSION IST LIVE",
+    "cta_desc": "Wir testen aktuell die Grundlagen für Identität, Verbindung und Kommunikation. Sieh dir an, was bereits funktioniert und was als Nächstes entsteht.",
+    "btn_test": "⚙️ ONEAPP ANSEHEN & TESTEN",
+    "bug_link": "> Alpha-Tester? Hier geht's zum Prüf- und Fehlerprotokoll"
+  },
+  "story": {
+    "title": "Die Trilogie: Die Vision als Geschichte erleben",
+    "quote": "Manche Menschen verstehen eine neue Gesellschaft nicht zuerst über Begriffe. <br>Sie müssen sie fühlen.",
+    "p1": "David, Sarah und Robert zeigen in einer erzählerischen Zukunft, wie Menschen durch Zweifel, Angst, Zusammenbruch und Hoffnung gehen – und wie aus Vereinzelung wieder echte Gemeinschaft entstehen kann.",
+    "book1": "🔥 <strong>Band 1: Stunde Null</strong> – Der Moment, in dem Menschen erkennen: So kann es nicht weitergehen.",
+    "book2": "🌪 <strong>Band 2: Das Fundament</strong> – Der mühsame Aufbau echter Gemeinschaft.",
+    "book3": "🦅 <strong>Band 3: Die Metamorphose</strong> – Die Vernetzung vieler Gemeinschaften.",
+    "proof_text": "Endlich eine Dystopie, die nicht im Chaos endet, sondern einen echten Ausweg zeigt. Das ist kein Roman, das ist ein Weckruf.",
+    "proof_author": "– Leserstimme aus dem Signal",
+    "btn_amazon": "TRILOGIE AUF AMAZON ANSEHEN",
+    "pdf_title": "📂 PDF-LESEPROBEN",
+    "pdf1": "> Leseprobe Band 1 downloaden",
+    "pdf2": "> Leseprobe Band 2 downloaden",
+    "pdf3": "> Leseprobe Band 3 downloaden"
+  },
+  "system": {
+    "title": "Der Bauplan: Die Architektur hinter der Vision",
+    "intro": "<strong>Aus einer Vision müssen tragfähige Strukturen werden.</strong>",
+    "desc": "Der Bauplan beschreibt, wie neue Gemeinschaften, Entscheidungsformen, Wirtschaftslogik, Bildung, Versorgung, Technik und Verantwortung konkret zusammengedacht werden können.",
+    "li1": "🛠 <strong>Gemeinsam entscheiden:</strong> Neue Formen der Mitbestimmung und Verantwortung.",
+    "li2": "📡 <strong>Sicher verbunden bleiben:</strong> Dezentrale Kommunikationswege und robuste Netze.",
+    "li3": "💡 <strong>Wirtschaft im Dienst des Lebens:</strong> Wertschöpfung soll Gemeinschaft und Versorgung tragen.",
+    "btn_v14": "Der vollständige Bauplan für eine souveräne Zivilisation (V 14.0)",
+    "btn_compass": "Der Bauplan in komprimierter Form als Kompass",
+    "btn_essence": "Die N.E.X.U.S. Essenz – 10 Seiten Zusammenfassung"
+  },
+  "academy": {
+    "title": "Der einfachste Einstieg: Der Lernpfad",
+    "box_title": "Schritt für Schritt verstehen",
+    "desc": "N.E.X.U.S. ist groß. Der Lernpfad hilft dir, Schritt für Schritt zu verstehen, worum es geht — ohne Fachsprache, ohne Überforderung, in klaren Lektionen.",
+    "btn_start": "LERNPFAD STARTEN"
+  },
+  "community": {
+    "title": "Finde deinen Platz im Aufbau",
+    "desc": "Allein bleibt es eine Idee. Gemeinsam kann es Realität werden.<br>N.E.X.U.S. braucht Menschen mit unterschiedlichen Gaben: Denker, Erzähler, Entwickler, Gastgeber, Praktiker und Brückenbauer.",
+    "btn_understand": "MITBAUEN VERSTEHEN",
+    "btn_telegram": "TELEGRAM-GEMEINSCHAFT"
+  },
+  "footer": {
+    "legal_note": "Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet."
+  },
+  "chatbot": {
+    "btn_open": "FRAG DEN NAVIGATOR",
+    "title": "N.E.X.U.S. NAVIGATOR V1.7",
+    "welcome": "Willkommen. Ich bin der N.E.X.U.S. Navigator. Frag mich nach dem Bauplan, der Romantrilogie, dem Lernpfad, der OneApp oder deinem ersten Einstieg.",
+    "typing": "Navigator antwortet...",
+    "placeholder": "Nachricht eingeben..."
+  }
+}
