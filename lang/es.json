@@ -2013,5 +2013,31 @@
     "button_1": "DE",
     "button_2": "ES",
     "h1_1": "política de privacidad"
+  },
+  "lektion-1": {
+    "button_1": "DE",
+    "button_2": "ES",
+    "p_1": "<strong>\"No me imagino el caos. Las crisis de nuestro tiempo están interconectadas. Y es precisamente por eso que ya no basta con reparar los síntomas individuales.\"</strong>",
+    "strong_1": "\"No me imagino el caos. Las crisis de nuestro tiempo están interconectadas. Y precisamente por eso ya no basta con reparar los síntomas individuales\".",
+    "p_2": "<strong data-i18n=\"elearning_lessons.l1.sec1_strong\">Algo anda mal.</strong>",
+    "p_3": "No sólo en política. No sólo en los negocios. No sólo en términos de clima. No sólo en el sistema sanitario. No sólo en los medios. Pero de alguna manera en todas partes al mismo tiempo.",
+    "p_4": "Esto no es un fracaso personal. Es una señal de que el sistema operativo de nuestra sociedad ha llegado a sus límites.",
+    "p_5": "<strong>Las crisis actuales no están separadas unas de otras. Son síntomas del mismo problema básico.</strong>",
+    "strong_2": "Las crisis actuales no están separadas unas de otras. Son síntomas del mismo problema básico.",
+    "p_6": "Cuando la vivienda se vuelve inasequible, aumenta la presión psicológica. Cuando aumenta la presión psicológica, las personas se vuelven más susceptibles al miedo y la ira. Cuando los medios aumentan el miedo y la ira, la confianza colapsa. Cuando la confianza se rompe, la política se vuelve más dura y miope. Cuando la política se vuelve más miope, los problemas ecológicos y sociales se posponen aún más. Y cuanto más se pospone todo, mayor será la presión.",
+    "p_7": "Esto crea un ciclo. Ni un solo error. Sino un sistema que constantemente produce resultados incorrectos.",
+    "p_8": "Primero, el techo tiene goteras. Entonces la pared se resquebraja. Entonces la calefacción se detiene. Luego huele a moho en el sótano. Entonces la electricidad parpadea. Entonces la puerta se atasca.",
+    "p_9": "<strong data-i18n=\"elearning_lessons.l1.sec3_strong\">El problema no es la grieta única. Los cimientos están dañados.</strong>",
+    "p_10": "No estamos diciendo: este partido tiene la culpa. Esta tecnología es peligrosa. Este grupo es el problema.",
+    "p_11": "Decimos: Los cimientos del viejo sistema crean repetidamente separación, miedo, competencia, escasez y concentración de poder.",
+    "p_12": "<strong data-i18n=\"elearning_lessons.l1.sec3_strong2\">Por eso no solo necesitamos reparaciones. Necesitamos un nuevo edificio.</strong>",
+    "p_13": "Mucha gente quiere lo correcto. Se involucran, se manifiestan, crean iniciativas, trabajan en trabajos sociales, ayudan a otros, escriben peticiones o votan con la esperanza de que las cosas mejoren.",
+    "p_14": "<strong data-i18n=\"elearning_lessons.l1.sec4_strong\">¿Qué sucede cuando buenas personas trabajan en un sistema programado incorrectamente?</strong>",
+    "p_15": "El problema no es que nadie quiera ayudar. El problema es que el antiguo sistema a menudo recompensa el comportamiento incorrecto y castiga el comportamiento humano.",
+    "p_16": "<strong data-i18n=\"elearning_lessons.l1.sec5_strong\">Necesitamos una nueva arquitectura.</strong>",
+    "li_1": "Una sociedad en la que la conexión es más fuerte que el aislamiento.",
+    "p_17": "NEXO. Por tanto, no es sólo una idea. Es un intento de diseñar un nuevo sistema operativo para la convivencia humana.",
+    "p_18": "No perfecto. No terminado. No ordenado desde arriba. Sino como un proyecto humano, de aprendizaje y descentralizado.",
+    "div_1": "No estás loco si sientes que algo anda fundamentalmente mal. Sientes la grieta entre la lógica de un viejo sistema y una nueva posibilidad humana."
   }
 }

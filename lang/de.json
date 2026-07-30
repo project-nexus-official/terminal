@@ -1846,5 +1846,31 @@
     "button_1": "DE",
     "button_2": "ES",
     "h1_1": "Datenschutzerklärung"
+  },
+  "lektion-1": {
+    "button_1": "DE",
+    "button_2": "ES",
+    "p_1": "<strong>„Ich bilde mir das Chaos nicht ein. Die Krisen unserer Zeit hängen zusammen. Und genau deshalb reicht es nicht mehr, einzelne Symptome zu reparieren.“</strong>",
+    "strong_1": "„Ich bilde mir das Chaos nicht ein. Die Krisen unserer Zeit hängen zusammen. Und genau deshalb reicht es nicht mehr, einzelne Symptome zu reparieren.“",
+    "p_2": "<strong data-i18n=\"elearning_lessons.l1.sec1_strong\">Etwas stimmt nicht.</strong>",
+    "p_3": "Nicht nur in der Politik. Nicht nur in der Wirtschaft. Nicht nur beim Klima. Nicht nur im Gesundheitssystem. Nicht nur in den Medien. Sondern irgendwie überall gleichzeitig.",
+    "p_4": "Das ist kein persönliches Versagen. Es ist ein Zeichen dafür, dass das Betriebssystem unserer Gesellschaft an seine Grenzen gekommen ist.",
+    "p_5": "<strong>Die heutigen Krisen sind nicht voneinander getrennt. Sie sind Symptome desselben Grundproblems.</strong>",
+    "strong_2": "Die heutigen Krisen sind nicht voneinander getrennt. Sie sind Symptome desselben Grundproblems.",
+    "p_6": "Wenn Wohnen unbezahlbar wird, steigt psychischer Druck. Wenn psychischer Druck steigt, werden Menschen anfälliger für Angst und Wut. Wenn Medien Angst und Wut verstärken, zerfällt Vertrauen. Wenn Vertrauen zerfällt, wird Politik härter und kurzsichtiger. Wenn Politik kurzsichtiger wird, werden ökologische und soziale Probleme weiter verschoben. Und je länger alles verschoben wird, desto größer wird der Druck.",
+    "p_7": "So entsteht ein Kreislauf. Nicht ein einzelner Fehler. Sondern ein System, das dauerhaft falsche Ergebnisse produziert.",
+    "p_8": "Zuerst tropft das Dach. Dann bekommt die Wand Risse. Dann fällt die Heizung aus. Dann riecht es im Keller nach Schimmel. Dann flackert der Strom. Dann klemmt die Tür.",
+    "p_9": "<strong data-i18n=\"elearning_lessons.l1.sec3_strong\">Das Problem ist nicht der einzelne Riss. Das Fundament ist beschädigt.</strong>",
+    "p_10": "Wir sagen nicht: Diese eine Partei ist schuld. Diese eine Technologie ist gefährlich. Diese eine Gruppe ist das Problem.",
+    "p_11": "Wir sagen: Das Fundament des alten Systems erzeugt immer wieder Trennung, Angst, Konkurrenz, Knappheit und Machtkonzentration.",
+    "p_12": "<strong data-i18n=\"elearning_lessons.l1.sec3_strong2\">Darum brauchen wir nicht nur Reparatur. Wir brauchen einen Neubau.</strong>",
+    "p_13": "Viele Menschen wollen das Richtige. Sie engagieren sich, demonstrieren, gründen Initiativen, arbeiten in sozialen Berufen, helfen anderen, schreiben Petitionen oder wählen in der Hoffnung, dass es besser wird.",
+    "p_14": "<strong data-i18n=\"elearning_lessons.l1.sec4_strong\">Was passiert, wenn gute Menschen in einem falsch programmierten System arbeiten?</strong>",
+    "p_15": "Das Problem ist nicht, dass niemand helfen will. Das Problem ist, dass das alte System falsches Verhalten oft belohnt und menschliches Verhalten oft bestraft.",
+    "p_16": "<strong data-i18n=\"elearning_lessons.l1.sec5_strong\">Wir brauchen eine neue Architektur.</strong>",
+    "li_1": "Eine Gesellschaft, in der Verbindung stärker ist als Vereinzelung.",
+    "p_17": "N.E.X.U.S. ist deshalb nicht einfach eine Idee. Es ist der Versuch, ein neues Betriebssystem für menschliches Zusammenleben zu entwerfen.",
+    "p_18": "Nicht perfekt. Nicht fertig. Nicht von oben verordnet. Sondern als lernendes, dezentrales, menschliches Projekt.",
+    "div_1": "Du bist nicht verrückt, wenn du spürst, dass etwas grundlegend falsch läuft. Du spürst den Riss zwischen einer alten Systemlogik und einer neuen menschlichen Möglichkeit."
   }
 }
