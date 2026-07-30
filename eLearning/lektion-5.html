@@ -526,17 +526,25 @@ ul.clean li {
         </a>
 
         <nav class="main-nav">
-            <a href="../vision_short.html" class="nav-link">Vision</a>
-            <a href="../oneapp.html" class="nav-link">OneApp</a>
-            <a href="../index.html#system" class="nav-link">Bauplan</a>
-            <a href="index.html" class="nav-link active">Lernpfad</a>
-            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);">Genesis Circle</a>
+            <a href="../vision_short.html" class="nav-link" data-i18n="nav.new_here">Vision</a>
+            <a href="../oneapp.html" class="nav-link" data-i18n="nav.oneapp">OneApp</a>
+            <a href="../index.html#system" class="nav-link" data-i18n="nav.blueprint">Bauplan</a>
+            <a href="index.html" class="nav-link active" data-i18n="nav.elearning">Lernpfad</a>
+            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);" data-i18n="nav.contribute">Genesis Circle</a>
         </nav>
+    
+        <div class="header-nav-right">
+            <div class="lang-selector">
+                <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')">DE</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')">ES</button>
+            </div>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="kicker">Lektion 5 · N.E.X.U.S. Lernpfad 0.1</div>
+            <div class="kicker" data-i18n="elearning_lessons.l5.kicker">Lektion 5 · N.E.X.U.S. Lernpfad 0.1</div>
             <h1>Die OneApp<br>als Einstiegstor</h1>
             <div class="subline">
                 Die OneApp ist nicht nur ein Messenger. Sie ist dein erstes Werkzeug für digitale Souveränität, Verbindung und Mitwirkung.
@@ -826,15 +834,18 @@ ul.clean li {
                 <div class="nav-bottom">
                     <a href="lektion-4.html" class="nav-button">← Lektion 4</a>
                     <a href="index.html" class="nav-button">Zur Übersicht</a>
-                    <a href="lektion-6.html" class="nav-button orange">Weiter zu Lektion 6 →</a>
+                    <a href="lektion-6.html" class="nav-button orange" data-i18n="elearning_lessons.l5.next_btn">Weiter zu Lektion 6 →</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
+<p data-i18n="footer.legal_notice" style="font-size:0.85rem; color:#666; margin-top:15px;">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</p>
         PROJECT N.E.X.U.S. · Lektion 5 · Die OneApp als Einstiegstor<br>
         <span style="color: var(--accent-cyan);">www.nexus-terminal.org</span>
     </footer>
+    <!-- i18n ENGINE SCRIPT -->
+    <script src="../js/i18n.js"></script>
 </body>
 </html>

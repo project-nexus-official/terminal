@@ -572,28 +572,34 @@ ul.clean li {
         </a>
 
         <nav class="main-nav">
-            <a href="../vision_short.html" class="nav-link">Vision</a>
-            <a href="../oneapp.html" class="nav-link">OneApp</a>
-            <a href="../index.html#system" class="nav-link">Bauplan</a>
-            <a href="index.html" class="nav-link active">Lernpfad</a>
-            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);">Genesis Circle</a>
+            <a href="../vision_short.html" class="nav-link" data-i18n="nav.new_here">Vision</a>
+            <a href="../oneapp.html" class="nav-link" data-i18n="nav.oneapp">OneApp</a>
+            <a href="../index.html#system" class="nav-link" data-i18n="nav.blueprint">Bauplan</a>
+            <a href="index.html" class="nav-link active" data-i18n="nav.elearning">Lernpfad</a>
+            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);" data-i18n="nav.contribute">Genesis Circle</a>
         </nav>
+    
+        <div class="header-nav-right">
+            <div class="lang-selector">
+                <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')">DE</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')">ES</button>
+            </div>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="kicker">N.E.X.U.S. Lernpfad 0.1 abgeschlossen</div>
-            <h1>Du hast den ersten<br>Schritt gemacht</h1>
-            <div class="subline">
-                Aus einem diffusen Gefühl ist Orientierung geworden. Jetzt beginnt der Übergang vom Verstehen zum Mitbauen.
-            </div>
+            <div class="kicker" data-i18n="elearning_abschluss.kicker">N.E.X.U.S. Lernpfad 0.1 abgeschlossen</div>
+            <h1 data-i18n="elearning_abschluss.h1">Du hast den ersten<br>Schritt gemacht</h1>
+            <div class="subline" data-i18n="elearning_abschluss.subline">Aus einem diffusen Gefühl ist Orientierung geworden. Jetzt beginnt der Übergang vom Verstehen zum Mitbauen.</div>
         </section>
 
         <section class="section">
             <div class="content">
                 <div class="lesson-box gold">
-                    <h2>Was du jetzt verstanden hast</h2>
-                    <p>Du hast den ersten Einstiegspfad abgeschlossen. Du kennst jetzt die Grundlogik von N.E.X.U.S.:</p>
+                    <h2 data-i18n="elearning_abschluss.box1_h2">Was du jetzt verstanden hast</h2>
+                    <p data-i18n="elearning_abschluss.box1_p">Du hast den ersten Einstiegspfad abgeschlossen. Du kennst jetzt die Grundlogik von N.E.X.U.S.:</p>
                     <ul class="clean">
                         <li>Die Krisen unserer Zeit hängen zusammen.</li>
                         <li>Reformen reichen oft nicht, wenn die Systemregeln falsch bleiben.</li>
@@ -605,76 +611,82 @@ ul.clean li {
                     </ul>
                 </div>
 
-                <div class="quote">Der erste Lernpfad ist kein Abschluss. Er ist eine Schwelle.</div>
+                <div class="quote" data-i18n="elearning_abschluss.quote">Der erste Lernpfad ist kein Abschluss. Er ist eine Schwelle.</div>
 
                 <div class="lesson-box">
-                    <h2>Wähle deinen nächsten Schritt</h2>
-                    <p>Je nachdem, wo du gerade stehst, kannst du jetzt auf unterschiedliche Weise weitergehen.</p>
+                    <h2 data-i18n="elearning_abschluss.box2_h2">Wähle deinen nächsten Schritt</h2>
+                    <p data-i18n="elearning_abschluss.box2_p">Je nachdem, wo du gerade stehst, kannst du jetzt auf unterschiedliche Weise weitergehen.</p>
 
                     <div class="next-grid">
                         <a href="../oneapp.html" class="next-card">
                             <div>
-                                <h3>1. OneApp ansehen</h3>
-                                <p>Du möchtest praktisch verstehen, welches digitale Werkzeug bereits entsteht: Identität, Chat, Dorfplatz, Kontakte, Gemeinschaften und erste Governance.</p>
+                                <h3 data-i18n="elearning_abschluss.card1_h3">1. OneApp ansehen</h3>
+                                <p data-i18n="elearning_abschluss.card1_p">Du möchtest praktisch verstehen, welches digitale Werkzeug bereits entsteht: Identität, Chat, Dorfplatz, Kontakte, Gemeinschaften und erste Governance.</p>
                             </div>
-                            <span class="next-cta">Zur OneApp</span>
+                            <span class="next-cta" data-i18n="elearning_abschluss.card1_cta">Zur OneApp</span>
                         </a>
 
                         <a href="../index.html#system" class="next-card">
                             <div>
-                                <h3>2. Bauplan vertiefen</h3>
-                                <p>Du möchtest tiefer in die Architektur einsteigen: Ökonomie, Governance, Infrastruktur, Bildung, Gesundheit, Wohnen und ökologische Regeneration.</p>
+                                <h3 data-i18n="elearning_abschluss.card2_h3">2. Bauplan vertiefen</h3>
+                                <p data-i18n="elearning_abschluss.card2_p">Du möchtest tiefer in die Architektur einsteigen: Ökonomie, Governance, Infrastruktur, Bildung, Gesundheit, Wohnen und ökologische Regeneration.</p>
                             </div>
-                            <span class="next-cta">Zum Bauplan</span>
+                            <span class="next-cta" data-i18n="elearning_abschluss.card2_cta">Zum Bauplan</span>
                         </a>
 
                         <a href="../thinktank.html" class="next-card">
                             <div>
-                                <h3>3. Genesis Circle verstehen</h3>
-                                <p>Du möchtest sehen, wie sich die ersten Mitbauer, Entwickler, Erzähler, Juristen, Praktiker und Strategen organisieren.</p>
+                                <h3 data-i18n="elearning_abschluss.card3_h3">3. Genesis Circle verstehen</h3>
+                                <p data-i18n="elearning_abschluss.card3_p">Du möchtest sehen, wie sich die ersten Mitbauer, Entwickler, Erzähler, Juristen, Praktiker und Strategen organisieren.</p>
                             </div>
-                            <span class="next-cta">Zum Genesis Circle</span>
+                            <span class="next-cta" data-i18n="elearning_abschluss.card3_cta">Zum Genesis Circle</span>
                         </a>
 
                         <a href="../genesis.html" class="next-card">
                             <div>
-                                <h3>4. Mitbauen</h3>
-                                <p>Du spürst Resonanz und möchtest prüfen, ob du Teil der ersten Kohorte werden willst.</p>
+                                <h3 data-i18n="elearning_abschluss.card4_h3">4. Mitbauen</h3>
+                                <p data-i18n="elearning_abschluss.card4_p">Du spürst Resonanz und möchtest prüfen, ob du Teil der ersten Kohorte werden willst.</p>
                             </div>
-                            <span class="next-cta">Genesis Pakt ansehen</span>
+                            <span class="next-cta" data-i18n="elearning_abschluss.card4_cta">Genesis Pakt ansehen</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="lesson-box orange">
-                    <h2>Empfohlener einfacher Weg</h2>
+                    <h2 data-i18n="elearning_abschluss.box3_h2">Empfohlener einfacher Weg</h2>
                     <ul class="clean">
-                        <li>1. OneApp-Seite ansehen.</li>
-                        <li>2. Ein Kapitel des Bauplans auswählen, das dich wirklich interessiert.</li>
-                        <li>3. Eine konkrete Frage oder Kritik notieren.</li>
-                        <li>4. Einen Menschen einladen, dem du N.E.X.U.S. ruhig erklären kannst.</li>
-                        <li>5. Später prüfen, ob der Genesis Circle zu dir passt.</li>
+                        <li data-i18n="elearning_abschluss.rec1">1. OneApp-Seite ansehen.</li>
+                        <li data-i18n="elearning_abschluss.rec2">2. Ein Kapitel des Bauplans auswählen, das dich wirklich interessiert.</li>
+                        <li data-i18n="elearning_abschluss.rec3">3. Eine konkrete Frage oder Kritik notieren.</li>
+                        <li data-i18n="elearning_abschluss.rec4">4. Einen Menschen einladen, dem du N.E.X.U.S. ruhig erklären kannst.</li>
+                        <li data-i18n="elearning_abschluss.rec5">5. Später prüfen, ob der Genesis Circle zu dir passt.</li>
                     </ul>
                 </div>
 
                 <div class="lesson-box gold">
-                    <h2>Merksatz</h2>
-                    <p>N.E.X.U.S. braucht keine Zuschauer, die alles bewundern.</p>
-                    <p>N.E.X.U.S. braucht Menschen, die mit klarem Herzen, wachem Verstand und kleinen konkreten Schritten anfangen.</p>
+                    <h2 data-i18n="elearning_abschluss.box4_h2">Merksatz</h2>
+                    <p data-i18n="elearning_abschluss.box4_p1">N.E.X.U.S. braucht keine Zuschauer, die alles bewundern.</p>
+                    <p data-i18n="elearning_abschluss.box4_p2">N.E.X.U.S. braucht Menschen, die mit klarem Herzen, wachem Verstand und kleinen konkreten Schritten anfangen.</p>
                 </div>
 
                 <div class="nav-bottom">
-                    <a href="lektion-7.html" class="nav-button">← Zurück zu Lektion 7</a>
-                    <a href="index.html" class="nav-button">Zur Kursübersicht</a>
-                    <a href="../genesis.html" class="nav-button orange">Genesis Pakt ansehen →</a>
+                    <a href="lektion-7.html" class="nav-button" data-i18n="elearning_abschluss.btn_back">← Zurück zu Lektion 7</a>
+                    <a href="index.html" class="nav-button" data-i18n="elearning_abschluss.btn_overview">Zur Kursübersicht</a>
+                    <a href="../genesis.html" class="nav-button orange" data-i18n="elearning_abschluss.btn_pakt">Genesis Pakt ansehen →</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        PROJECT N.E.X.U.S. · Lernpfad abgeschlossen<br>
-        <span style="color: var(--accent-cyan);">www.nexus-terminal.org</span>
-    </footer>
+    <div class="social-icons">
+        <a href="https://t.me/Nexus_Project_official" target="_blank" data-i18n="footer.tg_group">Telegram Gruppe</a> | 
+        <a href="../datenschutz.html" data-i18n="footer.privacy">Datenschutz</a> | 
+        <a href="../impressum.html" data-i18n="footer.imprint">Impressum</a>
+    </div>
+    <p data-i18n="footer.legal_notice" style="font-size:0.85rem; color:#666; margin-top:15px;">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</p>
+</footer>
+    <!-- i18n ENGINE SCRIPT -->
+    <script src="../js/i18n.js"></script>
 </body>
 </html>

@@ -528,30 +528,34 @@ ul.clean li {
         </a>
 
         <nav class="main-nav">
-            <a href="../vision_short.html" class="nav-link">Vision</a>
-            <a href="../oneapp.html" class="nav-link">OneApp</a>
-            <a href="../index.html#system" class="nav-link">Bauplan</a>
-            <a href="index.html" class="nav-link active">Lernpfad</a>
-            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);">Genesis Circle</a>
+            <a href="../vision_short.html" class="nav-link" data-i18n="nav.new_here">Vision</a>
+            <a href="../oneapp.html" class="nav-link" data-i18n="nav.oneapp">OneApp</a>
+            <a href="../index.html#system" class="nav-link" data-i18n="nav.blueprint">Bauplan</a>
+            <a href="index.html" class="nav-link active" data-i18n="nav.elearning">Lernpfad</a>
+            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);" data-i18n="nav.contribute">Genesis Circle</a>
         </nav>
+    
+        <div class="header-nav-right">
+            <div class="lang-selector">
+                <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')">DE</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')">ES</button>
+            </div>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="kicker">Lektion 1 · N.E.X.U.S. Lernpfad 0.1</div>
-            <h1>Warum alles<br>gleichzeitig zerbricht</h1>
-            <div class="subline">
-                Du bildest dir das Chaos nicht ein. Die Krisen unserer Zeit hängen zusammen.
-            </div>
+            <div class="kicker" data-i18n="elearning_lessons.l1.kicker">Lektion 1 · N.E.X.U.S. Lernpfad 0.1</div>
+            <h1 data-i18n="elearning_lessons.l1.h1">Warum alles<br>gleichzeitig zerbricht</h1>
+            <div class="subline" data-i18n="elearning_lessons.l1.subline">Du bildest dir das Chaos nicht ein. Die Krisen unserer Zeit hängen zusammen.</div>
         </section>
 
         <section class="section">
             <div class="content">
                 <div class="lesson-box gold">
-                    <h2>Ziel dieser Lektion</h2>
-                    <p>
-                        Nach dieser Lektion soll ein neuer Mensch verstehen:
-                    </p>
+                    <h2 data-i18n="elearning_lessons.l1.goal_h2">Ziel dieser Lektion</h2>
+                    <p data-i18n="elearning_lessons.l1.goal_p1">Nach dieser Lektion soll ein neuer Mensch verstehen:</p>
                     <p>
                         <strong>„Ich bilde mir das Chaos nicht ein. Die Krisen unserer Zeit hängen zusammen.
                         Und genau deshalb reicht es nicht mehr, einzelne Symptome zu reparieren.“</strong>
@@ -559,7 +563,7 @@ ul.clean li {
                 </div>
 
                 <div class="lesson-box">
-                    <h2>1. Das Gefühl, dass etwas nicht mehr stimmt</h2>
+                    <h2 data-i18n="elearning_lessons.l1.sec1_h2">1. Das Gefühl, dass etwas nicht mehr stimmt</h2>
                     <p>Viele Menschen spüren es längst.</p>
                     <p><strong>Etwas stimmt nicht.</strong></p>
                     <p>
@@ -588,7 +592,7 @@ ul.clean li {
                 </div>
 
                 <div class="lesson-box orange">
-                    <h2>2. Die zentrale Erkenntnis</h2>
+                    <h2 data-i18n="elearning_lessons.l1.sec2_h2">2. Die zentrale Erkenntnis</h2>
                     <p>
                         N.E.X.U.S. beginnt mit einer unbequemen, aber befreienden Erkenntnis:
                     </p>
@@ -617,7 +621,7 @@ ul.clean li {
                 </div>
 
                 <div class="lesson-box">
-                    <h2>3. Das Bild: Ein altes Haus</h2>
+                    <h2 data-i18n="elearning_lessons.l1.sec3_h2">3. Das Bild: Ein altes Haus</h2>
                     <p>Stell dir vor, du wohnst in einem alten Haus.</p>
                     <p>
                         Zuerst tropft das Dach. Dann bekommt die Wand Risse. Dann fällt die Heizung aus.
@@ -648,7 +652,7 @@ ul.clean li {
                 </div>
 
                 <div class="lesson-box orange">
-                    <h2>4. Warum Reformen oft nicht reichen</h2>
+                    <h2 data-i18n="elearning_lessons.l1.sec4_h2">4. Warum Reformen oft nicht reichen</h2>
                     <p>
                         Viele Menschen wollen das Richtige. Sie engagieren sich, demonstrieren, gründen Initiativen,
                         arbeiten in sozialen Berufen, helfen anderen, schreiben Petitionen oder wählen in der Hoffnung,
@@ -676,7 +680,7 @@ ul.clean li {
                 </div>
 
                 <div class="lesson-box">
-                    <h2>5. Die N.E.X.U.S.-Perspektive</h2>
+                    <h2 data-i18n="elearning_lessons.l1.sec5_h2">5. Die N.E.X.U.S.-Perspektive</h2>
                     <p>
                         N.E.X.U.S. sagt: Wir müssen aufhören, nur gegen Symptome zu kämpfen.
                     </p>
@@ -706,7 +710,7 @@ ul.clean li {
                 </div>
 
                 <div class="lesson-box gold">
-                    <h2>6. Kleine Aufgabe</h2>
+                    <h2 data-i18n="elearning_lessons.l1.task_h2">6. Kleine Aufgabe</h2>
                     <p>Nimm dir 5 Minuten und beantworte diese drei Fragen:</p>
                     <ol class="task-list">
                         <li>In welchem Bereich spürst du persönlich am stärksten, dass das alte System nicht mehr funktioniert?</li>
@@ -715,16 +719,19 @@ ul.clean li {
                     </ol>
                 </div>
 <div class="nav-bottom">
-                    <a href="index.html" class="nav-button">← Zur Übersicht</a>
-                    <a href="lektion-2.html" class="nav-button orange">Weiter zu Lektion 2 →</a>
+                    <a href="index.html" class="nav-button" data-i18n="elearning_lessons.overview_btn">← Zur Übersicht</a>
+                    <a href="lektion-2.html" class="nav-button orange" data-i18n="elearning_lessons.l1.next_btn">Weiter zu Lektion 2 →</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
+<p data-i18n="footer.legal_notice" style="font-size:0.85rem; color:#666; margin-top:15px;">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</p>
         PROJECT N.E.X.U.S. · Lektion 1 · Warum alles gleichzeitig zerbricht<br>
         <span style="color: var(--accent-cyan);">www.nexus-terminal.org</span>
     </footer>
+    <!-- i18n ENGINE SCRIPT -->
+    <script src="../js/i18n.js"></script>
 </body>
 </html>
