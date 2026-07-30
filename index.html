@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N.E.X.U.S. | Gemeinschaft neu aufbauen</title>
+    <title data-i18n="meta.title">N.E.X.U.S. | Gemeinschaft neu aufbauen</title>
 
     <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/project-nexus-official/terminal/main/favicon.ico">
@@ -466,6 +466,43 @@
         }
         #send-btn:hover { background: #fff; }
         .typing { font-size: 0.8rem; color: #666; font-style: italic; margin: 0 0 5px 15px; display: none;}
+    
+        /* --- SPRACH-UMSCHALTER (LANGUAGE SELECTOR) --- */
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(10, 15, 25, 0.8);
+            border: 1px solid var(--accent-cyan);
+            padding: 4px 10px;
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.15);
+            margin-right: 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #888;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 2px 4px;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover {
+            color: var(--accent-cyan);
+        }
+        .lang-btn.active-lang {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px var(--accent-cyan);
+            border-bottom: 2px solid var(--accent-cyan);
+        }
+        .lang-divider {
+            color: #444;
+            font-size: 0.8rem;
+        }
+
     </style>
 </head>
 <body>
@@ -482,16 +519,22 @@
 
         <!-- Die neuen Anker-Links in der Mitte -->
         <nav class="main-nav">
-            <a href="vision_short.html" class="nav-link">Neu hier?</a>
-            <a href="eLearning/index.html" class="nav-link" style="color: var(--accent-green);">Lernpfad</a>
-            <a href="wissen.html" class="nav-link">Bibliothek</a>
-            <a href="oneapp.html" class="nav-link active-app">OneApp [Live]</a>
-            <a href="#system" class="nav-link">Bauplan</a>
-            <a href="thinktank.html" class="nav-link" style="color: var(--accent-gold);">Mitbauen</a>
+            <a href="vision_short.html" class="nav-link" data-i18n="nav.new_here">Neu hier?</a>
+            <a href="eLearning/index.html" class="nav-link" style="color: var(--accent-green);" data-i18n="nav.elearning">Lernpfad</a>
+            <a href="wissen.html" class="nav-link" data-i18n="nav.library">Bibliothek</a>
+            <a href="oneapp.html" class="nav-link active-app" data-i18n="nav.oneapp">OneApp [Live]</a>
+            <a href="#system" class="nav-link" data-i18n="nav.blueprint">Bauplan</a>
+            <a href="thinktank.html" class="nav-link" style="color: var(--accent-gold);" data-i18n="nav.contribute">Mitbauen</a>
         </nav>
 
+        
         <div class="header-nav-right">
-            <a href="https://project-nexus-official.github.io/terminal/thinktank.html" class="header-architekt-btn">FINDE DEINEN PLATZ</a>
+            <div class="lang-selector">
+                <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')">DE</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')">ES</button>
+            </div>
+            <a href="https://project-nexus-official.github.io/terminal/thinktank.html" class="header-architekt-btn" data-i18n="nav.find_place">FINDE DEINEN PLATZ</a>
         </div>
     </header>
 
@@ -502,61 +545,38 @@
     <div class="hero">
 
         <!-- HÖRBUCH BANNER -->
-        <a href="https://youtu.be/fRYNU-r-WQ4" target="_blank" class="marketing-banner">
-            🔴 JETZT NEU: HÖRBUCH BAND 1 DER TRILOGIE HÖREN
-        </a>
+        <a href="https://youtu.be/fRYNU-r-WQ4" target="_blank" class="marketing-banner" data-i18n="hero.banner">🔴 JETZT NEU: HÖRBUCH BAND 1 DER TRILOGIE HÖREN</a>
 
-        <h1>N.E.X.U.S.</h1>
-        <div class="subline">
-            Aus Vereinzelung wieder Gemeinschaft machen.<br>
-            Menschlich. Selbstbestimmt. Dezentral.
-        </div>
+        <h1 data-i18n="hero.title">N.E.X.U.S.</h1>
+        <div class="subline" data-i18n="hero.subline">Aus Vereinzelung wieder Gemeinschaft machen.<br>Menschlich. Selbstbestimmt. Dezentral.</div>
 
         <!-- BUTTONS FÜR EINSTIEG -->
         <div class="intro-buttons">
-            <a href="vision_short.html" class="ghost-button">
-                Neu hier? Beginne hier
-            </a>
+            <a href="vision_short.html" class="ghost-button" data-i18n="hero.btn_new_here">Neu hier? Beginne hier</a>
 
-            <a href="eLearning/index.html" class="btn-academy">
-                Lernpfad starten
-            </a>
+            <a href="eLearning/index.html" class="btn-academy" data-i18n="hero.btn_academy">Lernpfad starten</a>
 
-            <a href="wissen.html" class="ghost-button" style="border-color: var(--accent-gold); color: var(--accent-gold);">
-                Bibliothek öffnen
-            </a>
+            <a href="wissen.html" class="ghost-button" style="border-color: var(--accent-gold); color: var(--accent-gold);" data-i18n="hero.btn_library">Bibliothek öffnen</a>
 
-            <a href="oneapp.html" class="pulse-button">
-                Was bereits gebaut wird
-            </a>
+            <a href="oneapp.html" class="pulse-button" data-i18n="hero.btn_building">Was bereits gebaut wird</a>
         </div>
 
         <!-- HAUPT-WAHL BUTTONS -->
         <div class="split-container">
-            <a href="#story" class="btn-choice btn-story">Die Vision als Geschichte erleben</a>
-            <a href="#system" class="btn-choice btn-system">Den Bauplan tiefer verstehen</a>
+            <a href="#story" class="btn-choice btn-story" data-i18n="hero.btn_story">Die Vision als Geschichte erleben</a>
+            <a href="#system" class="btn-choice btn-system" data-i18n="hero.btn_system">Den Bauplan tiefer verstehen</a>
         </div>
     </div>
 
     <!-- EINLEITUNG -->
     <div class="intro-text-block">
         <div class="intro-container">
-            <h3 class="intro-headline">Eine Bewegung für neue Gemeinschaft</h3>
-            <p>
-                Viele Menschen spüren, dass unser Zusammenleben aus dem Gleichgewicht geraten ist. Wir sind vernetzter als je zuvor – und fühlen uns trotzdem einsamer. Wir arbeiten, funktionieren, konsumieren und scrollen – aber viele verlieren dabei Nähe, Vertrauen und Sinn.
-            </p>
-            <p>
-                N.E.X.U.S. antwortet darauf nicht mit Wut, sondern mit Aufbau. Wir entwickeln eine neue Form von Gemeinschaft: menschlich, dezentral, selbstbestimmt und getragen von Verantwortung füreinander.
-            </p>
-            <p>
-                <strong>N.E.X.U.S. ist eine Bewegung von Menschen, die aus Vereinzelung wieder Gemeinschaft machen.</strong> Technik, Bauplan, Lernpfad und OneApp sind Werkzeuge dafür – der Kern bleibt der Mensch.
-            </p>
-            <p>
-                Wir wollen das Alte nicht gewaltsam bekämpfen. Wir bauen das Neue so gut, dass das Alte irgendwann überflüssig wird.
-            </p>
-            <p>
-                Macht organisiert sich seit jeher in Denkfabriken, Netzwerken und langfristigen Strategien. Wenn wir eine menschlichere Welt wollen, müssen auch wir beginnen, klug, liebevoll und verbindlich zusammenzuarbeiten.
-            </p>
+            <h3 class="intro-headline" data-i18n="intro.headline">Eine Bewegung für neue Gemeinschaft</h3>
+            <p data-i18n="intro.p1">Viele Menschen spüren, dass unser Zusammenleben aus dem Gleichgewicht geraten ist. Wir sind vernetzter als je zuvor – und fühlen uns trotzdem einsamer. Wir arbeiten, funktionieren, konsumieren und scrollen – aber viele verlieren dabei Nähe, Vertrauen und Sinn.</p>
+            <p data-i18n="intro.p2">N.E.X.U.S. antwortet darauf nicht mit Wut, sondern mit Aufbau. Wir entwickeln eine neue Form von Gemeinschaft: menschlich, dezentral, selbstbestimmt und getragen von Verantwortung füreinander.</p>
+            <p data-i18n="intro.p3"><strong>N.E.X.U.S. ist eine Bewegung von Menschen, die aus Vereinzelung wieder Gemeinschaft machen.</strong> Technik, Bauplan, Lernpfad und OneApp sind Werkzeuge dafür – der Kern bleibt der Mensch.</p>
+            <p data-i18n="intro.p4">Wir wollen das Alte nicht gewaltsam bekämpfen. Wir bauen das Neue so gut, dass das Alte irgendwann überflüssig wird.</p>
+            <p data-i18n="intro.p5">Macht organisiert sich seit jeher in Denkfabriken, Netzwerken und langfristigen Strategien. Wenn wir eine menschlichere Welt wollen, müssen auch wir beginnen, klug, liebevoll und verbindlich zusammenzuarbeiten.</p>
         </div>
     </div>
 
@@ -574,29 +594,17 @@
         <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
 
             <div class="role-manifest">
-                <h4>Ein lebendes System – Kein Dogma</h4>
-                <p>
-                    Ich bin Josh Richman. Ich bin der Initiator, nicht der Prophet. N.E.X.U.S. ist keine fertige Lehre, sondern ein offener Arbeitsstand für ein neues gesellschaftliches Betriebssystem.
-                </p>
-                <p>
-                    Meine Rolle ist die des ersten Architekten – ich halte den Rahmen und die Grundwerte. Aber das System gehört nicht einer Person. Es soll gemeinsam geprüft, verbessert und aufgebaut werden.
-                </p>
-                <p>
-                    Kritik ist hier kein Angriff, sondern Prüfung. Ich wünsche mir, dass ihr diesen Bauplan hinterfragt, verbessert und dort neu schreibt, wo es nötig ist. Wir bauen das zusammen.
-                </p>
+                <h4 data-i18n="manifest.title">Ein lebendes System – Kein Dogma</h4>
+                <p data-i18n="manifest.p1">Ich bin Josh Richman. Ich bin der Initiator, nicht der Prophet. N.E.X.U.S. ist keine fertige Lehre, sondern ein offener Arbeitsstand für ein neues gesellschaftliches Betriebssystem.</p>
+                <p data-i18n="manifest.p2">Meine Rolle ist die des ersten Architekten – ich halte den Rahmen und die Grundwerte. Aber das System gehört nicht einer Person. Es soll gemeinsam geprüft, verbessert und aufgebaut werden.</p>
+                <p data-i18n="manifest.p3">Kritik ist hier kein Angriff, sondern Prüfung. Ich wünsche mir, dass ihr diesen Bauplan hinterfragt, verbessert und dort neu schreibt, wo es nötig ist. Wir bauen das zusammen.</p>
 
                 <!-- PROMO BEREICH MIT 2 BUTTONS NEBENEINANDER -->
                 <div class="thinktank-promo">
-                    <p class="tt-desc">
-                        Der N.E.X.U.S. Gründungskreis formiert sich. Wir organisieren die gemeinsame Intelligenz in Arbeitsfeldern wie Technik, Recht, Gemeinschaft, Bildung, Erzählung und Finanzierung.
-                    </p>
+                    <p class="tt-desc" data-i18n="manifest.promo_desc">Der N.E.X.U.S. Gründungskreis formiert sich. Wir organisieren die gemeinsame Intelligenz in Arbeitsfeldern wie Technik, Recht, Gemeinschaft, Bildung, Erzählung und Finanzierung.</p>
                     <div class="tt-buttons">
-                        <a href="thinktank.html" class="tt-link">
-                            DETAILS ZUR DENKFABRIK ANSEHEN
-                        </a>
-                        <a href="genesis.html" class="tt-link-gold">
-                            🏛 FINDE DEINEN PLATZ
-                        </a>
+                        <a href="thinktank.html" class="tt-link" data-i18n="manifest.btn_details">DETAILS ZUR DENKFABRIK ANSEHEN</a>
+                        <a href="genesis.html" class="tt-link-gold" data-i18n="manifest.btn_place">🏛 FINDE DEINEN PLATZ</a>
                     </div>
                 </div>
             </div>
@@ -606,74 +614,68 @@
 
     <!-- ONEAPP SECTION TEASER AUF DER STARTSEITE -->
     <div id="oneapp" class="section">
-        <h2 class="section-title orange-border">OneApp: Das erste Werkzeug für selbstbestimmte Gemeinschaft</h2>
+        <h2 class="section-title orange-border" data-i18n="oneapp.title">OneApp: Das erste Werkzeug für selbstbestimmte Gemeinschaft</h2>
 
-        <p style="font-size: 1.2rem; color: #fff; max-width: 800px;">
-            Die OneApp ist die zentrale Anwendung von N.E.X.U.S. Sie soll Menschen verbinden, ohne sie zu überwachen. Sie gibt Identität, Kommunikation, Gemeinschaftsräume und gemeinsame Entscheidungen zurück in die Hände der Menschen.
-        </p>
+        <p style="font-size: 1.2rem; color: #fff; max-width: 800px;" data-i18n="oneapp.desc">Die OneApp ist die zentrale Anwendung von N.E.X.U.S. Sie soll Menschen verbinden, ohne sie zu überwachen. Sie gibt Identität, Kommunikation, Gemeinschaftsräume und gemeinsame Entscheidungen zurück in die Hände der Menschen.</p>
 
         <div class="app-grid">
             <div class="app-card">
-                <h4>🌐 Dezentrale Verbindung</h4>
-                <p>Nachrichten können über dezentrale Wege laufen. Ziel ist eine Verbindung, die nicht von einzelnen Konzernen oder zentralen Stellen abhängig ist.</p>
+                <h4 data-i18n="oneapp.card1_title">🌐 Dezentrale Verbindung</h4>
+                <p data-i18n="oneapp.card1_desc">Nachrichten können über dezentrale Wege laufen. Ziel ist eine Verbindung, die nicht von einzelnen Konzernen oder zentralen Stellen abhängig ist.</p>
             </div>
             <div class="app-card">
-                <h4>📡 Funktioniert auch ohne großes Netz</h4>
-                <p>Die App soll auch direkte Verbindung von Gerät zu Gerät ermöglichen – etwa über Bluetooth oder lokales WLAN.</p>
+                <h4 data-i18n="oneapp.card2_title">📡 Funktioniert auch ohne großes Netz</h4>
+                <p data-i18n="oneapp.card2_desc">Die App soll auch direkte Verbindung von Gerät zu Gerät ermöglichen – etwa über Bluetooth oder lokales WLAN.</p>
             </div>
             <div class="app-card">
-                <h4>🔐 Deine Identität gehört dir</h4>
-                <p>Du sollst deine digitale Identität selbst verwalten können – ohne Abhängigkeit von Telefonnummern oder zentralen Konten.</p>
+                <h4 data-i18n="oneapp.card3_title">🔐 Deine Identität gehört dir</h4>
+                <p data-i18n="oneapp.card3_desc">Du sollst deine digitale Identität selbst verwalten können – ohne Abhängigkeit von Telefonnummern oder zentralen Konten.</p>
             </div>
             <div class="app-card">
-                <h4>⚡ Gemeinsam entscheiden</h4>
-                <p>Schritt für Schritt entstehen Grundlagen für gemeinsame Entscheidungen, Gemeinschaften und spätere Wirtschaftsbausteine.</p>
+                <h4 data-i18n="oneapp.card4_title">⚡ Gemeinsam entscheiden</h4>
+                <p data-i18n="oneapp.card4_desc">Schritt für Schritt entstehen Grundlagen für gemeinsame Entscheidungen, Gemeinschaften und spätere Wirtschaftsbausteine.</p>
             </div>
         </div>
 
         <!-- CTA KASTEN FÜR DIE APP -->
         <div class="app-cta-box">
-            <h3 style="color: #fff; margin-top: 0;">DIE ALPHA-VERSION IST LIVE</h3>
-            <p style="color: #aaa;">Wir testen aktuell die Grundlagen für Identität, Verbindung und Kommunikation. Sieh dir an, was bereits funktioniert und was als Nächstes entsteht.</p>
+            <h3 style="color: #fff; margin-top: 0;" data-i18n="oneapp.cta_title">DIE ALPHA-VERSION IST LIVE</h3>
+            <p style="color: #aaa;" data-i18n="oneapp.cta_desc">Wir testen aktuell die Grundlagen für Identität, Verbindung und Kommunikation. Sieh dir an, was bereits funktioniert und was als Nächstes entsteht.</p>
 
-            <a href="oneapp.html" class="pulse-button" style="margin-top: 10px;">
-                ⚙️ ONEAPP ANSEHEN & TESTEN
-            </a>
+            <a href="oneapp.html" class="pulse-button" style="margin-top: 10px;" data-i18n="oneapp.btn_test">⚙️ ONEAPP ANSEHEN & TESTEN</a>
 
             <br>
             <a href="bugreport.html" style="color: #ff3333; text-decoration: underline; font-size: 0.9rem; display: inline-block; margin-top: 20px; transition: 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#ff3333'">
-                > Alpha-Tester? Hier geht's zum Prüf- und Fehlerprotokoll
+                <span data-i18n="oneapp.bug_link">> Alpha-Tester? Hier geht's zum Prüf- und Fehlerprotokoll</span>
             </a>
         </div>
     </div>
 
     <!-- STORY -->
     <div id="story" class="section">
-        <h2 class="section-title orange-border">Die Trilogie: Die Vision als Geschichte erleben</h2>
+        <h2 class="section-title orange-border" data-i18n="story.title">Die Trilogie: Die Vision als Geschichte erleben</h2>
         <div class="content-grid">
             <div class="text-col">
 
-                <div class="highlight-quote">
-                    Manche Menschen verstehen eine neue Gesellschaft nicht zuerst über Begriffe. <br>Sie müssen sie fühlen.
-                </div>
+                <div class="highlight-quote" data-i18n="story.quote">Manche Menschen verstehen eine neue Gesellschaft nicht zuerst über Begriffe. <br>Sie müssen sie fühlen.</div>
 
-                <p>David, Sarah und Robert zeigen in einer erzählerischen Zukunft, wie Menschen durch Zweifel, Angst, Zusammenbruch und Hoffnung gehen – und wie aus Vereinzelung wieder echte Gemeinschaft entstehen kann.</p>
+                <p data-i18n="story.p1">David, Sarah und Robert zeigen in einer erzählerischen Zukunft, wie Menschen durch Zweifel, Angst, Zusammenbruch und Hoffnung gehen – und wie aus Vereinzelung wieder echte Gemeinschaft entstehen kann.</p>
                 <ul>
-                    <li>🔥 <strong>Band 1: Stunde Null</strong> – Der Moment, in dem Menschen erkennen: So kann es nicht weitergehen.</li>
-                    <li>🌪 <strong>Band 2: Das Fundament</strong> – Der mühsame Aufbau echter Gemeinschaft.</li>
-                    <li>🦅 <strong>Band 3: Die Metamorphose</strong> – Die Vernetzung vieler Gemeinschaften.</li>
+                    <li data-i18n="story.book1">🔥 <strong>Band 1: Stunde Null</strong> – Der Moment, in dem Menschen erkennen: So kann es nicht weitergehen.</li>
+                    <li data-i18n="story.book2">🌪 <strong>Band 2: Das Fundament</strong> – Der mühsame Aufbau echter Gemeinschaft.</li>
+                    <li data-i18n="story.book3">🦅 <strong>Band 3: Die Metamorphose</strong> – Die Vernetzung vieler Gemeinschaften.</li>
                 </ul>
 
                 <div class="social-proof-box">
                     <span class="quote-icon">❝</span>
-                    <span class="proof-text">Endlich eine Dystopie, die nicht im Chaos endet, sondern einen echten Ausweg zeigt. Das ist kein Roman, das ist ein Weckruf.</span>
-                    <span class="proof-author">– Leserstimme aus dem Signal</span>
+                    <span class="proof-text" data-i18n="story.proof_text">Endlich eine Dystopie, die nicht im Chaos endet, sondern einen echten Ausweg zeigt. Das ist kein Roman, das ist ein Weckruf.</span>
+                    <span class="proof-author" data-i18n="story.proof_author">– Leserstimme aus dem Signal</span>
                 </div>
 
-                <a href="https://amzn.eu/d/eWMNOTG" target="_blank" class="cta-button cta-amazon">TRILOGIE AUF AMAZON ANSEHEN</a>
+                <a href="https://amzn.eu/d/eWMNOTG" target="_blank" class="cta-button cta-amazon" data-i18n="story.btn_amazon">TRILOGIE AUF AMAZON ANSEHEN</a>
 
                 <div class="pdf-download-box">
-                    <span class="pdf-box-title">📂 PDF-LESEPROBEN</span>
+                    <span class="pdf-box-title" data-i18n="story.pdf_title">📂 PDF-LESEPROBEN</span>
                     <a href="https://github.com/project-nexus-official/terminal/raw/docs/de/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf" target="_blank" class="pdf-link">
                         <span class="pdf-icon">></span> Leseprobe Band 1 downloaden
                     </a>
@@ -696,34 +698,32 @@
 
     <!-- SYSTEM -->
     <div id="system" class="section">
-        <h2 class="section-title cyan-border">Der Bauplan: Die Architektur hinter der Vision</h2>
+        <h2 class="section-title cyan-border" data-i18n="system.title">Der Bauplan: Die Architektur hinter der Vision</h2>
         <div class="content-grid">
             <div class="visual-col">
                 <img src="https://raw.githubusercontent.com/project-nexus-official/terminal/main/Blueprint.png" alt="Handbuch" class="manual-cover">
             </div>
             <div class="text-col">
-                <p><strong>Aus einer Vision müssen tragfähige Strukturen werden.</strong></p>
-                <p>Der Bauplan beschreibt, wie neue Gemeinschaften, Entscheidungsformen, Wirtschaftslogik, Bildung, Versorgung, Technik und Verantwortung konkret zusammengedacht werden können.</p>
+                <p data-i18n="system.intro"><strong>Aus einer Vision müssen tragfähige Strukturen werden.</strong></p>
+                <p data-i18n="system.desc">Der Bauplan beschreibt, wie neue Gemeinschaften, Entscheidungsformen, Wirtschaftslogik, Bildung, Versorgung, Technik und Verantwortung konkret zusammengedacht werden können.</p>
                 <ul>
-                    <li>🛠 <strong>Gemeinsam entscheiden:</strong> Neue Formen der Mitbestimmung und Verantwortung.</li>
-                    <li>📡 <strong>Sicher verbunden bleiben:</strong> Dezentrale Kommunikationswege und robuste Netze.</li>
-                    <li>💡 <strong>Wirtschaft im Dienst des Lebens:</strong> Wertschöpfung soll Gemeinschaft und Versorgung tragen.</li>
+                    <li data-i18n="system.li1">🛠 <strong>Gemeinsam entscheiden:</strong> Neue Formen der Mitbestimmung und Verantwortung.</li>
+                    <li data-i18n="system.li2">📡 <strong>Sicher verbunden bleiben:</strong> Dezentrale Kommunikationswege und robuste Netze.</li>
+                    <li data-i18n="system.li3">💡 <strong>Wirtschaft im Dienst des Lebens:</strong> Wertschöpfung soll Gemeinschaft und Versorgung tragen.</li>
                 </ul>
-                <a href="https://github.com/project-nexus-official/terminal/raw/docs/de/BAUPLAN_PROJEKT_NEXUS_V14_0.pdf" target="_blank" class="cta-button cta-whitepaper" style="background: rgba(0, 243, 255, 0.1);">Der vollständige Bauplan für eine souveräne Zivilisation (V 14.0)</a>
-                <a href="https://github.com/project-nexus-official/terminal/raw/docs/de/NEXUS_Kompass_V1_0.pdf" target="_blank" class="cta-button cta-whitepaper">Der Bauplan in komprimierter Form als Kompass</a>
-                <a href="https://github.com/project-nexus-official/terminal/raw/docs/de/NEXUS_Zusammenfassung_V2_0.pdf" target="_blank" class="cta-button cta-whitepaper">Die N.E.X.U.S. Essenz – 10 Seiten Zusammenfassung</a>
+                <a href="https://github.com/project-nexus-official/terminal/raw/docs/de/BAUPLAN_PROJEKT_NEXUS_V14_0.pdf" target="_blank" class="cta-button cta-whitepaper" style="background: rgba(0, 243, 255, 0.1);" data-i18n="system.btn_v14">Der vollständige Bauplan für eine souveräne Zivilisation (V 14.0)</a>
+                <a href="https://github.com/project-nexus-official/terminal/raw/docs/de/NEXUS_Kompass_V1_0.pdf" target="_blank" class="cta-button cta-whitepaper" data-i18n="system.btn_compass">Der Bauplan in komprimierter Form als Kompass</a>
+                <a href="https://github.com/project-nexus-official/terminal/raw/docs/de/NEXUS_Zusammenfassung_V2_0.pdf" target="_blank" class="cta-button cta-whitepaper" data-i18n="system.btn_essence">Die N.E.X.U.S. Essenz – 10 Seiten Zusammenfassung</a>
             </div>
         </div>
     </div>
 
     <!-- ACADEMY (E-LEARNING BEREICH) -->
     <div id="academy" class="section">
-        <h2 class="section-title" style="border-color: var(--accent-green); color: var(--accent-green);">Der einfachste Einstieg: Der Lernpfad</h2>
+        <h2 class="section-title" style="border-color: var(--accent-green); color: var(--accent-green);" data-i18n="academy.title">Der einfachste Einstieg: Der Lernpfad</h2>
         <div style="background: #0a0a0c; border: 1px dashed var(--accent-green); padding: 40px; text-align: center; border-radius: 4px; box-shadow: 0 0 20px rgba(74, 222, 128, 0.05);">
-            <h3 style="color: #fff; margin-top: 0; font-size: 1.5rem;">Schritt für Schritt verstehen</h3>
-            <p style="max-width: 800px; margin: 0 auto 30px auto; color: #ccc; font-size: 1.1rem; line-height: 1.8;">
-                N.E.X.U.S. ist groß. Der Lernpfad hilft dir, Schritt für Schritt zu verstehen, worum es geht — ohne Fachsprache, ohne Überforderung, in klaren Lektionen.
-            </p>
+            <h3 style="color: #fff; margin-top: 0; font-size: 1.5rem;" data-i18n="academy.box_title">Schritt für Schritt verstehen</h3>
+            <p style="max-width: 800px; margin: 0 auto 30px auto; color: #ccc; font-size: 1.1rem; line-height: 1.8;" data-i18n="academy.desc">N.E.X.U.S. ist groß. Der Lernpfad hilft dir, Schritt für Schritt zu verstehen, worum es geht — ohne Fachsprache, ohne Überforderung, in klaren Lektionen.</p>
             <a href="eLearning/index.html" class="btn-academy">
                 LERNPFAD STARTEN
             </a>
@@ -732,17 +732,10 @@
 
     <!-- COMMUNITY -->
     <div class="section" style="border-bottom:none; text-align:center; padding-top: 30px;">
-        <h2 style="color:var(--accent-gold); margin-bottom:20px;">Finde deinen Platz im Aufbau</h2>
-        <p style="max-width: 700px; margin: 0 auto 30px auto;">
-            Allein bleibt es eine Idee. Gemeinsam kann es Realität werden.<br>
-            N.E.X.U.S. braucht Menschen mit unterschiedlichen Gaben: Denker, Erzähler, Entwickler, Gastgeber, Praktiker und Brückenbauer.
-        </p>
-        <a href="thinktank.html" class="header-architekt-btn" style="border: 2px solid var(--accent-gold); color: var(--accent-gold); margin-right: 15px; padding: 13px 30px; font-size: 1.1rem;">
-            MITBAUEN VERSTEHEN
-        </a>
-        <a href="https://t.me/Nexus_Project_official" target="_blank" class="cta-button cta-telegram" style="width: auto; padding: 13px 30px; display: inline-block;">
-            TELEGRAM-GEMEINSCHAFT
-        </a>
+        <h2 style="color:var(--accent-gold); margin-bottom:20px;" data-i18n="community.title">Finde deinen Platz im Aufbau</h2>
+        <p style="max-width: 700px; margin: 0 auto 30px auto;" data-i18n="community.desc">Allein bleibt es eine Idee. Gemeinsam kann es Realität werden.<br>N.E.X.U.S. braucht Menschen mit unterschiedlichen Gaben: Denker, Erzähler, Entwickler, Gastgeber, Praktiker und Brückenbauer.</p>
+        <a href="thinktank.html" class="header-architekt-btn" style="border: 2px solid var(--accent-gold); color: var(--accent-gold); margin-right: 15px; padding: 13px 30px; font-size: 1.1rem;" data-i18n="community.btn_understand">MITBAUEN VERSTEHEN</a>
+        <a href="https://t.me/Nexus_Project_official" target="_blank" class="cta-button cta-telegram" style="width: auto; padding: 13px 30px; display: inline-block;" data-i18n="community.btn_telegram">TELEGRAM-GEMEINSCHAFT</a>
     </div>
 
     <footer>
@@ -766,33 +759,30 @@
 
         <!-- RECHTLICHER HINWEIS -->
         <div style="max-width: 800px; margin: 30px auto 0 auto; padding: 20px; border-top: 1px solid #333; font-size: 0.85rem; color: #666; text-align: center; line-height: 1.5;">
-            <p style="margin-bottom: 10px;">
-                Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>
-                Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.
-            </p>
+            <p style="margin-bottom: 10px;" data-i18n="footer.legal_note">Der Bauplan, die Volksversion und die Romantrilogie sind geistiges Eigentum von Josh Richman (&copy; 2024–2026).<br>Lesen und Teilen ist ausdrücklich erwünscht. Die Verwendung als Grundlage für eigene Projekte ohne Genehmigung ist nicht gestattet.</p>
             <p style="margin-bottom: 0;"></p>
         </div>
     </footer>
 
     <!-- NEXUS AI TERMINAL WIDGET -->
     <!-- CHAT BUTTON -->
-    <div id="nexus-chat-btn" onclick="toggleChat()">FRAG DEN NAVIGATOR</div>
+    <div id="nexus-chat-btn" onclick="toggleChat()" data-i18n="chatbot.btn_open">FRAG DEN NAVIGATOR</div>
 
     <!-- CHAT FENSTER -->
     <div id="nexus-chat-window">
         <div class="chat-header">
-            <span>N.E.X.U.S. NAVIGATOR V1.7</span>
+            <span data-i18n="chatbot.title">N.E.X.U.S. NAVIGATOR V1.7</span>
             <span class="close-chat" onclick="toggleChat()">X</span>
         </div>
 
         <div id="chat-messages">
-            <div class="msg msg-bot">Willkommen. Ich bin der N.E.X.U.S. Navigator. Frag mich nach dem Bauplan, der Romantrilogie, dem Lernpfad, der OneApp oder deinem ersten Einstieg.</div>
+            <div class="msg msg-bot" data-i18n="chatbot.welcome">Willkommen. Ich bin der N.E.X.U.S. Navigator. Frag mich nach dem Bauplan, der Romantrilogie, dem Lernpfad, der OneApp oder deinem ersten Einstieg.</div>
         </div>
 
-        <div class="typing" id="typing-indicator">Navigator antwortet...</div>
+        <div class="typing" id="typing-indicator" data-i18n="chatbot.typing">Navigator antwortet...</div>
 
         <div class="chat-input-area">
-            <input type="text" id="user-input" placeholder="Nachricht eingeben..." onkeypress="handleEnter(event)">
+            <input type="text" id="user-input" placeholder="Nachricht eingeben..." data-i18n-attr="placeholder:chatbot.placeholder" onkeypress="handleEnter(event)">
             <button id="send-btn" onclick="sendMessage()">></button>
         </div>
     </div>
@@ -944,5 +934,7 @@
             msgDiv.scrollTop = msgDiv.scrollHeight;
         }
     </script>
+    <!-- i18n ENGINE SCRIPT -->
+    <script src="js/i18n.js"></script>
 </body>
 </html>
