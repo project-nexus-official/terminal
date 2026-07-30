@@ -179,5 +179,73 @@
     "area3_title": "🌱 Selbstversorgung & Energie",
     "area4_title": "📚 Bildung & Erzählung",
     "btn_join": "🏛 FINDE DEINEN PLATZ IM GRÜNDUNGSKREIS"
+  },
+  "vs": {
+    "hero_h1": "Neu hier? Beginne hier.",
+    "hero_lead": "Ein einfacher Einstieg in N.E.X.U.S. — ohne Vorwissen, ohne Fachsprache, ohne Überforderung.",
+    "q_intro": "Du bist auf N.E.X.U.S. gestoßen und fragst dich vielleicht:",
+    "q1": "<strong>Was ist das eigentlich?</strong><br><strong>Worum geht es hier?</strong><br><strong>Ist das nur eine Idee — oder entsteht hier wirklich etwas?</strong>",
+    "q_p1": "Diese Seite ist für dich gemacht.",
+    "q_p2": "Du musst keinen 400-Seiten-Bauplan gelesen haben. Du musst keine technischen Begriffe verstehen. Und du musst auch nicht sofort wissen, ob du mitmachen willst.",
+    "q_ans": "Hier bekommst du einen einfachen ersten Überblick.",
+    "not_alone_h2": "Du bist nicht allein",
+    "not_alone_p1": "Viele Menschen spüren heute, dass etwas nicht mehr stimmt.",
+    "not_alone_p2": "Nicht nur in der Politik. Nicht nur in der Wirtschaft. Nicht nur in den Medien. Nicht nur im Umgang mit Technik. Sondern tiefer: im Grundgefühl des Lebens.",
+    "not_alone_p3": "Menschen sind ständig verbunden — und fühlen sich trotzdem einsam. Sie arbeiten viel — und kommen doch kaum zur Ruhe. Sie informieren sich — und wissen immer weniger, wem sie noch vertrauen können.",
+    "not_alone_p4": "Vielleicht kennst du dieses Gefühl: dass unser Zusammenleben aus dem Gleichgewicht geraten ist.",
+    "quote1": "N.E.X.U.S. beginnt nicht mit Wut, nicht mit Schuldzuweisungen und nicht mit einem Feindbild. N.E.X.U.S. beginnt mit der Frage: <strong>Wie können wir wieder menschlicher miteinander leben?</strong>",
+    "what_is_h2": "Was ist N.E.X.U.S. in einfachen Worten?",
+    "what_is_box": "<strong>N.E.X.U.S. ist eine Bewegung von Menschen, die aus Vereinzelung wieder Gemeinschaft machen — mit Menschlichkeit, Selbstbestimmung, dezentraler Technik und einer neuen Kultur des Miteinanders.</strong>",
+    "what_is_p1": "Es geht nicht darum, das alte System mit Gewalt zu bekämpfen. Es geht darum, Schritt für Schritt etwas Besseres aufzubauen.",
+    "what_is_p2": "N.E.X.U.S. ist der Versuch, ein neues gesellschaftliches Betriebssystem zu entwickeln.",
+    "what_is_p3": "Damit ist kein gewöhnliches Computerprogramm gemeint. Gemeint ist die Grundordnung unseres Zusammenlebens:",
+    "not_against_h2": "Nicht gegen das Alte — für den Aufbau des Neuen",
+    "not_against_p1": "Viele Menschen merken, dass die heutigen Systeme an ihre Grenzen kommen.",
+    "not_against_p2": "Aber N.E.X.U.S. ist kein Projekt des Hasses. Es ist kein Aufruf zum Kampf. Es ist keine Partei. Es ist keine Machtübernahme.",
+    "bridge1": "<strong>Wir verschwenden unsere Kraft nicht damit, das Alte zu hassen.</strong><br>Wir bauen das Neue so gut, dass das Alte irgendwann überflüssig wird.",
+    "values_title": "Sondern über gemeinsame Werte:",
+    "core_h2": "Der Kern ist Gemeinschaft",
+    "core_p1": "N.E.X.U.S. ist nicht zuerst Technik. Nicht zuerst Geld. Nicht zuerst Verwaltung. Nicht zuerst ein Bauplan. Nicht zuerst eine Anwendung.",
+    "core_p2": "Der Kern ist der Mensch in echter Gemeinschaft.",
+    "core_p3": "Menschen sollen sich wieder finden. Miteinander sprechen. Miteinander lernen. Miteinander entscheiden. Miteinander arbeiten. Miteinander feiern. Miteinander Verantwortung tragen.",
+    "core_p4": "Aus einzelnen Menschen sollen wieder tragfähige Gemeinschaften entstehen. Lokal vor Ort. Und verbunden über sichere, dezentrale Technik.",
+    "already_h2": "Was gibt es bereits?",
+    "already_p1": "N.E.X.U.S. ist nicht mehr nur eine Idee. In den letzten Monaten und Jahren ist bereits viel entstanden:",
+    "bridge2": "<strong>Der Bauplan ist der Kopf.</strong><br><strong>Die Trilogie ist das Herz.</strong><br><strong>Die OneApp ist das erste Werkzeug.</strong><br><strong>Die Gemeinschaft ist das Leben.</strong>"
+  },
+  "vision_page": {
+    "meta_title": "N.E.X.U.S. | Vision",
+    "header_title": "N.E.X.U.S. VISION",
+    "close_btn": "X Schliessen",
+    "h1": "Die Vision: Aus Vereinzelung wieder Gemeinschaft machen",
+    "p1": "Die N.E.X.U.S. Vision ist eine Einladung, die Zukunft unseres Zusammenlebens neu zu denken.",
+    "p2": "In einer Welt, die sich zunehmend vereinzeit und fragmentiert, bauen wir Strukturen für menschliche Nähe, selbstbestimmtes Handeln und dezentrale Verbindung.",
+    "h2_1": "1. Menschlichkeit im Mittelpunkt",
+    "p3": "Technik und Strukturen dienen dem Menschen, nicht umgekehrt.",
+    "h2_2": "2. Dezentrale Freiheit",
+    "p4": "Keine zentralen Kontrollinstanzen. Die Verantwortung und Entscheidungsfreiheit liegt bei den Gemeinschaften vor Ort.",
+    "h2_3": "3. Nachhaltige Zukunft",
+    "p5": "Gemeinsam bauen wir tragfähige Alternativen auf, die Bestand haben."
+  },
+  "genesis_page": {
+    "meta_title": "N.E.X.U.S. | Genesis Pakt",
+    "header_title": "GENESIS PAKT",
+    "cancel_btn": "ABBRUCH",
+    "h1": "Der Genesis Pakt",
+    "subtitle": "Der Gründungskreis für ein neues gesellschaftliches Betriebssystem",
+    "p1": "Der Genesis Pakt ist der erste Schritt zur Formierung der Pioniergemeinschaften von N.E.X.U.S.",
+    "p2": "Hier schließen sich Menschen zusammen, die Verantwortung übernehmen und die ersten dezentralen Einheiten aufbauen möchten."
+  },
+  "analyse_page": {
+    "meta_title": "N.E.X.U.S. | Systemanalyse",
+    "h1": "Systemanalyse & Lagebericht",
+    "p1": "Eine tiefgehende Analyse der aktuellen gesellschaftlichen, technischen und wirtschaftlichen Herausforderungen."
+  },
+  "legal": {
+    "impressum_title": "Impressum - N.E.X.U.S. Project",
+    "datenschutz_title": "Datenschutzerklärung - N.E.X.U.S. Project",
+    "bugreport_title": "Fehler- & Prüfprotokoll - N.E.X.U.S.",
+    "bugreport_h1": "Alpha-Tester Prüf- & Fehlerprotokoll",
+    "bugreport_p": "Hier kannst du Fehler melden und Feedback zur Alpha-Version der OneApp einreichen."
   }
 }
