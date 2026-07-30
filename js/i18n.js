@@ -10,6 +10,26 @@
     let currentLang = DEFAULT_LANG;
     let translations = {};
 
+    // Get current script element for path resolution
+    const currentScript = document.currentScript || (function() {
+        const scripts = document.getElementsByTagName('script');
+        return scripts[scripts.length - 1];
+    })();
+
+    // Determine base path of the site dynamically from i18n.js location
+    function getBasePath() {
+        try {
+            if (currentScript && currentScript.src) {
+                const url = new URL(currentScript.src);
+                // Remove /js/i18n.js or /js/... to get repo root path
+                return url.pathname.replace(/\/js\/[^\/]*$/, '');
+            }
+        } catch (e) {
+            console.warn('[i18n] Could not parse script URL:', e);
+        }
+        return '';
+    }
+
     // Determine initial language
     function getInitialLanguage() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -36,28 +56,23 @@
         return path.split('.').reduce((prev, curr) => (prev && prev[curr] !== undefined ? prev[curr] : null), obj);
     }
 
-    // Determine correct path to /lang/ directory regardless of subfolder depth
+    // Determine correct path to /lang/ directory regardless of custom domain or subpath
     function getLangPath(lang) {
-        // If hosted on GitHub Pages or local web server, root-relative path works best
-        const origin = window.location.origin;
-        if (origin && origin !== 'null' && origin !== 'file://') {
-            return `/lang/${lang}.json`;
-        }
-        // Fallback relative path calculation based on depth
-        const depth = (window.location.pathname.match(/\//g) || []).length;
-        const prefix = depth > 1 ? '../'.repeat(depth - 1) : './';
-        return `${prefix}lang/${lang}.json`;
+        const basePath = getBasePath();
+        return `${basePath}/lang/${lang}.json`;
     }
 
     // Load and apply translations
     async function loadLanguage(lang) {
         if (!SUPPORTED_LANGS.includes(lang)) lang = DEFAULT_LANG;
 
+        const path = getLangPath(lang);
+        console.log(`[i18n] Loading language '${lang}' from path: ${path}`);
+
         try {
-            const path = getLangPath(lang);
             const response = await fetch(path);
             if (!response.ok) {
-                throw new Error(`Failed to load ${path}: ${response.status}`);
+                throw new Error(`HTTP ${response.status} when fetching ${path}`);
             }
             translations = await response.json();
             currentLang = lang;
@@ -66,10 +81,12 @@
 
             applyTranslations();
             updateLanguageUI();
+            console.log(`[i18n] Successfully switched to '${lang}'`);
         } catch (error) {
-            console.error('[i18n] Error loading translation:', error);
+            console.error(`[i18n] Failed to load language '${lang}':`, error);
             // Fallback to German if loading failed
-            if (lang !== DEFAULT_LANG) {
+            if (lang !== DEFAULT_LANG && Object.keys(translations).length === 0) {
+                console.log('[i18n] Falling back to default language:', DEFAULT_LANG);
                 loadLanguage(DEFAULT_LANG);
             }
         }
@@ -81,7 +98,7 @@
         document.querySelectorAll('[data-i18n]').forEach((el) => {
             const key = el.getAttribute('data-i18n');
             const val = getNestedValue(translations, key);
-            if (val !== null) {
+            if (val !== null && val !== undefined) {
                 if (/<[a-z][\s\S]*>/i.test(val)) {
                     el.innerHTML = val;
                 } else {
@@ -96,14 +113,14 @@
             attrRules.forEach((rule) => {
                 const [attr, key] = rule.split(':').map((s) => s.trim());
                 const val = getNestedValue(translations, key);
-                if (attr && val !== null) {
+                if (attr && val !== null && val !== undefined) {
                     el.setAttribute(attr, val);
                 }
             });
         });
 
         // 3. Document Title
-        const metaTitleVal = getNestedValue(translations, 'meta.title');
+        const metaTitleVal = getNestedValue(translations, 'meta.title') || getNestedValue(translations, 'elearning_page.meta_title');
         if (metaTitleVal) {
             document.title = metaTitleVal;
         }
@@ -123,14 +140,16 @@
 
     // Public method to switch language
     window.switchNexusLanguage = function (lang) {
-        if (lang !== currentLang) {
-            loadLanguage(lang);
-        }
+        console.log(`[i18n] User requested language switch to: ${lang}`);
+        loadLanguage(lang);
     };
 
     // Auto-init when DOM is ready
-    document.addEventListener('DOMContentLoaded', () => {
-        const initialLang = getInitialLanguage();
-        loadLanguage(initialLang);
-    });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            loadLanguage(getInitialLanguage());
+        });
+    } else {
+        loadLanguage(getInitialLanguage());
+    }
 })();
