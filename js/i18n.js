@@ -21,7 +21,6 @@
         try {
             if (currentScript && currentScript.src) {
                 const url = new URL(currentScript.src);
-                // Remove /js/i18n.js or /js/... to get repo root path
                 return url.pathname.replace(/\/js\/[^\/]*$/, '');
             }
         } catch (e) {
@@ -51,14 +50,22 @@
         return DEFAULT_LANG;
     }
 
-    // Get nested object property by string path (e.g., "hero.title")
+    // Get nested object property by string path
     function getNestedValue(obj, path) {
         return path.split('.').reduce((prev, curr) => (prev && prev[curr] !== undefined ? prev[curr] : null), obj);
     }
 
-    // Determine correct path to /lang/ directory regardless of custom domain or subpath
+    // Determine correct path to /lang/ directory
     function getLangPath(lang) {
-        const basePath = getBasePath();
+        let basePath = getBasePath();
+        // If file:// protocol or empty path, use relative path depending on nesting
+        if (!basePath || basePath === '/' || window.location.protocol === 'file:') {
+            // Check if we are in a subdirectory like eLearning/
+            if (window.location.pathname.includes('/eLearning/')) {
+                return `../lang/${lang}.json`;
+            }
+            return `lang/${lang}.json`;
+        }
         return `${basePath}/lang/${lang}.json`;
     }
 
@@ -84,7 +91,6 @@
             console.log(`[i18n] Successfully switched to '${lang}'`);
         } catch (error) {
             console.error(`[i18n] Failed to load language '${lang}':`, error);
-            // Fallback to German if loading failed
             if (lang !== DEFAULT_LANG && Object.keys(translations).length === 0) {
                 console.log('[i18n] Falling back to default language:', DEFAULT_LANG);
                 loadLanguage(DEFAULT_LANG);
@@ -118,12 +124,8 @@
                 }
             });
         });
-
-        // 3. Document Title
-        const metaTitleVal = getNestedValue(translations, 'meta.title') || getNestedValue(translations, 'elearning_page.meta_title');
-        if (metaTitleVal) {
-            document.title = metaTitleVal;
-        }
+        
+        // Title is handled by data-i18n on the <title> tag now.
     }
 
     // Update Language Switcher UI elements
