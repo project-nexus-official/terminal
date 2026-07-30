@@ -168,7 +168,44 @@
             .analysis-container { padding: 20px; }
             .range-labels { font-size: 0.8rem; }
         }
-    </style>
+    
+        /* --- SPRACH-UMSCHALTER (LANGUAGE SELECTOR) --- */
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(10, 15, 25, 0.8);
+            border: 1px solid var(--accent-cyan, #00f3ff);
+            padding: 4px 10px;
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.15);
+            margin-right: 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #888;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 2px 4px;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover {
+            color: var(--accent-cyan, #00f3ff);
+        }
+        .lang-btn.active-lang {
+            color: var(--accent-cyan, #00f3ff);
+            text-shadow: 0 0 8px var(--accent-cyan, #00f3ff);
+            border-bottom: 2px solid var(--accent-cyan, #00f3ff);
+        }
+        .lang-divider {
+            color: #444;
+            font-size: 0.8rem;
+        }
+
+</style>
 </head>
 <body>
 
@@ -373,5 +410,7 @@
             </p>
         </div>
     </footer>
+    <!-- i18n ENGINE SCRIPT -->
+    <script src="js/i18n.js"></script>
 </body>
 </html>

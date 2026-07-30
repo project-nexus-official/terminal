@@ -467,6 +467,43 @@ footer {
     }
 }
 
+
+        /* --- SPRACH-UMSCHALTER (LANGUAGE SELECTOR) --- */
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(10, 15, 25, 0.8);
+            border: 1px solid var(--accent-cyan, #00f3ff);
+            padding: 4px 10px;
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.15);
+            margin-right: 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #888;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 2px 4px;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover {
+            color: var(--accent-cyan, #00f3ff);
+        }
+        .lang-btn.active-lang {
+            color: var(--accent-cyan, #00f3ff);
+            text-shadow: 0 0 8px var(--accent-cyan, #00f3ff);
+            border-bottom: 2px solid var(--accent-cyan, #00f3ff);
+        }
+        .lang-divider {
+            color: #444;
+            font-size: 0.8rem;
+        }
+
 </style>
 </head>
 <body>
@@ -482,16 +519,22 @@ footer {
 
         <!-- Die neuen Anker-Links in der Mitte -->
         <nav class="main-nav">
-            <a href="vision_short.html" class="nav-link">Neu hier?</a>
-            <a href="eLearning/index.html" class="nav-link" style="color: var(--accent-green);">Lernpfad</a>
+            <a href="vision_short.html" class="nav-link" data-i18n="nav.new_here">Neu hier?</a>
+            <a href="eLearning/index.html" class="nav-link" style="color: var(--accent-green);" data-i18n="nav.elearning">Lernpfad</a>
             <a href="wissen.html" class="nav-link" style="color: var(--accent-gold); border-bottom: 2px solid var(--accent-gold);">Bibliothek</a>
-            <a href="oneapp.html" class="nav-link">OneApp [Live]</a>
-            <a href="index.html#system" class="nav-link">Bauplan</a>
-            <a href="thinktank.html" class="nav-link" style="color: var(--accent-gold);">Mitbauen</a>
+            <a href="oneapp.html" class="nav-link" data-i18n="nav.oneapp">OneApp [Live]</a>
+            <a href="index.html#system" class="nav-link" data-i18n="nav.blueprint">Bauplan</a>
+            <a href="thinktank.html" class="nav-link" style="color: var(--accent-gold);" data-i18n="nav.contribute">Mitbauen</a>
         </nav>
 
+        
         <div class="header-nav-right">
-            <a href="https://project-nexus-official.github.io/terminal/thinktank.html" class="header-architekt-btn">FINDE DEINEN PLATZ</a>
+            <div class="lang-selector">
+                <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')">DE</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')">ES</button>
+            </div>
+            <a href="thinktank.html" class="header-architekt-btn" data-i18n="nav.find_place">FINDE DEINEN PLATZ</a>
         </div>
     </header>
 
@@ -752,5 +795,7 @@ footer {
             <p style="margin-bottom: 0;"></p>
         </div>
     </footer>
+    <!-- i18n ENGINE SCRIPT -->
+    <script src="js/i18n.js"></script>
 </body>
 </html>
