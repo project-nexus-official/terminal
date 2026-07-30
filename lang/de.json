@@ -144,5 +144,40 @@
     "how_li3": "Sprich mit einem anderen Menschen darüber.",
     "how_li4": "Gehe erst dann zur nächsten Lektion weiter.",
     "how_note": "Der Einstiegspfad 0.1 ist vollständig. Später können hier Videos, Audio-Versionen, Quizfragen, PDFs und OneApp-Verknüpfungen ergänzt werden. Für diese Version zählt zuerst Klarheit, nicht Perfektion."
+  },
+  "vision_short": {
+    "meta_title": "N.E.X.U.S. | Neu hier?",
+    "back_btn": "zurück zur übersicht",
+    "hero_title": "DEZENTRAL. MENSCHLICH. SELBSTBESTIMMT.",
+    "hero_subline": "Ein Betriebssystem für neue Gemeinschaft",
+    "hero_desc": "N.E.X.U.S. ist die Antwort auf die zunehmende Vereinzelung und Abhängigkeit in unserer Gesellschaft.",
+    "btn_story": "📖 Vision als Geschichte",
+    "btn_blueprint": "🛠 Bauplan lesen",
+    "btn_elearning": "🎓 Lernpfad starten",
+    "box1_title": "1. Warum N.E.X.U.S.?",
+    "box1_text": "Unser Zusammenleben braucht neue Grundlagen. N.E.X.U.S. schafft Strukturen für echte Gemeinschaft, Unabhängigkeit und gegenseitige Unterstützung.",
+    "box2_title": "2. Wie funktioniert es?",
+    "box2_text": "Über lokale Gemeinschaften, dezentrale Technik (OneApp) und geprüfte Konzepte bauen wir Schritt für Schritt eine funktionierende Alternative auf.",
+    "box3_title": "3. Wie kann ich mitmachen?",
+    "box3_text": "Starte mit dem Lernpfad, lerne den Bauplan kennen oder bringe deine Fähigkeiten im Think Tank ein."
+  },
+  "wissen": {
+    "meta_title": "N.E.X.U.S. | Bibliothek & Wissensdatenbank",
+    "title": "BIBLIOTHEK & WISSENSDATENBANK",
+    "desc": "Hier findest du alle wesentlichen Dokumente, Leitfäden und Materialien des N.E.X.U.S. Projekts zum freien Download.",
+    "section1_title": "📖 DIE TRILOGIE",
+    "section2_title": "📐 DER BAUPLAN",
+    "section3_title": "🎓 E-LEARNING & HANDBÜCHER"
+  },
+  "thinktank_page": {
+    "meta_title": "N.E.X.U.S. | Think Tank & Mitbauen",
+    "title": "THINK TANK & GRÜNDUNGSKREIS",
+    "subtitle": "Gemeinsame Intelligenz für eine menschliche Zukunft",
+    "desc": "Der Think Tank ist die Denkfabrik von N.E.X.U.S. Hier arbeiten Menschen aus verschiedenen Fachbereichen an konkreten Bausteinen der neuen Gemeinschaft.",
+    "area1_title": "🛠 Technik & Dezentralisierung",
+    "area2_title": "⚖️ Recht & Gemeinschaftsform",
+    "area3_title": "🌱 Selbstversorgung & Energie",
+    "area4_title": "📚 Bildung & Erzählung",
+    "btn_join": "🏛 FINDE DEINEN PLATZ IM GRÜNDUNGSKREIS"
   }
 }

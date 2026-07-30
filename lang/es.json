@@ -144,5 +144,40 @@
     "how_li3": "Habla con otra persona sobre ello.",
     "how_li4": "Solo entonces avanza a la siguiente lección.",
     "how_note": "La ruta de inicio 0.1 está completa. Más adelante se podrán añadir vídeos, versiones de audio, preguntas tipo test, PDF y enlaces a OneApp. Para esta versión cuenta primero la claridad, no la perfección."
+  },
+  "vision_short": {
+    "meta_title": "N.E.X.U.S. | ¿Nuevo aquí?",
+    "back_btn": "volver al resumen",
+    "hero_title": "DESCENTRALIZADO. HUMANO. AUTODETERMINADO.",
+    "hero_subline": "Un sistema operativo para una nueva comunidad",
+    "hero_desc": "N.E.X.U.S. es la respuesta al creciente aislamiento y dependencia en nuestra sociedad.",
+    "btn_story": "📖 Visión como Historia",
+    "btn_blueprint": "🛠 Leer el Plano",
+    "btn_elearning": "🎓 Iniciar Ruta de Aprendizaje",
+    "box1_title": "1. ¿Por qué N.E.X.U.S.?",
+    "box1_text": "Nuestra convivencia necesita nuevos fundamentos. N.E.X.U.S. crea estructuras para una comunidad real, independencia y apoyo mutuo.",
+    "box2_title": "2. ¿Cómo funciona?",
+    "box2_text": "A través de comunidades locales, tecnología descentralizada (OneApp) y conceptos probados, construimos paso a paso una alternativa funcional.",
+    "box3_title": "3. ¿Cómo puedo participar?",
+    "box3_text": "Comienza con la ruta de aprendizaje, conoce el plano de construcción o aporta tus habilidades en el Think Tank."
+  },
+  "wissen": {
+    "meta_title": "N.E.X.U.S. | Biblioteca y Base de Conocimiento",
+    "title": "BIBLIOTECA Y BASE DE CONOCIMIENTO",
+    "desc": "Aquí encontrarás todos los documentos esenciales, guías y materiales del proyecto N.E.X.U.S. para descarga libre.",
+    "section1_title": "📖 LA TRILOGÍA",
+    "section2_title": "📐 EL PLANO DE CONSTRUCCIÓN",
+    "section3_title": "🎓 E-LEARNING Y MANUALES"
+  },
+  "thinktank_page": {
+    "meta_title": "N.E.X.U.S. | Think Tank y Construcción Conjunta",
+    "title": "THINK TANK Y CÍRCULO FUNDADOR",
+    "subtitle": "Inteligencia compartida para un futuro humano",
+    "desc": "El Think Tank es el laboratorio de ideas de N.E.X.U.S. Aquí personas de diferentes disciplinas trabajan en bloques concretos de la nueva comunidad.",
+    "area1_title": "🛠 Tecnología y Descentralización",
+    "area2_title": "⚖️ Derecho y Forma Comunitaria",
+    "area3_title": "🌱 Autosuficiencia y Energía",
+    "area4_title": "📚 Educación y Narrativa",
+    "btn_join": "🏛 ENCUENTRA TU LUGAR EN EL CÍRCULO FUNDADOR"
   }
 }
