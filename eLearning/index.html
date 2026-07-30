@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N.E.X.U.S. Lernpfad 0.1 | Vom Erwachen zum Mitbauen</title>
+    <title data-i18n="elearning_page.meta_title">N.E.X.U.S. Lernpfad 0.1 | Vom Erwachen zum Mitbauen</title>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <style>
 
@@ -681,6 +681,43 @@ footer {
     }
 }
 
+
+        /* --- SPRACH-UMSCHALTER (LANGUAGE SELECTOR) --- */
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(10, 15, 25, 0.8);
+            border: 1px solid var(--accent-cyan);
+            padding: 4px 10px;
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.15);
+            margin-right: 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #888;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 2px 4px;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover {
+            color: var(--accent-cyan);
+        }
+        .lang-btn.active-lang {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px var(--accent-cyan);
+            border-bottom: 2px solid var(--accent-cyan);
+        }
+        .lang-divider {
+            color: #444;
+            font-size: 0.8rem;
+        }
+
 </style>
 </head>
 <body>
@@ -696,135 +733,125 @@ footer {
 
         <!-- Die neuen Anker-Links in der Mitte -->
         <nav class="main-nav">
-            <a href="../vision_short.html" class="nav-link">Neu hier?</a>
-            <a href="index.html" class="nav-link" style="color: var(--accent-green); border-bottom: 2px solid var(--accent-green);">Lernpfad</a>
-            <a href="../wissen.html" class="nav-link">Bibliothek</a>
-            <a href="../oneapp.html" class="nav-link">OneApp [Live]</a>
-            <a href="../index.html#system" class="nav-link">Bauplan</a>
-            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);">Mitbauen</a>
+            <a href="../vision_short.html" class="nav-link" data-i18n="nav.new_here">Neu hier?</a>
+            <a href="index.html" class="nav-link" style="color: var(--accent-green); border-bottom: 2px solid var(--accent-green);" data-i18n="nav.elearning">Lernpfad</a>
+            <a href="../wissen.html" class="nav-link" data-i18n="nav.library">Bibliothek</a>
+            <a href="../oneapp.html" class="nav-link" data-i18n="nav.oneapp">OneApp [Live]</a>
+            <a href="../index.html#system" class="nav-link" data-i18n="nav.blueprint">Bauplan</a>
+            <a href="../thinktank.html" class="nav-link" style="color: var(--accent-gold);" data-i18n="nav.contribute">Mitbauen</a>
         </nav>
 
+        
         <div class="header-nav-right">
-            <a href="../thinktank.html" class="header-architekt-btn">FINDE DEINEN PLATZ</a>
+            <div class="lang-selector">
+                <button class="lang-btn active-lang" data-lang="de" onclick="switchNexusLanguage('de')">DE</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="es" onclick="switchNexusLanguage('es')">ES</button>
+            </div>
+            <a href="../thinktank.html" class="header-architekt-btn" data-i18n="nav.find_place">FINDE DEINEN PLATZ</a>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="kicker">N.E.X.U.S. Lernpfad 0.1</div>
-            <h1>Vom Erwachen<br>zum Mitbauen</h1>
-            <div class="subline">
-                Der einfache Einstieg in das Betriebssystem einer freien Welt.
-                Kein Vorwissen. Keine Ideologie. Nur Verstehen, Einordnen und der erste praktische Schritt.
-            </div>
+            <div class="kicker" data-i18n="elearning_page.kicker">N.E.X.U.S. Lernpfad 0.1</div>
+            <h1 data-i18n="elearning_page.title">Vom Erwachen<br>zum Mitbauen</h1>
+            <div class="subline" data-i18n="elearning_page.subline">Der einfache Einstieg in das Betriebssystem einer freien Welt. Kein Vorwissen. Keine Ideologie. Nur Verstehen, Einordnen und der erste praktische Schritt.</div>
         </section>
 
         <section class="section">
-            <h2 class="section-title orange">Warum dieser Lernpfad existiert</h2>
-            <p class="lead">
-                N.E.X.U.S. ist groß. Der Bauplan ist tief. Die OneApp wächst. Die Trilogie macht den Wandel fühlbar.
-                Dieser Lernpfad baut die Brücke: Er hilft neuen Menschen, den Kern von N.E.X.U.S. Schritt für Schritt zu verstehen,
-                ohne sofort vom Gesamtumfang überfordert zu werden.
-            </p>
-            <p class="lead">
-                Ziel ist nicht, alles perfekt zu wissen. Ziel ist, den inneren Übergang zu beginnen:
-                vom Gefühl, dass etwas nicht stimmt, hin zur Frage, wie wir eine bessere Struktur gemeinsam bauen können.
-            </p>
+            <h2 class="section-title orange" data-i18n="elearning_page.why_title">Warum dieser Lernpfad existiert</h2>
+            <p class="lead" data-i18n="elearning_page.why_p1">N.E.X.U.S. ist groß. Der Bauplan ist tief. Die OneApp wächst. Die Trilogie macht den Wandel fühlbar. Dieser Lernpfad baut die Brücke: Er hilft neuen Menschen, den Kern von N.E.X.U.S. Schritt für Schritt zu verstehen, ohne sofort vom Gesamtumfang überfordert zu werden.</p>
+            <p class="lead" data-i18n="elearning_page.why_p2">Ziel ist nicht, alles perfekt zu wissen. Ziel ist, den inneren Übergang zu beginnen: vom Gefühl, dass etwas nicht stimmt, hin zur Frage, wie wir eine bessere Struktur gemeinsam bauen können.</p>
         </section>
 
         <section class="section">
-            <h2 class="section-title gold">Die 7 Lektionen</h2>
+            <h2 class="section-title gold" data-i18n="elearning_page.lessons_title">Die 7 Lektionen</h2>
 
             <div class="course-grid">
                 <a href="lektion-1.html" class="course-card available">
                     <div>
-                        <div class="lesson-number">Lektion 1</div>
-                        <h3>Warum alles gleichzeitig zerbricht</h3>
-                        <p>Du verstehst, warum die Krisen unserer Zeit nicht getrennt sind, sondern Symptome desselben Systemfehlers.</p>
+                        <div class="lesson-number" data-i18n="elearning_page.l1_num">Lektion 1</div>
+                        <h3 data-i18n="elearning_page.l1_title">Warum alles gleichzeitig zerbricht</h3>
+                        <p data-i18n="elearning_page.l1_desc">Du verstehst, warum die Krisen unserer Zeit nicht getrennt sind, sondern Symptome desselben Systemfehlers.</p>
                     </div>
-                    <span class="card-cta">Lektion starten</span>
+                    <span class="card-cta" data-i18n="elearning_page.btn_start_lesson">Lektion starten</span>
                 </a>
 
                 <a href="lektion-2.html" class="course-card available">
                     <div>
-                        <div class="lesson-number">Lektion 2</div>
-                        <h3>Warum Reformen nicht mehr reichen</h3>
-                        <p>Du erkennst, warum gute Absichten in einem falsch programmierten System oft verpuffen.</p>
+                        <div class="lesson-number" data-i18n="elearning_page.l2_num">Lektion 2</div>
+                        <h3 data-i18n="elearning_page.l2_title">Warum Reformen nicht mehr reichen</h3>
+                        <p data-i18n="elearning_page.l2_desc">Du erkennst, warum gute Absichten in einem falsch programmierten System oft verpuffen.</p>
                     </div>
-                    <span class="card-cta">Lektion starten</span>
+                    <span class="card-cta" data-i18n="elearning_page.btn_start_lesson">Lektion starten</span>
                 </a>
 
                 <a href="lektion-3.html" class="course-card available">
                     <div>
-                        <div class="lesson-number">Lektion 3</div>
-                        <h3>Warum wir nicht kämpfen, sondern neu bauen</h3>
-                        <p>Du lernst das Prinzip der parallelen Konstruktion kennen: das Alte nicht bekämpfen, sondern überflüssig machen.</p>
+                        <div class="lesson-number" data-i18n="elearning_page.l3_num">Lektion 3</div>
+                        <h3 data-i18n="elearning_page.l3_title">Warum wir nicht kämpfen, sondern neu bauen</h3>
+                        <p data-i18n="elearning_page.l3_desc">Du lernst das Prinzip der parallelen Konstruktion kennen: das Alte nicht bekämpfen, sondern überflüssig machen.</p>
                     </div>
-                    <span class="card-cta">Lektion starten</span>
+                    <span class="card-cta" data-i18n="elearning_page.btn_start_lesson">Lektion starten</span>
                 </a>
 
                 <a href="lektion-4.html" class="course-card available">
                     <div>
-                        <div class="lesson-number">Lektion 4</div>
-                        <h3>Was N.E.X.U.S. eigentlich ist</h3>
-                        <p>Du verstehst N.E.X.U.S. als dezentrales Betriebssystem für freie, menschliche Gemeinschaften.</p>
+                        <div class="lesson-number" data-i18n="elearning_page.l4_num">Lektion 4</div>
+                        <h3 data-i18n="elearning_page.l4_title">Was N.E.X.U.S. eigentlich ist</h3>
+                        <p data-i18n="elearning_page.l4_desc">Du verstehst N.E.X.U.S. als dezentrales Betriebssystem für freie, menschliche Gemeinschaften.</p>
                     </div>
-                    <span class="card-cta">Lektion starten</span>
+                    <span class="card-cta" data-i18n="elearning_page.btn_start_lesson">Lektion starten</span>
                 </a>
 
                 <a href="lektion-5.html" class="course-card available">
                     <div>
-                        <div class="lesson-number">Lektion 5</div>
-                        <h3>Die OneApp als Einstiegstor</h3>
-                        <p>Du erkennst, warum die OneApp nicht nur Messenger ist, sondern Identität, Verbindung und Mitwirkung ermöglicht.</p>
+                        <div class="lesson-number" data-i18n="elearning_page.l5_num">Lektion 5</div>
+                        <h3 data-i18n="elearning_page.l5_title">Die OneApp als Einstiegstor</h3>
+                        <p data-i18n="elearning_page.l5_desc">Du erkennst, warum die OneApp nicht nur Messenger ist, sondern Identität, Verbindung und Mitwirkung ermöglicht.</p>
                     </div>
-                    <span class="card-cta">Lektion starten</span>
+                    <span class="card-cta" data-i18n="elearning_page.btn_start_lesson">Lektion starten</span>
                 </a>
 
                 <a href="lektion-6.html" class="course-card available">
                     <div>
-                        <div class="lesson-number">Lektion 6</div>
-                        <h3>Die neue Gemeinschaft</h3>
-                        <p>Du lernst, warum kleine Vertrauensräume der Anfang echter gesellschaftlicher Veränderung sein können.</p>
+                        <div class="lesson-number" data-i18n="elearning_page.l6_num">Lektion 6</div>
+                        <h3 data-i18n="elearning_page.l6_title">Die neue Gemeinschaft</h3>
+                        <p data-i18n="elearning_page.l6_desc">Du lernst, warum kleine Vertrauensräume der Anfang echter gesellschaftlicher Veränderung sein können.</p>
                     </div>
-                    <span class="card-cta">Lektion starten</span>
+                    <span class="card-cta" data-i18n="elearning_page.btn_start_lesson">Lektion starten</span>
                 </a>
 
                 <a href="lektion-7.html" class="course-card available">
                     <div>
-                        <div class="lesson-number">Lektion 7</div>
-                        <h3>Wie du mitmachen kannst</h3>
-                        <p>Du bekommst konkrete erste Schritte: lesen, testen, Feedback geben, Menschen einladen, lokale Ideen sammeln.</p>
+                        <div class="lesson-number" data-i18n="elearning_page.l7_num">Lektion 7</div>
+                        <h3 data-i18n="elearning_page.l7_title">Wie du mitmachen kannst</h3>
+                        <p data-i18n="elearning_page.l7_desc">Du bekommst konkrete erste Schritte: lesen, testen, Feedback geben, Menschen einladen, lokale Ideen sammeln.</p>
                     </div>
-                    <span class="card-cta">Lektion starten</span>
+                    <span class="card-cta" data-i18n="elearning_page.btn_start_lesson">Lektion starten</span>
                 </a>
             </div>
         </section>
 
         <section class="section">
             <div class="lesson-box gold">
-                <h2>Nach dem Lernpfad</h2>
-                <p>
-                    Wenn du alle 7 Lektionen abgeschlossen hast, führt dich die Abschlussseite zu den nächsten sinnvollen Schritten:
-                    OneApp ansehen, Bauplan vertiefen, Genesis Circle verstehen oder direkt den Genesis Pakt prüfen.
-                </p>
-                <a href="abschluss.html" class="nav-button orange">Abschluss & nächste Schritte ansehen →</a>
+                <h2 data-i18n="elearning_page.after_title">Nach dem Lernpfad</h2>
+                <p data-i18n="elearning_page.after_desc">Wenn du alle 7 Lektionen abgeschlossen hast, führt dich die Abschlussseite zu den nächsten sinnvollen Schritten: OneApp ansehen, Bauplan vertiefen, Genesis Circle verstehen oder direkt den Genesis Pakt prüfen.</p>
+                <a href="abschluss.html" class="nav-button orange" data-i18n="elearning_page.after_btn">Abschluss & nächste Schritte ansehen →</a>
             </div>
         </section>
 
         <section class="section">
             <div class="lesson-box gold">
-                <h2>So nutzt du diesen Lernpfad</h2>
+                <h2 data-i18n="elearning_page.how_title">So nutzt du diesen Lernpfad</h2>
                 <ul class="clean">
-                    <li>Lies eine Lektion vollständig durch.</li>
-                    <li>Beantworte am Ende die kleine Aufgabe für dich selbst.</li>
-                    <li>Sprich mit einem anderen Menschen darüber.</li>
-                    <li>Gehe erst dann zur nächsten Lektion weiter.</li>
+                    <li data-i18n="elearning_page.how_li1">Lies eine Lektion vollständig durch.</li>
+                    <li data-i18n="elearning_page.how_li2">Beantworte am Ende die kleine Aufgabe für dich selbst.</li>
+                    <li data-i18n="elearning_page.how_li3">Sprich mit einem anderen Menschen darüber.</li>
+                    <li data-i18n="elearning_page.how_li4">Gehe erst dann zur nächsten Lektion weiter.</li>
                 </ul>
-                <p class="placeholder-note">
-                    Der Einstiegspfad 0.1 ist vollständig. Später können hier Videos, Audio-Versionen, Quizfragen, PDFs und OneApp-Verknüpfungen ergänzt werden.
-                    Für diese Version zählt zuerst Klarheit, nicht Perfektion.
-                </p>
+                <p class="placeholder-note" data-i18n="elearning_page.how_note">Der Einstiegspfad 0.1 ist vollständig. Später können hier Videos, Audio-Versionen, Quizfragen, PDFs und OneApp-Verknüpfungen ergänzt werden. Für diese Version zählt zuerst Klarheit, nicht Perfektion.</p>
             </div>
         </section>
     </main>
@@ -857,5 +884,7 @@ footer {
             <p style="margin-bottom: 0;"></p>
         </div>
     </footer>
+    <!-- i18n ENGINE SCRIPT -->
+    <script src="../js/i18n.js"></script>
 </body>
 </html>
