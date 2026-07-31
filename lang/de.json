@@ -1690,7 +1690,11 @@
     "a_12": "Bluesky",
     "p_1": "<span data-i18n=\"footer.contact\">Kontakt:</span> <a href=\"mailto:nexus.blueprint@proton.me\" class=\"contact-mail\" style=\"display:inline; margin:0;\">nexus.blueprint@proton.me</a>",
     "a_13": "nexus.blueprint@proton.me",
-    "button_3": "&gt;"
+    "button_3": "&gt;",
+    "book1_img": "https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_1_4.jpg",
+    "book2_img": "https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_2_2.jpg",
+    "book3_img": "https://raw.githubusercontent.com/project-nexus-official/terminal/main/Band_3_2.jpg",
+    "blueprint_img": "https://raw.githubusercontent.com/project-nexus-official/terminal/main/Blueprint.png"
   },
   "vision": {
     "button_1": "DE",
