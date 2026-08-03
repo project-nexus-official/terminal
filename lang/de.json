@@ -113,7 +113,8 @@
     "btn_v14": "Der vollständige Bauplan für eine souveräne Zivilisation (V 14.0)",
     "btn_compass": "Der Bauplan in komprimierter Form als Kompass",
     "btn_essence": "Die N.E.X.U.S. Essenz – 10 Seiten Zusammenfassung",
-    "btn_v14_url": "https://github.com/project-nexus-official/terminal/raw/docs/de/BAUPLAN_PROJEKT_NEXUS_V14_0.pdf"
+    "btn_v14_url": "https://github.com/project-nexus-official/terminal/raw/docs/de/BAUPLAN_PROJEKT_NEXUS_V14_0.pdf",
+    "btn_compass_url": "https://github.com/project-nexus-official/terminal/raw/docs/de/NEXUS_Kompass_V1_0.pdf"
   },
   "academy": {
     "title": "Der einfachste Einstieg: Der Lernpfad",

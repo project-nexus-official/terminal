@@ -113,7 +113,8 @@
     "btn_v14": "El plano completo para una civilización soberana (V 14.0)",
     "btn_compass": "El plano en forma comprimida como brújula",
     "btn_essence": "La esencia N.E.X.U.S. – Resumen de 10 páginas",
-    "btn_v14_url": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/N.E.X.U.S._Plan_Maestro_V14_ES_Final.pdf"
+    "btn_v14_url": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/N.E.X.U.S._Plan_Maestro_V14_ES_Final.pdf",
+    "btn_compass_url": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/N.E.X.U.S._La_Brujula_V1_0_ES.pdf"
   },
   "academy": {
     "title": "El paso más sencillo: La ruta de aprendizaje",
