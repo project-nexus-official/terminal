@@ -303,7 +303,17 @@
     "a_7": "cielo azul",
     "p_28": "<span data-i18n=\"footer.contact\">Contacto:</span> <a href=\"mailto:nexus.blueprint@proton.me\" class=\"contact-mail\" style=\"display:inline; margin:0;\">nexus.blueprint@proton.me</a>",
     "a_8": "nexus.blueprint@proton.me",
-    "p_29": "<span data-i18n=\"footer.legal_notice\">El plano, la versión popular y la trilogía de novelas son propiedad intelectual de Josh Richman (© 2024-2026).<br>Se recomienda expresamente leer y compartir. No está permitido usarlo como base para sus propios proyectos sin permiso.</span>"
+    "p_29": "<span data-i18n=\"footer.legal_notice\">El plano, la versión popular y la trilogía de novelas son propiedad intelectual de Josh Richman (© 2024-2026).<br>Se recomienda expresamente leer y compartir. No está permitido usarlo como base para sus propios proyectos sin permiso.</span>",
+    "pdf_url_1": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_Carta_Familia_Humana_Resumen_ES.pdf",
+    "pdf_url_2": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_Llamamiento_Familia_Humana_ES.pdf",
+    "pdf_url_3": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_Folleto_A4_ES.pdf",
+    "pdf_url_4": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_Carta_Familia_Humana_V3.1_ES.pdf",
+    "pdf_url_5": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_Ordenamiento_Fundamental_ES.pdf",
+    "pdf_url_6": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_Pacto_Genesis_V1_ES.pdf",
+    "pdf_url_7": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_Guia_para_Comunidades_V1_ES.pdf",
+    "pdf_url_8": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_PB-01_Primeros_90_Dias_V0.1_ES.pdf",
+    "pdf_url_9": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_AURA_Explicada_Facilmente_V2_ES.pdf",
+    "pdf_url_10": "https://github.com/project-nexus-official/terminal/raw/main/docs_es/NEXUS_Por_Que_No_Es_Socialismo_ES.pdf"
   },
   "thinktank_page": {
     "meta_title": "N.E.X.U.S. | Think Tank y Construcción Conjunta",
