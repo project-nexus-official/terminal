@@ -6,7 +6,7 @@
 
 (function () {
     const DEFAULT_LANG = 'de';
-    const SUPPORTED_LANGS = ['de', 'es'];
+    const SUPPORTED_LANGS = ['de', 'es', 'en'];
     let currentLang = DEFAULT_LANG;
     let translations = {};
 
