@@ -55,17 +55,6 @@ Wir suchen die **ersten 100 Architekten** — keine Zuschauer, keine Follower, s
 
 ---
 
-### 🛤️ Wähle deinen Pfad
-
-**1. Verstehen — Die Vision**
-
-Lies die Romane und den Bauplan. Verstehe, was wir bauen und warum.
-
-* [📄 Das Whitepaper (12.0)](https://github.com/project-nexus-official/terminal/blob/docs/de/BAUPLAN_%20PROJEKT%20NEXUS_V12.0.pdf)
-* [👁️ Leseprobe Band 1: Stunde Null](https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/Nexus%20-Trilogie_final_4.3_Band_1_Leseprobe_Teil%201.pdf)
-* [👁️ Leseprobe Band 2: Das Fundament](https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/Nexus%20-Trilogie_final_4.3_Band_2_Leseprobe.pdf)
-* [👁️ Leseprobe Band 3: Die Metamorphose](https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/Nexus%20-Trilogie_final_4.3_Band_3_Leseprobe.pdf)
-
 **2. Mitarbeiten — Der Workspace**
 
 Dieses GitHub ist unser Arbeitsraum. Alles ist öffentlich. Alles ist nachvollziehbar.
@@ -142,10 +131,6 @@ No secrets. No profit motive. Just the code of freedom.
 We are looking for the **first 100 architects** — not spectators, not followers, but builders. The Genesis Pact closes when the cohort is complete.
 
 **Find your place:** Architect (Code & Tech) · Builder (Hardware & Energy) · Thinker (Law & Economics) · Guardian (Care & Ethics) · Narrator (Art & Voice) · Investor (Resources & Network)
-
-### 🛤️ Choose your path
-
-**Understand:** [Handbook (DE)](https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/PROJEKT%20NEXUS_Das%20Handbuch_V6.3.pdf) · [Whitepaper (DE)](https://github.com/project-nexus-official/terminal/blob/ad78e42a11eacca9b54e4e3c3736492e9ca01ac1/WHITE%20PAPER_%20PROJEKT%20NEXUS_V6.3_W.pdf) *(English translations in progress)*
 
 **Contribute:** [Issues](../../issues) · [Projects](../../projects) · [Discussions](../../discussions) · [Wiki](../../wiki)
 
